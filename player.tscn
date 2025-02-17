@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://v7fuklt8nwxj"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_xlfw7"]
+[ext_resource type="SpriteFrames" uid="uid://it7fq2fn8ey3" path="res://Resources/Animations/PlayerAnims.tres" id="2_yr4xh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrugd"]
+size = Vector2(15.25, 10.75)
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_xlfw7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_yr4xh")
+animation = &"attack"
+frame = 4
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.125, 4.375)
+shape = SubResource("RectangleShape2D_mrugd")
+
+[node name="Camera2D" type="Camera2D" parent="."]
