@@ -10,4 +10,4 @@ func _ready() -> void:
 
 func collision(body) -> void:
 	damage_taken.emit(1)
-	print(body)
+	print(get_parent().get_name())

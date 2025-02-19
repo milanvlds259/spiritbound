@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dr1r1xj2pim7r"]
+[gd_scene load_steps=9 format=3 uid="uid://45g25n5ut1md"]
 
-[ext_resource type="Script" path="res://Enemies/Enemy_Component_Scripts/enemy.gd" id="1_cr3e4"]
-[ext_resource type="Texture2D" uid="uid://bqfjtuiydirrw" path="res://Assets/Sprites/Dungeon_Enemy_v3.png" id="1_jy1n3"]
-[ext_resource type="Script" path="res://Enemies/Enemy_Component_Scripts/marker_movement_ai.gd" id="3_2leit"]
-[ext_resource type="Script" path="res://Enemies/Enemy_Component_Scripts/health_c.gd" id="4_m2qfw"]
-[ext_resource type="Script" path="res://Enemies/Enemy_Component_Scripts/hurt_c.gd" id="5_7sw3y"]
+[ext_resource type="Script" path="res://Enemies/Enemy_Component_Scripts/enemy.gd" id="1_u7p6b"]
+[ext_resource type="Texture2D" uid="uid://bvupqsdy3uk3u" path="res://Assets/Sprites/Dungeon_Enemy_v2.png" id="2_o13a0"]
+[ext_resource type="Script" path="res://Enemies/Enemy_Component_Scripts/health_c.gd" id="3_odmxq"]
+[ext_resource type="Script" path="res://Enemies/Enemy_Component_Scripts/hurt_c.gd" id="4_t6mli"]
+[ext_resource type="Script" path="res://Enemies/Enemy_Component_Scripts/guard_movement.gd" id="5_0x1y2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uv6dy"]
 size = Vector2(20, 22)
@@ -15,16 +15,16 @@ height = 14.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p5hoi"]
 
-[node name="Enemy" type="CharacterBody2D"]
-script = ExtResource("1_cr3e4")
+[node name="EnemyFollower" type="CharacterBody2D"]
+script = ExtResource("1_u7p6b")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -32)
 scale = Vector2(4, 4)
-texture = ExtResource("1_jy1n3")
+texture = ExtResource("2_o13a0")
 region_enabled = true
-region_rect = Rect2(31, 0, 16, 16)
+region_rect = Rect2(16, 0, 16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -24)
@@ -51,15 +51,17 @@ scale = Vector2(20, 20)
 shape = SubResource("CircleShape2D_p5hoi")
 
 [node name="HealthComponent" type="Node" parent="." node_paths=PackedStringArray("hurt_comp")]
-script = ExtResource("4_m2qfw")
+script = ExtResource("3_odmxq")
 hurt_comp = NodePath("../HurtBoxC")
 
 [node name="HurtBoxC" type="Node" parent="." node_paths=PackedStringArray("area2D")]
-script = ExtResource("5_7sw3y")
+script = ExtResource("4_t6mli")
 area2D = NodePath("../HitBox")
 
-[node name="MarkerMovementAIC" type="Node" parent="." node_paths=PackedStringArray("health_comp", "hurt_comp")]
-script = ExtResource("3_2leit")
-limit = 10.0
-health_comp = NodePath("../HealthComponent")
-hurt_comp = NodePath("../HurtBoxC")
+[node name="GuardMovementC" type="Node" parent="." node_paths=PackedStringArray("health_component")]
+script = ExtResource("5_0x1y2")
+health_component = NodePath("../HealthComponent")
+limit = 5
+follow_distance = 300
+
+[connection signal="body_exited" from="FollowArea" to="GuardMovementC" method="_on_follow_area_body_exited"]
