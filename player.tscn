@@ -8,13 +8,14 @@ size = Vector2(15.25, 10.75)
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(4, 4)
+collision_layer = 4
+collision_mask = 7
 script = ExtResource("1_xlfw7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_yr4xh")
-animation = &"attack"
-frame = 4
-frame_progress = 1.0
+animation = &"idle"
+frame_progress = 0.955756
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.125, 4.375)
