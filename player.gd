@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 @export var speed: float = 250.0  # Movement speed in pixels per second
 
@@ -6,20 +6,28 @@ var direction: Vector2 = Vector2.ZERO
 var current_direction: String = "down"
 var is_sprinting: bool = false
 var is_attacking : bool = false
+var push_force = 80.0
 
 func _ready():
 	$AnimatedSprite2D.animation_finished.connect(_on_AnimatedSprite2D_animation_finished)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	handle_input()
 	move_and_slide()
+	handle_collision()
 	update_animation()
+
+func handle_collision():
+	for i in get_slide_collision_count():
+		var c = get_slide_collision(i)
+		if c.get_collider() is RigidBody2D:
+			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
 
 
 func handle_input():
 	var input_direction = Vector2.ZERO
-    
-    # Always process movement to update velocity 
+	
+	# Always process movement to update velocity 
 	if Input.is_action_pressed("move_left"):
 		input_direction.x -= 1
 		if not is_attacking:
@@ -43,7 +51,7 @@ func handle_input():
 	direction = input_direction
 	velocity = direction * speed
 
-    # Attack input check (only triggers if not already attacking)
+	# Attack input check (only triggers if not already attacking)
 	if Input.is_action_just_pressed("attack") and not is_attacking:
 		is_attacking = true
 		$AnimatedSprite2D.play("attack")

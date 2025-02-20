@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://4004ntpvh4i5"]
+
+[ext_resource type="Texture2D" uid="uid://l1ww5jlc34ch" path="res://Assets/Sprites/Spirits.png" id="1_ae6io"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mh7jr"]
+atlas = ExtResource("1_ae6io")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hy12x"]
+atlas = ExtResource("1_ae6io")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_beljq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mh7jr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hy12x")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jmwck"]
+radius = 3.0
+
+[node name="SpiritFire" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -7)
+sprite_frames = SubResource("SpriteFrames_beljq")
+animation = &"walk"
+frame = 1
+frame_progress = 0.668633
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_jmwck")
