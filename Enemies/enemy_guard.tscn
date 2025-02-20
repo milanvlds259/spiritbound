@@ -52,6 +52,7 @@ shape = SubResource("CircleShape2D_p5hoi")
 
 [node name="HealthComponent" type="Node" parent="." node_paths=PackedStringArray("hurt_comp")]
 script = ExtResource("3_odmxq")
+health = 5
 hurt_comp = NodePath("../HurtBoxC")
 
 [node name="HurtBoxC" type="Node" parent="." node_paths=PackedStringArray("area2D")]

@@ -81,14 +81,12 @@ func stop_follow() -> void:
 		current_state = State.BACK
 
 
-
-
 func disable() -> void:
 	process_mode = ProcessMode.PROCESS_MODE_DISABLED
 
 
 
-func _on_follow_area_body_exited(body) -> void: pass
+func _on_follow_area_body_exited(_body) -> void: pass
 	#Follows Player while Player is within the detection area 
 	#if body == target:
 	 #	target = null
