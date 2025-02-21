@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://dr1r1xj2pim7r"]
 
-[ext_resource type="Script" path="res://Enemies/Enemy_Component_Scripts/enemy.gd" id="1_cr3e4"]
+[ext_resource type="Script" path="res://Scripts/Enemy_Component_Scripts/enemy.gd" id="1_cr3e4"]
 [ext_resource type="Texture2D" uid="uid://bqfjtuiydirrw" path="res://Assets/Sprites/Dungeon_Enemy_v3.png" id="1_jy1n3"]
-[ext_resource type="Script" path="res://Enemies/Enemy_Component_Scripts/marker_movement_ai.gd" id="3_2leit"]
-[ext_resource type="Script" path="res://Enemies/Enemy_Component_Scripts/health_c.gd" id="4_m2qfw"]
-[ext_resource type="Script" path="res://Enemies/Enemy_Component_Scripts/hurt_c.gd" id="5_7sw3y"]
+[ext_resource type="Script" path="res://Scripts/Enemy_Component_Scripts/marker_movement_ai.gd" id="3_2leit"]
+[ext_resource type="Script" path="res://Scripts/Enemy_Component_Scripts/health_c.gd" id="4_m2qfw"]
+[ext_resource type="Script" path="res://Scripts/Enemy_Component_Scripts/hurt_c.gd" id="5_7sw3y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uv6dy"]
-size = Vector2(20, 22)
+size = Vector2(22.5, 17.5)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8cr47"]
 radius = 6.0
@@ -17,36 +17,36 @@ height = 14.0
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_cr3e4")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -32)
+position = Vector2(6, -3)
 scale = Vector2(4, 4)
 texture = ExtResource("1_jy1n3")
 region_enabled = true
 region_rect = Rect2(31, 0, 16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -24)
+position = Vector2(-0.5, 10.5)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_uv6dy")
 
 [node name="HitBox" type="Area2D" parent="."]
-position = Vector2(0, -24)
+position = Vector2(6, 5)
 collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(0, -4)
+position = Vector2(-7, -4)
 scale = Vector2(4, 4)
 shape = SubResource("CapsuleShape2D_8cr47")
 
 [node name="FollowArea" type="Area2D" parent="."]
-position = Vector2(0, -32)
+position = Vector2(6, -3)
 collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FollowArea"]
+position = Vector2(-6, 4)
 scale = Vector2(20, 20)
 shape = SubResource("CircleShape2D_p5hoi")
 

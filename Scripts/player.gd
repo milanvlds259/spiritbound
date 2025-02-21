@@ -9,7 +9,7 @@ var is_attacking : bool = false
 var push_force = 80.0
 
 func _ready():
-	$AnimatedSprite2D.animation_finished.connect(_on_AnimatedSprite2D_animation_finished)
+	$PlayerSprite.animation_finished.connect(_on_AnimatedSprite2D_animation_finished)
 
 func _physics_process(_delta):
 	handle_input()
@@ -32,12 +32,12 @@ func handle_input():
 		input_direction.x -= 1
 		if not is_attacking:
 			current_direction = "left"
-			$AnimatedSprite2D.flip_h = true
+			$PlayerSprite.flip_h = true
 	if Input.is_action_pressed("move_right"):
 		input_direction.x += 1
 		if not is_attacking:
 			current_direction = "right"
-			$AnimatedSprite2D.flip_h = false
+			$PlayerSprite.flip_h = false
 	if Input.is_action_pressed("move_up"):
 		input_direction.y -= 1
 		if not is_attacking:
@@ -54,20 +54,20 @@ func handle_input():
 	# Attack input check (only triggers if not already attacking)
 	if Input.is_action_just_pressed("attack") and not is_attacking:
 		is_attacking = true
-		$AnimatedSprite2D.play("attack")
+		$PlayerSprite.play("attack")
 
 func update_animation():
 	if is_attacking:
 		return
 
 	if direction != Vector2.ZERO:
-		$AnimatedSprite2D.play("run")
+		$PlayerSprite.play("run")
 	else:
-		$AnimatedSprite2D.play("idle")
+		$PlayerSprite.play("idle")
 
 func _on_AnimatedSprite2D_animation_finished():
 	print("Animation finished")
-	if $AnimatedSprite2D.animation == "attack":
+	if $PlayerSprite.animation == "attack":
 		print("Attack animation finished")
 		is_attacking = false
-		$AnimatedSprite2D.play("idle")
+		$PlayerSprite.play("idle")
