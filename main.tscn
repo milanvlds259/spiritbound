@@ -27,7 +27,7 @@ position = Vector2(808, 272)
 marker_end_point = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="Enemy1"]
-position = Vector2(15, 346)
+position = Vector2(12, 266)
 
 [node name="Enemy2" parent="." node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
 position = Vector2(400, 250)

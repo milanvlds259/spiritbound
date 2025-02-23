@@ -10,6 +10,8 @@ var push_force = 80.0
 
 func _ready():
 	$PlayerSprite.animation_finished.connect(_on_AnimatedSprite2D_animation_finished)
+	$AttackEffect01/AttackEffectSprite.frame_changed.connect(_on_attack_effect_frame_changed)
+	$AttackEffect01/AttackHitbox.disabled = true
 
 func _physics_process(_delta):
 	handle_input()
@@ -81,6 +83,15 @@ func handle_input():
 
 		$PlayerSprite.play("attack")
 		$AttackEffect01/AttackEffectSprite.play("attack01")
+
+func _on_attack_effect_frame_changed():
+	var current_frame = $AttackEffect01/AttackEffectSprite.frame
+	# If the current frame is where the attack should be active.
+	# Adjust the frame numbers (e.g. 3 and 4) as needed depending on your animation indexing.
+	if current_frame == 3 or current_frame == 4:
+		$AttackEffect01/AttackHitbox.disabled = false
+	else:
+		$AttackEffect01/AttackHitbox.disabled = true
 
 func update_animation():
 	if is_attacking:
