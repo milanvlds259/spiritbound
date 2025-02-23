@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://45g25n5ut1md"]
 
-[ext_resource type="Script" path="res://Enemies/Enemy_Component_Scripts/enemy.gd" id="1_u7p6b"]
+[ext_resource type="Script" path="res://Scripts/Enemy_Component_Scripts/enemy.gd" id="1_u7p6b"]
 [ext_resource type="Texture2D" uid="uid://bvupqsdy3uk3u" path="res://Assets/Sprites/Dungeon_Enemy_v2.png" id="2_o13a0"]
-[ext_resource type="Script" path="res://Enemies/Enemy_Component_Scripts/health_c.gd" id="3_odmxq"]
-[ext_resource type="Script" path="res://Enemies/Enemy_Component_Scripts/hurt_c.gd" id="4_t6mli"]
-[ext_resource type="Script" path="res://Enemies/Enemy_Component_Scripts/guard_movement.gd" id="5_0x1y2"]
+[ext_resource type="Script" path="res://Scripts/Enemy_Component_Scripts/health_c.gd" id="3_odmxq"]
+[ext_resource type="Script" path="res://Scripts/Enemy_Component_Scripts/hurt_c.gd" id="4_t6mli"]
+[ext_resource type="Script" path="res://Scripts/Enemy_Component_Scripts/guard_movement.gd" id="5_0x1y2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uv6dy"]
 size = Vector2(20, 22)

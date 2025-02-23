@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=4 uid="uid://7eq4syk4h7lu"]
+[gd_scene load_steps=4 format=4 uid="uid://7eq4syk4h7lu"]
 
 [ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="1_58lbu"]
 [ext_resource type="PackedScene" uid="uid://v7fuklt8nwxj" path="res://player.tscn" id="2_m62md"]
-[ext_resource type="PackedScene" uid="uid://45g25n5ut1md" path="res://Enemies/enemy_guard.tscn" id="4_3mntu"]
 [ext_resource type="PackedScene" uid="uid://dr1r1xj2pim7r" path="res://Enemies/enemy.tscn" id="4_lnfp4"]
 
 [node name="Main" type="Node2D"]
+y_sort_enabled = true
 
 [node name="TileMap" type="Node2D" parent="."]
 scale = Vector2(4, 4)
@@ -22,17 +22,16 @@ tile_set = ExtResource("1_58lbu")
 [node name="Player" parent="." instance=ExtResource("2_m62md")]
 position = Vector2(565, 357)
 
-[node name="Enemy1" parent="." instance=ExtResource("4_lnfp4")]
+[node name="Enemy1" parent="." node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
 position = Vector2(808, 272)
+marker_end_point = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="Enemy1"]
-position = Vector2(-168, 216)
+position = Vector2(12, 266)
 
-[node name="Enemy2" parent="." instance=ExtResource("4_lnfp4")]
+[node name="Enemy2" parent="." node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
 position = Vector2(400, 250)
+marker_end_point = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="Enemy2"]
 position = Vector2(200, 0)
-
-[node name="EnemyGuard" parent="." instance=ExtResource("4_3mntu")]
-position = Vector2(336, 544)

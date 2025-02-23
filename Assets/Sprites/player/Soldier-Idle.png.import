@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://l1ww5jlc34ch"
-path="res://.godot/imported/Spirits.png-40d39df6b7494bc6ec2701a1e4f833a8.ctex"
+uid="uid://casykyuxhttv6"
+path="res://.godot/imported/Soldier-Idle.png-4202c601591a2c018c8a9e48055f0d5f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Spirits.png"
-dest_files=["res://.godot/imported/Spirits.png-40d39df6b7494bc6ec2701a1e4f833a8.ctex"]
+source_file="res://Assets/Sprites/player/Soldier-Idle.png"
+dest_files=["res://.godot/imported/Soldier-Idle.png-4202c601591a2c018c8a9e48055f0d5f.ctex"]
 
 [params]
 
