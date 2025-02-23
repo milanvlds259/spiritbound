@@ -26,18 +26,26 @@ func handle_collision():
 
 func handle_input():
 	var input_direction = Vector2.ZERO
+
+	# Flip sprtite depending on mouse position
+	if get_viewport().get_mouse_position().x < get_viewport().size.x / 2:
+		if not $PlayerSprite.flip_h:
+			$PlayerSprite.flip_h = true
+			$AttackEffect01/AttackEffectSprite.flip_h = true
+	else:
+		if $PlayerSprite.flip_h:
+			$PlayerSprite.flip_h = false
+			$AttackEffect01/AttackEffectSprite.flip_h = false
 	
 	# Always process movement to update velocity 
 	if Input.is_action_pressed("move_left"):
 		input_direction.x -= 1
 		if not is_attacking:
 			current_direction = "left"
-			$PlayerSprite.flip_h = true
 	if Input.is_action_pressed("move_right"):
 		input_direction.x += 1
 		if not is_attacking:
 			current_direction = "right"
-			$PlayerSprite.flip_h = false
 	if Input.is_action_pressed("move_up"):
 		input_direction.y -= 1
 		if not is_attacking:
@@ -54,7 +62,25 @@ func handle_input():
 	# Attack input check (only triggers if not already attacking)
 	if Input.is_action_just_pressed("attack") and not is_attacking:
 		is_attacking = true
+
+		# get attack dir from mouse pos relative to center of screen
+		var center = Vector2(get_viewport().size / 2)
+		var attack_dir = (get_viewport().get_mouse_position() - center).normalized()
+		var angle = attack_dir.angle()
+
+		if $AttackEffect01/AttackEffectSprite.flip_h:
+			angle += PI
+
+		print(attack_dir.angle())
+		$AttackEffect01/AttackEffectSprite.rotation = angle
+		$AttackEffect01/AttackEffectSprite.position = attack_dir * 5
+
+		# Update attack hitbox collider
+		$AttackEffect01/AttackHitbox.position = attack_dir * 12
+		$AttackEffect01/AttackHitbox.rotation = angle + PI/2
+
 		$PlayerSprite.play("attack")
+		$AttackEffect01/AttackEffectSprite.play("attack01")
 
 func update_animation():
 	if is_attacking:
