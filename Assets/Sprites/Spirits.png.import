@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bibdiel70ce6n"
-path="res://.godot/imported/FDR_Dungeon_Animations.png-5df8098fd0364b571f72007bb625e0d3.ctex"
+uid="uid://l1ww5jlc34ch"
+path="res://.godot/imported/Spirits.png-40d39df6b7494bc6ec2701a1e4f833a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/FDR_Dungeon_Animations.png"
-dest_files=["res://.godot/imported/FDR_Dungeon_Animations.png-5df8098fd0364b571f72007bb625e0d3.ctex"]
+source_file="res://Assets/Sprites/Spirits.png"
+dest_files=["res://.godot/imported/Spirits.png-40d39df6b7494bc6ec2701a1e4f833a8.ctex"]
 
 [params]
 

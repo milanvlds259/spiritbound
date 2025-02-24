@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ws6vyuy0si1"
-path="res://.godot/imported/FDR_Ground_Tiles_Godot.png-bfa76a27697ad9a5ab5a91d95c3b9fbb.ctex"
+uid="uid://7e0shsld1gg"
+path="res://.godot/imported/FDR_Water_Tiles_Unity.png-3f1f168b8011ea1db421c03ae4f17017.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/FDR_Ground_Tiles_Godot.png"
-dest_files=["res://.godot/imported/FDR_Ground_Tiles_Godot.png-bfa76a27697ad9a5ab5a91d95c3b9fbb.ctex"]
+source_file="res://Assets/Sprites/Tiles/FDR_Water_Tiles_Unity.png"
+dest_files=["res://.godot/imported/FDR_Water_Tiles_Unity.png-3f1f168b8011ea1db421c03ae4f17017.ctex"]
 
 [params]
 

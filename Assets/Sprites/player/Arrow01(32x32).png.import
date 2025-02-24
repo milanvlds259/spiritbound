@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl73ub7lfunnj"
-path="res://.godot/imported/FDR_Ground_Tiles.png-4e29151743854bd2a03a07f74046fe8a.ctex"
+uid="uid://dpgcy7oaullmp"
+path="res://.godot/imported/Arrow01(32x32).png-405178ae512e48dc8a5d89d1916458c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/FDR_Ground_Tiles.png"
-dest_files=["res://.godot/imported/FDR_Ground_Tiles.png-4e29151743854bd2a03a07f74046fe8a.ctex"]
+source_file="res://Assets/Sprites/player/Arrow01(32x32).png"
+dest_files=["res://.godot/imported/Arrow01(32x32).png-405178ae512e48dc8a5d89d1916458c5.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8733p18lxm7m"
-path="res://.godot/imported/Dungeon_item_props_v2.png-3b8f666f169d629eab2c86a43edbf1b3.ctex"
+uid="uid://3qe2rcup43ig"
+path="res://.godot/imported/FDR_Dungeon.png-11c1f99488987b6a9dedce4f2fcc578e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Dungeon_item_props_v2.png"
-dest_files=["res://.godot/imported/Dungeon_item_props_v2.png-3b8f666f169d629eab2c86a43edbf1b3.ctex"]
+source_file="res://Assets/Sprites/Tiles/FDR_Dungeon.png"
+dest_files=["res://.godot/imported/FDR_Dungeon.png-11c1f99488987b6a9dedce4f2fcc578e.ctex"]
 
 [params]
 

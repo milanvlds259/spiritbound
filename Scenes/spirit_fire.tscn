@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://4004ntpvh4i5"]
 
-[ext_resource type="Texture2D" uid="uid://l1ww5jlc34ch" path="res://Assets/Sprites/player/Spirits.png" id="1_ae6io"]
+[ext_resource type="Texture2D" uid="uid://l1ww5jlc34ch" path="res://Assets/Sprites/Spirits.png" id="1_ae6io"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mh7jr"]
 atlas = ExtResource("1_ae6io")
@@ -25,7 +25,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jmwck"]
-radius = 3.0
+radius = 5.0
 
 [node name="SpiritFire" type="Area2D"]
 
@@ -33,9 +33,8 @@ radius = 3.0
 position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_beljq")
 animation = &"walk"
-frame = 1
-frame_progress = 0.668633
+frame_progress = 0.91863
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4)
+position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_jmwck")
