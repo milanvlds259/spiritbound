@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://7eq4syk4h7lu"]
+[gd_scene load_steps=12 format=4 uid="uid://7eq4syk4h7lu"]
 
 [ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="1_58lbu"]
 [ext_resource type="PackedScene" uid="uid://v7fuklt8nwxj" path="res://player.tscn" id="2_m62md"]
 [ext_resource type="PackedScene" uid="uid://dr1r1xj2pim7r" path="res://Enemies/enemy.tscn" id="4_lnfp4"]
 [ext_resource type="Texture2D" uid="uid://b8733p18lxm7m" path="res://Assets/Sprites/Dungeon_item_props_v2.png" id="5_05g2a"]
 [ext_resource type="Texture2D" uid="uid://bibdiel70ce6n" path="res://Assets/Sprites/FDR_Dungeon_Animations.png" id="6_p2r4m"]
+[ext_resource type="AudioStream" uid="uid://c4abcppdikws3" path="res://Assets/Audio/8bitloop_Level_Combat.wav" id="7_44unc"]
 [ext_resource type="Texture2D" uid="uid://3qe2rcup43ig" path="res://Assets/Sprites/FDR_Dungeon.png" id="7_62rwg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ew0o1"]
@@ -1217,3 +1218,35 @@ marker_end_point = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="Enemy2"]
 position = Vector2(200, 0)
+
+[node name="Enemy3" parent="." node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
+position = Vector2(0, 559)
+marker_end_point = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Enemy3"]
+position = Vector2(-108, -444)
+
+[node name="Enemy4" parent="." node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
+position = Vector2(386, 766)
+marker_end_point = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Enemy4"]
+position = Vector2(-394, 195)
+
+[node name="Enemy5" parent="." node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
+position = Vector2(850, 716)
+marker_end_point = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Enemy5"]
+position = Vector2(455, -178)
+
+[node name="Enemy6" parent="." node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
+position = Vector2(1036, 1030)
+marker_end_point = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Enemy6"]
+position = Vector2(-439, 22)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_44unc")
+autoplay = true
