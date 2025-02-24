@@ -1,4 +1,4 @@
-
+[gd_scene load_steps=11 format=4 uid="uid://7eq4syk4h7lu"]
 
 [ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="1_58lbu"]
 [ext_resource type="PackedScene" uid="uid://v7fuklt8nwxj" path="res://player.tscn" id="2_m62md"]
