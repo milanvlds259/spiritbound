@@ -19,6 +19,7 @@ func _ready() -> void:
 	# Connect the hurt area's signal for collision detection.
 	if hurt_area:
 		hurt_area.area_entered.connect(_on_hurt_area_entered)
+		hurt_area.body_entered.connect(_on_hurt_body_entered)
 	# Initialize marker movement positions.
 	start_position = position
 	if marker_end_point:
@@ -56,6 +57,12 @@ func _change_marker_direction() -> void:
 func _on_hurt_area_entered(area: Area2D) -> void:
 	# Check if the area is the player's attack hitbox (temporary)
 	if area.is_in_group("player_attack"):
+		print("Enemy hit by player's attack!")
+		queue_free()
+
+func _on_hurt_body_entered(body: RigidBody2D) -> void:
+	# Check if the area is the player's attack hitbox (temporary)
+	if body.is_in_group("player_attack"):
 		print("Enemy hit by player's attack!")
 		queue_free()
 

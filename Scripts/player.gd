@@ -1,6 +1,8 @@
 class_name Player extends CharacterBody2D
 
 @export var speed: float = 250.0  # Movement speed in pixels per second
+@export var arrow: PackedScene
+@export var arrow_speed: float = 500.0
 
 var direction: Vector2 = Vector2.ZERO
 var current_direction: String = "down"
@@ -8,8 +10,12 @@ var is_sprinting: bool = false
 var is_attacking : bool = false
 var push_force = 80.0
 
+var attack_mode: String = ""
+var arrow_fired: bool = false
+
 func _ready():
 	$PlayerSprite.animation_finished.connect(_on_AnimatedSprite2D_animation_finished)
+	$PlayerSprite.frame_changed.connect(_on_PlayerSprite_frame_changed)
 	$AttackEffect01/AttackEffectSprite.frame_changed.connect(_on_attack_effect_frame_changed)
 	$AttackEffect01/AttackHitbox.disabled = true
 
@@ -64,25 +70,62 @@ func handle_input():
 	# Attack input check (only triggers if not already attacking)
 	if Input.is_action_just_pressed("attack") and not is_attacking:
 		is_attacking = true
+		_attack_melee()
 
-		# get attack dir from mouse pos relative to center of screen
-		var center = Vector2(get_viewport().size / 2)
-		var attack_dir = (get_viewport().get_mouse_position() - center).normalized()
-		var angle = attack_dir.angle()
+	if Input.is_action_just_pressed("ranged_attack"):
+		is_attacking = true
+		_attack_ranged()
 
-		if $AttackEffect01/AttackEffectSprite.flip_h:
-			angle += PI
+func _attack_melee():
+	# get attack dir from mouse pos relative to center of screen
+	var center = Vector2(get_viewport().size / 2)
+	var attack_dir = (get_viewport().get_mouse_position() - center).normalized()
+	var angle = attack_dir.angle()
 
-		print(attack_dir.angle())
-		$AttackEffect01/AttackEffectSprite.rotation = angle
-		$AttackEffect01/AttackEffectSprite.position = attack_dir * 5
+	if $AttackEffect01/AttackEffectSprite.flip_h:
+		angle += PI
 
-		# Update attack hitbox collider
-		$AttackEffect01/AttackHitbox.position = attack_dir * 12
-		$AttackEffect01/AttackHitbox.rotation = angle + PI/2
+	print(attack_dir.angle())
+	$AttackEffect01/AttackEffectSprite.rotation = angle
+	$AttackEffect01/AttackEffectSprite.position = attack_dir * 5
 
-		$PlayerSprite.play("attack")
-		$AttackEffect01/AttackEffectSprite.play("attack01")
+	# Update attack hitbox collider
+	$AttackEffect01/AttackHitbox.position = attack_dir * 12
+	$AttackEffect01/AttackHitbox.rotation = angle + PI/2
+
+	$PlayerSprite.play("attack")
+	$AttackEffect01/AttackEffectSprite.play("attack01")
+
+func _attack_ranged():
+	attack_mode = "ranged"
+	arrow_fired = false
+	$PlayerSprite.play("attack_ranged")
+
+func fire_arrow():
+	if not arrow:
+		push_error("Arrow scene not set")
+		return
+
+	# calculate initial position of arrow
+	var arrow_instance = arrow.instantiate()
+	arrow_instance.position = global_position
+
+	# calculate direction of arrow
+	var center = Vector2(get_viewport().size / 2)
+	var dir = (get_viewport().get_mouse_position() - center).normalized()
+
+	# set arrow direction
+	arrow_instance.rotation = dir.angle()
+	arrow_instance.linear_velocity = dir * arrow_speed
+
+	get_tree().current_scene.add_child(arrow_instance)
+
+func _on_PlayerSprite_frame_changed():
+	# When performing a ranged attack, fire the arrow at frame 6.
+	if attack_mode == "ranged" and not arrow_fired:
+		if $PlayerSprite.frame == 6:
+			arrow_fired = true
+			fire_arrow()
 
 func _on_attack_effect_frame_changed():
 	var current_frame = $AttackEffect01/AttackEffectSprite.frame
@@ -104,7 +147,8 @@ func update_animation():
 
 func _on_AnimatedSprite2D_animation_finished():
 	print("Animation finished")
-	if $PlayerSprite.animation == "attack":
+	if $PlayerSprite.animation == "attack" or $PlayerSprite.animation == "attack_ranged":
 		print("Attack animation finished")
 		is_attacking = false
+		attack_mode = ""
 		$PlayerSprite.play("idle")
