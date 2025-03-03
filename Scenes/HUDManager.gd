@@ -5,6 +5,8 @@ func _ready() -> void:
 	Global.spirit_inventory_updated.connect(_on_spirit_inventory_updated)
 	Global.player_hp_changed.connect(_on_player_hp_changed)
 	Global.setup_hpbar.connect(_on_setup_hpbar)
+	Global.player_died.connect(_on_player_died)
+	$RestartButton.pressed.connect(_on_restart_button_pressed)
 
 func _on_spirit_inventory_updated(new_inventory: Array) -> void:
 	var inventory = $SpiritInventory
@@ -33,3 +35,12 @@ func _on_setup_hpbar(hp: int, max_hp: int) -> void:
 	$HPBar.max_value = max_hp
 	$HPBar.value = hp
 	$HPBar/HPValueLabel.text = str(hp) + " / " + str(max_hp)
+
+func _on_player_died() -> void:
+	# Tint the screen darker by showing a semi-transparent ColorRect
+	$DeathTint.visible = true
+	$RestartButton.visible = true
+	$GameOverText.visible = true
+
+func _on_restart_button_pressed() -> void:
+	get_tree().reload_current_scene()

@@ -45,6 +45,12 @@ corner_radius_bottom_left = 5
 [node name="PlayerHUD" type="CanvasLayer"]
 script = ExtResource("1_pvo2x")
 
+[node name="DeathTint" type="ColorRect" parent="."]
+visible = false
+offset_right = 1153.0
+offset_bottom = 650.0
+color = Color(0, 0, 0, 0.392157)
+
 [node name="SpiritsHeader" type="Label" parent="."]
 offset_left = 1048.0
 offset_top = 531.0
@@ -160,3 +166,38 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 5
 theme_override_font_sizes/font_size = 32
 text = "16 / 20"
+
+[node name="GameOverText" type="Label" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -119.5
+offset_top = 125.205
+offset_right = 119.5
+offset_bottom = 192.205
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 9
+theme_override_font_sizes/font_size = 48
+text = "YOU DIED!"
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -134.0
+offset_top = 256.0
+offset_right = 134.0
+offset_bottom = 325.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.0177324, 0.0177324, 0.0177324, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/h_separation = 0
+theme_override_font_sizes/font_size = 41
+text = "RESTART"

@@ -158,9 +158,17 @@ func take_damage(damage: int):
 	hp -= damage
 	if hp <= 0:
 		hp = 0
+		die()
 	Global.emit_signal("player_hp_changed", hp)
 	$PlayerSprite.play("hurt")
 	print("played hurt anim")
+
+func die():
+	print("Player died")
+	# Emit signal to global script
+	Global.emit_signal("player_died")
+	#disable player
+	queue_free()
 
 func _on_PlayerSprite_frame_changed():
 	# When performing a ranged attack, fire the arrow at frame 6.

@@ -5,3 +5,4 @@ signal spirit_picked_up
 signal spirit_inventory_updated
 signal player_hp_changed
 signal setup_hpbar
+signal player_died
