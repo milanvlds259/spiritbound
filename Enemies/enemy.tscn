@@ -1,7 +1,58 @@
-[gd_scene load_steps=6 format=3 uid="uid://dr1r1xj2pim7r"]
+[gd_scene load_steps=14 format=3 uid="uid://dr1r1xj2pim7r"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy_Component_Scripts/enemy.gd" id="1_cr3e4"]
 [ext_resource type="Texture2D" uid="uid://bqfjtuiydirrw" path="res://Assets/Sprites/Dungeon_Enemy_v3.png" id="1_jy1n3"]
+[ext_resource type="Texture2D" uid="uid://7wd7npp4rfw8" path="res://Assets/Sprites/EnemyGuard.png" id="2_0fy1h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3jjg"]
+atlas = ExtResource("2_0fy1h")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gnxf"]
+atlas = ExtResource("2_0fy1h")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7das"]
+atlas = ExtResource("2_0fy1h")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xeglq"]
+atlas = ExtResource("2_0fy1h")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nycd"]
+atlas = ExtResource("2_0fy1h")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ns22h"]
+atlas = ExtResource("2_0fy1h")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tirm8"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_n3jjg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7gnxf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7das")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_xeglq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nycd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ns22h")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 12.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uv6dy"]
 size = Vector2(22.5, 17.5)
@@ -16,7 +67,13 @@ collision_layer = 2
 collision_mask = 6
 script = ExtResource("1_cr3e4")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_tirm8")
+animation = &"walk"
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(6, -3)
 scale = Vector2(4, 4)
 texture = ExtResource("1_jy1n3")
@@ -41,7 +98,6 @@ shape = SubResource("RectangleShape2D_y0bp2")
 [node name="FollowArea" type="Area2D" parent="."]
 position = Vector2(6, -3)
 collision_layer = 0
-collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FollowArea"]
 position = Vector2(-6, 3)
