@@ -1,0 +1,99 @@
+[gd_scene load_steps=6 format=3 uid="uid://de7br0582ath"]
+
+[ext_resource type="Texture2D" uid="uid://l1ww5jlc34ch" path="res://Assets/Sprites/Spirits.png" id="1_51208"]
+[ext_resource type="Script" path="res://Scenes/HUDManager.gd" id="1_pvo2x"]
+
+[sub_resource type="Theme" id="Theme_0qe3m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ma53j"]
+bg_color = Color(0.18806, 0.0856214, 0.181579, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.94, 0.767667, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+anti_aliasing = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kfx1"]
+atlas = ExtResource("1_51208")
+region = Rect2(0, 0, 16.0888, 16.0015)
+
+[node name="PlayerHUD" type="CanvasLayer"]
+script = ExtResource("1_pvo2x")
+
+[node name="SpiritInventory" type="HBoxContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -352.0
+offset_top = -80.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Panel1" type="Panel" parent="SpiritInventory"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = SubResource("Theme_0qe3m")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ma53j")
+
+[node name="Sprite" type="Sprite2D" parent="SpiritInventory/Panel1"]
+visible = false
+position = Vector2(32, 32)
+scale = Vector2(3.625, 3.625)
+texture = SubResource("AtlasTexture_2kfx1")
+
+[node name="Panel2" type="Panel" parent="SpiritInventory"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = SubResource("Theme_0qe3m")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ma53j")
+
+[node name="Sprite" type="Sprite2D" parent="SpiritInventory/Panel2"]
+visible = false
+position = Vector2(32, 32)
+scale = Vector2(3.625, 3.625)
+texture = SubResource("AtlasTexture_2kfx1")
+
+[node name="Panel3" type="Panel" parent="SpiritInventory"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = SubResource("Theme_0qe3m")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ma53j")
+
+[node name="Sprite" type="Sprite2D" parent="SpiritInventory/Panel3"]
+visible = false
+position = Vector2(32, 32)
+scale = Vector2(3.625, 3.625)
+texture = SubResource("AtlasTexture_2kfx1")
+
+[node name="Panel4" type="Panel" parent="SpiritInventory"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = SubResource("Theme_0qe3m")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ma53j")
+
+[node name="Sprite" type="Sprite2D" parent="SpiritInventory/Panel4"]
+visible = false
+position = Vector2(32, 32)
+scale = Vector2(3.625, 3.625)
+texture = SubResource("AtlasTexture_2kfx1")
+
+[node name="Panel5" type="Panel" parent="SpiritInventory"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = SubResource("Theme_0qe3m")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ma53j")
+
+[node name="Sprite" type="Sprite2D" parent="SpiritInventory/Panel5"]
+visible = false
+position = Vector2(32, 32)
+scale = Vector2(3.625, 3.625)
+texture = SubResource("AtlasTexture_2kfx1")
