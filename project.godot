@@ -14,9 +14,14 @@ config/name="spiritbound"
 run/main_scene="res://Scenes/main.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 
+[autoload]
+
+Global="*res://Global.gd"
+
 [global_group]
 
 player_attack=""
+player="duh"
 
 [input]
 

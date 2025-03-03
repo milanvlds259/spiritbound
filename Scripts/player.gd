@@ -13,6 +13,8 @@ var push_force = 80.0
 var attack_mode: String = ""
 var arrow_fired: bool = false
 
+var spirit_inventory: Array = []
+
 func _ready():
 	$PlayerSprite.animation_finished.connect(_on_AnimatedSprite2D_animation_finished)
 	$PlayerSprite.frame_changed.connect(_on_PlayerSprite_frame_changed)
@@ -76,6 +78,11 @@ func handle_input():
 		is_attacking = true
 		_attack_ranged()
 
+func add_spirit(type: String) -> void:
+	spirit_inventory.append(type)
+	Global.emit_signal("spirit_inventory_updated", spirit_inventory)
+	print("Spirit added to inventory: ", type)
+
 func _attack_melee():
 	# get attack dir from mouse pos relative to center of screen
 	var center = Vector2(get_viewport().size / 2)
@@ -85,7 +92,6 @@ func _attack_melee():
 	if $AttackEffect01/AttackEffectSprite.flip_h:
 		angle += PI
 
-	print(attack_dir.angle())
 	$AttackEffect01/AttackEffectSprite.rotation = angle
 	$AttackEffect01/AttackEffectSprite.position = attack_dir * 5
 
@@ -94,7 +100,16 @@ func _attack_melee():
 	$AttackEffect01/AttackHitbox.rotation = angle + PI/2
 
 	$PlayerSprite.play("attack")
-	$AttackEffect01/AttackEffectSprite.play("attack01")
+	if "fire" in spirit_inventory:
+		$AttackEffect01/AttackHitbox.scale = Vector2(2, 2)
+		$AttackEffect01/AttackEffectSprite.scale = Vector2(2, 2)
+		$AttackEffect01/AttackHitbox.position = attack_dir * 16
+		$AttackEffect01/AttackEffectSprite.position = attack_dir * 5
+		$AttackEffect01/AttackEffectSprite.play("attack01fire")
+	else:
+		$AttackEffect01/AttackHitbox.scale = Vector2(1, 1)
+		$AttackEffect01/AttackEffectSprite.scale = Vector2(1, 1)
+		$AttackEffect01/AttackEffectSprite.play("attack01")
 
 func _attack_ranged():
 	attack_mode = "ranged"
