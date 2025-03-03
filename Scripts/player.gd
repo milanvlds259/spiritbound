@@ -41,11 +41,13 @@ func handle_input():
 	if get_viewport().get_mouse_position().x < get_viewport().size.x / 2:
 		if not $PlayerSprite.flip_h:
 			$PlayerSprite.flip_h = true
-			$AttackEffect01/AttackEffectSprite.flip_h = true
+			if not is_attacking:
+				$AttackEffect01/AttackEffectSprite.flip_h = true
 	else:
 		if $PlayerSprite.flip_h:
 			$PlayerSprite.flip_h = false
-			$AttackEffect01/AttackEffectSprite.flip_h = false
+			if not is_attacking:
+				$AttackEffect01/AttackEffectSprite.flip_h = false
 	
 	# Always process movement to update velocity 
 	if Input.is_action_pressed("move_left"):
