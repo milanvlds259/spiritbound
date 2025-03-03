@@ -5,6 +5,7 @@ class_name Player extends CharacterBody2D
 @export var arrow_speed: float = 500.0
 
 var hp: int = 20
+var max_hp: int = 20
 
 var direction: Vector2 = Vector2.ZERO
 var current_direction: String = "down"
@@ -23,19 +24,17 @@ func _ready():
 	$AttackEffect01/AttackEffectSprite.frame_changed.connect(_on_attack_effect_frame_changed)
 	$AttackEffect01/AttackHitbox.disabled = true
 
+	# Set up hp bar
+	call_deferred("emit_setup_hpbar")
+
+func emit_setup_hpbar():
+	Global.emit_signal("setup_hpbar", hp, max_hp)
+
+
 func _physics_process(_delta):
 	handle_input()
 	move_and_slide()
-	handle_collision()
 	update_animation()
-
-func handle_collision():
-	pass
-	#for i in get_slide_collision_count():
-		#var c = get_slide_collision(i)
-		#if c.get_collider() is RigidBody2D:
-			#c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
-
 
 func handle_input():
 	var input_direction = Vector2.ZERO

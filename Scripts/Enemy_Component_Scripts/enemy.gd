@@ -40,6 +40,9 @@ func _ready() -> void:
 	else:
 		end_position = start_position + Vector2(0, 10)
 
+	# Connect enemy hitbox to hit player
+	$HitBox.body_entered.connect(_on_hitbox_body_entered)
+
 func _process(_delta: float) -> void:
 	updateAnimations()
 
@@ -148,6 +151,15 @@ func _on_hurt_body_entered(body: RigidBody2D) -> void:
 		print("Enemy hit by player's attack!")
 		print ("-5 Health")
 		damage_taken(5)
+
+func _on_hitbox_body_entered(body: Node) -> void:
+	if body.is_in_group("player"):
+		body.take_damage(2)
+
+		var push_dir = (body.global_position - global_position).normalized()
+		var impulse_str = 50
+
+		body.velocity += push_dir * impulse_str
 
 
 func damage_taken(damage: int) -> void:

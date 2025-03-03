@@ -130,7 +130,7 @@ position = Vector2(32, 32)
 scale = Vector2(3.625, 3.625)
 texture = SubResource("AtlasTexture_2kfx1")
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="HPBar" type="ProgressBar" parent="."]
 offset_left = 18.0
 offset_top = 586.0
 offset_right = 292.0
@@ -140,7 +140,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_08fal")
 value = 80.0
 show_percentage = false
 
-[node name="HPLabel" type="Label" parent="ProgressBar"]
+[node name="HPLabel" type="Label" parent="HPBar"]
 layout_mode = 0
 offset_left = 4.0
 offset_top = -30.0
@@ -151,7 +151,7 @@ theme_override_constants/shadow_outline_size = 3
 theme_override_font_sizes/font_size = 18
 text = "HP"
 
-[node name="HPValueLabel" type="Label" parent="ProgressBar"]
+[node name="HPValueLabel" type="Label" parent="HPBar"]
 layout_mode = 0
 offset_left = 32.0
 offset_top = -45.0
