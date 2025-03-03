@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://de7br0582ath"]
+[gd_scene load_steps=8 format=3 uid="uid://de7br0582ath"]
 
 [ext_resource type="Texture2D" uid="uid://l1ww5jlc34ch" path="res://Assets/Sprites/Spirits.png" id="1_51208"]
 [ext_resource type="Script" path="res://Scenes/HUDManager.gd" id="1_pvo2x"]
@@ -22,8 +22,40 @@ anti_aliasing = false
 atlas = ExtResource("1_51208")
 region = Rect2(0, 0, 16.0888, 16.0015)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4w5dx"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+shadow_size = 5
+shadow_offset = Vector2(2.695, 2.26)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_08fal"]
+bg_color = Color(0.403833, 1, 0.27, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [node name="PlayerHUD" type="CanvasLayer"]
 script = ExtResource("1_pvo2x")
+
+[node name="SpiritsHeader" type="Label" parent="."]
+offset_left = 1048.0
+offset_top = 531.0
+offset_right = 1133.0
+offset_bottom = 565.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 7
+theme_override_font_sizes/font_size = 24
+text = "SPIRITS"
 
 [node name="SpiritInventory" type="HBoxContainer" parent="."]
 anchors_preset = 3
@@ -97,3 +129,34 @@ visible = false
 position = Vector2(32, 32)
 scale = Vector2(3.625, 3.625)
 texture = SubResource("AtlasTexture_2kfx1")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 18.0
+offset_top = 586.0
+offset_right = 292.0
+offset_bottom = 634.0
+theme_override_styles/background = SubResource("StyleBoxFlat_4w5dx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_08fal")
+value = 80.0
+show_percentage = false
+
+[node name="HPLabel" type="Label" parent="ProgressBar"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -30.0
+offset_right = 29.0
+offset_bottom = -4.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 3
+theme_override_font_sizes/font_size = 18
+text = "HP"
+
+[node name="HPValueLabel" type="Label" parent="ProgressBar"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = -45.0
+offset_right = 152.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 32
+text = "16 / 20"

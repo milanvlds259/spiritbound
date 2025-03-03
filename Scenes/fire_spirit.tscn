@@ -7,6 +7,7 @@
 radius = 17.0
 
 [node name="FireSpirit" type="Area2D"]
+z_index = 2
 script = ExtResource("1_naoud")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

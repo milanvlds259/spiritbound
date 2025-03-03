@@ -18,6 +18,11 @@ config/features=PackedStringArray("4.3", "GL Compatibility")
 
 Global="*res://Global.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/scale_mode="integer"
+
 [global_group]
 
 player_attack=""

@@ -17,6 +17,7 @@ collision_mask = 6
 script = ExtResource("1_cr3e4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_as_relative = false
 position = Vector2(6, -3)
 scale = Vector2(4, 4)
 texture = ExtResource("1_jy1n3")

@@ -4,6 +4,8 @@ class_name Player extends CharacterBody2D
 @export var arrow: PackedScene
 @export var arrow_speed: float = 500.0
 
+var hp: int = 20
+
 var direction: Vector2 = Vector2.ZERO
 var current_direction: String = "down"
 var is_sprinting: bool = false
@@ -28,10 +30,11 @@ func _physics_process(_delta):
 	update_animation()
 
 func handle_collision():
-	for i in get_slide_collision_count():
-		var c = get_slide_collision(i)
-		if c.get_collider() is RigidBody2D:
-			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
+	pass
+	#for i in get_slide_collision_count():
+		#var c = get_slide_collision(i)
+		#if c.get_collider() is RigidBody2D:
+			#c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
 
 
 func handle_input():
@@ -41,13 +44,13 @@ func handle_input():
 	if get_viewport().get_mouse_position().x < get_viewport().size.x / 2:
 		if not $PlayerSprite.flip_h:
 			$PlayerSprite.flip_h = true
-			if not is_attacking:
-				$AttackEffect01/AttackEffectSprite.flip_h = true
+			#if not is_attacking:
+				#$AttackEffect01/AttackEffectSprite.flip_h = true
 	else:
 		if $PlayerSprite.flip_h:
 			$PlayerSprite.flip_h = false
-			if not is_attacking:
-				$AttackEffect01/AttackEffectSprite.flip_h = false
+			#if not is_attacking:
+				#$AttackEffect01/AttackEffectSprite.flip_h = false
 	
 	# Always process movement to update velocity 
 	if Input.is_action_pressed("move_left"):
@@ -90,6 +93,11 @@ func _attack_melee():
 	var center = Vector2(get_viewport().size / 2)
 	var attack_dir = (get_viewport().get_mouse_position() - center).normalized()
 	var angle = attack_dir.angle()
+
+	if get_viewport().get_mouse_position().x < get_viewport().size.x / 2:
+		$AttackEffect01/AttackEffectSprite.flip_h = true
+	else:
+		$AttackEffect01/AttackEffectSprite.flip_h = false
 
 	if $AttackEffect01/AttackEffectSprite.flip_h:
 		angle += PI
@@ -136,6 +144,13 @@ func fire_arrow():
 	arrow_instance.linear_velocity = dir * arrow_speed
 
 	get_tree().current_scene.add_child(arrow_instance)
+
+func take_damage(damage: int):
+	hp -= damage
+	if hp <= 0:
+		hp = 0
+	Global.emit_signal("player_hp_changed", hp)
+	print("Player HP: ", hp)
 
 func _on_PlayerSprite_frame_changed():
 	# When performing a ranged attack, fire the arrow at frame 6.
