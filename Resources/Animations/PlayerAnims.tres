@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=31 format=3 uid="uid://it7fq2fn8ey3"]
+[gd_resource type="SpriteFrames" load_steps=34 format=3 uid="uid://it7fq2fn8ey3"]
 
 [ext_resource type="Texture2D" uid="uid://d1h431ha6k6n5" path="res://Assets/Sprites/player/Soldier.png" id="1_bdreo"]
 [ext_resource type="Texture2D" uid="uid://casykyuxhttv6" path="res://Assets/Sprites/player/Soldier-Idle.png" id="2_t4l6l"]
@@ -55,6 +55,18 @@ region = Rect2(700, 400, 100, 100)
 [sub_resource type="AtlasTexture" id="AtlasTexture_81ic4"]
 atlas = ExtResource("1_bdreo")
 region = Rect2(800, 400, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5g8g"]
+atlas = ExtResource("1_bdreo")
+region = Rect2(100, 500, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fyos"]
+atlas = ExtResource("1_bdreo")
+region = Rect2(200, 500, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ce2tb"]
+atlas = ExtResource("1_bdreo")
+region = Rect2(300, 500, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e0n42"]
 atlas = ExtResource("2_t4l6l")
@@ -165,6 +177,20 @@ animations = [{
 "loop": false,
 "name": &"attack_ranged",
 "speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5g8g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fyos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ce2tb")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,

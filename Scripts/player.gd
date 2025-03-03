@@ -6,12 +6,14 @@ class_name Player extends CharacterBody2D
 
 var hp: int = 20
 var max_hp: int = 20
+var is_invincible: bool = false
 
 var direction: Vector2 = Vector2.ZERO
 var current_direction: String = "down"
 var is_sprinting: bool = false
 var is_attacking : bool = false
-var push_force = 80.0
+var knockback_velocity: Vector2 = Vector2.ZERO
+@export var knockback_decay: float = 200.0
 
 var attack_mode: String = ""
 var arrow_fired: bool = false
@@ -33,8 +35,13 @@ func emit_setup_hpbar():
 
 func _physics_process(_delta):
 	handle_input()
+	velocity += knockback_velocity
 	move_and_slide()
+	knockback_velocity = knockback_velocity.move_toward(Vector2.ZERO, knockback_decay * _delta)
 	update_animation()
+
+func apply_knockback(impulse: Vector2) -> void:
+	knockback_velocity += impulse
 
 func handle_input():
 	var input_direction = Vector2.ZERO
@@ -145,11 +152,15 @@ func fire_arrow():
 	get_tree().current_scene.add_child(arrow_instance)
 
 func take_damage(damage: int):
+	if is_invincible:
+		return
+	is_invincible = true
 	hp -= damage
 	if hp <= 0:
 		hp = 0
 	Global.emit_signal("player_hp_changed", hp)
-	print("Player HP: ", hp)
+	$PlayerSprite.play("hurt")
+	print("played hurt anim")
 
 func _on_PlayerSprite_frame_changed():
 	# When performing a ranged attack, fire the arrow at frame 6.
@@ -168,7 +179,7 @@ func _on_attack_effect_frame_changed():
 		$AttackEffect01/AttackHitbox.disabled = true
 
 func update_animation():
-	if is_attacking:
+	if is_attacking or $PlayerSprite.animation == "hurt":
 		return
 
 	if direction != Vector2.ZERO:
@@ -177,7 +188,10 @@ func update_animation():
 		$PlayerSprite.play("idle")
 
 func _on_AnimatedSprite2D_animation_finished():
-	print("Animation finished")
+	if $PlayerSprite.animation == "hurt":
+		is_invincible = false
+		is_attacking = false
+		$PlayerSprite.play("idle")
 	if $PlayerSprite.animation == "attack" or $PlayerSprite.animation == "attack_ranged":
 		print("Attack animation finished")
 		is_attacking = false

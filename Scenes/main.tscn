@@ -1207,7 +1207,7 @@ tile_set = SubResource("TileSet_qd6qe")
 
 [node name="Player" parent="." instance=ExtResource("2_m62md")]
 position = Vector2(578, -26)
-speed = 250.0
+knockback_decay = 500.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_44unc")
@@ -1218,130 +1218,70 @@ z_as_relative = false
 
 [node name="Enemy1" parent="Enemies" node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
 position = Vector2(974, 517)
-speed = null
-health = null
 marker_end_point = NodePath("Marker2D")
-marker_limit = null
-follow_duration = null
-follow_distance = null
-consider_distance = null
 
 [node name="Marker2D" type="Marker2D" parent="Enemies/Enemy1"]
 position = Vector2(275, -256)
 
 [node name="Enemy2" parent="Enemies" node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
 position = Vector2(1150, 1003)
-speed = null
-health = null
 marker_end_point = NodePath("Marker2D")
-marker_limit = null
-follow_duration = null
-follow_distance = null
-consider_distance = null
 
 [node name="Marker2D" type="Marker2D" parent="Enemies/Enemy2"]
 position = Vector2(145, -345)
 
 [node name="Enemy3" parent="Enemies" node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
 position = Vector2(242, 138)
-speed = null
-health = null
 marker_end_point = NodePath("Marker2D")
-marker_limit = null
-follow_duration = null
-follow_distance = null
-consider_distance = null
 
 [node name="Marker2D" type="Marker2D" parent="Enemies/Enemy3"]
-position = Vector2(-341, -180)
+position = Vector2(-1, -223)
 
 [node name="Enemy10" parent="Enemies" node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
 position = Vector2(910, 112)
-speed = null
-health = null
 marker_end_point = NodePath("Marker2D")
-marker_limit = null
-follow_duration = null
-follow_distance = null
-consider_distance = null
 
 [node name="Marker2D" type="Marker2D" parent="Enemies/Enemy10"]
 position = Vector2(403, -162)
 
 [node name="Enemy4" parent="Enemies" node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
 position = Vector2(-71, 316)
-speed = null
-health = null
 marker_end_point = NodePath("Marker2D")
-marker_limit = null
-follow_duration = null
-follow_distance = null
-consider_distance = null
 
 [node name="Marker2D" type="Marker2D" parent="Enemies/Enemy4"]
 position = Vector2(215, 165)
 
 [node name="Enemy5" parent="Enemies" node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
 position = Vector2(-146, 989)
-speed = null
-health = null
 marker_end_point = NodePath("Marker2D")
-marker_limit = null
-follow_duration = null
-follow_distance = null
-consider_distance = null
 
 [node name="Marker2D" type="Marker2D" parent="Enemies/Enemy5"]
 position = Vector2(263, -293)
 
 [node name="Enemy6" parent="Enemies" node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
 position = Vector2(370, 462)
-speed = null
-health = null
 marker_end_point = NodePath("Marker2D")
-marker_limit = null
-follow_duration = null
-follow_distance = null
-consider_distance = null
 
 [node name="Marker2D" type="Marker2D" parent="Enemies/Enemy6"]
 position = Vector2(70, -222)
 
 [node name="Enemy7" parent="Enemies" node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
 position = Vector2(479, 930)
-speed = null
-health = null
 marker_end_point = NodePath("Marker2D")
-marker_limit = null
-follow_duration = null
-follow_distance = null
-consider_distance = null
 
 [node name="Marker2D" type="Marker2D" parent="Enemies/Enemy7"]
 position = Vector2(-109, -223)
 
 [node name="Enemy8" parent="Enemies" node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
 position = Vector2(700, 631)
-speed = null
-health = null
 marker_end_point = NodePath("Marker2D")
-marker_limit = null
-follow_duration = null
-follow_distance = null
-consider_distance = null
 
 [node name="Marker2D" type="Marker2D" parent="Enemies/Enemy8"]
 position = Vector2(59, 330)
 
 [node name="Enemy9" parent="Enemies" node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
 position = Vector2(666, 295)
-speed = null
-health = null
 marker_end_point = NodePath("Marker2D")
-marker_limit = null
-follow_duration = null
-follow_distance = null
-consider_distance = null
 
 [node name="Marker2D" type="Marker2D" parent="Enemies/Enemy9"]
 position = Vector2(90, 210)
@@ -1351,4 +1291,4 @@ layer = 2
 
 [node name="FireSpirit" parent="." instance=ExtResource("8_g2a0w")]
 z_index = 0
-position = Vector2(475, -114)
+position = Vector2(-154, -87)

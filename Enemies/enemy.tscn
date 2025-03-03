@@ -58,7 +58,7 @@ animations = [{
 size = Vector2(22.5, 17.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y0bp2"]
-size = Vector2(13, 16)
+size = Vector2(13, 11.25)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p5hoi"]
 
@@ -66,12 +66,9 @@ size = Vector2(13, 16)
 collision_layer = 2
 collision_mask = 6
 script = ExtResource("1_cr3e4")
-speed = null
-health = null
-marker_limit = null
-follow_duration = null
-follow_distance = null
-consider_distance = null
+health = 10
+consider_distance = 94
+impulse_str = 300.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(4, 4)
@@ -98,7 +95,7 @@ collision_layer = 4
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(-6, -4)
+position = Vector2(-6, 5.5)
 scale = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_y0bp2")
 

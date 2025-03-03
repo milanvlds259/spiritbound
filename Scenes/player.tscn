@@ -18,13 +18,12 @@ collision_mask = 5
 script = ExtResource("1_xlfw7")
 arrow = ExtResource("2_387co")
 arrow_speed = 750.0
+knockback_decay = 1000.0
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(-0.25, 0)
 sprite_frames = ExtResource("2_yr4xh")
-animation = &"attack_ranged"
-frame = 6
-frame_progress = 1.0
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.75, 2.5)

@@ -14,6 +14,8 @@ class_name Enemy extends CharacterBody2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hurt_area: Area2D = $HitBox         # The Area2D used for taking damage
 
+@export var impulse_str: float = 200
+
 @onready var follow_area: Area2D = $FollowArea      # Area2D used for vision
 enum State{IDLE, FOLLOW, CONSIDER, BACK}
 enum GameAi{CHASER, RUNNER, GUARDER}
@@ -141,30 +143,31 @@ func _change_marker_direction() -> void:
 func _on_hurt_area_entered(area: Area2D) -> void:
 	# Check if the area is the player's attack hitbox (temporary)
 	if area.is_in_group("player_attack"):
-		print("Enemy hit by player's attack!")
-		print("-1 Health")
-		damage_taken(1)
+		damage_taken(5)
 
 func _on_hurt_body_entered(body: RigidBody2D) -> void:
 	# Check if the area is the player's attack hitbox (temporary)
 	if body.is_in_group("player_attack"):
 		print("Enemy hit by player's attack!")
 		print ("-5 Health")
-		damage_taken(5)
+		damage_taken(2)
 
 func _on_hitbox_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
 		body.take_damage(2)
 
 		var push_dir = (body.global_position - global_position).normalized()
-		var impulse_str = 50
 
-		body.velocity += push_dir * impulse_str
+		print("pushing player")
+		if body.has_method("apply_knockback"):
+			body.apply_knockback(push_dir * impulse_str)
 
 
 func damage_taken(damage: int) -> void:
 	modulate = hurt_color
+	print("health pre: ", health)
 	health -= damage
+	print("health post: ", health)
 	if health <= 0:
 		died()
 	await get_tree().create_timer(hurt_duration).timeout
