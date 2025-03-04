@@ -4,8 +4,10 @@
 [ext_resource type="Script" path="res://map_gen.gd" id="2_yr61k"]
 
 [node name="Node2D" type="Node2D"]
+[node name="Test node" type="Node2D"]
 
 [node name="Node2D" type="Node2D" parent="."]
+[node name="map gen" type="Node2D" parent="."]
 scale = Vector2(4, 4)
 script = ExtResource("2_yr61k")
 
