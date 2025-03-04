@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://7eq4syk4h7lu"]
+[gd_scene load_steps=16 format=4 uid="uid://7eq4syk4h7lu"]
 
 [ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="1_58lbu"]
 [ext_resource type="PackedScene" uid="uid://v7fuklt8nwxj" path="res://Scenes/player.tscn" id="2_m62md"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://3qe2rcup43ig" path="res://Assets/Sprites/Tiles/FDR_Dungeon.png" id="7_62rwg"]
 [ext_resource type="PackedScene" uid="uid://de7br0582ath" path="res://Scenes/player_hud.tscn" id="8_g1w1d"]
 [ext_resource type="PackedScene" uid="uid://dtntgcbx3gs3d" path="res://Scenes/fire_spirit.tscn" id="8_g2a0w"]
+[ext_resource type="PackedScene" uid="uid://bf880mqeqp1cr" path="res://Scenes/air_spirit.tscn" id="10_tdvln"]
+[ext_resource type="PackedScene" uid="uid://dqqb7caw840bf" path="res://Scenes/earth_spirit.tscn" id="11_cfs5g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ew0o1"]
 texture = ExtResource("5_05g2a")
@@ -1292,3 +1294,9 @@ layer = 2
 [node name="FireSpirit" parent="." instance=ExtResource("8_g2a0w")]
 z_index = 0
 position = Vector2(-154, -87)
+
+[node name="AirSpirit" parent="." instance=ExtResource("10_tdvln")]
+position = Vector2(7.62939e-06, -87)
+
+[node name="EarthSpirit" parent="." instance=ExtResource("11_cfs5g")]
+position = Vector2(117, -95)

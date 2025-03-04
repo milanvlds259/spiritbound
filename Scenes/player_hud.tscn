@@ -1,7 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://de7br0582ath"]
+[gd_scene load_steps=13 format=3 uid="uid://de7br0582ath"]
 
 [ext_resource type="Texture2D" uid="uid://l1ww5jlc34ch" path="res://Assets/Sprites/Spirits.png" id="1_51208"]
-[ext_resource type="Script" path="res://Scenes/HUDManager.gd" id="1_pvo2x"]
+[ext_resource type="Script" path="res://Scripts/HUDManager.gd" id="1_pvo2x"]
+[ext_resource type="Texture2D" uid="uid://j1rgj1lmi217" path="res://Assets/Sprites/air_spirit.png" id="3_kwkag"]
+[ext_resource type="Texture2D" uid="uid://cv2jkub02j7oh" path="res://Assets/Sprites/Spirit_Earth_Animation.png" id="4_gp8ph"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14212"]
+atlas = ExtResource("3_kwkag")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1nqf"]
+atlas = ExtResource("1_51208")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckk4v"]
+atlas = ExtResource("4_gp8ph")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="Theme" id="Theme_0qe3m"]
 
@@ -44,6 +58,11 @@ corner_radius_bottom_left = 5
 
 [node name="PlayerHUD" type="CanvasLayer"]
 script = ExtResource("1_pvo2x")
+spirit_textures = {
+"air": SubResource("AtlasTexture_14212"),
+"earth": SubResource("AtlasTexture_ckk4v"),
+"fire": SubResource("AtlasTexture_q1nqf")
+}
 
 [node name="DeathTint" type="ColorRect" parent="."]
 visible = false
@@ -52,10 +71,17 @@ offset_bottom = 650.0
 color = Color(0, 0, 0, 0.392157)
 
 [node name="SpiritsHeader" type="Label" parent="."]
-offset_left = 1048.0
-offset_top = 531.0
-offset_right = 1133.0
-offset_bottom = 565.0
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -103.0
+offset_top = -121.0
+offset_right = -18.0
+offset_bottom = -87.0
+grow_horizontal = 0
+grow_vertical = 0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
@@ -137,10 +163,14 @@ scale = Vector2(3.625, 3.625)
 texture = SubResource("AtlasTexture_2kfx1")
 
 [node name="HPBar" type="ProgressBar" parent="."]
-offset_left = 18.0
-offset_top = 586.0
-offset_right = 292.0
-offset_bottom = 634.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -67.0
+offset_right = 294.0
+offset_bottom = -19.0
+grow_vertical = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_4w5dx")
 theme_override_styles/fill = SubResource("StyleBoxFlat_08fal")
 value = 80.0

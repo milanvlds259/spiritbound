@@ -20,7 +20,7 @@ Global="*res://Global.gd"
 
 [display]
 
-window/stretch/mode="canvas_items"
+window/size/resizable=false
 window/stretch/scale_mode="integer"
 
 [global_group]

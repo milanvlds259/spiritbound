@@ -78,7 +78,12 @@ func handle_input():
 
 	input_direction = input_direction.normalized()
 	direction = input_direction
-	velocity = direction * speed
+
+	var speed_mult = 1.0
+	if "air" in spirit_inventory:
+		speed_mult = 1.5
+
+	velocity = direction * speed * speed_mult
 
 	# Attack input check (only triggers if not already attacking)
 	if Input.is_action_just_pressed("attack") and not is_attacking:
@@ -93,6 +98,12 @@ func add_spirit(type: String) -> void:
 	spirit_inventory.append(type)
 	Global.emit_signal("spirit_inventory_updated", spirit_inventory)
 	print("Spirit added to inventory: ", type)
+
+	if type == "earth":
+		max_hp += 20        # Increase max health by 20
+		hp += 20            # Heal by 20 so that the new max is accounted for
+		Global.emit_signal("player_hp_changed", hp)
+		Global.emit_signal("setup_hpbar", hp, max_hp)
 
 func _attack_melee():
 	# get attack dir from mouse pos relative to center of screen
