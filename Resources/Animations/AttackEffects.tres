@@ -1,6 +1,7 @@
-[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://d13x0a41bwxgo"]
+[gd_resource type="SpriteFrames" load_steps=15 format=3 uid="uid://d13x0a41bwxgo"]
 
 [ext_resource type="Texture2D" uid="uid://d346e3ceyu2qf" path="res://Assets/Sprites/player/Soldier-Attack01_Effect.png" id="1_610sb"]
+[ext_resource type="Texture2D" uid="uid://rtkce1jrkiiw" path="res://Assets/Sprites/player/Soldier-Attack01_Fire_Effect.png" id="2_s0mwk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4wnrf"]
 atlas = ExtResource("1_610sb")
@@ -26,6 +27,30 @@ region = Rect2(400, 0, 100, 100)
 atlas = ExtResource("1_610sb")
 region = Rect2(500, 0, 100, 100)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_aw1ir"]
+atlas = ExtResource("2_s0mwk")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oga0l"]
+atlas = ExtResource("2_s0mwk")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukt3s"]
+atlas = ExtResource("2_s0mwk")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oeww0"]
+atlas = ExtResource("2_s0mwk")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ya4q"]
+atlas = ExtResource("2_s0mwk")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6ml0"]
+atlas = ExtResource("2_s0mwk")
+region = Rect2(500, 0, 100, 100)
+
 [resource]
 animations = [{
 "frames": [{
@@ -49,5 +74,31 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack01",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aw1ir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oga0l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukt3s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oeww0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ya4q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6ml0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukt3s")
+}],
+"loop": false,
+"name": &"attack01fire",
 "speed": 12.0
 }]

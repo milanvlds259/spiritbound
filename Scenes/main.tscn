@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://7eq4syk4h7lu"]
+[gd_scene load_steps=16 format=4 uid="uid://7eq4syk4h7lu"]
 
 [ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="1_58lbu"]
 [ext_resource type="PackedScene" uid="uid://v7fuklt8nwxj" path="res://Scenes/player.tscn" id="2_m62md"]
@@ -7,6 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://bibdiel70ce6n" path="res://Assets/Sprites/Tiles/FDR_Dungeon_Animations.png" id="6_p2r4m"]
 [ext_resource type="AudioStream" uid="uid://c4abcppdikws3" path="res://Assets/Audio/8bitloop_Level_Combat.wav" id="7_44unc"]
 [ext_resource type="Texture2D" uid="uid://3qe2rcup43ig" path="res://Assets/Sprites/Tiles/FDR_Dungeon.png" id="7_62rwg"]
+[ext_resource type="PackedScene" uid="uid://de7br0582ath" path="res://Scenes/player_hud.tscn" id="8_g1w1d"]
+[ext_resource type="PackedScene" uid="uid://dtntgcbx3gs3d" path="res://Scenes/fire_spirit.tscn" id="8_g2a0w"]
+[ext_resource type="PackedScene" uid="uid://bf880mqeqp1cr" path="res://Scenes/air_spirit.tscn" id="10_tdvln"]
+[ext_resource type="PackedScene" uid="uid://dqqb7caw840bf" path="res://Scenes/earth_spirit.tscn" id="11_cfs5g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ew0o1"]
 texture = ExtResource("5_05g2a")
@@ -1182,6 +1186,7 @@ sources/2 = SubResource("TileSetAtlasSource_dfl0d")
 sources/3 = SubResource("TileSetAtlasSource_lvdqe")
 
 [node name="Main" type="Node2D"]
+z_as_relative = false
 y_sort_enabled = true
 
 [node name="TileMap" type="Node2D" parent="."]
@@ -1203,50 +1208,95 @@ tile_map_data = PackedByteArray("AAAyAP//AAAFAAQAAAAzAP//AAAIAAMAAADu/xoAAAAEAAM
 tile_set = SubResource("TileSet_qd6qe")
 
 [node name="Player" parent="." instance=ExtResource("2_m62md")]
-position = Vector2(565, 357)
-
-[node name="Enemy1" parent="." node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
-position = Vector2(808, 272)
-marker_end_point = NodePath("Marker2D")
-
-[node name="Marker2D" type="Marker2D" parent="Enemy1"]
-position = Vector2(12, 266)
-
-[node name="Enemy2" parent="." node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
-position = Vector2(400, 250)
-marker_end_point = NodePath("Marker2D")
-
-[node name="Marker2D" type="Marker2D" parent="Enemy2"]
-position = Vector2(200, 0)
-
-[node name="Enemy3" parent="." node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
-position = Vector2(0, 559)
-marker_end_point = NodePath("Marker2D")
-
-[node name="Marker2D" type="Marker2D" parent="Enemy3"]
-position = Vector2(-108, -444)
-
-[node name="Enemy4" parent="." node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
-position = Vector2(386, 766)
-marker_end_point = NodePath("Marker2D")
-
-[node name="Marker2D" type="Marker2D" parent="Enemy4"]
-position = Vector2(-394, 195)
-
-[node name="Enemy5" parent="." node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
-position = Vector2(850, 716)
-marker_end_point = NodePath("Marker2D")
-
-[node name="Marker2D" type="Marker2D" parent="Enemy5"]
-position = Vector2(455, -178)
-
-[node name="Enemy6" parent="." node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
-position = Vector2(1036, 1030)
-marker_end_point = NodePath("Marker2D")
-
-[node name="Marker2D" type="Marker2D" parent="Enemy6"]
-position = Vector2(-439, 22)
+position = Vector2(578, -26)
+knockback_decay = 500.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_44unc")
 autoplay = true
+
+[node name="Enemies" type="Node2D" parent="."]
+z_as_relative = false
+
+[node name="Enemy1" parent="Enemies" node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
+position = Vector2(974, 517)
+marker_end_point = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Enemies/Enemy1"]
+position = Vector2(275, -256)
+
+[node name="Enemy2" parent="Enemies" node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
+position = Vector2(1150, 1003)
+marker_end_point = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Enemies/Enemy2"]
+position = Vector2(145, -345)
+
+[node name="Enemy3" parent="Enemies" node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
+position = Vector2(242, 138)
+marker_end_point = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Enemies/Enemy3"]
+position = Vector2(-1, -223)
+
+[node name="Enemy10" parent="Enemies" node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
+position = Vector2(910, 112)
+marker_end_point = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Enemies/Enemy10"]
+position = Vector2(403, -162)
+
+[node name="Enemy4" parent="Enemies" node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
+position = Vector2(-71, 316)
+marker_end_point = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Enemies/Enemy4"]
+position = Vector2(215, 165)
+
+[node name="Enemy5" parent="Enemies" node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
+position = Vector2(-146, 989)
+marker_end_point = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Enemies/Enemy5"]
+position = Vector2(263, -293)
+
+[node name="Enemy6" parent="Enemies" node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
+position = Vector2(370, 462)
+marker_end_point = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Enemies/Enemy6"]
+position = Vector2(70, -222)
+
+[node name="Enemy7" parent="Enemies" node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
+position = Vector2(479, 930)
+marker_end_point = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Enemies/Enemy7"]
+position = Vector2(-109, -223)
+
+[node name="Enemy8" parent="Enemies" node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
+position = Vector2(700, 631)
+marker_end_point = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Enemies/Enemy8"]
+position = Vector2(59, 330)
+
+[node name="Enemy9" parent="Enemies" node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
+position = Vector2(666, 295)
+marker_end_point = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Enemies/Enemy9"]
+position = Vector2(90, 210)
+
+[node name="PlayerHUD" parent="." instance=ExtResource("8_g1w1d")]
+layer = 2
+
+[node name="FireSpirit" parent="." instance=ExtResource("8_g2a0w")]
+z_index = 0
+position = Vector2(-154, -87)
+
+[node name="AirSpirit" parent="." instance=ExtResource("10_tdvln")]
+position = Vector2(7.62939e-06, -87)
+
+[node name="EarthSpirit" parent="." instance=ExtResource("11_cfs5g")]
+position = Vector2(117, -95)
