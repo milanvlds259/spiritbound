@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://7eq4syk4h7lu"]
+[gd_scene load_steps=17 format=4 uid="uid://7eq4syk4h7lu"]
 
 [ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="1_58lbu"]
 [ext_resource type="PackedScene" uid="uid://v7fuklt8nwxj" path="res://Scenes/player.tscn" id="2_m62md"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dtntgcbx3gs3d" path="res://Scenes/fire_spirit.tscn" id="8_g2a0w"]
 [ext_resource type="PackedScene" uid="uid://bf880mqeqp1cr" path="res://Scenes/air_spirit.tscn" id="10_tdvln"]
 [ext_resource type="PackedScene" uid="uid://dqqb7caw840bf" path="res://Scenes/earth_spirit.tscn" id="11_cfs5g"]
+[ext_resource type="PackedScene" uid="uid://b7fgsl5ndk0p5" path="res://Scenes/thunder_spirit.tscn" id="12_tifiv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ew0o1"]
 texture = ExtResource("5_05g2a")
@@ -1300,3 +1301,6 @@ position = Vector2(7.62939e-06, -87)
 
 [node name="EarthSpirit" parent="." instance=ExtResource("11_cfs5g")]
 position = Vector2(117, -95)
+
+[node name="ThunderSpirit" parent="." instance=ExtResource("12_tifiv")]
+position = Vector2(212, -94)

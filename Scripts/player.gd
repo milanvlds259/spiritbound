@@ -2,7 +2,8 @@ class_name Player extends CharacterBody2D
 
 @export var speed: float = 250.0  # Movement speed in pixels per second
 @export var arrow: PackedScene
-@export var arrow_speed: float = 500.0
+@export var elec_arrow: PackedScene
+@export var arrow_speed: float = 750
 
 var hp: int = 20
 var max_hp: int = 20
@@ -144,12 +145,20 @@ func _attack_ranged():
 	$PlayerSprite.play("attack_ranged")
 
 func fire_arrow():
+	var used_arrow: PackedScene
+	if "thunder" in spirit_inventory:
+		used_arrow = elec_arrow
+		arrow_speed = 2500
+	else:
+		used_arrow = arrow
+		arrow_speed = 750
+
 	if not arrow:
 		push_error("Arrow scene not set")
 		return
 
 	# calculate initial position of arrow
-	var arrow_instance = arrow.instantiate()
+	var arrow_instance = used_arrow.instantiate()
 	arrow_instance.position = global_position
 
 	# calculate direction of arrow
@@ -158,7 +167,7 @@ func fire_arrow():
 
 	# set arrow direction
 	arrow_instance.rotation = dir.angle()
-	arrow_instance.linear_velocity = dir * arrow_speed
+	arrow_instance.velocity = dir * arrow_speed
 
 	get_tree().current_scene.add_child(arrow_instance)
 
@@ -172,10 +181,9 @@ func take_damage(damage: int):
 		die()
 	Global.emit_signal("player_hp_changed", hp)
 	$PlayerSprite.play("hurt")
-	print("played hurt anim")
+
 
 func die():
-	print("Player died")
 	# Emit signal to global script
 	Global.emit_signal("player_died")
 	#disable player
@@ -212,7 +220,6 @@ func _on_AnimatedSprite2D_animation_finished():
 		is_attacking = false
 		$PlayerSprite.play("idle")
 	if $PlayerSprite.animation == "attack" or $PlayerSprite.animation == "attack_ranged":
-		print("Attack animation finished")
 		is_attacking = false
 		attack_mode = ""
 		$PlayerSprite.play("idle")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://pe54mwctw00j"]
+
+[ext_resource type="Script" path="res://Scripts/arrow.gd" id="1_cbiyu"]
+[ext_resource type="Texture2D" uid="uid://bgcwbiup1oau4" path="res://Assets/Sprites/elecarrow.png" id="2_of730"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2l4ho"]
+size = Vector2(61, 14)
+
+[node name="ElecArrow" type="Area2D" groups=["arrows"]]
+script = ExtResource("1_cbiyu")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_of730")
+
+[node name="Collider" type="CollisionShape2D" parent="." groups=["arrows"]]
+position = Vector2(5, -1)
+shape = SubResource("RectangleShape2D_2l4ho")

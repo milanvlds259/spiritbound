@@ -1,21 +1,28 @@
-[gd_scene load_steps=13 format=3 uid="uid://de7br0582ath"]
+[gd_scene load_steps=22 format=3 uid="uid://de7br0582ath"]
 
 [ext_resource type="Texture2D" uid="uid://l1ww5jlc34ch" path="res://Assets/Sprites/Spirits.png" id="1_51208"]
 [ext_resource type="Script" path="res://Scripts/HUDManager.gd" id="1_pvo2x"]
 [ext_resource type="Texture2D" uid="uid://j1rgj1lmi217" path="res://Assets/Sprites/air_spirit.png" id="3_kwkag"]
 [ext_resource type="Texture2D" uid="uid://cv2jkub02j7oh" path="res://Assets/Sprites/Spirit_Earth_Animation.png" id="4_gp8ph"]
+[ext_resource type="Texture2D" uid="uid://bjwf4ijvw4ol0" path="res://Assets/Sprites/thunder_spirit.png" id="5_oy2l1"]
+[ext_resource type="Texture2D" uid="uid://cmurc64yyroae" path="res://Assets/Sprites/tilemap.png" id="6_c3ub6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_14212"]
 atlas = ExtResource("3_kwkag")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckk4v"]
+atlas = ExtResource("4_gp8ph")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q1nqf"]
 atlas = ExtResource("1_51208")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ckk4v"]
-atlas = ExtResource("4_gp8ph")
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcvc6"]
+atlas = ExtResource("5_oy2l1")
 region = Rect2(0, 0, 16, 16)
+margin = Rect2(0, 4.44, 0, 9.895)
 
 [sub_resource type="Theme" id="Theme_0qe3m"]
 
@@ -56,12 +63,37 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_j82fn"]
+atlas = ExtResource("6_c3ub6")
+region = Rect2(153, 34, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aor10"]
+atlas = ExtResource("6_c3ub6")
+region = Rect2(170, 34, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rg1dx"]
+atlas = ExtResource("6_c3ub6")
+region = Rect2(306, 170, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0ihe"]
+atlas = ExtResource("6_c3ub6")
+region = Rect2(306, 187, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sitj4"]
+atlas = ExtResource("6_c3ub6")
+region = Rect2(323, 187, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4quk"]
+atlas = ExtResource("6_c3ub6")
+region = Rect2(340, 187, 15, 16)
+
 [node name="PlayerHUD" type="CanvasLayer"]
 script = ExtResource("1_pvo2x")
 spirit_textures = {
 "air": SubResource("AtlasTexture_14212"),
 "earth": SubResource("AtlasTexture_ckk4v"),
-"fire": SubResource("AtlasTexture_q1nqf")
+"fire": SubResource("AtlasTexture_q1nqf"),
+"thunder": SubResource("AtlasTexture_xcvc6")
 }
 
 [node name="DeathTint" type="ColorRect" parent="."]
@@ -231,3 +263,120 @@ theme_override_constants/outline_size = 5
 theme_override_constants/h_separation = 0
 theme_override_font_sizes/font_size = 41
 text = "RESTART"
+
+[node name="Controls" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+
+[node name="LMouse" type="Control" parent="Controls"]
+layout_mode = 1
+anchor_top = -1.45
+anchor_bottom = -1.45
+offset_top = -28.0
+offset_right = 196.0
+offset_bottom = 28.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Controls/LMouse"]
+position = Vector2(0, 28)
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_j82fn")
+offset = Vector2(12, 0)
+
+[node name="Label" type="Label" parent="Controls/LMouse"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 48.0
+offset_top = -26.0
+offset_right = 171.0
+offset_bottom = 32.0
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 12
+theme_override_font_sizes/font_size = 32
+text = "Melee
+"
+
+[node name="RMouse" type="Control" parent="Controls"]
+layout_mode = 1
+anchor_top = -1.45
+anchor_bottom = -1.45
+offset_top = 28.0
+offset_right = 196.0
+offset_bottom = 84.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Controls/RMouse"]
+position = Vector2(0, 28)
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_aor10")
+offset = Vector2(12, 0)
+
+[node name="Label" type="Label" parent="Controls/RMouse"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 48.0
+offset_top = -26.0
+offset_right = 171.0
+offset_bottom = 32.0
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 12
+theme_override_font_sizes/font_size = 32
+text = "Ranged
+"
+
+[node name="RMouse2" type="Control" parent="Controls"]
+layout_mode = 1
+anchor_top = -1.45
+anchor_bottom = -1.45
+offset_top = -85.0
+offset_right = 196.0
+offset_bottom = -29.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Controls/RMouse2"]
+position = Vector2(21, 7)
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_rg1dx")
+offset = Vector2(12, 0)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Controls/RMouse2"]
+position = Vector2(-7, 30)
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_f0ihe")
+offset = Vector2(12, 0)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Controls/RMouse2"]
+position = Vector2(21, 38)
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_sitj4")
+offset = Vector2(12, 0)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Controls/RMouse2"]
+position = Vector2(49, 30)
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_s4quk")
+offset = Vector2(12, 0)
+
+[node name="Label" type="Label" parent="Controls/RMouse2"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 96.0
+offset_top = -27.0
+offset_right = 219.0
+offset_bottom = 31.0
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 12
+theme_override_font_sizes/font_size = 32
+text = "Move"
