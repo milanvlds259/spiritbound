@@ -34,7 +34,6 @@ func _ready() -> void:
 	# Connect the hurt area's signal for collision detection.
 	if hurt_area:
 		hurt_area.area_entered.connect(_on_hurt_area_entered)
-		hurt_area.body_entered.connect(_on_hurt_body_entered)
 	# Initialize marker movement positions.
 	start_position = position
 	if marker_end_point:
@@ -144,13 +143,9 @@ func _on_hurt_area_entered(area: Area2D) -> void:
 	# Check if the area is the player's attack hitbox (temporary)
 	if area.is_in_group("player_attack"):
 		damage_taken(5)
-
-func _on_hurt_body_entered(body: RigidBody2D) -> void:
-	# Check if the area is the player's attack hitbox (temporary)
-	if body.is_in_group("player_attack"):
-		print("Enemy hit by player's attack!")
-		print ("-5 Health")
+	elif area.is_in_group("arrows"):
 		damage_taken(2)
+		area.queue_free()
 
 func _on_hitbox_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
@@ -158,16 +153,13 @@ func _on_hitbox_body_entered(body: Node) -> void:
 
 		var push_dir = (body.global_position - global_position).normalized()
 
-		print("pushing player")
 		if body.has_method("apply_knockback"):
 			body.apply_knockback(push_dir * impulse_str)
 
 
 func damage_taken(damage: int) -> void:
 	modulate = hurt_color
-	print("health pre: ", health)
 	health -= damage
-	print("health post: ", health)
 	if health <= 0:
 		died()
 	await get_tree().create_timer(hurt_duration).timeout
