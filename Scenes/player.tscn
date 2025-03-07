@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://v7fuklt8nwxj"]
+[gd_scene load_steps=9 format=3 uid="uid://v7fuklt8nwxj"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_xlfw7"]
 [ext_resource type="PackedScene" uid="uid://cufgcvrbu5khl" path="res://Scenes/arrow.tscn" id="2_387co"]
 [ext_resource type="SpriteFrames" uid="uid://it7fq2fn8ey3" path="res://Resources/Animations/PlayerAnims.tres" id="2_yr4xh"]
 [ext_resource type="SpriteFrames" uid="uid://d13x0a41bwxgo" path="res://Resources/Animations/AttackEffects.tres" id="3_cy3px"]
 [ext_resource type="PackedScene" uid="uid://pe54mwctw00j" path="res://Scenes/elec_arrow.tscn" id="3_gjm8e"]
+[ext_resource type="Texture2D" uid="uid://deavjxvmuqxsx" path="res://Assets/Sprites/shadow.png" id="4_ap8wn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mrugd"]
 size = Vector2(13.5, 9)
@@ -20,6 +21,12 @@ script = ExtResource("1_xlfw7")
 arrow = ExtResource("2_387co")
 elec_arrow = ExtResource("3_gjm8e")
 knockback_decay = 1000.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.305882)
+position = Vector2(-0.375, 6.5)
+scale = Vector2(0.734375, 0.34375)
+texture = ExtResource("4_ap8wn")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(-0.25, 0)

@@ -30,7 +30,6 @@ player="duh"
 enemy_hit=""
 arrows=""
 
-
 [input]
 
 attack={
