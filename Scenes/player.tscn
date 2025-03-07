@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://v7fuklt8nwxj"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_xlfw7"]
+[ext_resource type="PackedScene" uid="uid://cufgcvrbu5khl" path="res://Scenes/arrow.tscn" id="2_387co"]
+[ext_resource type="SpriteFrames" uid="uid://it7fq2fn8ey3" path="res://Resources/Animations/PlayerAnims.tres" id="2_yr4xh"]
+[ext_resource type="SpriteFrames" uid="uid://d13x0a41bwxgo" path="res://Resources/Animations/AttackEffects.tres" id="3_cy3px"]
+[ext_resource type="PackedScene" uid="uid://pe54mwctw00j" path="res://Scenes/elec_arrow.tscn" id="3_gjm8e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrugd"]
+size = Vector2(13.5, 9)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dbeav"]
+radius = 7.25
+height = 24.0
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+scale = Vector2(4, 4)
+collision_mask = 5
+script = ExtResource("1_xlfw7")
+arrow = ExtResource("2_387co")
+elec_arrow = ExtResource("3_gjm8e")
+knockback_decay = 1000.0
+
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.25, 0)
+sprite_frames = ExtResource("2_yr4xh")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.75, 2.5)
+shape = SubResource("RectangleShape2D_mrugd")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.75, 0.75)
+
+[node name="AttackEffect01" type="Area2D" parent="." groups=["player_attack"]]
+collision_layer = 4
+collision_mask = 4
+
+[node name="AttackEffectSprite" type="AnimatedSprite2D" parent="AttackEffect01"]
+z_index = 1
+scale = Vector2(1.01264, 0.889231)
+sprite_frames = ExtResource("3_cy3px")
+animation = &"attack01"
+frame = 5
+frame_progress = 1.0
+
+[node name="AttackHitbox" type="CollisionShape2D" parent="AttackEffect01"]
+position = Vector2(12, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_dbeav")

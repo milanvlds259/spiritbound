@@ -28,6 +28,8 @@ window/stretch/scale_mode="integer"
 player_attack=""
 player="duh"
 enemy_hit=""
+arrows=""
+
 
 [input]
 

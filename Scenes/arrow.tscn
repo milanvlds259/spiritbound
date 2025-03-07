@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cufgcvrbu5khl"]
+
+[ext_resource type="Script" path="res://Scripts/arrow.gd" id="1_8oiwd"]
+[ext_resource type="Texture2D" uid="uid://dpgcy7oaullmp" path="res://Assets/Sprites/player/Arrow01(32x32).png" id="1_exnk7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2l4ho"]
+size = Vector2(42, 11)
+
+[node name="Arrow" type="Area2D" groups=["arrows"]]
+script = ExtResource("1_8oiwd")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_exnk7")
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2(8, 1.5)
+shape = SubResource("RectangleShape2D_2l4ho")
