@@ -22,7 +22,7 @@ arrow = ExtResource("2_387co")
 elec_arrow = ExtResource("3_gjm8e")
 knockback_decay = 1000.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Shadow" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.305882)
 position = Vector2(-0.375, 6.5)
 scale = Vector2(0.734375, 0.34375)

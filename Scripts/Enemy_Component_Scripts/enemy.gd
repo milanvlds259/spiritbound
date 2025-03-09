@@ -3,6 +3,8 @@ class_name Enemy extends CharacterBody2D
 @export var speed: float = 100
 @export var health: int = 1
 
+@export var damage_label: PackedScene
+
 # Marker movement parameters
 @export var marker_end_point: Marker2D = null   # Drag a Marker2D node here if available.
 @export var marker_limit: float = 1.5           # When to change movement direction
@@ -160,6 +162,12 @@ func _on_hitbox_body_entered(body: Node) -> void:
 func damage_taken(damage: int) -> void:
 	modulate = hurt_color
 	health -= damage
+
+	var damage_label_instance = damage_label.instantiate()
+	damage_label_instance.text = str(damage)
+
+	add_child(damage_label_instance)
+
 	if health <= 0:
 		died()
 	await get_tree().create_timer(hurt_duration).timeout
