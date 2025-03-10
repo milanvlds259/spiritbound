@@ -29,6 +29,7 @@ scale = Vector2(0.734375, 0.34375)
 texture = ExtResource("4_ap8wn")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+z_as_relative = false
 position = Vector2(-0.25, 0)
 sprite_frames = ExtResource("2_yr4xh")
 animation = &"idle"

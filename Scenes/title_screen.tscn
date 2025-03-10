@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=3 uid="uid://ct8hpq8d4mjsj"]
+
+[ext_resource type="Texture2D" uid="uid://boghl7hhgvs62" path="res://Assets/Sprites/Dungeon_brick_wall_purple.png.png" id="1_4o3hy"]
+[ext_resource type="Script" path="res://Scripts/title_screen.gd" id="1_6ggef"]
+[ext_resource type="FontFile" uid="uid://c5y2dv5ufvdgf" path="res://Assets/Fonts/DungeonFont.ttf" id="2_1jtn1"]
+[ext_resource type="Texture2D" uid="uid://d271g6sx3mnus" path="res://Assets/Sprites/FreeButtons.png" id="3_pcmow"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7p6d"]
+atlas = ExtResource("3_pcmow")
+region = Rect2(33, 1, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xvujo"]
+texture = SubResource("AtlasTexture_n7p6d")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 4.0
+
+[node name="Node" type="Node"]
+script = ExtResource("1_6ggef")
+
+[node name="BG" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.2)
+position = Vector2(570, 319)
+texture = ExtResource("1_4o3hy")
+
+[node name="TITLE" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -399.0
+offset_top = 85.53
+offset_right = 399.0
+offset_bottom = 206.53
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.854833, 0.33, 1)
+theme_override_colors/font_shadow_color = Color(0.11, 0, 0.0825, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 25
+theme_override_fonts/font = ExtResource("2_1jtn1")
+theme_override_font_sizes/font_size = 120
+text = "SPIRITBOUND !"
+horizontal_alignment = 1
+
+[node name="PlayButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -147.0
+offset_top = -257.0
+offset_right = -73.0
+offset_bottom = -234.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(4, 4)
+theme_override_styles/normal = SubResource("StyleBoxTexture_xvujo")
+
+[node name="PlayText" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -139.0
+offset_top = -249.0
+offset_right = 141.0
+offset_bottom = -177.0
+theme_override_colors/font_color = Color(1, 0.854902, 0.329412, 1)
+theme_override_colors/font_shadow_color = Color(0.109804, 0.0313726, 0.0588235, 1)
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/font = ExtResource("2_1jtn1")
+theme_override_font_sizes/font_size = 66
+text = "PLAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AuthorText" type="Label" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -48.0
+offset_right = 331.0
+offset_bottom = -15.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.854833, 0.33, 1)
+theme_override_colors/font_shadow_color = Color(0.07, 0, 0.0525, 1)
+theme_override_constants/shadow_outline_size = 7
+theme_override_fonts/font = ExtResource("2_1jtn1")
+theme_override_font_sizes/font_size = 32
+text = "a game by The Eight Team"
+vertical_alignment = 2
