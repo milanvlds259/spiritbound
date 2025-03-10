@@ -21,14 +21,21 @@ var arrow_fired: bool = false
 
 var spirit_inventory: Array = []
 
+var continue_prompt_visible: bool = false
+@onready var continue_prompt = $ContinuePrompt
+
 func _ready():
 	$PlayerSprite.animation_finished.connect(_on_AnimatedSprite2D_animation_finished)
 	$PlayerSprite.frame_changed.connect(_on_PlayerSprite_frame_changed)
 	$AttackEffect01/AttackEffectSprite.frame_changed.connect(_on_attack_effect_frame_changed)
 	$AttackEffect01/AttackHitbox.disabled = true
+	$ContinuePrompt.visible = false
 
 	# Set up hp bar
 	call_deferred("emit_setup_hpbar")
+
+func _on_can_transition(can_transition: bool):
+	$ContinuePrompt.visible = can_transition
 
 func emit_setup_hpbar():
 	Global.emit_signal("setup_hpbar", hp, max_hp)
@@ -47,12 +54,17 @@ func apply_knockback(impulse: Vector2) -> void:
 func handle_input():
 	var input_direction = Vector2.ZERO
 
+	if Input.is_action_just_pressed("interact"):
+		if $ContinuePrompt.visible:
+			get_tree().change_scene_to_file("res://Scenes/main.tscn")
+
 	# Flip sprtite depending on mouse position
-	if get_viewport().get_mouse_position().x < get_viewport().size.x / 2:
-		if not $PlayerSprite.flip_h:
-			$PlayerSprite.flip_h = true
-			#if not is_attacking:
-				#$AttackEffect01/AttackEffectSprite.flip_h = true
+	if get_viewport():
+		if get_viewport().get_mouse_position().x < get_viewport().size.x / 2:
+			if not $PlayerSprite.flip_h:
+				$PlayerSprite.flip_h = true
+				#if not is_attacking:
+					#$AttackEffect01/AttackEffectSprite.flip_h = true
 	else:
 		if $PlayerSprite.flip_h:
 			$PlayerSprite.flip_h = false
