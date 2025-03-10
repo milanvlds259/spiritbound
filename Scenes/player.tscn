@@ -39,7 +39,6 @@ position = Vector2(-0.75, 2.5)
 shape = SubResource("RectangleShape2D_mrugd")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.75, 0.75)
 
 [node name="AttackEffect01" type="Area2D" parent="." groups=["player_attack"]]
 collision_layer = 4
