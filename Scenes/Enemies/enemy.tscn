@@ -68,7 +68,7 @@ size = Vector2(13, 11.25)
 collision_layer = 2
 collision_mask = 6
 script = ExtResource("1_cr3e4")
-health = 5
+health = 10
 damage_label = ExtResource("2_5y65s")
 
 [node name="Shadow" type="Sprite2D" parent="."]
