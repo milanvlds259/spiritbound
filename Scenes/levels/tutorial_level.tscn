@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://ctth5yk3ynadd"]
+[gd_scene load_steps=15 format=4 uid="uid://ctth5yk3ynadd"]
 
 [ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="1_ygkra"]
 [ext_resource type="PackedScene" uid="uid://v7fuklt8nwxj" path="res://Scenes/player.tscn" id="2_tobfr"]
@@ -6,7 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://de7br0582ath" path="res://Scenes/player_hud.tscn" id="4_co6kt"]
 [ext_resource type="PackedScene" uid="uid://ctqjr3xpg5cko" path="res://Scenes/Enemies/dummy_enemy.tscn" id="5_mqe60"]
 [ext_resource type="Texture2D" uid="uid://cmurc64yyroae" path="res://Assets/Sprites/tilemap.png" id="6_vklws"]
+[ext_resource type="PackedScene" uid="uid://bn2m5ghwophjs" path="res://Scenes/damage_label.tscn" id="7_4kwij"]
 [ext_resource type="FontFile" uid="uid://c5y2dv5ufvdgf" path="res://Assets/Fonts/DungeonFont.ttf" id="7_7mebi"]
+[ext_resource type="PackedScene" uid="uid://dr1r1xj2pim7r" path="res://Scenes/Enemies/enemy.tscn" id="8_qggb4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aj36y"]
 atlas = ExtResource("6_vklws")
@@ -53,6 +55,17 @@ layer = 2
 
 [node name="Enemy" parent="." instance=ExtResource("5_mqe60")]
 position = Vector2(534, 239)
+
+[node name="Enemy2" parent="." node_paths=PackedStringArray("marker_end_point") instance=ExtResource("8_qggb4")]
+position = Vector2(492, -818)
+health = 20
+damage_label = ExtResource("7_4kwij")
+marker_end_point = NodePath("BasicPath")
+follow_distance = 1000
+impulse_str = 300.0
+
+[node name="BasicPath" type="Marker2D" parent="Enemy2"]
+position = Vector2(143, 0)
 
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0

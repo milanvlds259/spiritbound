@@ -31,7 +31,8 @@ func _on_hurt_area_entered(area: Area2D) -> void:
 func _on_hitbox_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
 		var push_dir = (body.global_position - global_position).normalized()
-
+		
+		
 		if body.has_method("apply_knockback"):
 			body.apply_knockback(push_dir * impulse_str)
 

@@ -9,6 +9,8 @@ var hp: int = 20
 var max_hp: int = 20
 var is_invincible: bool = false
 
+var stunned:bool = false
+
 var direction: Vector2 = Vector2.ZERO
 var current_direction: String = "down"
 var is_sprinting: bool = false
@@ -85,6 +87,8 @@ func handle_input():
 		speed_mult = 1.5
 
 	velocity = direction * speed * speed_mult
+	if stunned:
+		velocity = Vector2.ZERO
 
 	# Attack input check (only triggers if not already attacking)
 	if Input.is_action_just_pressed("attack") and not is_attacking:
@@ -223,3 +227,9 @@ func _on_AnimatedSprite2D_animation_finished():
 		is_attacking = false
 		attack_mode = ""
 		$PlayerSprite.play("idle")
+
+func stun(secs: float):
+	stunned = true
+	await get_tree().create_timer(secs).timeout
+	stunned = false
+	
