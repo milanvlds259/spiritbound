@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://ct8hpq8d4mjsj"]
+[gd_scene load_steps=8 format=3 uid="uid://ct8hpq8d4mjsj"]
 
 [ext_resource type="Texture2D" uid="uid://boghl7hhgvs62" path="res://Assets/Sprites/Dungeon_brick_wall_purple.png.png" id="1_4o3hy"]
 [ext_resource type="Script" path="res://Scripts/title_screen.gd" id="1_6ggef"]
 [ext_resource type="FontFile" uid="uid://c5y2dv5ufvdgf" path="res://Assets/Fonts/DungeonFont.ttf" id="2_1jtn1"]
 [ext_resource type="Texture2D" uid="uid://d271g6sx3mnus" path="res://Assets/Sprites/FreeButtons.png" id="3_pcmow"]
+[ext_resource type="AudioStream" uid="uid://bgp6bvtjvfwa7" path="res://Assets/Audio/SLOWER2019-01-02_-_8_Bit_Menu_-_David_Renda_-_FesliyanStudios.com.mp3" id="5_7f1v0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n7p6d"]
 atlas = ExtResource("3_pcmow")
@@ -18,6 +19,7 @@ texture_margin_bottom = 4.0
 
 [node name="Node" type="Node"]
 script = ExtResource("1_6ggef")
+scene_path = "res://Scenes/levels/tutorial_level.tscn"
 
 [node name="BG" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.2)
@@ -59,7 +61,7 @@ scale = Vector2(4, 4)
 theme_override_styles/normal = SubResource("StyleBoxTexture_xvujo")
 
 [node name="PlayText" type="Label" parent="."]
-anchors_preset = -1
+anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -93,3 +95,7 @@ theme_override_fonts/font = ExtResource("2_1jtn1")
 theme_override_font_sizes/font_size = 32
 text = "a game by The Eight Team"
 vertical_alignment = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_7f1v0")
+autoplay = true
