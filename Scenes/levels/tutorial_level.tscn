@@ -190,10 +190,10 @@ position = Vector2(434, -1349)
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = -88.0
-offset_top = -89.0
-offset_right = 307.0
-offset_bottom = 64.0
+offset_left = -77.0
+offset_top = -64.0
+offset_right = 318.0
+offset_bottom = 89.0
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 12
@@ -201,7 +201,6 @@ theme_override_fonts/font = ExtResource("7_7mebi")
 theme_override_font_sizes/font_size = 48
 text = "Pick up Spirits to
 boost your abilities !
-Press E for next level!
 "
 
 [node name="Sprite2D" type="Sprite2D" parent="Spirit Guide"]
