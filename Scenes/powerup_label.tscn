@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg16fj8h48ot5"]
+
+[ext_resource type="FontFile" uid="uid://c5y2dv5ufvdgf" path="res://Assets/Fonts/DungeonFont.ttf" id="1_xc4yk"]
+[ext_resource type="Script" path="res://Scripts/damage_label.gd" id="2_sd40n"]
+
+[node name="DamageLabel" type="Label"]
+offset_left = -47.0
+offset_top = -22.0
+offset_right = 327.0
+offset_bottom = 24.0
+scale = Vector2(0.25, 0.25)
+theme_override_colors/font_color = Color(0.17, 1, 0.3775, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 13
+theme_override_fonts/font = ExtResource("1_xc4yk")
+theme_override_font_sizes/font_size = 45
+text = "x4 Arrow Speed!"
+horizontal_alignment = 1
+vertical_alignment = 2
+script = ExtResource("2_sd40n")

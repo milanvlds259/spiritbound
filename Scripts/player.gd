@@ -20,6 +20,7 @@ var attack_mode: String = ""
 var arrow_fired: bool = false
 
 var spirit_inventory: Array = []
+@export var powerup_label: PackedScene
 
 var continue_prompt_visible: bool = false
 @onready var continue_prompt = $ContinuePrompt
@@ -112,11 +113,27 @@ func add_spirit(type: String) -> void:
 	Global.emit_signal("spirit_inventory_updated", spirit_inventory)
 	print("Spirit added to inventory: ", type)
 
+	var powerup_text: String = ""
+
 	if type == "earth":
+		powerup_text = "+20 Max HP!"
 		max_hp += 20        # Increase max health by 20
 		hp += 20            # Heal by 20 so that the new max is accounted for
 		Global.emit_signal("player_hp_changed", hp)
 		Global.emit_signal("setup_hpbar", hp, max_hp)
+	elif type == "fire":
+		powerup_text = "Larger Melee Range!"
+	elif type == "air":
+		powerup_text = "+50% Move Speed!"
+	elif type == "thunder":
+		powerup_text = "Faster Arrows"
+	else:
+		powerup_text = "Unknown Spirit!"
+
+	if powerup_label:
+		var label_instance = powerup_label.instantiate()
+		label_instance.text = powerup_text
+		add_child(label_instance)
 
 func _attack_melee():
 	# get attack dir from mouse pos relative to center of screen

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://v7fuklt8nwxj"]
+[gd_scene load_steps=13 format=3 uid="uid://v7fuklt8nwxj"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_xlfw7"]
 [ext_resource type="PackedScene" uid="uid://cufgcvrbu5khl" path="res://Scenes/arrow.tscn" id="2_387co"]
@@ -6,6 +6,7 @@
 [ext_resource type="SpriteFrames" uid="uid://d13x0a41bwxgo" path="res://Resources/Animations/AttackEffects.tres" id="3_cy3px"]
 [ext_resource type="PackedScene" uid="uid://pe54mwctw00j" path="res://Scenes/elec_arrow.tscn" id="3_gjm8e"]
 [ext_resource type="Texture2D" uid="uid://deavjxvmuqxsx" path="res://Assets/Sprites/shadow.png" id="4_ap8wn"]
+[ext_resource type="PackedScene" uid="uid://cg16fj8h48ot5" path="res://Scenes/powerup_label.tscn" id="4_cd7ro"]
 [ext_resource type="Texture2D" uid="uid://cmurc64yyroae" path="res://Assets/Sprites/tilemap.png" id="7_0pmo8"]
 [ext_resource type="FontFile" uid="uid://c5y2dv5ufvdgf" path="res://Assets/Fonts/DungeonFont.ttf" id="8_x1yrj"]
 
@@ -27,6 +28,7 @@ script = ExtResource("1_xlfw7")
 arrow = ExtResource("2_387co")
 elec_arrow = ExtResource("3_gjm8e")
 knockback_decay = 1000.0
+powerup_label = ExtResource("4_cd7ro")
 
 [node name="Shadow" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.305882)
