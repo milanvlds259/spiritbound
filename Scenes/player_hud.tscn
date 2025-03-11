@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://de7br0582ath"]
+[gd_scene load_steps=16 format=3 uid="uid://de7br0582ath"]
 
 [ext_resource type="Texture2D" uid="uid://l1ww5jlc34ch" path="res://Assets/Sprites/Spirits.png" id="1_51208"]
 [ext_resource type="Script" path="res://Scripts/HUDManager.gd" id="1_pvo2x"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://cv2jkub02j7oh" path="res://Assets/Sprites/Spirit_Earth_Animation.png" id="4_gp8ph"]
 [ext_resource type="Texture2D" uid="uid://bjwf4ijvw4ol0" path="res://Assets/Sprites/thunder_spirit.png" id="5_oy2l1"]
 [ext_resource type="FontFile" uid="uid://c5y2dv5ufvdgf" path="res://Assets/Fonts/DungeonFont.ttf" id="6_28xsp"]
-[ext_resource type="Texture2D" uid="uid://cmurc64yyroae" path="res://Assets/Sprites/tilemap.png" id="6_c3ub6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_14212"]
 atlas = ExtResource("3_kwkag")
@@ -64,10 +63,6 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_aor10"]
-atlas = ExtResource("6_c3ub6")
-region = Rect2(170, 34, 16, 16)
-
 [node name="PlayerHUD" type="CanvasLayer"]
 script = ExtResource("1_pvo2x")
 spirit_textures = {
@@ -89,18 +84,19 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -103.0
-offset_top = -121.0
-offset_right = -18.0
-offset_bottom = -87.0
+offset_left = -131.0
+offset_top = -115.0
+offset_right = 94.0
+offset_bottom = -50.0
 grow_horizontal = 0
 grow_vertical = 0
+scale = Vector2(0.5, 0.5)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 1
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/shadow_outline_size = 7
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 12
 theme_override_fonts/font = ExtResource("6_28xsp")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 64
 text = "SPIRITS"
 horizontal_alignment = 2
 vertical_alignment = 2
@@ -252,44 +248,3 @@ theme_override_constants/outline_size = 5
 theme_override_constants/h_separation = 0
 theme_override_font_sizes/font_size = 41
 text = "RESTART"
-
-[node name="Controls" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -20.0
-offset_right = 40.0
-offset_bottom = 20.0
-grow_vertical = 2
-
-[node name="RMouse" type="Control" parent="Controls"]
-layout_mode = 1
-anchor_top = -1.45
-anchor_bottom = -1.45
-offset_top = 28.0
-offset_right = 196.0
-offset_bottom = 84.0
-
-[node name="Sprite2D" type="Sprite2D" parent="Controls/RMouse"]
-position = Vector2(0, 28)
-scale = Vector2(2, 2)
-texture = SubResource("AtlasTexture_aor10")
-offset = Vector2(12, 0)
-
-[node name="Label" type="Label" parent="Controls/RMouse"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 48.0
-offset_top = -26.0
-offset_right = 171.0
-offset_bottom = 32.0
-grow_vertical = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_outline_size = 12
-theme_override_fonts/font = ExtResource("6_28xsp")
-theme_override_font_sizes/font_size = 48
-text = "Ranged
-"
