@@ -16,10 +16,15 @@ class_name Enemy extends CharacterBody2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hurt_area: Area2D = $HitBox         # The Area2D used for taking damage
 
+@onready var attacking = false
+
+
 @export var impulse_str: float = 200
 
+@export var ai_type: String = "FOLLOW";
+
 @onready var follow_area: Area2D = $FollowArea      # Area2D used for vision
-enum State{IDLE, FOLLOW, CONSIDER, BACK}
+enum State{IDLE, FOLLOW, CONSIDER, BACK, RUN}
 enum GameAi{CHASER, RUNNER, GUARDER}
 
 var hurt_color = Color(255,0,0)
@@ -54,7 +59,13 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func updateAnimations() -> void:
-	$AnimatedSprite2D.play("walk")
+	if !attacking:
+		$AnimatedSprite2D.play("walk")
+	else:
+		$AnimatedSprite2D.play("attack")
+		await get_tree().create_timer(1).timeout
+		attacking = false
+
 	if velocity.x > 0:
 		sprite.flip_h = false
 	elif velocity.x < 0:
@@ -82,19 +93,20 @@ func update_velocity() -> void:
 		State.FOLLOW:
 			# Follows Player until Enemy gets too far away
 			var dist_to_start = (start_position - global_position).length()
-			if dist_to_start > follow_distance:
-				print("going back")
-				target = null
-				current_state = State.BACK
-				return
+			
 			var overlap = follow_area.get_overlapping_bodies()
 			var filtered = overlap.filter(func(b): return b is Player)
 			if filtered.is_empty():
 				current_state = State.BACK
 				return
+			
 			#Finds the target player's position and computes the directoin to follow
 			var direction = target.global_position - global_position
 			var new_velocity = direction.normalized() * speed
+			
+			if dist_to_start > follow_distance:
+				current_state = State.RUN
+				
 			velocity = new_velocity
 		
 		#State.CONSIDER:
@@ -118,8 +130,19 @@ func update_velocity() -> void:
 				velocity = Vector2.ZERO
 				current_state = State.IDLE
 				return
-		
+			var overlap = follow_area.get_overlapping_bodies()
+			var filtered = overlap.filter(func(b): return b is Player)
+			if !filtered.is_empty():
+				follow_body(filtered[0])
 			velocity = dir_to_start.normalized() * speed
+			
+		State.RUN:
+			var dir_to_start = start_position - global_position
+			if dir_to_start.length() < consider_distance:
+				current_state = State.BACK
+				return
+			
+			velocity = dir_to_start.normalized() * speed * 2
 
 
 func follow_body(body) -> void:
@@ -150,13 +173,33 @@ func _on_hurt_area_entered(area: Area2D) -> void:
 		area.queue_free()
 
 func _on_hitbox_body_entered(body: Node) -> void:
-	if body.is_in_group("player"):
-		body.take_damage(2)
-
+	if attacking:
 		var push_dir = (body.global_position - global_position).normalized()
-
 		if body.has_method("apply_knockback"):
-			body.apply_knockback(push_dir * impulse_str)
+				body.apply_knockback(push_dir * impulse_str)
+				await get_tree().create_timer(0.5).timeout
+	else:
+		attacking = true
+		if body.is_in_group("player"):
+			if body.has_method("stun"):
+				body.stun(0.75)
+			var push_dir = (body.global_position - global_position).normalized()
+			var angle = push_dir.angle();
+		
+			if body.has_method("apply_knockback"):
+				body.apply_knockback(push_dir * impulse_str)
+				await get_tree().create_timer(0.5).timeout
+				body.apply_knockback(push_dir * impulse_str)
+				body.take_damage(2)
+		
+			if $AttackEffect:
+				$AttackEffect.rotation = angle
+				$AttackEffect.position = push_dir * 5
+				$AttackEffect/AttackEffectSprite.play("attack")
+
+		
+			await get_tree().create_timer(0.5).timeout
+			attacking = false
 
 
 func damage_taken(damage: int) -> void:
