@@ -5,6 +5,12 @@ class_name Player extends CharacterBody2D
 @export var elec_arrow: PackedScene
 @export var arrow_speed: float = 750
 
+enum Controltype{KEYBOARD, CONTROLLER}
+# 0 is Keyboard, # 1 is Controller
+@export var control_type: int = 0
+var control = Controltype.KEYBOARD
+var joystick_vector: Vector2 = Vector2.ZERO
+
 var hp: int = 20
 var max_hp: int = 20
 var is_invincible: bool = false
@@ -36,6 +42,11 @@ func _ready():
 
 	# Set up hp bar
 	call_deferred("emit_setup_hpbar")
+	if (control_type == 0):
+		control = Controltype.KEYBOARD
+	else:
+		control = Controltype.CONTROLLER
+
 
 func _on_can_transition(can_transition: bool):
 	$ContinuePrompt.visible = can_transition
@@ -62,17 +73,28 @@ func handle_input():
 			get_tree().change_scene_to_file("res://Scenes/main.tscn")
 
 	# Flip sprtite depending on mouse position
-	if get_viewport():
-		if get_viewport().get_mouse_position().x < get_viewport().size.x / 2:
-			if not $PlayerSprite.flip_h:
-				$PlayerSprite.flip_h = true
-				#if not is_attacking:
-					#$AttackEffect01/AttackEffectSprite.flip_h = true
-		else:
-			if $PlayerSprite.flip_h:
-				$PlayerSprite.flip_h = false
+	match control:
+		Controltype.KEYBOARD:
+			if get_viewport():
+				if get_viewport().get_mouse_position().x < get_viewport().size.x / 2:
+					if not $PlayerSprite.flip_h:
+						$PlayerSprite.flip_h = true
+						#if not is_attacking:
+							#$AttackEffect01/AttackEffectSprite.flip_h = true
+				else:
+					if $PlayerSprite.flip_h:
+						$PlayerSprite.flip_h = false
 				#if not is_attacking:
 					#$AttackEffect01/AttackEffectSprite.flip_h = false
+	
+		Controltype.CONTROLLER:
+			var look_dir = Input.get_joy_axis(0, JOY_AXIS_RIGHT_X)
+			if look_dir < 0:
+				if not $PlayerSprite.flip_h:
+					$PlayerSprite.flip_h = true
+			else:
+				if $PlayerSprite.flip_h:
+					$PlayerSprite.flip_h = false
 	
 	# Always process movement to update velocity 
 	if Input.is_action_pressed("move_left"):
@@ -140,19 +162,32 @@ func add_spirit(type: String) -> void:
 		add_child(label_instance)
 
 func _attack_melee():
-	# get attack dir from mouse pos relative to center of screen
-	var center = Vector2(get_viewport().size / 2)
-	var attack_dir = (get_viewport().get_mouse_position() - center).normalized()
-	var angle = attack_dir.angle()
-
-	if get_viewport().get_mouse_position().x < get_viewport().size.x / 2:
+	
+	var attack_dir = Vector2.ZERO
+	var angle = 0
+	match control:
+		# Sets attack direction and attack angle for the rotation and direction later
+		Controltype.KEYBOARD:
+			var center = Vector2(get_viewport().size / 2)
+			# get attack dir from mouse pos relative to center of screen
+			attack_dir = (get_viewport().get_mouse_position() - center).normalized()
+			angle = attack_dir.angle()
+		
+		Controltype.CONTROLLER:
+			# takes the current value of the right joystick to figure out the attack direction and angle
+			attack_dir = Vector2(Input.get_joy_axis(0, JOY_AXIS_RIGHT_X), Input.get_joy_axis(0, JOY_AXIS_RIGHT_Y))
+			angle = atan2(attack_dir.y, attack_dir.x)
+			
+	# Orients the attack effect sprite so that it looks correct
+	if $PlayerSprite.flip_h:
 		$AttackEffect01/AttackEffectSprite.flip_h = true
 	else:
 		$AttackEffect01/AttackEffectSprite.flip_h = false
 
 	if $AttackEffect01/AttackEffectSprite.flip_h:
 		angle += PI
-
+	
+	
 	$AttackEffect01/AttackEffectSprite.rotation = angle
 	$AttackEffect01/AttackEffectSprite.position = attack_dir * 5
 
@@ -171,6 +206,9 @@ func _attack_melee():
 		$AttackEffect01/AttackHitbox.scale = Vector2(1, 1)
 		$AttackEffect01/AttackEffectSprite.scale = Vector2(1, 1)
 		$AttackEffect01/AttackEffectSprite.play("attack01")
+
+
+
 
 func _attack_ranged():
 	attack_mode = "ranged"
@@ -193,15 +231,32 @@ func fire_arrow():
 	# calculate initial position of arrow
 	var arrow_instance = used_arrow.instantiate()
 	arrow_instance.position = global_position
-
+	
+	
+	# Different method of firing arrow based on input type
+	var dir = Vector2.ZERO
+	
+	match control:
+		# Sets attack direction and attack angle for the rotation and direction later
+		Controltype.KEYBOARD:
+			var center = Vector2(get_viewport().size / 2)
+			# get attack dir from mouse pos relative to center of screen
+			dir = (get_viewport().get_mouse_position() - center).normalized()
+			# set arrow direction
+			arrow_instance.rotation = dir.angle()
+			
+		
+		Controltype.CONTROLLER:
+			# takes the current value of the right joystick to figure out the attack direction and angle
+			dir = Vector2(Input.get_joy_axis(0, JOY_AXIS_RIGHT_X), Input.get_joy_axis(0, JOY_AXIS_RIGHT_Y))
+			var angle = atan2(dir.y, dir.x)
+			dir = dir.normalized()
+			arrow_instance.rotation = angle
 	# calculate direction of arrow
-	var center = Vector2(get_viewport().size / 2)
-	var dir = (get_viewport().get_mouse_position() - center).normalized()
 
-	# set arrow direction
-	arrow_instance.rotation = dir.angle()
+
+	
 	arrow_instance.velocity = dir * arrow_speed
-
 	get_tree().current_scene.add_child(arrow_instance)
 
 func take_damage(damage: int):

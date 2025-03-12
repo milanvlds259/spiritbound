@@ -10,8 +10,8 @@ class_name Enemy extends CharacterBody2D
 @export var marker_limit: float = 1.5           # When to change movement direction
 
 @export var follow_duration: float = 10.0
-@export var follow_distance: int = 300
-@export var consider_distance: int = 100
+@export var follow_distance: int = 900
+@export var consider_distance: int = 700
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hurt_area: Area2D = $HitBox         # The Area2D used for taking damage
