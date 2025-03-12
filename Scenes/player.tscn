@@ -27,6 +27,7 @@ collision_mask = 5
 script = ExtResource("1_xlfw7")
 arrow = ExtResource("2_387co")
 elec_arrow = ExtResource("3_gjm8e")
+control_type = 1
 knockback_decay = 1000.0
 powerup_label = ExtResource("4_cd7ro")
 
