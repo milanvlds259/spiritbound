@@ -27,7 +27,6 @@ collision_mask = 5
 script = ExtResource("1_xlfw7")
 arrow = ExtResource("2_387co")
 elec_arrow = ExtResource("3_gjm8e")
-control_type = 1
 knockback_decay = 1000.0
 powerup_label = ExtResource("4_cd7ro")
 
@@ -61,8 +60,6 @@ z_index = 1
 scale = Vector2(1.01264, 0.889231)
 sprite_frames = ExtResource("3_cy3px")
 animation = &"attack01"
-frame = 5
-frame_progress = 1.0
 
 [node name="AttackHitbox" type="CollisionShape2D" parent="AttackEffect01"]
 position = Vector2(12, 0)

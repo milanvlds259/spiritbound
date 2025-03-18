@@ -1215,6 +1215,8 @@ knockback_decay = 500.0
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_44unc")
 autoplay = true
+max_distance = 1e+07
+attenuation = 3.05175e-05
 
 [node name="Enemies" type="Node2D" parent="."]
 z_as_relative = false
