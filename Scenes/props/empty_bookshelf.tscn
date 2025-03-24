@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://c65iy8ixixoyr"]
+
+[ext_resource type="Script" path="res://Scenes/props/bookshelf.gd" id="1_dc06s"]
+[ext_resource type="Texture2D" uid="uid://3qe2rcup43ig" path="res://Assets/Sprites/Tiles/FDR_Dungeon.png" id="1_yl6g4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_stmj5"]
+size = Vector2(32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sg32e"]
+atlas = ExtResource("1_yl6g4")
+region = Rect2(64, 256, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_shxm4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sg32e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="empty bookshelf" type="CharacterBody2D"]
+position = Vector2(624, -432)
+script = ExtResource("1_dc06s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_stmj5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_shxm4")
+
+[node name="HitBox" type="Area2D" parent="." groups=["enemy_hit"]]
+collision_layer = 4
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_stmj5")
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
