@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://bl3ldbh0gf5en"]
+
+[ext_resource type="PackedScene" uid="uid://274xnww4a8dx" path="res://Scenes/traps/spike_trap.tscn" id="1_t2bqm"]
+
+[node name="2x3 loop" type="AnimatedSprite2D"]
+position = Vector2(80, -40)
+
+[node name="spike trap" parent="." instance=ExtResource("1_t2bqm")]
+script = null
+
+[node name="spike trap2" parent="." instance=ExtResource("1_t2bqm")]
+position = Vector2(16, 0)
+frame = 1
+script = null
+
+[node name="spike trap3" parent="." instance=ExtResource("1_t2bqm")]
+position = Vector2(16, 16)
+frame = 2
+script = null
+
+[node name="spike trap4" parent="." instance=ExtResource("1_t2bqm")]
+position = Vector2(16, 32)
+frame = 3
+script = null
+
+[node name="spike trap5" parent="." instance=ExtResource("1_t2bqm")]
+position = Vector2(0, 32)
+frame = 4
+script = null
+
+[node name="spike trap6" parent="." instance=ExtResource("1_t2bqm")]
+position = Vector2(0, 16)
+frame = 5
+script = null

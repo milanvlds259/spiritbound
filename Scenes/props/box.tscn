@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://nmaoikk83jpc"]
+
+[ext_resource type="Script" path="res://Scenes/props/bookshelf.gd" id="1_0n7iy"]
+[ext_resource type="Texture2D" uid="uid://3qe2rcup43ig" path="res://Assets/Sprites/Tiles/FDR_Dungeon.png" id="2_gvsv7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_stmj5"]
+size = Vector2(16, 15.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_040mr"]
+atlas = ExtResource("2_gvsv7")
+region = Rect2(0, 352, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i7roj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_040mr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="box" type="CharacterBody2D"]
+script = ExtResource("1_0n7iy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.16, -0.25)
+shape = SubResource("RectangleShape2D_stmj5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.16, 0)
+scale = Vector2(1.145, 1)
+sprite_frames = SubResource("SpriteFrames_i7roj")
+speed_scale = 0.0
+
+[node name="HitBox" type="Area2D" parent="." groups=["enemy_hit"]]
+position = Vector2(4.16, 1)
+collision_layer = 4
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(-4, -1)
+shape = SubResource("RectangleShape2D_stmj5")
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]

@@ -1,6 +1,6 @@
 class_name Player extends CharacterBody2D
 
-@export var speed: float = 250.0  # Movement speed in pixels per second
+@export var speed: float = 950.0  # Movement speed in pixels per second
 @export var arrow: PackedScene
 @export var elec_arrow: PackedScene
 @export var arrow_speed: float = 750

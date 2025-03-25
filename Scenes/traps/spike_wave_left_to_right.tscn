@@ -1,0 +1,82 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckkepwnyxc5tj"]
+
+[ext_resource type="PackedScene" uid="uid://274xnww4a8dx" path="res://Scenes/traps/spike_trap.tscn" id="1_y8pj6"]
+
+[node name="spike wave left to right" type="AnimatedSprite2D"]
+position = Vector2(-16, 0)
+speed_scale = -1.0
+
+[node name="row 1" type="AnimatedSprite2D" parent="."]
+position = Vector2(-16, -16)
+
+[node name="spike trap" parent="row 1" instance=ExtResource("1_y8pj6")]
+frame = 5
+
+[node name="spike trap2" parent="row 1" instance=ExtResource("1_y8pj6")]
+position = Vector2(16, 0)
+frame = 4
+
+[node name="spike trap3" parent="row 1" instance=ExtResource("1_y8pj6")]
+position = Vector2(32, 0)
+frame = 3
+
+[node name="spike trap4" parent="row 1" instance=ExtResource("1_y8pj6")]
+position = Vector2(48, 0)
+frame = 2
+
+[node name="spike trap5" parent="row 1" instance=ExtResource("1_y8pj6")]
+position = Vector2(64, 0)
+frame = 1
+
+[node name="spike trap6" parent="row 1" instance=ExtResource("1_y8pj6")]
+position = Vector2(80, 0)
+
+[node name="row 2" type="AnimatedSprite2D" parent="."]
+position = Vector2(-16, 0)
+
+[node name="spike trap" parent="row 2" instance=ExtResource("1_y8pj6")]
+frame = 5
+
+[node name="spike trap2" parent="row 2" instance=ExtResource("1_y8pj6")]
+position = Vector2(16, 0)
+frame = 4
+
+[node name="spike trap3" parent="row 2" instance=ExtResource("1_y8pj6")]
+position = Vector2(32, 0)
+frame = 3
+
+[node name="spike trap4" parent="row 2" instance=ExtResource("1_y8pj6")]
+position = Vector2(48, 0)
+frame = 2
+
+[node name="spike trap5" parent="row 2" instance=ExtResource("1_y8pj6")]
+position = Vector2(64, 0)
+frame = 1
+
+[node name="spike trap6" parent="row 2" instance=ExtResource("1_y8pj6")]
+position = Vector2(80, 0)
+
+[node name="row 3" type="AnimatedSprite2D" parent="."]
+position = Vector2(-16, 16)
+
+[node name="spike trap" parent="row 3" instance=ExtResource("1_y8pj6")]
+frame = 5
+
+[node name="spike trap2" parent="row 3" instance=ExtResource("1_y8pj6")]
+position = Vector2(16, 0)
+frame = 4
+
+[node name="spike trap3" parent="row 3" instance=ExtResource("1_y8pj6")]
+position = Vector2(32, 0)
+frame = 3
+
+[node name="spike trap4" parent="row 3" instance=ExtResource("1_y8pj6")]
+position = Vector2(48, 0)
+frame = 2
+
+[node name="spike trap5" parent="row 3" instance=ExtResource("1_y8pj6")]
+position = Vector2(64, 0)
+frame = 1
+
+[node name="spike trap6" parent="row 3" instance=ExtResource("1_y8pj6")]
+position = Vector2(80, 0)
