@@ -1,0 +1,538 @@
+[gd_scene load_steps=9 format=4 uid="uid://dwjkxk6geylga"]
+
+[ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="1_34geq"]
+[ext_resource type="Texture2D" uid="uid://bibdiel70ce6n" path="res://Assets/Sprites/Tiles/FDR_Dungeon_Animations.png" id="2_3d5j4"]
+[ext_resource type="Script" path="res://Scenes/room scenes/main_next level.gd" id="3_7epi1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wld6e"]
+atlas = ExtResource("2_3d5j4")
+region = Rect2(32, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ce8jy"]
+atlas = ExtResource("2_3d5j4")
+region = Rect2(16, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajqmx"]
+atlas = ExtResource("2_3d5j4")
+region = Rect2(0, 192, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yvhnf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wld6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wld6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wld6e")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_ce8jy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajqmx")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_ce8jy")
+}],
+"loop": true,
+"name": &"4 square spikes ",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wld6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wld6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wld6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wld6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ce8jy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajqmx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajqmx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajqmx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ce8jy")
+}],
+"loop": true,
+"name": &"spike",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_83evl"]
+size = Vector2(12, 12)
+
+[node name="bl3" type="Node2D"]
+
+[node name="FloorLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AADf/wMAAAABAAEAAADf/wQAAAAGAAMAAADf/wUAAAAGAAMAAADf/wYAAAAGAAMAAADf/wcAAAABAAIAAADf/wgAAAAGAAMAAADf/wkAAAAGAAMAAADf/woAAAAGAAMAAADf/wsAAAAGAAMAAADf/wwAAAABAAIAAADf/w0AAAAGAAMAAADf/w4AAAABAAIAAADf/w8AAAAGAAMAAADf/xAAAAAGAAMAAADf/xEAAAAGAAMAAADf/xIAAAABAAIAAADf/xMAAAAGAAMAAADf/xQAAAAGAAMAAADf/xUAAAAGAAMAAADf/xYAAAABAAMAAADg/wMAAAADAAEAAADg/wQAAAAHAAMAAADg/wUAAAAHAAMAAADg/wYAAAAHAAMAAADg/wcAAAAHAAMAAADg/wgAAAAHAAMAAADg/wkAAAAHAAMAAADg/woAAAAHAAMAAADg/wsAAAAHAAMAAADg/wwAAAAHAAMAAADg/w0AAAAHAAMAAADg/w4AAAAHAAMAAADg/w8AAAAHAAMAAADg/xAAAAAHAAMAAADg/xEAAAAHAAMAAADg/xIAAAAHAAMAAADg/xMAAAAHAAMAAADg/xQAAAAHAAMAAADg/xUAAAAHAAMAAADg/xYAAAACAAMAAADh/wMAAAACAAEAAADh/wQAAAAIAAMAAADh/wUAAAAIAAMAAADh/wYAAAAHAAMAAADh/wcAAAAHAAMAAADh/wgAAAAIAAMAAADh/wkAAAAHAAMAAADh/woAAAAIAAMAAADh/wsAAAAHAAMAAADh/wwAAAAHAAMAAADh/w0AAAAHAAMAAADh/w4AAAAHAAMAAADh/w8AAAAIAAMAAADh/xAAAAAHAAMAAADh/xEAAAAHAAMAAADh/xIAAAAHAAMAAADh/xMAAAAHAAMAAADh/xQAAAAHAAMAAADh/xUAAAAIAAMAAADh/xYAAAACAAMAAADi/wMAAAACAAEAAADi/wQAAAAHAAAAAADi/wUAAAAHAAMAAADi/wYAAAAHAAMAAADi/wcAAAAHAAMAAADi/wgAAAAHAAAAAADi/wkAAAAHAAEAAADi/woAAAAHAAMAAADi/wsAAAAHAAMAAADi/wwAAAAHAAMAAADi/w0AAAAHAAEAAADi/w4AAAAHAAEAAADi/w8AAAAHAAMAAADi/xAAAAAHAAMAAADi/xEAAAAHAAEAAADi/xIAAAAHAAMAAADi/xMAAAAHAAEAAADi/xQAAAAHAAMAAADi/xUAAAAHAAEAAADi/xYAAAAHAAQAAADj/wMAAAADAAEAAADj/wQAAAAGAAAAAADj/wUAAAAHAAMAAADj/wYAAAACAAIAAADj/wcAAAACAAIAAADj/wgAAAACAAIAAADj/wkAAAAEAAIAAADj/woAAAAEAAIAAADj/wsAAAAHAAMAAADj/wwAAAACAAIAAADj/w0AAAAHAAMAAADj/w4AAAACAAIAAADj/w8AAAAEAAIAAADj/xAAAAAEAAIAAADj/xEAAAAHAAMAAADj/xIAAAAHAAMAAADj/xMAAAAHAAMAAADj/xQAAAACAAIAAADj/xUAAAAGAAEAAADj/xYAAAACAAMAAADk/wMAAAACAAkAAADk/wQAAAAHAAMAAADk/wUAAAACAAIAAADk/wYAAAAHAAAAAADk/wcAAAAHAAMAAADk/wgAAAACAAMAAADk/wsAAAADAAEAAADk/wwAAAACAAIAAADk/w0AAAACAAIAAADk/w4AAAACAAMAAADk/xEAAAACAAEAAADk/xIAAAACAAIAAADk/xQAAAAHAAMAAADk/xUAAAACAAIAAADl/wMAAAAIAAIAAADl/wQAAAAHAAMAAADl/wUAAAACAAIAAADl/wYAAAAHAAMAAADl/wgAAAAIAAQAAADl/wsAAAADAAEAAADl/wwAAAADAAIAAADl/w4AAAACAAMAAADl/xEAAAACAAEAAADl/xIAAAAHAAMAAADl/xQAAAAHAAMAAADl/xUAAAADAAIAAADm/wMAAAADAAEAAADm/wQAAAAHAAAAAADm/wUAAAACAAIAAADm/wYAAAAEAAIAAADm/wcAAAAEAAIAAADm/wgAAAAJAAQAAADm/wsAAAADAAEAAADm/wwAAAAHAAMAAADm/w0AAAAHAAMAAADm/w4AAAAIAAQAAADm/xEAAAAEAAEAAADm/xIAAAAEAAIAAADm/xMAAAAEAAIAAADm/xQAAAACAAIAAADm/xUAAAACAAIAAADn/wMAAAADAAEAAADn/wQAAAAHAAMAAADn/wUAAAACAAMAAADn/wsAAAADAAEAAADn/wwAAAAHAAMAAADn/w0AAAACAAIAAADn/w4AAAACAAMAAADn/xQAAAACAAEAAADn/xUAAAACAAIAAADo/wMAAAAIAAIAAADo/wQAAAAHAAAAAADo/wUAAAACAAMAAADo/wsAAAADAAEAAADo/wwAAAAHAAMAAADo/w0AAAAHAAEAAADo/w4AAAACAAMAAADo/xUAAAADAAIAAADp/wMAAAAHAAIAAADp/wQAAAAHAAMAAADp/wUAAAAHAAMAAADp/wYAAAABAAIAAADp/wcAAAABAAIAAADp/wgAAAABAAIAAADp/wkAAAABAAIAAADp/woAAAABAAIAAADp/wsAAAAGAAEAAADp/wwAAAAHAAMAAADp/w0AAAAHAAMAAADp/w4AAAAHAAMAAADp/w8AAAABAAIAAADp/xAAAAABAAIAAADp/xEAAAABAAIAAADp/xUAAAAGAAEAAADq/wMAAAACAAEAAADq/wQAAAAHAAAAAADq/wUAAAAHAAMAAADq/wYAAAAHAAAAAADq/wcAAAAHAAMAAADq/wgAAAAHAAMAAADq/wkAAAAHAAEAAADq/woAAAACAAIAAADq/wsAAAAHAAMAAADq/wwAAAAHAAMAAADq/w0AAAAHAAEAAADq/w4AAAAHAAMAAADq/w8AAAAHAAMAAADq/xAAAAAHAAMAAADq/xEAAAAHAAMAAADq/xUAAAAHAAEAAADr/wMAAAADAAEAAADr/wQAAAAGAAAAAADr/wUAAAAHAAMAAADr/wYAAAAHAAMAAADr/wcAAAAHAAMAAADr/wgAAAACAAIAAADr/wkAAAAHAAMAAADr/woAAAAHAAMAAADr/wsAAAAHAAMAAADr/wwAAAAGAAAAAADr/w0AAAAHAAMAAADr/w4AAAAHAAMAAADr/w8AAAAHAAEAAADr/xAAAAAHAAMAAADr/xEAAAAHAAMAAADr/xUAAAAGAAEAAADs/wMAAAAFAAYAAADs/wQAAAAHAAAAAADs/wUAAAAHAAMAAADs/wYAAAAHAAMAAADs/wcAAAAHAAMAAADs/wgAAAACAAIAAADs/wkAAAACAAIAAADs/woAAAAHAAMAAADs/wsAAAAHAAMAAADs/wwAAAAHAAMAAADs/w0AAAAHAAEAAADs/w4AAAAHAAMAAADs/w8AAAAHAAMAAADs/xAAAAACAAIAAADs/xEAAAACAAIAAADs/xUAAAAHAAEAAADt/wMAAAAHAAIAAADt/wQAAAAHAAMAAADt/wUAAAAGAAEAAADt/wYAAAAHAAMAAADt/wcAAAAHAAMAAADt/wgAAAAHAAMAAADt/wkAAAAHAAMAAADt/woAAAAHAAMAAADt/wsAAAAGAAEAAADt/wwAAAAHAAMAAADt/w0AAAAHAAEAAADt/w4AAAACAAIAAADt/w8AAAAHAAMAAADt/xAAAAAHAAMAAADt/xEAAAAHAAMAAADt/xUAAAAHAAMAAADu/wMAAAAIAAIAAADu/wQAAAAHAAAAAADu/wUAAAAHAAEAAADu/wYAAAAEAAIAAADu/wcAAAAEAAIAAADu/wgAAAAEAAIAAADu/wkAAAAEAAIAAADu/woAAAAEAAIAAADu/wsAAAAHAAEAAADu/wwAAAAHAAMAAADu/w0AAAAHAAMAAADu/w4AAAAHAAMAAADu/w8AAAAEAAIAAADu/xAAAAAEAAIAAADu/xEAAAAEAAIAAADu/xIAAAAEAAIAAADu/xMAAAAEAAIAAADu/xQAAAACAAIAAADu/xUAAAAHAAMAAADv/wMAAAAIAAIAAADv/wQAAAAHAAMAAADv/wUAAAAHAAQAAADv/wsAAAACAAEAAADv/wwAAAAHAAMAAADv/w0AAAAHAAMAAADv/w4AAAACAAMAAADv/xQAAAAIAAIAAADv/xUAAAAHAAMAAADv/xYAAAACAAMAAADw/wMAAAADAAEAAADw/wQAAAAHAAMAAADw/wUAAAACAAMAAADw/wsAAAACAAEAAADw/wwAAAACAAIAAADw/w0AAAACAAIAAADw/w4AAAAHAAQAAADw/xQAAAAIAAIAAADw/xUAAAAGAAEAAADw/xYAAAAHAAQAAADx/wMAAAADAAEAAADx/wQAAAAGAAAAAADx/wUAAAACAAIAAADx/wYAAAABAAIAAADx/wcAAAABAAIAAADx/wgAAAABAAMAAADx/wsAAAACAAEAAADx/wwAAAAHAAMAAADx/w0AAAAHAAMAAADx/w4AAAACAAMAAADx/xEAAAABAAEAAADx/xIAAAABAAIAAADx/xMAAAABAAIAAADx/xQAAAACAAIAAADx/xUAAAACAAIAAADx/xYAAAACAAMAAADy/wMAAAAIAAIAAADy/wQAAAAHAAAAAADy/wUAAAACAAIAAADy/wYAAAAHAAMAAADy/wgAAAACAAMAAADy/wsAAAACAAEAAADy/wwAAAAHAAMAAADy/w4AAAAIAAQAAADy/xEAAAACAAEAAADy/xIAAAAHAAMAAADy/xQAAAAHAAMAAADy/xUAAAACAAIAAADy/xYAAAAHAAQAAADz/wMAAAAIAAIAAADz/wQAAAAHAAMAAADz/wUAAAACAAIAAADz/wYAAAAHAAMAAADz/wcAAAAHAAMAAADz/wgAAAAHAAQAAADz/wsAAAACAAEAAADz/wwAAAAHAAMAAADz/w0AAAAHAAMAAADz/w4AAAAHAAQAAADz/xEAAAACAAEAAADz/xIAAAAHAAMAAADz/xMAAAAHAAMAAADz/xQAAAAHAAAAAADz/xUAAAACAAIAAADz/xYAAAACAAMAAAD0/wMAAAACAAkAAAD0/wQAAAAHAAMAAAD0/wUAAAACAAIAAAD0/wYAAAACAAIAAAD0/wcAAAACAAIAAAD0/wgAAAACAAIAAAD0/wkAAAABAAIAAAD0/woAAAABAAIAAAD0/wsAAAAHAAMAAAD0/wwAAAACAAIAAAD0/w0AAAACAAIAAAD0/w4AAAACAAIAAAD0/w8AAAABAAIAAAD0/xAAAAABAAIAAAD0/xEAAAAHAAMAAAD0/xIAAAACAAIAAAD0/xMAAAACAAIAAAD0/xQAAAACAAIAAAD0/xUAAAACAAIAAAD0/xYAAAAIAAQAAAD1/wMAAAACAAEAAAD1/wQAAAAGAAAAAAD1/wUAAAAGAAEAAAD1/wYAAAAHAAMAAAD1/wcAAAAGAAEAAAD1/wgAAAAHAAMAAAD1/wkAAAAGAAEAAAD1/woAAAAGAAAAAAD1/wsAAAAGAAEAAAD1/wwAAAACAAIAAAD1/w0AAAACAAIAAAD1/w4AAAAGAAAAAAD1/w8AAAAGAAEAAAD1/xAAAAAGAAAAAAD1/xEAAAACAAIAAAD1/xIAAAACAAIAAAD1/xMAAAACAAIAAAD1/xQAAAACAAIAAAD1/xUAAAAHAAMAAAD1/xYAAAAIAAQAAAD2/wMAAAAHAAIAAAD2/wQAAAAHAAMAAAD2/wUAAAAHAAEAAAD2/wYAAAAHAAMAAAD2/wcAAAAHAAMAAAD2/wgAAAAHAAAAAAD2/wkAAAAHAAMAAAD2/woAAAAHAAMAAAD2/wsAAAAHAAMAAAD2/wwAAAAHAAMAAAD2/w0AAAAHAAMAAAD2/w4AAAAHAAMAAAD2/w8AAAACAAIAAAD2/xAAAAACAAIAAAD2/xEAAAACAAIAAAD2/xIAAAAHAAAAAAD2/xMAAAAHAAMAAAD2/xQAAAAHAAMAAAD2/xUAAAAHAAMAAAD2/xYAAAACAAMAAAD3/wMAAAAIAAIAAAD3/wQAAAAGAAAAAAD3/wUAAAAHAAMAAAD3/wYAAAAHAAMAAAD3/wcAAAAHAAMAAAD3/wgAAAAHAAMAAAD3/wkAAAAHAAMAAAD3/woAAAAHAAMAAAD3/wsAAAAHAAMAAAD3/wwAAAAHAAMAAAD3/w0AAAAHAAMAAAD3/w4AAAAHAAMAAAD3/w8AAAAHAAMAAAD3/xAAAAAHAAMAAAD3/xEAAAAHAAMAAAD3/xIAAAACAAIAAAD3/xMAAAAHAAMAAAD3/xQAAAAHAAMAAAD3/xUAAAAGAAEAAAD3/xYAAAAIAAQAAAD4/wMAAAADAAEAAAD4/wQAAAAHAAAAAAD4/wUAAAAHAAMAAAD4/wYAAAAHAAAAAAD4/wcAAAAHAAEAAAD4/wgAAAAHAAMAAAD4/wkAAAAHAAMAAAD4/woAAAAHAAAAAAD4/wsAAAAHAAEAAAD4/wwAAAAHAAAAAAD4/w0AAAAHAAEAAAD4/w4AAAAHAAAAAAD4/w8AAAAHAAEAAAD4/xAAAAAHAAAAAAD4/xEAAAAHAAMAAAD4/xIAAAACAAIAAAD4/xMAAAAHAAEAAAD4/xQAAAAHAAAAAAD5/wMAAAAJAAIAAAD5/wQAAAAJAAMAAAD5/wUAAAAJAAMAAAD5/wYAAAAJAAMAAAD5/wcAAAAEAAIAAAD5/wgAAAAEAAIAAAD5/wkAAAAJAAMAAAD5/woAAAAJAAMAAAD5/wsAAAAJAAMAAAD5/wwAAAAEAAIAAAD5/w0AAAAEAAIAAAD5/w4AAAAEAAIAAAD5/w8AAAAEAAIAAAD5/xAAAAAJAAMAAAD5/xEAAAAJAAMAAAD5/xIAAAAJAAMAAAD5/xMAAAAJAAMAAAD5/xQAAAAJAAMAAAD4/xUAAAADAAIAAAD4/xYAAAAHAAQAAAD5/xUAAAAEAAIAAAD5/xYAAAAJAAQAAADl/xYAAAADAAIAAADm/xYAAAAHAAMAAADn/xYAAAAHAAMAAADo/xYAAAAGAAAAAADp/xYAAAAHAAMAAADq/xYAAAAHAAMAAADo/xQAAAACAAEAAADp/xIAAAABAAIAAADp/xMAAAABAAIAAADp/xQAAAAGAAAAAADq/xIAAAAHAAMAAADq/xMAAAAHAAMAAADq/xQAAAACAAIAAADr/xIAAAAGAAAAAADr/xMAAAAHAAMAAADr/xQAAAAHAAMAAADs/xIAAAAHAAMAAADs/xMAAAAHAAMAAADs/xQAAAAHAAMAAADt/xIAAAAHAAMAAADt/xMAAAAGAAEAAADt/xQAAAAHAAMAAADr/xYAAAACAAIAAADs/xYAAAACAAIAAADt/xYAAAAHAAMAAADk/xYAAAAGAAEAAADu/xYAAAAGAAEAAADk/xMAAAAHAAMAAADy/xMAAAACAAIAAADy/w0AAAACAAIAAADl/w0AAAADAAIAAADl/xMAAAACAAIAAADl/wcAAAACAAIAAADy/wcAAAACAAIAAAA=")
+tile_set = ExtResource("1_34geq")
+collision_enabled = false
+
+[node name="WallLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD4/wIAAAADAAAAAAD5/wIAAAADAAAAAAD6/wIAAAAFAAAAAAD0/wIAAAABAAgAAAD1/wIAAAAHAAcAAAD2/wIAAAADAAAAAAD3/wIAAAADAAAAAADw/wIAAAADAAAAAADx/wIAAAADAAAAAADy/wIAAAADAAAAAADz/wIAAAAGAAcAAADv/wIAAAADAAAAAADo/wIAAAADAAAAAADp/wIAAAADAAAAAADq/wIAAAADAAAAAAD6/wMAAAAFAAAAAAD6/wQAAAAFAAEAAAD6/wUAAAAFAAIAAAD6/wYAAAAFAAMAAAD6/wcAAAAFAAAAAAD6/wgAAAAFAAEAAAD6/wkAAAAFAAIAAAD6/woAAAAFAAMAAAD6/wsAAAAFAAMAAAD6/wwAAAAFAAIAAAD6/w8AAAAFAAIAAAD6/xAAAAAFAAMAAAD6/xEAAAAFAAIAAAD6/xIAAAAFAAMAAAD6/xMAAAAFAAAAAAD6/xQAAAAFAAEAAAD6/xUAAAAFAAIAAAD6/xYAAAAFAAMAAAD6/xcAAAAFAAQAAAD2/xcAAAABAAQAAAD3/xcAAAACAAQAAAD4/xcAAAADAAQAAAD5/xcAAAAEAAQAAADy/xcAAAABAAQAAADz/xcAAAACAAQAAAD0/xcAAAADAAQAAAD1/xcAAAAEAAQAAADx/xcAAAAEAAQAAADf/xcAAAABAAQAAADg/xcAAAACAAQAAADe/xcAAAAAAAQAAADe/xMAAAAAAAAAAADe/xQAAAAAAAEAAADe/xUAAAAAAAIAAADe/xYAAAAAAAMAAADe/w8AAAAAAAAAAADe/xAAAAAAAAEAAADe/xEAAAAAAAIAAADe/xIAAAAAAAMAAADe/wsAAAAAAAAAAADe/wwAAAAAAAEAAADe/w0AAAAAAAIAAADe/w4AAAAAAAMAAADe/wcAAAAAAAAAAADe/wgAAAAAAAEAAADe/wkAAAAAAAIAAADe/woAAAAAAAMAAADe/wMAAAAAAAAAAADe/wQAAAAAAAEAAADe/wUAAAAAAAIAAADe/wYAAAAAAAMAAADf/wIAAAADAAAAAADg/wIAAAADAAAAAADj/wIAAAAGAAcAAADk/wIAAAABAAgAAADn/wIAAAADAAAAAADe/wIAAAAAAAAAAADl/wIAAAAHAAcAAADm/wIAAAADAAAAAADh/wIAAAADAAAAAADi/wIAAAADAAAAAADh/xcAAAADAAQAAADi/xcAAAAEAAQAAADj/xcAAAACAAQAAADv/xcAAAADAAQAAADw/xcAAAADAAQAAADk/xcAAAADAAQAAADl/xcAAAAEAAQAAADm/xcAAAACAAQAAADn/xcAAAADAAQAAADo/xcAAAAEAAQAAADp/xcAAAACAAQAAADq/xcAAAADAAQAAADr/xcAAAAEAAQAAADs/xcAAAACAAQAAADt/xcAAAADAAQAAADu/xcAAAADAAQAAADk/wkAAAAAAAcAAADk/woAAAABAAAAAADl/wkAAAADAAQAAADl/woAAAACAAAAAADm/wkAAAADAAQAAADm/woAAAACAAAAAADn/wYAAAAAAAcAAADn/wcAAAAFAAIAAADn/wgAAAAFAAIAAADn/wkAAAAFAAQAAADn/woAAAACAAAAAADo/wYAAAABAAcAAADo/wcAAAAAAAEAAADo/wgAAAAAAAEAAADo/wkAAAAAAAEAAADo/woAAAABAAAAAADv/wcAAAAFAAIAAADv/wgAAAAFAAIAAADv/wkAAAAFAAIAAADv/woAAAABAAAAAADv/xAAAAAFAAIAAADv/xEAAAAFAAIAAADv/xIAAAAFAAIAAADv/xMAAAABAAAAAADw/wcAAAAAAAEAAADw/wgAAAAAAAEAAADw/wkAAAAAAAQAAADw/woAAAACAAAAAADw/xAAAAAAAAEAAADw/xEAAAAAAAEAAADw/xIAAAAAAAEAAADw/xMAAAABAAAAAADx/woAAAACAAAAAADx/xAAAAACAAAAAADy/woAAAACAAAAAADy/xAAAAACAAAAAADz/woAAAABAAAAAADz/xAAAAABAAAAAADv/wYAAAAAAAcAAADv/w8AAAAAAAcAAADw/wYAAAABAAcAAADw/w8AAAADAAQAAADx/wkAAAADAAQAAADx/w8AAAADAAQAAADy/wkAAAADAAQAAADy/w8AAAADAAQAAADz/wkAAAABAAcAAADz/w8AAAABAAcAAADk/xAAAAABAAAAAADl/xAAAAACAAAAAADm/xAAAAACAAAAAADn/xAAAAAFAAIAAADn/xEAAAAFAAIAAADn/xIAAAAFAAIAAADn/xMAAAABAAAAAADo/xAAAAAAAAEAAADo/xEAAAAAAAEAAADo/xIAAAAAAAEAAADo/xMAAAABAAAAAADk/w8AAAAAAAcAAADl/w8AAAADAAQAAADm/w8AAAADAAQAAADn/w8AAAADAAQAAADo/w8AAAABAAcAAAD6/w0AAAAFAAIAAAD6/w4AAAAFAAIAAADu/wIAAAADAAAAAADs/wIAAAAFAAUAAADr/wIAAAAEAAcAAADt/wIAAAAFAAcAAAA=")
+tile_set = ExtResource("1_34geq")
+
+[node name="spike traps" type="Node2D" parent="."]
+position = Vector2(-320, 192)
+
+[node name="4square trap" type="Node2D" parent="spike traps"]
+position = Vector2(-24, -16)
+
+[node name="left group" type="Node2D" parent="spike traps/4square trap"]
+position = Vector2(-48, 48)
+
+[node name="left1" type="AnimatedSprite2D" parent="spike traps/4square trap/left group"]
+position = Vector2(-16, -40)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="left2" type="AnimatedSprite2D" parent="spike traps/4square trap/left group"]
+position = Vector2(-16, -24)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="left3" type="AnimatedSprite2D" parent="spike traps/4square trap/left group"]
+position = Vector2(-16, -8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="left4" type="AnimatedSprite2D" parent="spike traps/4square trap/left group"]
+position = Vector2(-16, 8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="center1" type="AnimatedSprite2D" parent="spike traps/4square trap/left group"]
+position = Vector2(0, -40)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="center2" type="AnimatedSprite2D" parent="spike traps/4square trap/left group"]
+position = Vector2(0, -24)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="center3" type="AnimatedSprite2D" parent="spike traps/4square trap/left group"]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="center4" type="AnimatedSprite2D" parent="spike traps/4square trap/left group"]
+position = Vector2(0, 8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="right1" type="AnimatedSprite2D" parent="spike traps/4square trap/left group"]
+position = Vector2(16, -40)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="right 2" type="AnimatedSprite2D" parent="spike traps/4square trap/left group"]
+position = Vector2(16, -24)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="right3" type="AnimatedSprite2D" parent="spike traps/4square trap/left group"]
+position = Vector2(16, -8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="right4" type="AnimatedSprite2D" parent="spike traps/4square trap/left group"]
+position = Vector2(16, 8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="bottom group" type="Node2D" parent="spike traps/4square trap"]
+position = Vector2(24, 96)
+
+[node name="top1" type="AnimatedSprite2D" parent="spike traps/4square trap/bottom group"]
+position = Vector2(-40, -24)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="top2" type="AnimatedSprite2D" parent="spike traps/4square trap/bottom group"]
+position = Vector2(-24, -24)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="top3" type="AnimatedSprite2D" parent="spike traps/4square trap/bottom group"]
+position = Vector2(-8, -24)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="top4" type="AnimatedSprite2D" parent="spike traps/4square trap/bottom group"]
+position = Vector2(8, -24)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="top5" type="AnimatedSprite2D" parent="spike traps/4square trap/bottom group"]
+position = Vector2(24, -24)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="top6" type="AnimatedSprite2D" parent="spike traps/4square trap/bottom group"]
+position = Vector2(40, -24)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="center1" type="AnimatedSprite2D" parent="spike traps/4square trap/bottom group"]
+position = Vector2(-40, -8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="center2" type="AnimatedSprite2D" parent="spike traps/4square trap/bottom group"]
+position = Vector2(-24, -8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="center3" type="AnimatedSprite2D" parent="spike traps/4square trap/bottom group"]
+position = Vector2(-8, -8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="center4" type="AnimatedSprite2D" parent="spike traps/4square trap/bottom group"]
+position = Vector2(8, -8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="center5" type="AnimatedSprite2D" parent="spike traps/4square trap/bottom group"]
+position = Vector2(24, -8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="center6" type="AnimatedSprite2D" parent="spike traps/4square trap/bottom group"]
+position = Vector2(40, -8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="bottom1" type="AnimatedSprite2D" parent="spike traps/4square trap/bottom group"]
+position = Vector2(-40, 8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="bottom2" type="AnimatedSprite2D" parent="spike traps/4square trap/bottom group"]
+position = Vector2(-24, 8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="bottom3" type="AnimatedSprite2D" parent="spike traps/4square trap/bottom group"]
+position = Vector2(-8, 8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="bottom4" type="AnimatedSprite2D" parent="spike traps/4square trap/bottom group"]
+position = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="bottom5" type="AnimatedSprite2D" parent="spike traps/4square trap/bottom group"]
+position = Vector2(24, 8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="bottom6" type="AnimatedSprite2D" parent="spike traps/4square trap/bottom group"]
+position = Vector2(40, 8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="right group" type="Node2D" parent="spike traps/4square trap"]
+position = Vector2(96, 48)
+
+[node name="left1" type="AnimatedSprite2D" parent="spike traps/4square trap/right group"]
+position = Vector2(-16, -40)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="left2" type="AnimatedSprite2D" parent="spike traps/4square trap/right group"]
+position = Vector2(-16, -24)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="left3" type="AnimatedSprite2D" parent="spike traps/4square trap/right group"]
+position = Vector2(-16, -8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="left4" type="AnimatedSprite2D" parent="spike traps/4square trap/right group"]
+position = Vector2(-16, 8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="center1" type="AnimatedSprite2D" parent="spike traps/4square trap/right group"]
+position = Vector2(0, -40)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="center2" type="AnimatedSprite2D" parent="spike traps/4square trap/right group"]
+position = Vector2(0, -24)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="center3" type="AnimatedSprite2D" parent="spike traps/4square trap/right group"]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="center4" type="AnimatedSprite2D" parent="spike traps/4square trap/right group"]
+position = Vector2(0, 8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="right1" type="AnimatedSprite2D" parent="spike traps/4square trap/right group"]
+position = Vector2(16, -40)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="right 2" type="AnimatedSprite2D" parent="spike traps/4square trap/right group"]
+position = Vector2(16, -24)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="right3" type="AnimatedSprite2D" parent="spike traps/4square trap/right group"]
+position = Vector2(16, -8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="right4" type="AnimatedSprite2D" parent="spike traps/4square trap/right group"]
+position = Vector2(16, 8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="top group" type="Node2D" parent="spike traps/4square trap"]
+position = Vector2(24, -16)
+
+[node name="top1" type="AnimatedSprite2D" parent="spike traps/4square trap/top group"]
+position = Vector2(-40, -24)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="top2" type="AnimatedSprite2D" parent="spike traps/4square trap/top group"]
+position = Vector2(-24, -24)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="top3" type="AnimatedSprite2D" parent="spike traps/4square trap/top group"]
+position = Vector2(-8, -24)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="top4" type="AnimatedSprite2D" parent="spike traps/4square trap/top group"]
+position = Vector2(8, -24)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="top5" type="AnimatedSprite2D" parent="spike traps/4square trap/top group"]
+position = Vector2(24, -24)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="top6" type="AnimatedSprite2D" parent="spike traps/4square trap/top group"]
+position = Vector2(40, -24)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="center1" type="AnimatedSprite2D" parent="spike traps/4square trap/top group"]
+position = Vector2(-40, -8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="center2" type="AnimatedSprite2D" parent="spike traps/4square trap/top group"]
+position = Vector2(-24, -8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="center3" type="AnimatedSprite2D" parent="spike traps/4square trap/top group"]
+position = Vector2(-8, -8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="center4" type="AnimatedSprite2D" parent="spike traps/4square trap/top group"]
+position = Vector2(8, -8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="center5" type="AnimatedSprite2D" parent="spike traps/4square trap/top group"]
+position = Vector2(24, -8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="center6" type="AnimatedSprite2D" parent="spike traps/4square trap/top group"]
+position = Vector2(40, -8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="bottom1" type="AnimatedSprite2D" parent="spike traps/4square trap/top group"]
+position = Vector2(-40, 8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="bottom2" type="AnimatedSprite2D" parent="spike traps/4square trap/top group"]
+position = Vector2(-24, 8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="bottom3" type="AnimatedSprite2D" parent="spike traps/4square trap/top group"]
+position = Vector2(-8, 8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="bottom4" type="AnimatedSprite2D" parent="spike traps/4square trap/top group"]
+position = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="bottom5" type="AnimatedSprite2D" parent="spike traps/4square trap/top group"]
+position = Vector2(24, 8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="bottom6" type="AnimatedSprite2D" parent="spike traps/4square trap/top group"]
+position = Vector2(40, 8)
+sprite_frames = SubResource("SpriteFrames_yvhnf")
+animation = &"4 square spikes "
+autoplay = "4 square spikes "
+speed_scale = -1.0
+
+[node name="PlayerSpawn" type="Node2D" parent="."]
+position = Vector2(-308.75, 350)
+
+[node name="NextLevelArea" type="Area2D" parent="."]
+position = Vector2(-312, 58)
+script = ExtResource("3_7epi1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NextLevelArea" groups=["next_level"]]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_83evl")
