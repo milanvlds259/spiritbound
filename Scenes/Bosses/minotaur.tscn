@@ -28,7 +28,7 @@ size = Vector2(61.25, 59)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_daw2r"]
 size = Vector2(58, 98)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ude3s"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bwxrc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ww108"]
 
@@ -175,8 +175,9 @@ shape = SubResource("RectangleShape2D_daw2r")
 [node name="Vision" type="Area2D" parent="."]
 
 [node name="Shape" type="CollisionShape2D" parent="Vision"]
-scale = Vector2(100, 100)
-shape = SubResource("CircleShape2D_ude3s")
+rotation = 1.5708
+scale = Vector2(60, 60)
+shape = SubResource("CapsuleShape2D_bwxrc")
 
 [node name="FollowArea" type="Area2D" parent="."]
 
