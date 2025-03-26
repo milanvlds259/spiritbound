@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=15 format=3 uid="uid://d13x0a41bwxgo"]
+[gd_resource type="SpriteFrames" load_steps=13 format=3 uid="uid://d13x0a41bwxgo"]
 
 [ext_resource type="Texture2D" uid="uid://d346e3ceyu2qf" path="res://Assets/Sprites/player/Soldier-Attack01_Effect.png" id="1_610sb"]
 [ext_resource type="Texture2D" uid="uid://rtkce1jrkiiw" path="res://Assets/Sprites/player/Soldier-Attack01_Fire_Effect.png" id="2_s0mwk"]

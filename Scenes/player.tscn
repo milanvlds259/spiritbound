@@ -60,8 +60,6 @@ z_index = 1
 scale = Vector2(1.01264, 0.889231)
 sprite_frames = ExtResource("3_cy3px")
 animation = &"attack01"
-frame = 5
-frame_progress = 1.0
 
 [node name="AttackHitbox" type="CollisionShape2D" parent="AttackEffect01"]
 position = Vector2(12, 0)

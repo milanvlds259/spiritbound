@@ -42,7 +42,7 @@ theme_override_constants/shadow_offset_y = 5
 theme_override_constants/shadow_outline_size = 25
 theme_override_fonts/font = ExtResource("2_1jtn1")
 theme_override_font_sizes/font_size = 120
-text = "SPIRITBOUND !"
+text = "Spiritbound !"
 horizontal_alignment = 1
 
 [node name="PlayButton" type="Button" parent="."]
@@ -75,7 +75,8 @@ theme_override_colors/font_shadow_color = Color(0.109804, 0.0313726, 0.0588235, 
 theme_override_constants/shadow_outline_size = 8
 theme_override_fonts/font = ExtResource("2_1jtn1")
 theme_override_font_sizes/font_size = 66
-text = "PLAY"
+text = "Play !
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 

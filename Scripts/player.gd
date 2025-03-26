@@ -288,7 +288,7 @@ func _on_attack_effect_frame_changed():
 	var current_frame = $AttackEffect01/AttackEffectSprite.frame
 	# If the current frame is where the attack should be active.
 	# Adjust the frame numbers (e.g. 3 and 4) as needed depending on your animation indexing.
-	if current_frame == 3 or current_frame == 4:
+	if current_frame == 2 or current_frame == 3:
 		$AttackEffect01/AttackHitbox.disabled = false
 	else:
 		$AttackEffect01/AttackHitbox.disabled = true

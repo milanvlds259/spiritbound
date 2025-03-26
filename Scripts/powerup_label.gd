@@ -1,7 +1,7 @@
 extends Label
 
-var velocity = Vector2(0, -25)  # Upward movement speed
-var fade_speed = 1.1          # How quickly it fades out
+@export var velocity = Vector2(0, -25)  # Upward movement speed
+@export var fade_speed = 1.1          # How quickly it fades out
 
 func _ready():
 	# Random horizontal offset for variation

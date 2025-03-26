@@ -4,17 +4,21 @@
 [ext_resource type="Script" path="res://Scripts/powerup_label.gd" id="2_xdmav"]
 
 [node name="DamageLabel" type="Label"]
-offset_left = -47.0
+offset_left = -56.0
 offset_top = -22.0
-offset_right = 327.0
+offset_right = 318.0
 offset_bottom = 24.0
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0.17, 1, 0.3775, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_outline_size = 13
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 11
 theme_override_fonts/font = ExtResource("1_xc4yk")
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 48
 text = "x4 Arrow Speed!"
 horizontal_alignment = 1
 vertical_alignment = 2
 script = ExtResource("2_xdmav")
+velocity = Vector2(0, -20)
+fade_speed = 0.5
