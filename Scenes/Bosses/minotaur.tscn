@@ -35,8 +35,8 @@ size = Vector2(58, 98)
 [sub_resource type="CircleShape2D" id="CircleShape2D_evwo7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fur2d"]
-radius = 12.5
-height = 47.5
+radius = 14.0
+height = 42.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4wnrf"]
 atlas = ExtResource("4_461mv")
@@ -112,7 +112,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack",
-"speed": 16.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -138,7 +138,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack_fire",
-"speed": 16.0
+"speed": 8.0
 }]
 
 [node name="Minotaur" type="CharacterBody2D"]
@@ -194,16 +194,21 @@ shape = SubResource("CircleShape2D_evwo7")
 [node name="AttackEffect" type="Area2D" parent="."]
 
 [node name="AttackHitbox" type="CollisionShape2D" parent="AttackEffect"]
-position = Vector2(64, 1)
+position = Vector2(100, 1)
 rotation = 1.5708
-scale = Vector2(6, 6)
+scale = Vector2(8, 8)
 shape = SubResource("CapsuleShape2D_fur2d")
 
 [node name="AttackSprite" type="AnimatedSprite2D" parent="AttackEffect"]
-position = Vector2(24, 0)
-scale = Vector2(9, 8)
+position = Vector2(80, 0)
+scale = Vector2(10, 12)
 sprite_frames = SubResource("SpriteFrames_nis56")
-animation = &"attack"
+animation = &"attack_fire"
+
+[node name="ChargeTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
 
 [connection signal="body_entered" from="AttackEffect" to="." method="_on_attack_effect_body_entered"]
 [connection signal="animation_finished" from="AttackEffect/AttackSprite" to="." method="_on_attack_sprite_animation_finished"]
+[connection signal="timeout" from="ChargeTimer" to="." method="_on_charge_timer_timeout"]

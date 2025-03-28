@@ -114,15 +114,11 @@ func update_velocity() -> void:
 					velocity = new_velocity
 				
 				State.ATTACK:
-					print("attacking")
 					velocity = Vector2.ZERO
 				
 				State.BACK:
-					print("going back")
 					var dir_to_start = start_position - global_position
-					print(dir_to_start)
 					if dir_to_start.length() < limit:
-						print("reset")
 						position = start_position
 						velocity = Vector2.ZERO
 						current_state = State.IDLE
@@ -136,13 +132,11 @@ func update_velocity() -> void:
 		Mind.ANNOYED:
 			match current_state:
 				State.IDLE:
-					print("idle")
 					var overlap = follow_area.get_overlapping_bodies()
 					var filtered = overlap.filter(func(b): return b is Player)
 					if !filtered.is_empty():
 						follow_body(filtered[0])
 				State.FOLLOW:
-					print("follow")
 					check_attack();
 					var overlap = follow_area.get_overlapping_bodies()
 					var filtered = overlap.filter(func(b): return b is Player)
@@ -153,10 +147,8 @@ func update_velocity() -> void:
 					var new_velocity = direction.normalized() * speed * 1.5
 					velocity = new_velocity
 				State.ATTACK:
-					print("attack")
 					velocity = Vector2.ZERO
 				State.BACK:
-					print("back")
 					var dir_to_start = start_position - global_position
 					if dir_to_start.length() < limit:
 						position = start_position
@@ -173,13 +165,11 @@ func update_velocity() -> void:
 		Mind.ANGERED:
 			match current_state:
 				State.IDLE:
-					print("idle")
 					var overlap = vision.get_overlapping_bodies()
 					var filtered = overlap.filter(func(b): return b is Player)
 					if !filtered.is_empty():
 						follow_body(filtered[0])
 				State.FOLLOW:
-					print("follow")
 					check_attack();
 					var over_vis = vision.get_overlapping_bodies()
 					var filt_vis = over_vis.filter(func(b): return b is Player)
@@ -195,24 +185,20 @@ func update_velocity() -> void:
 					var new_velocity = direction.normalized() * speed * 2
 					velocity = new_velocity
 				State.ATTACK:
-					print("attack")
 					velocity = Vector2.ZERO
 				State.CHARGE:
-					print("charge")
 					if !charging:
 						return
 					var dir_to_charge = charging_position - global_position
 					if dir_to_charge.length() < limit*3:
 						position = charging_position
 						velocity = Vector2.ZERO
-						current_state = State.IDLE
 						charging = false
 						charging_position = global_position
-						await get_tree().create_timer(1).timeout
+						$ChargeTimer.timeout
 						return
 					velocity = dir_to_charge.normalized() * charge_speed
 				State.BACK:
-					print("back")
 					var dir_to_start = start_position - global_position
 					if dir_to_start.length() < limit:
 						position = start_position
@@ -226,6 +212,7 @@ func update_velocity() -> void:
 					velocity = dir_to_start.normalized() * speed
 
 func check_attack() -> void:
+	print("checking")
 	var attack_space = attack_range.get_overlapping_bodies()
 	var attack_target = attack_space.filter(func(b): return b is Player)
 	if !attack_target.is_empty():
@@ -243,41 +230,56 @@ func charge(body) -> void:
 	target = body
 	current_state = State.CHARGE
 	charging_position = body.global_position
+	$ChargeTimer.start()
 	charging = true
+
+
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	# Check if the area is the player's attack hitbox (temporary)
-	if area.is_in_group("player_attack"):
-		damage_taken(5)
-	elif area.is_in_group("arrows"):
-		damage_taken(2)
-		area.queue_free()
+	match mind_state:
+		Mind.CALM:
+			if area.is_in_group("player_attack"):
+				damage_taken(3)
+			elif area.is_in_group("arrows"):
+				damage_taken(3)
+				area.queue_free()
+		Mind.ANNOYED:
+			if area.is_in_group("player_attack"):
+				damage_taken(2)
+			elif area.is_in_group("arrows"):
+				damage_taken(2)
+				area.queue_free()
+		Mind.ANGERED:
+			if area.is_in_group("player_attack"):
+				damage_taken(2)
+			elif area.is_in_group("arrows"):
+				damage_taken(0)
+				area.queue_free()	
 
 func _on_hitbox_body_entered(body: Node) -> void:
 
 	var push_dir = (body.global_position - global_position).normalized()
 	if body.has_method("apply_knockback"):
 		body.apply_knockback(push_dir * 2* impulse_str)
+		if current_state == State.CHARGE:
+			body.take_damage(10)
 
 func attack_melee(body) -> void:
 	if body.is_in_group("player"):
 		var push_dir = (body.global_position - global_position).normalized()
 		var angle = push_dir.angle();
-		await get_tree().create_timer(0.5).timeout
-
-
 		if $AttackEffect:
 			$AttackEffect.rotation = angle
 			$AttackEffect.position = push_dir * 5
 			match mind_state:
 				Mind.CALM:
 					$AttackEffect/AttackSprite.play("attack")
-
 				Mind.ANNOYED:
 					$AttackEffect/AttackSprite.play("attack")
-
 				Mind.ANGERED:
 					$AttackEffect/AttackSprite.play("attack_fire")
+
 
 func _on_attack_effect_frame_changed():
 	var current_frame = $AttackEffect/AttackSprite.frame
@@ -297,14 +299,11 @@ func change_mind_state() -> void:
 		Mind.CALM:
 			if current_health < (0.90 * max_health):
 				mind_state = Mind.ANNOYED
-				print("annoyed")
 		Mind.ANNOYED:
 			if current_health == max_health:
 				mind_state = Mind.CALM
-				print("calmed")
 			if current_health < (0.40 * max_health):
 				mind_state = Mind.ANGERED
-				print("angered!!")
 		Mind.ANGERED:
 			if current_health > (0.60 * max_health):
 				mind_state = Mind.ANNOYED
@@ -356,19 +355,21 @@ func _on_attack_effect_body_entered(body: Node2D) -> void:
 				body.take_damage(base_damage)
 
 			Mind.ANNOYED:
-				body.stun(0.5)
+				body.stun(0.25)
 				body.apply_knockback(body.position-global_position)
 				body.take_damage(2*base_damage)
 
 			Mind.ANGERED:
-				body.stun(0.75)
+				body.stun(0.25)
 				body.apply_knockback(body.position-global_position)
 				body.take_damage(3*base_damage)
-		
-	 # Replace with function body.
 
 
 func _on_attack_sprite_animation_finished() -> void:
 	is_attacking = false
 	current_state = State.FOLLOW
-	 # Replace with function body.
+
+func _on_charge_timer_timeout() -> void:
+	if current_state == State.CHARGE:
+		charging = false
+		current_state = State.IDLE
