@@ -112,7 +112,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack",
-"speed": 12.0
+"speed": 16.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -138,12 +138,12 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack_fire",
-"speed": 12.0
+"speed": 16.0
 }]
 
 [node name="Minotaur" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 6
+collision_mask = 5
 script = ExtResource("1_6pvhb")
 max_health = 20
 damage_label = ExtResource("2_yfafg")
@@ -182,25 +182,28 @@ shape = SubResource("CapsuleShape2D_bwxrc")
 [node name="FollowArea" type="Area2D" parent="."]
 
 [node name="Shape" type="CollisionShape2D" parent="FollowArea"]
-scale = Vector2(30, 30)
+scale = Vector2(35, 35)
 shape = SubResource("CircleShape2D_ww108")
 
 [node name="AttackRange" type="Area2D" parent="."]
 
 [node name="Shape" type="CollisionShape2D" parent="AttackRange"]
-scale = Vector2(13, 13)
+scale = Vector2(20, 20)
 shape = SubResource("CircleShape2D_evwo7")
 
 [node name="AttackEffect" type="Area2D" parent="."]
 
-[node name="Shape" type="CollisionShape2D" parent="AttackEffect"]
+[node name="AttackHitbox" type="CollisionShape2D" parent="AttackEffect"]
 position = Vector2(64, 1)
 rotation = 1.5708
-scale = Vector2(4, 4)
+scale = Vector2(6, 6)
 shape = SubResource("CapsuleShape2D_fur2d")
 
 [node name="AttackSprite" type="AnimatedSprite2D" parent="AttackEffect"]
 position = Vector2(24, 0)
-scale = Vector2(7, 6)
+scale = Vector2(9, 8)
 sprite_frames = SubResource("SpriteFrames_nis56")
 animation = &"attack"
+
+[connection signal="body_entered" from="AttackEffect" to="." method="_on_attack_effect_body_entered"]
+[connection signal="animation_finished" from="AttackEffect/AttackSprite" to="." method="_on_attack_sprite_animation_finished"]
