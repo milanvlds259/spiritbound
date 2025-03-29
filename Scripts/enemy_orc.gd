@@ -1,41 +1,34 @@
 class_name EnemyOrc extends CharacterBody2D
 
-@export var speed: float = 200
-@export var health: int = 10
+# Speed, Health, Damage
+@export var speed: float = 150
+@export var health: int = 15
 @export var base_damage: int = 5
 
-@export var damage_label: PackedScene
-
-# Marker movement parameters
-@export var marker_end_point: Marker2D = null   # Drag a Marker2D node here if available.
-@export var marker_limit: float = 1.5           # When to change movement direction
-
-@export var follow_duration: float = 10.0
-@export var follow_distance: int = 900
-@export var consider_distance: int = 700
-
+# Animation
 @onready var sprite: AnimatedSprite2D = $OrcSprite
+
+#Taking Damage
+@export var damage_label: PackedScene
 @onready var hurt_area: Area2D = $HitBox         # The Area2D used for taking damage
-
-@onready var is_attacking = false
-@onready var attack_range: Area2D = $AttackRange   # The Area2D for checking if player is in range
-
-@export var impulse_str: float = 200
-
-@onready var follow_area: Area2D = $FollowArea      # Area2D used for vision
-enum State{IDLE, FOLLOW, HURT, ATTACK, RUN, BACK, DEATH}
-enum GameAi{CHASER, RUNNER, GUARDER}
-var attack_type = "attackdown"
-
 var hurt_color = Color(1,0.40,0.40)
 var hurt_duration = 0.1
 
+# Attacking
+@onready var is_attacking = false
+@onready var attack_range: Area2D = $AttackRange   # The Area2D for checking if player is in range
+var attack_type = "attackdown"
+@export var impulse_str: float = 200
+
+# Movement/AI 
+var target : Player
+@onready var follow_area: Area2D = $Vision      # Area2D used for vision
+enum State{IDLE, FOLLOW, HURT, ATTACK, DEATH}
 var current_state: State = State.IDLE
 
+# Start/End Position
 var start_position: Vector2
 var end_position: Vector2
-
-var target : Player
 
 func _ready() -> void:
 	sprite.frame_changed.connect(_on_frame_changed)
@@ -45,10 +38,6 @@ func _ready() -> void:
 		hurt_area.area_entered.connect(_on_hurt_area_entered)
 	# Initialize marker movement positions.
 	start_position = position
-	if marker_end_point:
-		end_position = marker_end_point.global_position
-	else:
-		end_position = start_position + Vector2(0, 10)
 
 	# Connect enemy hitbox to hit player
 	$HitBox.body_entered.connect(_on_hitbox_body_entered)
@@ -67,8 +56,6 @@ func updateAnimations() -> void:
 		State.ATTACK:
 			sprite.play(attack_type)
 		State.FOLLOW:
-			sprite.play("walk")
-		State.RUN:
 			sprite.play("walk")
 
 	if velocity.x > 0:
@@ -103,8 +90,6 @@ func update_velocity() -> void:
 		State.ATTACK:
 			velocity = Vector2.ZERO
 
-
-
 func follow_body(body) -> void:
 	target = body
 	current_state = State.FOLLOW
@@ -134,7 +119,6 @@ func damage_taken(damage: int) -> void:
 	health -= damage
 	if health <= 0:
 		died()
-
 
 func died() -> void:
 	current_state = State.DEATH
@@ -172,12 +156,10 @@ func _on_frame_changed() -> void:
 	var current_frame = sprite.frame
 	var animation = sprite.animation
 	if animation == "attackdown" or animation == "attackup":
-		if current_frame > 3 and current_frame < 5:
+		if current_frame > 2 and current_frame < 5:
 			$AttackArea/AttackHitbox.disabled = false
 		else:
 			$AttackArea/AttackHitbox.disabled = true
-
-
 
 func _on_orc_sprite_animation_finished() -> void:
 	if sprite.animation == "hurt":
@@ -190,13 +172,9 @@ func _on_orc_sprite_animation_finished() -> void:
 		modulate = Color(1, 1, 1, 1)
 		is_attacking = false
 
-
 	elif sprite.animation == "attackdown" or sprite.animation == "attackup":
 		current_state = State.IDLE
 		is_attacking = false
-	
-	pass # Replace with function body.
-
 
 func _on_attack_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):

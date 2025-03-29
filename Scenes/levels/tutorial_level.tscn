@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://l1ww5jlc34ch" path="res://Assets/Sprites/Spirits.png" id="10_ij447"]
 [ext_resource type="Texture2D" uid="uid://bjwf4ijvw4ol0" path="res://Assets/Sprites/thunder_spirit.png" id="11_38pgf"]
 [ext_resource type="Script" path="res://Scenes/levels/next_level_area.gd" id="12_r71qg"]
-[ext_resource type="PackedScene" uid="uid://cx0bsc413mouh" path="res://Scenes/Enemies/enemy_orc.tscn" id="13_q2l7m"]
+[ext_resource type="PackedScene" uid="uid://nipi6pghh748" path="res://Scenes/Enemies/enemy_skeleton.tscn" id="13_nhv8e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aj36y"]
 atlas = ExtResource("6_vklws")
@@ -236,5 +236,5 @@ next_level = "res://Scenes/main.tscn"
 position = Vector2(546.5, -1164.88)
 shape = SubResource("RectangleShape2D_0qx4r")
 
-[node name="EnemyOrc" parent="." instance=ExtResource("13_q2l7m")]
-position = Vector2(548, -96)
+[node name="EnemySkeleton" parent="." instance=ExtResource("13_nhv8e")]
+position = Vector2(564, -114)

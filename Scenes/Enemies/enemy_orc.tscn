@@ -1,7 +1,7 @@
 [gd_scene load_steps=45 format=3 uid="uid://cx0bsc413mouh"]
 
 [ext_resource type="Script" path="res://Scripts/enemy_orc.gd" id="1_o5lep"]
-[ext_resource type="Texture2D" uid="uid://bml4ya0bu6l4g" path="res://Assets/Tiny RPG Character Asset Pack -Full 10 Characters/Orc/Orc.png" id="1_rqxjn"]
+[ext_resource type="Texture2D" uid="uid://bml4ya0bu6l4g" path="res://Assets/TinyRPGCharPack/Orc/Orc.png" id="1_rqxjn"]
 [ext_resource type="PackedScene" uid="uid://bn2m5ghwophjs" path="res://Scenes/damage_label.tscn" id="2_hf8nf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qqlbt"]
@@ -285,8 +285,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_drc6a"]
 size = Vector2(31.75, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4cdvy"]
-size = Vector2(84, 82)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wu0w6"]
+radius = 44.0
+height = 148.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrdnk"]
 size = Vector2(31, 56)
@@ -307,7 +308,7 @@ damage_label = ExtResource("2_hf8nf")
 [node name="OrcSprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_mtqo7")
-animation = &"attackdown"
+animation = &"attackup"
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8)
@@ -319,8 +320,7 @@ shape = SubResource("RectangleShape2D_drc6a")
 
 [node name="AttackHitbox" type="CollisionShape2D" parent="AttackArea"]
 position = Vector2(40, -1.90735e-06)
-rotation = 1.5708
-shape = SubResource("RectangleShape2D_4cdvy")
+shape = SubResource("CapsuleShape2D_wu0w6")
 
 [node name="HitBox" type="Area2D" parent="." groups=["enemy_hit"]]
 light_mask = 0
@@ -330,9 +330,9 @@ collision_mask = 5
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 shape = SubResource("RectangleShape2D_jrdnk")
 
-[node name="FollowArea" type="Area2D" parent="."]
+[node name="Vision" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FollowArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vision"]
 rotation = 1.5708
 scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_teky5")

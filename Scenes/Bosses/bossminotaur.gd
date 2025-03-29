@@ -3,7 +3,7 @@ class_name Minotaur extends CharacterBody2D
 # Speed, Health, Damage #
 @export var speed: float = 100
 var charge_speed: float
-@export var max_health: int = 1
+@export var max_health: int = 40
 var current_health: int
 @export var base_damage: float = 1
 
@@ -12,8 +12,8 @@ var current_health: int
 
 # Damage Taken/Healing Death #
 @export var damage_label: PackedScene
-var hurt_color = Color(255,0,0)
-var heal_color = Color(0,0,255)
+var hurt_color = Color(1,0.2,0.2)
+var heal_color = Color(0.2,0.2,1)
 var hurt_duration = 0.1
 @onready var hit_box: Area2D = $HitBox         # The Area2D used for taking damage
 
