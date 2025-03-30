@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://ctth5yk3ynadd"]
+[gd_scene load_steps=23 format=4 uid="uid://ctth5yk3ynadd"]
 
 [ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="1_ygkra"]
 [ext_resource type="PackedScene" uid="uid://v7fuklt8nwxj" path="res://Scenes/player.tscn" id="2_tobfr"]
@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://l1ww5jlc34ch" path="res://Assets/Sprites/Spirits.png" id="10_ij447"]
 [ext_resource type="Texture2D" uid="uid://bjwf4ijvw4ol0" path="res://Assets/Sprites/thunder_spirit.png" id="11_38pgf"]
 [ext_resource type="Script" path="res://Scenes/levels/next_level_area.gd" id="12_r71qg"]
-[ext_resource type="PackedScene" uid="uid://nipi6pghh748" path="res://Scenes/Enemies/enemy_skeleton.tscn" id="13_nhv8e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aj36y"]
 atlas = ExtResource("6_vklws")
@@ -235,6 +234,3 @@ next_level = "res://Scenes/main.tscn"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NextLevelArea" groups=["next_level"]]
 position = Vector2(546.5, -1164.88)
 shape = SubResource("RectangleShape2D_0qx4r")
-
-[node name="EnemySkeleton" parent="." instance=ExtResource("13_nhv8e")]
-position = Vector2(564, -114)
