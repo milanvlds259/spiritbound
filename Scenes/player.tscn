@@ -42,7 +42,7 @@ texture = ExtResource("4_ap8wn")
 z_as_relative = false
 position = Vector2(-0.25, 0)
 sprite_frames = ExtResource("2_yr4xh")
-animation = &"idle"
+animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.75, 2.5)

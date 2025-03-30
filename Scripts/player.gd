@@ -249,6 +249,8 @@ func fire_arrow():
 		Controltype.CONTROLLER:
 			# takes the current value of the right joystick to figure out the attack direction and angle
 			dir = Vector2(Input.get_joy_axis(0, JOY_AXIS_RIGHT_X), Input.get_joy_axis(0, JOY_AXIS_RIGHT_Y))
+			if dir == Vector2.ZERO:
+				dir = Vector2(1,0)
 			var angle = atan2(dir.y, dir.x)
 			dir = dir.normalized()
 			arrow_instance.rotation = angle
@@ -308,6 +310,7 @@ func _on_AnimatedSprite2D_animation_finished():
 		is_attacking = false
 		$PlayerSprite.play("idle")
 	if $PlayerSprite.animation == "attack" or $PlayerSprite.animation == "attack_ranged":
+		is_invincible = false ## If you initiate an attack while the hurt animation is occuring, then player stays invincible
 		is_attacking = false
 		attack_mode = ""
 		$PlayerSprite.play("idle")
