@@ -22,6 +22,7 @@ atlas = ExtResource("7_0pmo8")
 region = Rect2(324, 171, 13, 14)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+position = Vector2(1, 0)
 scale = Vector2(4, 4)
 collision_mask = 5
 script = ExtResource("1_xlfw7")
