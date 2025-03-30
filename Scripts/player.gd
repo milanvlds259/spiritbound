@@ -310,6 +310,7 @@ func _on_AnimatedSprite2D_animation_finished():
 		is_attacking = false
 		$PlayerSprite.play("idle")
 	if $PlayerSprite.animation == "attack" or $PlayerSprite.animation == "attack_ranged":
+		is_invincible = false ## If you initiate an attack while the hurt animation is occuring, then player stays invincible
 		is_attacking = false
 		attack_mode = ""
 		$PlayerSprite.play("idle")

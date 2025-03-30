@@ -1,6 +1,6 @@
 [gd_scene load_steps=53 format=3 uid="uid://nipi6pghh748"]
 
-[ext_resource type="Script" path="res://Scripts/enemy_skeleton.gd" id="1_6orb4"]
+[ext_resource type="Script" path="res://Scripts/Enemy/enemy_skeleton.gd" id="1_6orb4"]
 [ext_resource type="Texture2D" uid="uid://cepbf6cmi222p" path="res://Assets/TinyRPGCharPack/Skeleton/Skeleton.png" id="2_ti5gg"]
 [ext_resource type="PackedScene" uid="uid://bn2m5ghwophjs" path="res://Scenes/damage_label.tscn" id="2_xt2tp"]
 
@@ -363,7 +363,7 @@ radius = 98.3107
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q1mgq"]
 radius = 40.0
-height = 132.0
+height = 160.0
 
 [node name="EnemySkeleton" type="CharacterBody2D"]
 script = ExtResource("1_6orb4")

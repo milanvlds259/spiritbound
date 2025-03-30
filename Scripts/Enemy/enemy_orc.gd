@@ -1,18 +1,19 @@
-class_name EnemySkeleton extends CharacterBody2D
+class_name EnemyOrc extends CharacterBody2D
 
 # Speed, Health, Damage
-@export var speed: float = 200
-@export var health: int = 5
+@export var speed: float = 150
+@export var health: int = 15
 @export var base_damage: int = 5
 
 # Animation
-@onready var sprite: AnimatedSprite2D = $SkellySprite
+@onready var sprite: AnimatedSprite2D = $OrcSprite
 
 #Taking Damage
 @export var damage_label: PackedScene
 @onready var hurt_area: Area2D = $HitBox         # The Area2D used for taking damage
-var hurt_color = Color(1,0.10,0.10)
+var hurt_color = Color(1,0.40,0.40)
 var hurt_duration = 0.1
+var invincible: bool = false
 
 # Attacking
 @onready var is_attacking = false
@@ -23,7 +24,7 @@ var attack_type = "attackdown"
 # Movement/AI 
 var target : Player
 @onready var follow_area: Area2D = $Vision      # Area2D used for vision
-enum State{IDLE, FOLLOW, HURT, ATTACK, DEATH, BLOCK}
+enum State{IDLE, FOLLOW, HURT, ATTACK, DEATH}
 var current_state: State = State.IDLE
 
 # Start/End Position
@@ -32,7 +33,6 @@ var end_position: Vector2
 
 func _ready() -> void:
 	sprite.frame_changed.connect(_on_frame_changed)
-	sprite.animation_finished.connect(_on_sprite_animation_finished)
 	$AttackArea/AttackHitbox.disabled = true
 	# Connect the hurt area's signal for collision detection.
 	if hurt_area:
@@ -90,13 +90,6 @@ func update_velocity() -> void:
 			velocity = Vector2.ZERO
 		State.ATTACK:
 			velocity = Vector2.ZERO
-		
-		State.BLOCK:
-			#Finds the target player's position and computes the directoin to follow
-			if target:
-				var direction = target.global_position - global_position
-				var new_velocity = direction.normalized() * speed
-
 
 func follow_body(body) -> void:
 	target = body
@@ -104,31 +97,28 @@ func follow_body(body) -> void:
 
 func _on_hurt_area_entered(area: Area2D) -> void:
 	# Check if the area is the player's attack hitbox (temporary)
-	if area.is_in_group("player_attack"):
-		damage_taken(3)
-	elif area.is_in_group("arrows"):
-		block_damage(0)
-		area.queue_free()
+	if !invincible:
+		if area.is_in_group("player_attack"):
+			damage_taken(3)
+		elif area.is_in_group("arrows"):
+			damage_taken(3)
+			area.queue_free()
 
 func _on_hitbox_body_entered(body: Node) -> void:
-	
 	if body.is_in_group("player"):
 		var push_dir = (body.global_position - global_position).normalized()
 		body.apply_knockback(push_dir * impulse_str)
 
-func block_damage(damage: int) -> void:
-	current_state = State.BLOCK
-	sprite.play("block")
-	var damage_label_instance = damage_label.instantiate()
-	damage_label_instance.text = str("blocked")
-	add_child(damage_label_instance)
-	
-	
-
 func damage_taken(damage: int) -> void:
+	invincible = true
 	modulate = hurt_color
-	current_state = State.HURT
-	sprite.play("hurt")
+	match current_state:
+		State.IDLE:
+			current_state = State.HURT
+			sprite.play("hurt")
+		State.FOLLOW:
+			current_state = State.HURT
+			sprite.play("hurt")
 	var damage_label_instance = damage_label.instantiate()
 	damage_label_instance.text = str(damage)
 	add_child(damage_label_instance)
@@ -176,28 +166,26 @@ func _on_frame_changed() -> void:
 		else:
 			$AttackArea/AttackHitbox.disabled = true
 
-func _on_sprite_animation_finished() -> void:
+func _on_orc_sprite_animation_finished() -> void:
 	if sprite.animation == "hurt":
 		current_state = State.IDLE
 		modulate = Color(1, 1, 1, 1)
 		is_attacking = false
+		invincible = false
 
 	elif sprite.animation == "death":
 		queue_free()
 		modulate = Color(1, 1, 1, 1)
 		is_attacking = false
+		invincible = false
 
 	elif sprite.animation == "attackdown" or sprite.animation == "attackup":
 		current_state = State.IDLE
+		modulate = Color(1, 1, 1, 1)
 		is_attacking = false
-	
-	elif sprite.animation == "raiseshield" or sprite.animation == "block":
-		current_state = State.IDLE
-		is_attacking = false
-		
+		invincible = false
 
 func _on_attack_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		body.stun(0.25)
 		body.apply_knockback(body.position-global_position)
 		body.take_damage(base_damage)

@@ -181,8 +181,6 @@ func _on_hitbox_body_entered(body: Node) -> void:
 	else:
 		attacking = true
 		if body.is_in_group("player"):
-			if body.has_method("stun"):
-				body.stun(0.75)
 			var push_dir = (body.global_position - global_position).normalized()
 			var angle = push_dir.angle();
 		

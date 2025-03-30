@@ -350,17 +350,14 @@ func _on_attack_effect_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		match mind_state:
 			Mind.CALM:
-				body.stun(0.25)
 				body.apply_knockback(body.position-global_position)
 				body.take_damage(base_damage)
 
 			Mind.ANNOYED:
-				body.stun(0.25)
 				body.apply_knockback(body.position-global_position)
 				body.take_damage(2*base_damage)
 
 			Mind.ANGERED:
-				body.stun(0.25)
 				body.apply_knockback(body.position-global_position)
 				body.take_damage(3*base_damage)
 
