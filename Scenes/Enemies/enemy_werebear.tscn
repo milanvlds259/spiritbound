@@ -670,7 +670,8 @@ animations = [{
 [node name="EnemyWerebear" type="CharacterBody2D"]
 z_index = 1
 script = ExtResource("1_2j1mh")
-base_damage = 4
+health = 25
+base_damage = 3
 damage_label = ExtResource("2_616g8")
 impulse_str = 250.0
 

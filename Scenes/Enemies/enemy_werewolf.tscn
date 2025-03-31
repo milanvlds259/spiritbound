@@ -454,6 +454,7 @@ radius = 253.0
 [node name="EnemyWerewolf" type="CharacterBody2D"]
 z_index = 1
 script = ExtResource("1_24uwu")
+health = 20
 base_damage = 2
 damage_label = ExtResource("2_pqwdi")
 
