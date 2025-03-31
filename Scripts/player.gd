@@ -76,16 +76,15 @@ func handle_input():
 	match control:
 		Controltype.KEYBOARD:
 			if get_viewport():
-				if get_viewport().get_mouse_position().x < get_viewport().size.x / 2:
+				# Get mouse position in world coordinates
+				var mouse_pos = get_viewport().get_camera_2d().get_global_mouse_position()
+				# Compare mouse position with player position
+				if mouse_pos.x < global_position.x:
 					if not $PlayerSprite.flip_h:
 						$PlayerSprite.flip_h = true
-						#if not is_attacking:
-							#$AttackEffect01/AttackEffectSprite.flip_h = true
 				else:
 					if $PlayerSprite.flip_h:
 						$PlayerSprite.flip_h = false
-				#if not is_attacking:
-					#$AttackEffect01/AttackEffectSprite.flip_h = false
 	
 		Controltype.CONTROLLER:
 			var look_dir = Input.get_joy_axis(0, JOY_AXIS_RIGHT_X)
@@ -168,9 +167,9 @@ func _attack_melee():
 	match control:
 		# Sets attack direction and attack angle for the rotation and direction later
 		Controltype.KEYBOARD:
-			var center = Vector2(get_viewport().size / 2)
-			# get attack dir from mouse pos relative to center of screen
-			attack_dir = (get_viewport().get_mouse_position() - center).normalized()
+			var mouse_pos = get_viewport().get_camera_2d().get_global_mouse_position()
+
+			attack_dir = (mouse_pos - global_position).normalized()
 			angle = attack_dir.angle()
 		
 		Controltype.CONTROLLER:
@@ -239,10 +238,11 @@ func fire_arrow():
 	match control:
 		# Sets attack direction and attack angle for the rotation and direction later
 		Controltype.KEYBOARD:
-			var center = Vector2(get_viewport().size / 2)
-			# get attack dir from mouse pos relative to center of screen
-			dir = (get_viewport().get_mouse_position() - center).normalized()
-			# set arrow direction
+			# Get the player's position in viewport coordinates
+			var mouse_pos = get_viewport().get_camera_2d().get_global_mouse_position()
+      
+			# Get attack direction relative to the player
+			dir = (mouse_pos - global_position).normalized()
 			arrow_instance.rotation = dir.angle()
 			
 		
