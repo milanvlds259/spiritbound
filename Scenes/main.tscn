@@ -1,8 +1,8 @@
-[gd_scene load_steps=17 format=4 uid="uid://7eq4syk4h7lu"]
+[gd_scene load_steps=18 format=4 uid="uid://7eq4syk4h7lu"]
 
 [ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="1_58lbu"]
 [ext_resource type="PackedScene" uid="uid://v7fuklt8nwxj" path="res://Scenes/player.tscn" id="2_m62md"]
-[ext_resource type="PackedScene" uid="uid://dr1r1xj2pim7r" path="res://Enemies/enemy.tscn" id="4_lnfp4"]
+[ext_resource type="PackedScene" uid="uid://dr1r1xj2pim7r" path="res://Scenes/Enemies/enemy.tscn" id="4_lnfp4"]
 [ext_resource type="Texture2D" uid="uid://b8733p18lxm7m" path="res://Assets/Sprites/Tiles/Dungeon_item_props_v2.png" id="5_05g2a"]
 [ext_resource type="Texture2D" uid="uid://bibdiel70ce6n" path="res://Assets/Sprites/Tiles/FDR_Dungeon_Animations.png" id="6_p2r4m"]
 [ext_resource type="AudioStream" uid="uid://c4abcppdikws3" path="res://Assets/Audio/8bitloop_Level_Combat.wav" id="7_44unc"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bf880mqeqp1cr" path="res://Scenes/air_spirit.tscn" id="10_tdvln"]
 [ext_resource type="PackedScene" uid="uid://dqqb7caw840bf" path="res://Scenes/earth_spirit.tscn" id="11_cfs5g"]
 [ext_resource type="PackedScene" uid="uid://b7fgsl5ndk0p5" path="res://Scenes/thunder_spirit.tscn" id="12_tifiv"]
+[ext_resource type="PackedScene" uid="uid://k0whlwy7le1b" path="res://Scenes/Bosses/minotaur.tscn" id="13_svhai"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ew0o1"]
 texture = ExtResource("5_05g2a")
@@ -1209,12 +1210,14 @@ tile_map_data = PackedByteArray("AAAyAP//AAAFAAQAAAAzAP//AAAIAAMAAADu/xoAAAAEAAM
 tile_set = SubResource("TileSet_qd6qe")
 
 [node name="Player" parent="." instance=ExtResource("2_m62md")]
-position = Vector2(578, -26)
+position = Vector2(572, -100)
 knockback_decay = 500.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_44unc")
 autoplay = true
+max_distance = 1e+07
+attenuation = 3.05175e-05
 
 [node name="Enemies" type="Node2D" parent="."]
 z_as_relative = false
@@ -1252,6 +1255,7 @@ position = Vector2(-71, 316)
 marker_end_point = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="Enemies/Enemy4"]
+visible = false
 position = Vector2(215, 165)
 
 [node name="Enemy5" parent="Enemies" node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
@@ -1276,7 +1280,7 @@ marker_end_point = NodePath("Marker2D")
 position = Vector2(-109, -223)
 
 [node name="Enemy8" parent="Enemies" node_paths=PackedStringArray("marker_end_point") instance=ExtResource("4_lnfp4")]
-position = Vector2(700, 631)
+position = Vector2(687, 626)
 marker_end_point = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="Enemies/Enemy8"]
@@ -1294,13 +1298,16 @@ layer = 2
 
 [node name="FireSpirit" parent="." instance=ExtResource("8_g2a0w")]
 z_index = 0
-position = Vector2(-154, -87)
+position = Vector2(-186, -83)
 
 [node name="AirSpirit" parent="." instance=ExtResource("10_tdvln")]
-position = Vector2(7.62939e-06, -87)
+position = Vector2(1276, 90)
 
 [node name="EarthSpirit" parent="." instance=ExtResource("11_cfs5g")]
-position = Vector2(117, -95)
+position = Vector2(837, 871)
 
 [node name="ThunderSpirit" parent="." instance=ExtResource("12_tifiv")]
-position = Vector2(212, -94)
+position = Vector2(124, 882)
+
+[node name="Minotaur" parent="." instance=ExtResource("13_svhai")]
+position = Vector2(-1367, 499)
