@@ -190,7 +190,6 @@ func check_attack() -> void:
 			return
 
 func attack(body) -> void:
-	print(attack_type)
 	if body.is_in_group("player"):
 		if attack_type == "attackcharge":
 			charge()

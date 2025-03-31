@@ -89,7 +89,6 @@ func update_velocity() -> void:
 			var attackable_area = follow_area.get_overlapping_bodies()
 			var filtered = attackable_area.filter(func(b): return b is Player)
 			if filtered.is_empty():
-				print("following")
 				# Finds the target player's position and computes direction to follow
 				if target:
 					var direction = target.global_position - global_position
@@ -117,10 +116,10 @@ func update_velocity() -> void:
 				if !filt_scared.is_empty():
 					check_attack()
 					return
-					var direction = -target.global_position + global_position
-					var new_velocity = direction.normalized() * speed
-					velocity = new_velocity
-					return
+				var direction = -target.global_position + global_position
+				var new_velocity = direction.normalized() * speed
+				velocity = new_velocity
+				return
 			else:
 				current_state = State.FOLLOW
 
