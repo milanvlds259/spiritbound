@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dat7owl2o1282" path="res://Scenes/traps/spike_wave_right_to_left.tscn" id="7_j3te8"]
 [ext_resource type="PackedScene" uid="uid://ddhrmeowk1f5o" path="res://Scenes/traps/spike_wave_bottom_up.tscn" id="8_4gww8"]
 [ext_resource type="PackedScene" uid="uid://cawlsgibekht1" path="res://Scenes/traps/spike_wave_top down.tscn" id="9_6hd5h"]
-[ext_resource type="PackedScene" uid="uid://colewlvdd1y07" path="res://Scenes/props/brazier.tscn" id="12_qkv0h"]
+[ext_resource type="PackedScene" path="res://Scenes/props/brazier.tscn" id="12_qkv0h"]
 [ext_resource type="Script" path="res://Scenes/room scenes/main_next level.gd" id="13_rbg3c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t6fbi"]
@@ -1309,25 +1309,25 @@ tile_set = SubResource("TileSet_eukjh")
 [node name="traps" type="Node2D" parent="."]
 
 [node name="spike wave left to right" parent="traps" instance=ExtResource("6_gv0da")]
-position = Vector2(8, -8)
-
-[node name="spike wave right to left" parent="traps" instance=ExtResource("7_j3te8")]
-position = Vector2(248, -8)
-
-[node name="spike wave left to right2" parent="traps" instance=ExtResource("6_gv0da")]
 position = Vector2(8, -280)
 
-[node name="spike wave right to left2" parent="traps" instance=ExtResource("7_j3te8")]
+[node name="spike wave right to left" parent="traps" instance=ExtResource("7_j3te8")]
+position = Vector2(8, -8)
+
+[node name="spike wave left to right2" parent="traps" instance=ExtResource("6_gv0da")]
 position = Vector2(248, -280)
 
-[node name="spike wave bottom up" parent="traps" instance=ExtResource("8_4gww8")]
-position = Vector2(-40, -72)
+[node name="spike wave right to left2" parent="traps" instance=ExtResource("7_j3te8")]
+position = Vector2(248, -8)
 
-[node name="spike wave top down" parent="traps" instance=ExtResource("9_6hd5h")]
+[node name="spike wave bottom up" parent="traps" instance=ExtResource("8_4gww8")]
 position = Vector2(-40, -200)
 
-[node name="spike wave bottom up2" parent="traps" instance=ExtResource("8_4gww8")]
+[node name="spike wave top down" parent="traps" instance=ExtResource("9_6hd5h")]
 position = Vector2(344, -72)
+
+[node name="spike wave bottom up2" parent="traps" instance=ExtResource("8_4gww8")]
+position = Vector2(-40, -72)
 
 [node name="spike wave top down2" parent="traps" instance=ExtResource("9_6hd5h")]
 position = Vector2(344, -200)

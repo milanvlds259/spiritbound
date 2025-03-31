@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="1_pumca"]
 [ext_resource type="PackedScene" uid="uid://bl3ldbh0gf5en" path="res://Scenes/traps/2x_3_loop.tscn" id="2_tnynj"]
-[ext_resource type="PackedScene" uid="uid://colewlvdd1y07" path="res://Scenes/props/brazier.tscn" id="4_b1q80"]
+[ext_resource type="PackedScene" path="res://Scenes/props/brazier.tscn" id="4_b1q80"]
 [ext_resource type="Script" path="res://Scenes/room scenes/main_next level.gd" id="4_btxvc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_raji6"]

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bvrynxbdcuy8g" path="res://Assets/Sprites/Tiles/Dungeon_Tileset_v2.png" id="3_8u230"]
 [ext_resource type="Texture2D" uid="uid://3qe2rcup43ig" path="res://Assets/Sprites/Tiles/FDR_Dungeon.png" id="4_jubc1"]
 [ext_resource type="Texture2D" uid="uid://bibdiel70ce6n" path="res://Assets/Sprites/Tiles/FDR_Dungeon_Animations.png" id="5_p0u1a"]
-[ext_resource type="PackedScene" uid="uid://colewlvdd1y07" path="res://Scenes/props/brazier.tscn" id="6_04kxv"]
+[ext_resource type="PackedScene" path="res://Scenes/props/brazier.tscn" id="6_04kxv"]
 [ext_resource type="Script" path="res://Scenes/room scenes/main_next level.gd" id="9_xsv1r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q0v70"]

@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bibdiel70ce6n" path="res://Assets/Sprites/Tiles/FDR_Dungeon_Animations.png" id="5_1go11"]
 [ext_resource type="PackedScene" uid="uid://wysg20h8ri63" path="res://Scenes/props/bookshelf.tscn" id="6_vlai0"]
 [ext_resource type="PackedScene" uid="uid://c65iy8ixixoyr" path="res://Scenes/props/empty_bookshelf.tscn" id="7_d54o2"]
-[ext_resource type="PackedScene" uid="uid://colewlvdd1y07" path="res://Scenes/props/brazier.tscn" id="10_c0c8c"]
+[ext_resource type="PackedScene" path="res://Scenes/props/brazier.tscn" id="10_c0c8c"]
 [ext_resource type="PackedScene" uid="uid://ddhrmeowk1f5o" path="res://Scenes/traps/spike_wave_bottom_up.tscn" id="11_xhf7u"]
 [ext_resource type="PackedScene" uid="uid://cawlsgibekht1" path="res://Scenes/traps/spike_wave_top down.tscn" id="12_8vb7l"]
 [ext_resource type="Script" path="res://Scenes/room scenes/main_next level.gd" id="13_hvw6c"]
