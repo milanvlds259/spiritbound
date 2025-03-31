@@ -1,0 +1,192 @@
+[gd_scene load_steps=2 format=3 uid="uid://p8jp1hw7boii"]
+
+[ext_resource type="PackedScene" uid="uid://274xnww4a8dx" path="res://Scenes/traps/spike_trap.tscn" id="1_q0eiq"]
+
+[node name="spike wave top down" type="AnimatedSprite2D"]
+position = Vector2(-24, -56)
+speed_scale = -1.0
+
+[node name="row 1" type="AnimatedSprite2D" parent="."]
+position = Vector2(-16, 0)
+
+[node name="spike trap" parent="row 1" instance=ExtResource("1_q0eiq")]
+position = Vector2(0, -48)
+frame = 5
+speed_scale = -1.0
+
+[node name="spike trap2" parent="row 1" instance=ExtResource("1_q0eiq")]
+position = Vector2(0, -32)
+frame = 4
+speed_scale = -1.0
+
+[node name="spike trap3" parent="row 1" instance=ExtResource("1_q0eiq")]
+position = Vector2(0, -15)
+frame = 3
+speed_scale = -1.0
+
+[node name="spike trap4" parent="row 1" instance=ExtResource("1_q0eiq")]
+frame = 2
+speed_scale = -1.0
+
+[node name="spike trap5" parent="row 1" instance=ExtResource("1_q0eiq")]
+position = Vector2(0, 16)
+frame = 1
+speed_scale = -1.0
+
+[node name="spike trap6" parent="row 1" instance=ExtResource("1_q0eiq")]
+position = Vector2(0, 32)
+speed_scale = -1.0
+
+[node name="row 2" type="AnimatedSprite2D" parent="."]
+
+[node name="spike trap" parent="row 2" instance=ExtResource("1_q0eiq")]
+position = Vector2(0, -48)
+frame = 5
+speed_scale = -1.0
+
+[node name="spike trap2" parent="row 2" instance=ExtResource("1_q0eiq")]
+position = Vector2(0, -32)
+frame = 4
+speed_scale = -1.0
+
+[node name="spike trap3" parent="row 2" instance=ExtResource("1_q0eiq")]
+position = Vector2(0, -16)
+frame = 3
+speed_scale = -1.0
+
+[node name="spike trap4" parent="row 2" instance=ExtResource("1_q0eiq")]
+frame = 2
+speed_scale = -1.0
+
+[node name="spike trap5" parent="row 2" instance=ExtResource("1_q0eiq")]
+position = Vector2(0, 16)
+frame = 1
+speed_scale = -1.0
+
+[node name="spike trap6" parent="row 2" instance=ExtResource("1_q0eiq")]
+position = Vector2(0, 32)
+speed_scale = -1.0
+
+[node name="row 3" type="AnimatedSprite2D" parent="."]
+position = Vector2(16, 0)
+
+[node name="spike trap" parent="row 3" instance=ExtResource("1_q0eiq")]
+position = Vector2(0, -48)
+frame = 5
+speed_scale = -1.0
+
+[node name="spike trap2" parent="row 3" instance=ExtResource("1_q0eiq")]
+position = Vector2(0, -32)
+frame = 4
+speed_scale = -1.0
+
+[node name="spike trap3" parent="row 3" instance=ExtResource("1_q0eiq")]
+position = Vector2(0, -16)
+frame = 3
+speed_scale = -1.0
+
+[node name="spike trap4" parent="row 3" instance=ExtResource("1_q0eiq")]
+frame = 2
+speed_scale = -1.0
+
+[node name="spike trap5" parent="row 3" instance=ExtResource("1_q0eiq")]
+position = Vector2(0, 16)
+frame = 1
+speed_scale = -1.0
+
+[node name="spike trap6" parent="row 3" instance=ExtResource("1_q0eiq")]
+position = Vector2(0, 32)
+speed_scale = -1.0
+
+[node name="row 4" type="AnimatedSprite2D" parent="."]
+position = Vector2(32, 0)
+
+[node name="spike trap" parent="row 4" instance=ExtResource("1_q0eiq")]
+position = Vector2(0, -48)
+frame = 5
+speed_scale = -1.0
+
+[node name="spike trap2" parent="row 4" instance=ExtResource("1_q0eiq")]
+position = Vector2(0, -32)
+frame = 4
+speed_scale = -1.0
+
+[node name="spike trap3" parent="row 4" instance=ExtResource("1_q0eiq")]
+position = Vector2(0, -15)
+frame = 3
+speed_scale = -1.0
+
+[node name="spike trap4" parent="row 4" instance=ExtResource("1_q0eiq")]
+frame = 2
+speed_scale = -1.0
+
+[node name="spike trap5" parent="row 4" instance=ExtResource("1_q0eiq")]
+position = Vector2(0, 16)
+frame = 1
+speed_scale = -1.0
+
+[node name="spike trap6" parent="row 4" instance=ExtResource("1_q0eiq")]
+position = Vector2(0, 32)
+speed_scale = -1.0
+
+[node name="row 5" type="AnimatedSprite2D" parent="."]
+position = Vector2(48, 0)
+
+[node name="spike trap" parent="row 5" instance=ExtResource("1_q0eiq")]
+position = Vector2(0, -48)
+frame = 5
+speed_scale = -1.0
+
+[node name="spike trap2" parent="row 5" instance=ExtResource("1_q0eiq")]
+position = Vector2(0, -32)
+frame = 4
+speed_scale = -1.0
+
+[node name="spike trap3" parent="row 5" instance=ExtResource("1_q0eiq")]
+position = Vector2(0, -16)
+frame = 3
+speed_scale = -1.0
+
+[node name="spike trap4" parent="row 5" instance=ExtResource("1_q0eiq")]
+frame = 2
+speed_scale = -1.0
+
+[node name="spike trap5" parent="row 5" instance=ExtResource("1_q0eiq")]
+position = Vector2(0, 16)
+frame = 1
+speed_scale = -1.0
+
+[node name="spike trap6" parent="row 5" instance=ExtResource("1_q0eiq")]
+position = Vector2(0, 32)
+speed_scale = -1.0
+
+[node name="row 6" type="AnimatedSprite2D" parent="."]
+position = Vector2(64, 0)
+
+[node name="spike trap" parent="row 6" instance=ExtResource("1_q0eiq")]
+position = Vector2(0, -48)
+frame = 5
+speed_scale = -1.0
+
+[node name="spike trap2" parent="row 6" instance=ExtResource("1_q0eiq")]
+position = Vector2(0, -32)
+frame = 4
+speed_scale = -1.0
+
+[node name="spike trap3" parent="row 6" instance=ExtResource("1_q0eiq")]
+position = Vector2(0, -16)
+frame = 3
+speed_scale = -1.0
+
+[node name="spike trap4" parent="row 6" instance=ExtResource("1_q0eiq")]
+frame = 2
+speed_scale = -1.0
+
+[node name="spike trap5" parent="row 6" instance=ExtResource("1_q0eiq")]
+position = Vector2(0, 16)
+frame = 1
+speed_scale = -1.0
+
+[node name="spike trap6" parent="row 6" instance=ExtResource("1_q0eiq")]
+position = Vector2(0, 32)
+speed_scale = -1.0

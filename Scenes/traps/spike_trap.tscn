@@ -47,6 +47,7 @@ height = 18.0
 
 [node name="spike trap" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_da2v3")
+autoplay = "default"
 script = ExtResource("2_hiven")
 
 [node name="Area2D" type="Area2D" parent="."]

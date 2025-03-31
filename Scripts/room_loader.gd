@@ -44,15 +44,13 @@ func load_next_room():
 		current_room = room_scene.instantiate()
 		add_child(current_room)
 		print("Room added to scene tree.")
-		
 		print("Room structure:")
 		current_room.print_tree_pretty()
-
-		call_deferred("_place_player")
+		call_deferred("_place_player_and_spawn_enemies")
 	else:
 		print("Failed to load scene: ", scene_path)
 
-func _place_player():
+func _place_player_and_spawn_enemies():
 	player = get_tree().get_first_node_in_group("player")
 	if player and current_room:
 		var spawn = current_room.get_node_or_null("PlayerSpawn")
@@ -61,6 +59,16 @@ func _place_player():
 			print("Player placed at: ", player.global_position)
 		else:
 			print("PlayerSpawn node not found in current room!")
+
+		print("Looking for enemy_spawner in room children...")
+		for node in current_room.get_children():
+			if node.name == "enemy_spawner":
+				if node.has_method("spawn_enemies"):
+					print("Calling enemy_spawner.spawn_enemies()...")
+					node.call_deferred("spawn_enemies")
+				else:
+					print("enemy_spawner node found but has no 'spawn_enemies' method.")
+				break
 	else:
 		print("ERROR: Player or current room not found!")
 

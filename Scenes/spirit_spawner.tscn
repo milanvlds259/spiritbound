@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://2y0180eaghc4"]
+
+[node name="spirit_spawner" type="Node2D"]
+position = Vector2(-312, 56)
+
+[node name="Spirit_spawner_1" type="Node2D" parent="."]
+position = Vector2(-16, 0)
+
+[node name="Spirit_spawner_2" type="Node2D" parent="."]
+position = Vector2(0, 16)
+
+[node name="Spirit_spawner_3" type="Node2D" parent="."]
+position = Vector2(16, 0)
