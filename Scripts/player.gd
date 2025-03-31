@@ -240,7 +240,7 @@ func fire_arrow():
 		Controltype.KEYBOARD:
 			# Get the player's position in viewport coordinates
 			var mouse_pos = get_viewport().get_camera_2d().get_global_mouse_position()
-      
+	  
 			# Get attack direction relative to the player
 			dir = (mouse_pos - global_position).normalized()
 			arrow_instance.rotation = dir.angle()

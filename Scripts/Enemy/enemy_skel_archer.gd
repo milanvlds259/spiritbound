@@ -12,7 +12,7 @@ class_name EnemySkelArcher extends CharacterBody2D
 #Taking Damage
 @export var damage_label: PackedScene
 @onready var hurt_area: Area2D = $HitBox         # The Area2D used for taking damage
-var hurt_color = Color(1,0.10,0.10)
+var hurt_color = Color(1,0.50,0.50)
 var hurt_duration = 0.1
 var is_invincible: bool = false
 
@@ -70,8 +70,13 @@ func updateAnimations() -> void:
 		sprite.flip_h = true
 
 func update_velocity() -> void:
-	if !check_exists():
+	var bugs = $BugCollider.get_overlapping_bodies()
+	var filt_bugs = bugs.filter(func(b): return b is Player)
+	if filt_bugs.is_empty():
 		return
+	else:
+		target = filt_bugs[0]
+
 	match current_state:
 		State.IDLE:
 			var overlap = follow_area.get_overlapping_bodies()
@@ -112,10 +117,10 @@ func update_velocity() -> void:
 				if !filt_scared.is_empty():
 					check_attack()
 					return
-				var direction = -target.global_position + global_position
-				var new_velocity = direction.normalized() * speed
-				velocity = new_velocity
-				return
+					var direction = -target.global_position + global_position
+					var new_velocity = direction.normalized() * speed
+					velocity = new_velocity
+					return
 			else:
 				current_state = State.FOLLOW
 

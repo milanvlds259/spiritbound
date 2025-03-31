@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bd4unjout48hv"]
+[gd_scene load_steps=54 format=3 uid="uid://bd4unjout48hv"]
 
 [ext_resource type="Texture2D" uid="uid://bommbtf8m22if" path="res://Assets/TinyRPGCharPack/Skeleton Archer/Skeleton Archer(Split Effects)/Skeleton Archer.png" id="1_5ef7e"]
 [ext_resource type="Script" path="res://Scripts/Enemy/enemy_skel_archer.gd" id="1_rsbpa"]
@@ -339,6 +339,10 @@ height = 720.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_apr6o"]
 radius = 120.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pnt34"]
+radius = 600.0
+height = 2000.0
+
 [node name="EnemySkelArcher" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 5
@@ -384,3 +388,9 @@ shape = SubResource("CapsuleShape2D_c8yo7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ScaredRange"]
 shape = SubResource("CircleShape2D_apr6o")
+
+[node name="BugCollider" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BugCollider"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_pnt34")
