@@ -1,10 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://v7fuklt8nwxj"]
+[gd_scene load_steps=13 format=3 uid="uid://v7fuklt8nwxj"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_xlfw7"]
 [ext_resource type="PackedScene" uid="uid://cufgcvrbu5khl" path="res://Scenes/arrow.tscn" id="2_387co"]
 [ext_resource type="SpriteFrames" uid="uid://it7fq2fn8ey3" path="res://Resources/Animations/PlayerAnims.tres" id="2_yr4xh"]
 [ext_resource type="SpriteFrames" uid="uid://d13x0a41bwxgo" path="res://Resources/Animations/AttackEffects.tres" id="3_cy3px"]
 [ext_resource type="PackedScene" uid="uid://pe54mwctw00j" path="res://Scenes/elec_arrow.tscn" id="3_gjm8e"]
+[ext_resource type="Texture2D" uid="uid://deavjxvmuqxsx" path="res://Assets/Sprites/shadow.png" id="4_ap8wn"]
+[ext_resource type="PackedScene" uid="uid://cg16fj8h48ot5" path="res://Scenes/powerup_label.tscn" id="4_cd7ro"]
+[ext_resource type="Texture2D" uid="uid://cmurc64yyroae" path="res://Assets/Sprites/tilemap.png" id="7_0pmo8"]
+[ext_resource type="FontFile" uid="uid://c5y2dv5ufvdgf" path="res://Assets/Fonts/DungeonFont.ttf" id="8_x1yrj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mrugd"]
 size = Vector2(13.5, 9)
@@ -13,25 +17,41 @@ size = Vector2(13.5, 9)
 radius = 7.25
 height = 24.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrcy8"]
+atlas = ExtResource("7_0pmo8")
+region = Rect2(324, 171, 13, 14)
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+position = Vector2(1, 0)
 scale = Vector2(4, 4)
 collision_mask = 5
 script = ExtResource("1_xlfw7")
+speed = 300.0
 arrow = ExtResource("2_387co")
 elec_arrow = ExtResource("3_gjm8e")
 knockback_decay = 1000.0
+powerup_label = ExtResource("4_cd7ro")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.305882)
+position = Vector2(-0.375, 6.5)
+scale = Vector2(0.734375, 0.34375)
+texture = ExtResource("4_ap8wn")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+z_as_relative = false
 position = Vector2(-0.25, 0)
 sprite_frames = ExtResource("2_yr4xh")
-animation = &"idle"
+animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.75, 2.5)
 shape = SubResource("RectangleShape2D_mrugd")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.75, 0.75)
+zoom = Vector2(0.8, 0.8)
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
 
 [node name="AttackEffect01" type="Area2D" parent="." groups=["player_attack"]]
 collision_layer = 4
@@ -42,10 +62,33 @@ z_index = 1
 scale = Vector2(1.01264, 0.889231)
 sprite_frames = ExtResource("3_cy3px")
 animation = &"attack01"
-frame = 5
-frame_progress = 1.0
 
 [node name="AttackHitbox" type="CollisionShape2D" parent="AttackEffect01"]
 position = Vector2(12, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_dbeav")
+
+[node name="ContinuePrompt" type="Node2D" parent="."]
+scale = Vector2(1.5, 1.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="ContinuePrompt"]
+position = Vector2(-15.5, -12.8333)
+scale = Vector2(0.413462, 0.413462)
+texture = SubResource("AtlasTexture_jrcy8")
+
+[node name="Label" type="Label" parent="ContinuePrompt/Sprite2D"]
+anchors_preset = -1
+anchor_top = 0.486
+anchor_bottom = 0.486
+offset_left = 13.907
+offset_top = -17.0831
+offset_right = 332.907
+offset_bottom = 61.9169
+scale = Vector2(0.25, 0.25)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 16
+theme_override_fonts/font = ExtResource("8_x1yrj")
+theme_override_font_sizes/font_size = 78
+text = "Continue"

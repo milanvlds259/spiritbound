@@ -1,15 +1,15 @@
 extends Node2D
 
 const MAP_SCENE_PATHS := {
-	"top_left": "res://Map scenes/top left/",
-	"top_center": "res://Map scenes/top center/",
-	"top_right": "res://Map scenes/top right/",
-	"center_left": "res://Map scenes/center left/",
-	"center_center": "res://Map scenes/center center/",
-	"center_right": "res://Map scenes/center right/",
-	"bottom_left": "res://Map scenes/bottom left/",
-	"bottom_center": "res://Map scenes/bottom center/",
-	"bottom_right": "res://Map scenes/bottom right/"
+	"top_left": "res://Scenes/Map scenes/top left/",
+	"top_center": "res://Scenes/Map scenes/top center/",
+	"top_right": "res://Scenes/Map scenes/top right/",
+	"center_left": "res://Scenes/Map scenes/center left/",
+	"center_center": "res://Scenes/Map scenes/center center/",
+	"center_right": "res://Scenes/Map scenes/center right/",
+	"bottom_left": "res://Scenes/Map scenes/bottom left/",
+	"bottom_center": "res://Scenes/Map scenes/bottom center/",
+	"bottom_right": "res://Scenes/Map scenes/bottom right/"
 }
 
 func _ready():

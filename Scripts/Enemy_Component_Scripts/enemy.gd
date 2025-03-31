@@ -60,7 +60,7 @@ func _physics_process(_delta: float) -> void:
 
 func updateAnimations() -> void:
 	if !attacking:
-		$AnimatedSpriwte2D.play("walk")
+		$AnimatedSprite2D.play("walk")
 	else:
 		$AnimatedSprite2D.play("attack")
 		await get_tree().create_timer(1).timeout

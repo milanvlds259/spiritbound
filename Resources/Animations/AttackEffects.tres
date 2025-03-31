@@ -7,13 +7,13 @@
 atlas = ExtResource("1_610sb")
 region = Rect2(0, 0, 100, 100)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tkvxw"]
-atlas = ExtResource("1_610sb")
-region = Rect2(100, 0, 100, 100)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_u8lvt"]
 atlas = ExtResource("1_610sb")
 region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkvxw"]
+atlas = ExtResource("1_610sb")
+region = Rect2(100, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5kb3a"]
 atlas = ExtResource("1_610sb")
@@ -31,13 +31,13 @@ region = Rect2(500, 0, 100, 100)
 atlas = ExtResource("2_s0mwk")
 region = Rect2(0, 0, 100, 100)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oga0l"]
-atlas = ExtResource("2_s0mwk")
-region = Rect2(100, 0, 100, 100)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ukt3s"]
 atlas = ExtResource("2_s0mwk")
 region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oga0l"]
+atlas = ExtResource("2_s0mwk")
+region = Rect2(100, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oeww0"]
 atlas = ExtResource("2_s0mwk")
@@ -58,10 +58,10 @@ animations = [{
 "texture": SubResource("AtlasTexture_4wnrf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tkvxw")
+"texture": SubResource("AtlasTexture_u8lvt")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u8lvt")
+"texture": SubResource("AtlasTexture_tkvxw")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5kb3a")
@@ -81,10 +81,10 @@ animations = [{
 "texture": SubResource("AtlasTexture_aw1ir")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oga0l")
+"texture": SubResource("AtlasTexture_ukt3s")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ukt3s")
+"texture": SubResource("AtlasTexture_oga0l")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oeww0")
@@ -96,7 +96,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_f6ml0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ukt3s")
+"texture": SubResource("AtlasTexture_oga0l")
 }],
 "loop": false,
 "name": &"attack01fire",

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bn2m5ghwophjs"]
+
+[ext_resource type="Script" path="res://Scripts/damage_label.gd" id="1_khvnn"]
+[ext_resource type="FontFile" uid="uid://c5y2dv5ufvdgf" path="res://Assets/Fonts/DungeonFont.ttf" id="1_s4g0o"]
+
+[node name="DamageLabel" type="Label"]
+offset_left = -10.0
+offset_top = -61.0
+offset_right = 28.0
+offset_bottom = 24.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 13
+theme_override_fonts/font = ExtResource("1_s4g0o")
+theme_override_font_sizes/font_size = 90
+text = "9"
+script = ExtResource("1_khvnn")
