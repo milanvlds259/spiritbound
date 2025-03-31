@@ -300,9 +300,11 @@ height = 644.0
 radius = 83.4865
 
 [node name="EnemyOrc" type="CharacterBody2D"]
+z_index = 1
 collision_layer = 2
 collision_mask = 6
 script = ExtResource("1_o5lep")
+base_damage = 3
 damage_label = ExtResource("2_hf8nf")
 
 [node name="OrcSprite" type="AnimatedSprite2D" parent="."]

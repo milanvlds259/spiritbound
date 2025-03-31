@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="1_dasry"]
 [ext_resource type="Texture2D" uid="uid://3qe2rcup43ig" path="res://Assets/Sprites/Tiles/FDR_Dungeon.png" id="2_hhx4x"]
 [ext_resource type="Script" path="res://Scenes/room scenes/enemy_spawner.gd" id="2_y1hw7"]
-[ext_resource type="PackedScene" path="res://Scenes/props/brazier.tscn" id="3_xu2lo"]
+[ext_resource type="PackedScene" uid="uid://colewlvdd1y07" path="res://Scenes/props/brazier.tscn" id="3_xu2lo"]
 [ext_resource type="PackedScene" uid="uid://wysg20h8ri63" path="res://Scenes/props/bookshelf.tscn" id="4_15kmm"]
 [ext_resource type="PackedScene" uid="uid://c65iy8ixixoyr" path="res://Scenes/props/empty_bookshelf.tscn" id="5_0t6n6"]
 [ext_resource type="Script" path="res://Scenes/room scenes/main_next level.gd" id="7_pkuiv"]

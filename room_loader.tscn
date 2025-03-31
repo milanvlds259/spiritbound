@@ -11,6 +11,8 @@ scale = Vector2(4, 4)
 script = ExtResource("1_mhbm3")
 
 [node name="Player" parent="." instance=ExtResource("2_ltihn")]
+z_index = 2
 scale = Vector2(1, 1)
+max_hp = 50
 
 [node name="PlayerHUD" parent="." instance=ExtResource("3_t4ttr")]

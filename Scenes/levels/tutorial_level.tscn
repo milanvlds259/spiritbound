@@ -1,18 +1,17 @@
-[gd_scene load_steps=24 format=4 uid="uid://ctth5yk3ynadd"]
+[gd_scene load_steps=23 format=4 uid="uid://ctth5yk3ynadd"]
 
 [ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="1_ygkra"]
 [ext_resource type="PackedScene" uid="uid://v7fuklt8nwxj" path="res://Scenes/player.tscn" id="2_tobfr"]
 [ext_resource type="AudioStream" uid="uid://c4abcppdikws3" path="res://Assets/Audio/8bitloop_Level_Combat.wav" id="3_vifju"]
 [ext_resource type="PackedScene" uid="uid://de7br0582ath" path="res://Scenes/player_hud.tscn" id="4_co6kt"]
-[ext_resource type="PackedScene" uid="uid://ctqjr3xpg5cko" path="res://Scenes/Enemies/dummy_enemy.tscn" id="5_mqe60"]
+[ext_resource type="PackedScene" uid="uid://ctqjr3xpg5cko" path="res://Scenes/dummy_enemy.tscn" id="5_mqe60"]
 [ext_resource type="Texture2D" uid="uid://cmurc64yyroae" path="res://Assets/Sprites/tilemap.png" id="6_vklws"]
 [ext_resource type="FontFile" uid="uid://c5y2dv5ufvdgf" path="res://Assets/Fonts/DungeonFont.ttf" id="7_7mebi"]
 [ext_resource type="Texture2D" uid="uid://j1rgj1lmi217" path="res://Assets/Sprites/air_spirit.png" id="8_u6k3q"]
 [ext_resource type="Texture2D" uid="uid://cv2jkub02j7oh" path="res://Assets/Sprites/Spirit_Earth_Animation.png" id="9_vobyk"]
 [ext_resource type="Texture2D" uid="uid://l1ww5jlc34ch" path="res://Assets/Sprites/Spirits.png" id="10_ij447"]
 [ext_resource type="Texture2D" uid="uid://bjwf4ijvw4ol0" path="res://Assets/Sprites/thunder_spirit.png" id="11_38pgf"]
-[ext_resource type="Script" path="res://Scenes/levels/next_level_area.gd" id="12_r71qg"]
-[ext_resource type="PackedScene" uid="uid://nipi6pghh748" path="res://Scenes/Enemies/enemy_skeleton.tscn" id="13_nhv8e"]
+[ext_resource type="Script" path="res://Scripts/next_level_area.gd" id="12_r71qg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aj36y"]
 atlas = ExtResource("6_vklws")
@@ -53,7 +52,7 @@ region = Rect2(0, 0, 16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0qx4r"]
 size = Vector2(109, 83.7549)
 
-[node name="bc1" type="Node2D"]
+[node name="tutorial_level" type="Node2D"]
 
 [node name="FloorLayer" type="TileMapLayer" parent="."]
 scale = Vector2(4, 4)
@@ -77,7 +76,7 @@ autoplay = true
 layer = 2
 
 [node name="Dummy" parent="." instance=ExtResource("5_mqe60")]
-position = Vector2(534, 239)
+position = Vector2(533.25, 214.5)
 
 [node name="Dummy2" parent="." instance=ExtResource("5_mqe60")]
 position = Vector2(540, -736)
@@ -230,11 +229,9 @@ texture = SubResource("AtlasTexture_emvw7")
 
 [node name="NextLevelArea" type="Area2D" parent="."]
 script = ExtResource("12_r71qg")
-next_level = "res://Scenes/main.tscn"
+next_level = "res://room_loader.tscn"
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NextLevelArea" groups=["next_level"]]
 position = Vector2(546.5, -1164.88)
 shape = SubResource("RectangleShape2D_0qx4r")
-
-[node name="EnemySkeleton" parent="." instance=ExtResource("13_nhv8e")]
-position = Vector2(564, -114)
