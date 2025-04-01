@@ -203,11 +203,14 @@ func _on_frame_changed() -> void:
 	elif animation == "attack2":
 		if (current_frame > 4 and current_frame < 7) or (current_frame > 8 and current_frame < 11):
 			$AttackArea/AttackHitbox.disabled = false
-		elif current_frame == 7 and target:
-			var push_dir = (target.global_position - global_position).normalized()
-			var angle = push_dir.angle();
-			$AttackArea.rotation = angle
-			$AttackArea.position = push_dir * 5
+		elif current_frame == 7:
+			var attack_space = attack_range.get_overlapping_bodies()
+			var attack_target = attack_space.filter(func(b): return b is Player)
+			if !attack_target.is_empty():
+				var push_dir = (attack_target[0].global_position - global_position).normalized()
+				var angle = push_dir.angle();
+				$AttackArea.rotation = angle
+				$AttackArea.position = push_dir * 5
 		else:
 			$AttackArea/AttackHitbox.disabled = true
 
