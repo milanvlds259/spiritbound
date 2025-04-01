@@ -668,8 +668,12 @@ animations = [{
 }]
 
 [node name="EnemyWerebear" type="CharacterBody2D"]
+z_index = 1
 script = ExtResource("1_2j1mh")
+health = 25
+base_damage = 3
 damage_label = ExtResource("2_616g8")
+impulse_str = 250.0
 
 [node name="WerebearSprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(4, 4)

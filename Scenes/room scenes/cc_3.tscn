@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bvrynxbdcuy8g" path="res://Assets/Sprites/Tiles/Dungeon_Tileset_v2.png" id="3_rn3cn"]
 [ext_resource type="Texture2D" uid="uid://3qe2rcup43ig" path="res://Assets/Sprites/Tiles/FDR_Dungeon.png" id="4_y8lkt"]
 [ext_resource type="Texture2D" uid="uid://bibdiel70ce6n" path="res://Assets/Sprites/Tiles/FDR_Dungeon_Animations.png" id="5_l5j7j"]
-[ext_resource type="PackedScene" path="res://Scenes/props/brazier.tscn" id="8_edmsd"]
+[ext_resource type="PackedScene" uid="uid://colewlvdd1y07" path="res://Scenes/props/brazier.tscn" id="8_edmsd"]
 [ext_resource type="Script" path="res://Scenes/boss room scenes/spirit_spawner.gd" id="9_fndei"]
 [ext_resource type="Script" path="res://Scenes/room scenes/main_next level.gd" id="9_jed7a"]
 

@@ -16,8 +16,8 @@ func _on_body_entered(body: Node2D):
 	player_in_area = true
 	player_can_transition.emit(true)
 
-	if body.has_node("continue_prompt"):
-		body.get_node("continue_prompt").visible = true
+	if body.has_node("ContinuePrompt"):
+		body.get_node("ContinuePrompt").visible = true
 
 	print("Player entered next level area")
 
@@ -25,8 +25,8 @@ func _on_body_exited(body: Node2D):
 	player_in_area = false
 	player_can_transition.emit(false)
 
-	if body.has_node("continue_prompt"):
-		body.get_node("continue_prompt").visible = false
+	if body.has_node("ContinuePrompt"):
+		body.get_node("ContinuePrompt").visible = false
 
 	print("Player exited next level area")
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://45g25n5ut1md"]
 
-[ext_resource type="Script" path="res://Scripts/Enemy_Component_Scripts/enemy.gd" id="1_u7p6b"]
-[ext_resource type="Texture2D" uid="uid://bvupqsdy3uk3u" path="res://Assets/Sprites/Dungeon_Enemy_v2.png" id="2_o13a0"]
+[ext_resource type="Script" path="res://Scripts/Enemy_Component_Scripts/enemy.gd" id="1_cml4c"]
+[ext_resource type="Texture2D" uid="uid://bvupqsdy3uk3u" path="res://Assets/Sprites/Dungeon_Enemy_v2.png" id="2_enqqj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uv6dy"]
 size = Vector2(20, 22)
@@ -13,13 +13,13 @@ height = 14.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_p5hoi"]
 
 [node name="EnemyFollower" type="CharacterBody2D"]
-script = ExtResource("1_u7p6b")
+script = ExtResource("1_cml4c")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -32)
 scale = Vector2(4, 4)
-texture = ExtResource("2_o13a0")
+texture = ExtResource("2_enqqj")
 region_enabled = true
 region_rect = Rect2(16, 0, 16, 16)
 

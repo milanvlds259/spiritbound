@@ -366,8 +366,12 @@ radius = 40.0
 height = 160.0
 
 [node name="EnemySkeleton" type="CharacterBody2D"]
+z_index = 1
 script = ExtResource("1_6orb4")
+health = 6
+base_damage = 3
 damage_label = ExtResource("2_xt2tp")
+impulse_str = 100.0
 
 [node name="SkellySprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(4, 4)
