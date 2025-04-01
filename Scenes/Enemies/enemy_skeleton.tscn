@@ -352,14 +352,14 @@ animations = [{
 size = Vector2(48, 20)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gqbib"]
-radius = 349.0
-height = 1226.0
+radius = 360.0
+height = 1200.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_muar0"]
 size = Vector2(48, 56)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8lnh7"]
-radius = 98.3107
+radius = 100.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q1mgq"]
 radius = 40.0
@@ -377,6 +377,8 @@ impulse_str = 100.0
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_lis66")
 animation = &"block"
+frame = 2
+frame_progress = 1.0
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(0, 10)

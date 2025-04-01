@@ -254,7 +254,7 @@ animations = [{
 [node name="EnemySprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_dme2r")
-animation = &"attack02"
+animation = &"attack01"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 
