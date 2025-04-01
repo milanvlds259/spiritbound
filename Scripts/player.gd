@@ -3,7 +3,9 @@ class_name Player extends CharacterBody2D
 @export var speed: float = 950.0  # Movement speed in pixels per second
 @export var arrow: PackedScene
 @export var elec_arrow: PackedScene
-@export var arrow_speed: float = 750
+@export var regular_arrow_speed: float = 250
+@export var thunder_arrow_speed: float = 1000
+var arrow_speed: float = 250
 
 enum Controltype{KEYBOARD, CONTROLLER}
 # 0 is Keyboard, # 1 is Controller
@@ -11,8 +13,8 @@ enum Controltype{KEYBOARD, CONTROLLER}
 var control = Controltype.KEYBOARD
 var joystick_vector: Vector2 = Vector2.ZERO
 
-var hp: int = 20
-var max_hp: int = 20
+@export var max_hp: int = 20
+var hp: int
 var is_invincible: bool = false
 
 var stunned:bool = false
@@ -52,6 +54,7 @@ func _on_can_transition(can_transition: bool):
 	$ContinuePrompt.visible = can_transition
 
 func emit_setup_hpbar():
+	hp = max_hp
 	Global.emit_signal("setup_hpbar", hp, max_hp)
 
 
@@ -63,14 +66,25 @@ func _physics_process(_delta):
 	update_animation()
 
 func apply_knockback(impulse: Vector2) -> void:
-	knockback_velocity += impulse
+    # Normalize the impulse vector first to ensure consistent direction
+	var normalized_impulse = impulse.normalized()
+    
+    # Get the current scene scale to compensate
+	var current_scene = get_tree().current_scene
+	var scene_scale_factor = 1.0
+    
+    # If the scene has a scale property, use it to compensate
+	if current_scene and current_scene.scale != Vector2.ONE:
+		scene_scale_factor = (current_scene.scale.x + current_scene.scale.y) / 2
+    
+    # Apply a consistent force with scene scale compensation
+	var adjusted_impulse = normalized_impulse * (knockback_decay / 2) / scene_scale_factor
+    
+    # Apply the final impulse
+	knockback_velocity = adjusted_impulse
 
 func handle_input():
 	var input_direction = Vector2.ZERO
-
-	if Input.is_action_just_pressed("interact"):
-		if $ContinuePrompt.visible:
-			get_tree().change_scene_to_file("res://Scenes/main.tscn")
 
 	# Flip sprtite depending on mouse position
 	match control:
@@ -141,9 +155,9 @@ func add_spirit(type: String) -> void:
 	var powerup_text: String = ""
 
 	if type == "earth":
-		powerup_text = "+20 Max HP!"
-		max_hp += 20        # Increase max health by 20
-		hp += 20            # Heal by 20 so that the new max is accounted for
+		powerup_text = "+25 Max HP!"
+		max_hp += 25        # Increase max health by x
+		hp += 25            # Heal by x so that the new max is accounted for
 		Global.emit_signal("player_hp_changed", hp)
 		Global.emit_signal("setup_hpbar", hp, max_hp)
 	elif type == "fire":
@@ -153,7 +167,7 @@ func add_spirit(type: String) -> void:
 	elif type == "thunder":
 		powerup_text = "Faster Arrows"
 	else:
-		powerup_text = "Unknown Spirit!"
+		powerup_text = "Unknown Effect!"
 
 	if powerup_label:
 		var label_instance = powerup_label.instantiate()
@@ -218,10 +232,10 @@ func fire_arrow():
 	var used_arrow: PackedScene
 	if "thunder" in spirit_inventory:
 		used_arrow = elec_arrow
-		arrow_speed = 2500
+		arrow_speed = thunder_arrow_speed
 	else:
 		used_arrow = arrow
-		arrow_speed = 750
+		arrow_speed = regular_arrow_speed
 
 	if not arrow:
 		push_error("Arrow scene not set")
@@ -229,8 +243,26 @@ func fire_arrow():
 
 	# calculate initial position of arrow
 	var arrow_instance = used_arrow.instantiate()
-	arrow_instance.position = global_position
-	
+
+    # Calculate the correct position and scale for the arrow
+	var current_scene = get_tree().current_scene
+	var scene_scale = current_scene.scale
+	var scale_factor = 1.0
+
+
+	if current_scene.name == "tutorial_level":
+		scale_factor = 4.0
+	elif scene_scale != Vector2.ONE:
+		scale_factor = (scene_scale.x + scene_scale.y) / 2
+	else:
+		scale_factor = 1.0
+	print(scale_factor)
+
+	get_tree().current_scene.add_child(arrow_instance)
+
+	arrow_instance.global_position = global_position
+
+	arrow_instance.scale = Vector2(1, 1) / scene_scale
 	
 	# Different method of firing arrow based on input type
 	var dir = Vector2.ZERO
@@ -256,10 +288,10 @@ func fire_arrow():
 			arrow_instance.rotation = angle
 	# calculate direction of arrow
 
-
-	
-	arrow_instance.velocity = dir * arrow_speed
-	get_tree().current_scene.add_child(arrow_instance)
+	var adjusted_speed = arrow_speed * scale_factor
+	if current_scene.name != "tutorial_level":
+		adjusted_speed = adjusted_speed / 4.0
+	arrow_instance.velocity = dir * adjusted_speed
 
 func take_damage(damage: int):
 	if is_invincible:
