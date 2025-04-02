@@ -22,6 +22,7 @@ atlas = ExtResource("7_0pmo8")
 region = Rect2(324, 171, 13, 14)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+z_index = 1
 position = Vector2(1, 0)
 scale = Vector2(4, 4)
 collision_mask = 5
@@ -34,6 +35,7 @@ powerup_label = ExtResource("4_cd7ro")
 
 [node name="Shadow" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.305882)
+z_index = 1
 position = Vector2(-0.375, 6.5)
 scale = Vector2(0.734375, 0.34375)
 texture = ExtResource("4_ap8wn")
@@ -59,6 +61,7 @@ collision_mask = 4
 
 [node name="AttackEffectSprite" type="AnimatedSprite2D" parent="AttackEffect01"]
 z_index = 1
+z_as_relative = false
 scale = Vector2(1.01264, 0.889231)
 sprite_frames = ExtResource("3_cy3px")
 animation = &"attack01"

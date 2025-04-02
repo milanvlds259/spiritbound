@@ -1,8 +1,8 @@
 class_name EnemySkeleton extends CharacterBody2D
 
 # Speed, Health, Damage
-@export var speed: float = 200
-@export var health: int = 5
+@export var speed: float = 210
+@export var health: int = 8
 @export var base_damage: int = 5
 
 # Animation
@@ -11,7 +11,7 @@ class_name EnemySkeleton extends CharacterBody2D
 #Taking Damage
 @export var damage_label: PackedScene
 @onready var hurt_area: Area2D = $HitBox         # The Area2D used for taking damage
-var hurt_color = Color(1,0.10,0.10)
+var hurt_color = Color(1,0.50,0.50)
 var hurt_duration = 0.1
 var is_invincible: bool = false
 

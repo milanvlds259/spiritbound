@@ -1,32 +1,30 @@
-class_name EnemyWerebear extends CharacterBody2D
+class_name EnemyOrcRider extends CharacterBody2D
 
 # Speed, Health, Damage
-@export var speed: float = 120
-@onready var enraged_speed = speed * 2
-@export var health: int = 30
-@export var base_damage: int = 1
+@export var speed: float = 250
+@export var health: int = 20
+@export var base_damage: int = 2
 
 # Animation
-@onready var sprite: AnimatedSprite2D = $WerebearSprite
+@onready var sprite: AnimatedSprite2D = $OrcRiderSprite
 
 #Taking Damage
 @export var damage_label: PackedScene
 @onready var hurt_area: Area2D = $HitBox         # The Area2D used for taking damage
-var hurt_color = Color(1,0.40,0.40)
+var hurt_color = Color(1,0.10,0.10)
 var hurt_duration = 0.1
 var is_invincible: bool = false
 
 # Attacking
 @onready var is_attacking = false
 @onready var attack_range: Area2D = $AttackRange   # The Area2D for checking if player is in range
-var attack_type = "attack1"
+var attack_type = "attackdown"
 @export var impulse_str: float = 200
-@onready var stompable = true
 
 # Movement/AI 
 var target : Player
 @onready var follow_area: Area2D = $Vision      # Area2D used for vision
-enum State{IDLE, FOLLOW, HURT, ATTACK, DEATH, STOMP}
+enum State{IDLE, FOLLOW, HURT, ATTACK, DEATH, BLOCK, CHARGE}
 var current_state: State = State.IDLE
 
 # Start/End Position
@@ -36,7 +34,8 @@ var end_position: Vector2
 func _ready() -> void:
 	sprite.frame_changed.connect(_on_frame_changed)
 	sprite.animation_finished.connect(_on_sprite_animation_finished)
-	$AttackArea/AttackHitbox.disabled = true
+	$AttackArea1/AttackHitbox.disabled = true
+	$AttackArea2/AttackHitbox2.disabled = true
 	# Connect the hurt area's signal for collision detection.
 	if hurt_area:
 		hurt_area.area_entered.connect(_on_hurt_area_entered)
@@ -45,13 +44,9 @@ func _ready() -> void:
 
 	# Connect enemy hitbox to hit player
 	$HitBox.body_entered.connect(_on_hitbox_body_entered)
-	$AttackArea.body_entered.connect(_on_attack_area_body_entered)
-	$StompZone/StompHitbox.disabled = true
-	
-	# Connect stomp hitbox to stomp player
-	$StompZone/StompEffect.frame_changed.connect(_on_stomp_frame_changed)
-	$StompZone.body_entered.connect(_on_stomp_hitbox_body_entered)
-	
+	$AttackArea1.body_entered.connect(_on_attack_area_body_entered)
+	$AttackArea2.body_entered.connect(_on_attack_area2_body_entered)
+
 func _process(_delta: float) -> void:
 	updateAnimations()
 
@@ -62,13 +57,16 @@ func _physics_process(_delta: float) -> void:
 func updateAnimations() -> void:
 	match current_state:
 		State.IDLE:
+			modulate = Color(1,1,1,1)
 			sprite.play("idle")
 		State.ATTACK:
 			sprite.play(attack_type)
 		State.FOLLOW:
+			modulate = Color(1,1,1,1)
 			sprite.play("walk")
-		State.STOMP:
-			sprite.play("stomp")
+		State.CHARGE:
+			sprite.play("attackcharge")
+			$AttackArea2/AnimatedSprite2D.play("attackeffect02")
 
 	if velocity.x > 0:
 		sprite.flip_h = false
@@ -76,6 +74,8 @@ func updateAnimations() -> void:
 		sprite.flip_h = true
 
 func update_velocity() -> void:
+	if !check_exists():
+		return
 	match current_state:
 		State.IDLE:
 			var overlap = follow_area.get_overlapping_bodies()
@@ -101,8 +101,23 @@ func update_velocity() -> void:
 			velocity = Vector2.ZERO
 		State.ATTACK:
 			velocity = Vector2.ZERO
-		State.STOMP:
-			velocity = Vector2.ZERO
+		
+		State.CHARGE:
+			var overlap = follow_area.get_overlapping_bodies()
+			var filtered = overlap.filter(func(b): return b is Player)
+			if filtered.is_empty():
+				current_state = State.IDLE
+				return
+			var direction = target.global_position - global_position
+			var new_velocity = direction.normalized() * speed
+			velocity = new_velocity
+			
+		
+		State.BLOCK:
+			#If the skeleton is already following player, it will continue, otherwise it will not change velocity
+			if target:
+				var direction = target.global_position - global_position
+				var new_velocity = direction.normalized() * speed
 
 func follow_body(body) -> void:
 	target = body
@@ -110,48 +125,54 @@ func follow_body(body) -> void:
 
 func _on_hurt_area_entered(area: Area2D) -> void:
 	# Check if the area is the player's attack hitbox (temporary)
-	if !is_invincible:
-		if area.is_in_group("player_attack"):
-			damage_taken(2)
-		elif area.is_in_group("arrows"):
-			damage_taken(1)
-			area.queue_free()
+	if area.is_in_group("player_attack"):
+		if is_invincible:
+			return
+		damage_taken(4)
+	elif area.is_in_group("arrows"):
+		block_damage()
+		area.queue_free()
 
 func _on_hitbox_body_entered(body: Node) -> void:
+	
 	if body.is_in_group("player"):
 		var push_dir = (body.global_position - global_position).normalized()
 		body.apply_knockback(push_dir * impulse_str)
+
+func block_damage() -> void:
+	current_state = State.BLOCK
+	sprite.play("block")
+	var damage_label_instance = damage_label.instantiate()
+	damage_label_instance.text = str("blocked")
+	add_child(damage_label_instance)
+
+func check_exists() -> bool:
+	var check = get_tree().get_nodes_in_group("player")
+	if check.size() > 0:
+		return true
+	return false
 
 func damage_taken(damage: int) -> void:
 	is_invincible = true
 	modulate = hurt_color
 	var damage_label_instance = damage_label.instantiate()
-	match current_state:
-		State.IDLE:
-			current_state = State.HURT
-			sprite.play("hurt")
-			damage *= 3
-
-		State.FOLLOW:
-			current_state = State.HURT
-			sprite.play("hurt")
-			damage *= 2
-
-
 	damage_label_instance.text = str(damage)
 	add_child(damage_label_instance)
 	health -= damage
-	if health <= 10:
-		attack_type = "attack2"
-		stompable = false
-		speed = enraged_speed
 	if health <= 0:
 		died()
+		return
+	if health <= 5:
+		attack_type = "attackcharge"
+	current_state = State.HURT
+	sprite.play("hurt")
+
+func charge() -> void:
+	current_state = State.CHARGE
+
 
 func died() -> void:
 	current_state = State.DEATH
-	$StompZone/StompEffect.stop()
-	$AttackArea/AttackEffect.stop()
 	disable()
 	sprite.play("death")
 
@@ -163,63 +184,50 @@ func check_attack() -> void:
 	var attack_space = attack_range.get_overlapping_bodies()
 	var attack_target = attack_space.filter(func(b): return b is Player)
 	if !attack_target.is_empty():
-		if stompable:
-			current_state = State.STOMP
-			stompable = false
-			stomp()
-
-		elif !is_attacking:
+		if !is_attacking:
 			is_attacking = true
 			attack(attack_target[0])
-			current_state = State.ATTACK
 			return
-
-
-func stomp() -> void:
-	$StompZone/StompEffect.play("stompeffect")
-
 
 func attack(body) -> void:
 	if body.is_in_group("player"):
-		current_state = State.ATTACK
-		var push_dir = (body.global_position - global_position).normalized()
-		var angle = push_dir.angle();
-		$AttackArea.rotation = angle
-		$AttackArea.position = push_dir * 5
-		if attack_type == "attack1":
-			$AttackArea/AttackEffect.play("attackeffect01")
+		if attack_type == "attackcharge":
+			charge()
 		else:
-			$AttackArea/AttackEffect.play("attackeffect02")
-
+			var push_dir = (body.global_position - global_position).normalized()
+			var angle = push_dir.angle();
+			$AttackArea1.rotation = angle
+		
+		
+		
+			current_state = State.ATTACK
+			if angle > 0:
+				attack_type = "attackdown"
+				$AttackArea1/AnimatedSprite2D.play("attackeffectboar")
+			else: 
+				attack_type = "attackup"
+				$AttackArea1/AnimatedSprite2D.play("attackeffectup")
+			if sprite.flip_h:
+			
+				$AttackArea1/AnimatedSprite2D.flip_h = true
+				$AttackArea1/AnimatedSprite2D.rotation = PI
+			else:
+				$AttackArea1/AnimatedSprite2D.flip_h = false
+				$AttackArea1/AnimatedSprite2D.rotation = 0
 
 func _on_frame_changed() -> void:
 	var current_frame = sprite.frame
 	var animation = sprite.animation
-	if animation == "attack1":
-		if current_frame > 4 and current_frame < 8:
-			$AttackArea/AttackHitbox.disabled = false
+	if animation == "attackdown" or animation == "attackup":
+		if current_frame > 2 and current_frame < 5:
+			$AttackArea1/AttackHitbox.disabled = false
 		else:
-			$AttackArea/AttackHitbox.disabled = true
-	elif animation == "attack2":
-		if (current_frame > 4 and current_frame < 7) or (current_frame > 8 and current_frame < 11):
-			$AttackArea/AttackHitbox.disabled = false
-		elif current_frame == 7:
-			var attack_space = attack_range.get_overlapping_bodies()
-			var attack_target = attack_space.filter(func(b): return b is Player)
-			if !attack_target.is_empty():
-				var push_dir = (attack_target[0].global_position - global_position).normalized()
-				var angle = push_dir.angle();
-				$AttackArea.rotation = angle
-				$AttackArea.position = push_dir * 5
+			$AttackArea1/AttackHitbox.disabled = true
+	elif animation == "attackcharge":
+		if current_frame > 3 and current_frame < 10:
+			$AttackArea2/AttackHitbox2.disabled = false
 		else:
-			$AttackArea/AttackHitbox.disabled = true
-
-func _on_stomp_frame_changed() -> void:
-	var current_frame = $StompZone/StompEffect.frame
-	if current_frame > 4 and current_frame < 8:
-		$StompZone/StompHitbox.disabled = false
-	else:
-		$StompZone/StompHitbox.disabled = true
+			$AttackArea2/AttackHitbox2.disabled = true
 
 func _on_sprite_animation_finished() -> void:
 	is_invincible = false
@@ -227,32 +235,29 @@ func _on_sprite_animation_finished() -> void:
 	if sprite.animation == "hurt":
 		current_state = State.IDLE
 		is_attacking = false
-		stompable = true
 
 	elif sprite.animation == "death":
 		queue_free()
 		is_attacking = false
 
-	elif sprite.animation == "stomp" :
+	elif sprite.animation == "attackdown" or sprite.animation == "attackup":
 		current_state = State.IDLE
 		is_attacking = false
-
-	elif sprite.animation == "attack1":
+	
+	elif sprite.animation == "raiseshield" or sprite.animation == "block":
 		current_state = State.IDLE
 		is_attacking = false
-		stompable = true
-
-	elif sprite.animation == "attack2":
-		current_state = State.IDLE
+	
+	elif sprite.animation == "charge":
 		is_attacking = false
+		current_state = State.IDLE
 
 func _on_attack_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		body.apply_knockback(body.position-global_position)
 		body.take_damage(base_damage)
 
-func _on_stomp_hitbox_body_entered(body: Node2D) -> void:
+func _on_attack_area2_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		body.stun(0.5)
-		body.apply_knockback(-body.position + global_position)
-		body.take_damage(base_damage)
+		body.apply_knockback(body.position-global_position)
+		body.take_damage(2 * base_damage)

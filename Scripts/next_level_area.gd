@@ -1,4 +1,4 @@
-extends Area2D
+class_name NextLevelArea extends Area2D
 
 signal player_can_transition(can_transition: bool)
 

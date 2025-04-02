@@ -420,8 +420,8 @@ animations = [{
 size = Vector2(43, 24)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lcc8a"]
-radius = 274.0
-height = 940.0
+radius = 340.0
+height = 1200.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jk2ae"]
 size = Vector2(48, 56)
@@ -594,7 +594,7 @@ animations = [{
 radius = 100.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f8aul"]
-radius = 150.0
+radius = 200.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_15xeb"]
 atlas = ExtResource("5_fi4ex")
@@ -668,8 +668,12 @@ animations = [{
 }]
 
 [node name="EnemyWerebear" type="CharacterBody2D"]
+z_index = 1
 script = ExtResource("1_2j1mh")
+health = 25
+base_damage = 3
 damage_label = ExtResource("2_616g8")
+impulse_str = 250.0
 
 [node name="WerebearSprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(4, 4)
@@ -718,8 +722,8 @@ shape = SubResource("CircleShape2D_pnmao")
 shape = SubResource("CircleShape2D_f8aul")
 
 [node name="StompEffect" type="AnimatedSprite2D" parent="StompZone"]
-position = Vector2(-24, 0)
-scale = Vector2(5, 5)
+position = Vector2(-32, 0)
+scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_h1xgn")
 animation = &"stompeffect"
 frame = 8

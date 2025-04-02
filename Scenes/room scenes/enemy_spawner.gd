@@ -1,7 +1,7 @@
 extends TileMapLayer
 
 const ENEMY_FOLDER := "res://Scenes/Enemies/"
-@export var base_enemies := 2
+@export var base_enemies := 4
 @export var enemy_scale_factor := 0.5
 
 var enemy_scenes: Array = []
@@ -87,7 +87,16 @@ func spawn_random_enemy(pos: Vector2):
 	print("[Spawner] Spawned enemy at position: %s with scale: %s" % [str(pos), str(enemy.scale)])
 
 func _on_enemy_died():
+
+	# Check if the tree still exists before proceeding
+	if not is_instance_valid(get_tree()):
+		return
+
 	await get_tree().process_frame
+
+	# Check again after waiting for process_frame
+	if not is_instance_valid(get_tree()) or spawned_enemies == null:
+		return
 
 	spawned_enemies = spawned_enemies.filter(func(e):
 		return e != null and e.is_inside_tree()
