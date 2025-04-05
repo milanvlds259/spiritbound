@@ -66,21 +66,21 @@ func _physics_process(_delta):
 	update_animation()
 
 func apply_knockback(impulse: Vector2) -> void:
-    # Normalize the impulse vector first to ensure consistent direction
+	# Normalize the impulse vector first to ensure consistent direction
 	var normalized_impulse = impulse.normalized()
-    
-    # Get the current scene scale to compensate
+	
+	# Get the current scene scale to compensate
 	var current_scene = get_tree().current_scene
 	var scene_scale_factor = 1.0
-    
-    # If the scene has a scale property, use it to compensate
+	
+	# If the scene has a scale property, use it to compensate
 	if current_scene and current_scene.scale != Vector2.ONE:
 		scene_scale_factor = (current_scene.scale.x + current_scene.scale.y) / 2
-    
-    # Apply a consistent force with scene scale compensation
+	
+	# Apply a consistent force with scene scale compensation
 	var adjusted_impulse = normalized_impulse * (knockback_decay / 2) / scene_scale_factor
-    
-    # Apply the final impulse
+	
+	# Apply the final impulse
 	knockback_velocity = adjusted_impulse
 
 func handle_input():
@@ -244,7 +244,7 @@ func fire_arrow():
 	# calculate initial position of arrow
 	var arrow_instance = used_arrow.instantiate()
 
-    # Calculate the correct position and scale for the arrow
+	# Calculate the correct position and scale for the arrow
 	var current_scene = get_tree().current_scene
 	var scene_scale = current_scene.scale
 	var scale_factor = 1.0
