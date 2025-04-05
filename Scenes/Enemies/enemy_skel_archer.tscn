@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bommbtf8m22if" path="res://Assets/TinyRPGCharPack/Skeleton Archer/Skeleton Archer(Split Effects)/Skeleton Archer.png" id="1_5ef7e"]
 [ext_resource type="Script" path="res://Scripts/Enemy/enemy_skel_archer.gd" id="1_rsbpa"]
-[ext_resource type="PackedScene" uid="uid://cn5hvacow2vb6" path="res://Scenes/Enemies/enemy_skeleton_arrow.tscn" id="2_7vmnr"]
+[ext_resource type="PackedScene" uid="uid://cn5hvacow2vb6" path="res://Scenes/EnemyParts/enemy_skeleton_arrow.tscn" id="2_7vmnr"]
 [ext_resource type="PackedScene" uid="uid://bn2m5ghwophjs" path="res://Scenes/damage_label.tscn" id="3_qcol6"]
 [ext_resource type="Texture2D" uid="uid://cls6sv06rbv4t" path="res://Assets/TinyRPGCharPack/Skeleton Archer/Skeleton Archer(Split Effects)/Skeleton Archer-Attack_Effect.png" id="5_krq2p"]
 

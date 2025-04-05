@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://bja406cwxrdgc"]
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://bja406cwxrdgc"]
 
 [ext_resource type="Texture2D" uid="uid://bvrynxbdcuy8g" path="res://Assets/Sprites/Tiles/Dungeon_Tileset_v2.png" id="1_fhiak"]
 
@@ -27,6 +27,12 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8
 agent_radius = 0.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_g72ff"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_t7wng"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
@@ -167,6 +173,7 @@ texture = ExtResource("1_fhiak")
 5:6/0 = 0
 5:6/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_oqsxb")
 6:6/0 = 0
+6:6/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_t7wng")
 7:6/0 = 0
 7:6/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_g72ff")
 8:6/0 = 0

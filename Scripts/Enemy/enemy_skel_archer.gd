@@ -186,7 +186,27 @@ func attack(body) -> void:
 		arrow_instance.rotation = dir.angle()
 		arrow_instance.velocity = dir*arrow_speed
 		arrow_instance.damage = base_damage
+			# Calculate the correct position and scale for the arrow
+		var current_scene = get_tree().current_scene
+		var scene_scale = current_scene.scale
+		var scale_factor = 1.0
+
+
+		if current_scene.name == "tutorial_level":
+			scale_factor = 4.0
+		elif scene_scale != Vector2.ONE:
+			scale_factor = (scene_scale.x + scene_scale.y) / 2
+			arrow_instance.velocity = dir * arrow_speed/4
+		else:
+			scale_factor = 1.0
+		print(scale_factor)
+
 		get_tree().current_scene.add_child(arrow_instance)
+
+		arrow_instance.global_position = global_position
+
+		arrow_instance.scale = Vector2(1, 1) / scene_scale
+
 		current_state = State.ATTACK
 		if dir[0] < 0:
 			sprite.flip_h = true
