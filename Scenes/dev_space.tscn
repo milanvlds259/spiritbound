@@ -1,0 +1,46 @@
+[gd_scene load_steps=10 format=3 uid="uid://cj27j6f6ylydi"]
+
+[ext_resource type="PackedScene" uid="uid://v7fuklt8nwxj" path="res://Scenes/player.tscn" id="2_t76tv"]
+[ext_resource type="PackedScene" uid="uid://de7br0582ath" path="res://Scenes/player_hud.tscn" id="3_iklah"]
+[ext_resource type="PackedScene" uid="uid://bd4unjout48hv" path="res://Scenes/Enemies/enemy_skel_archer.tscn" id="4_0bd55"]
+[ext_resource type="PackedScene" uid="uid://c5bwvk7fq2qyh" path="res://Scenes/Enemies/enemy_slime.tscn" id="4_7g3ph"]
+[ext_resource type="PackedScene" uid="uid://b33xjbsmr7q3y" path="res://Scenes/room scenes/br_1.tscn" id="4_kbhvw"]
+[ext_resource type="PackedScene" uid="uid://c7eubxy7iku7k" path="res://Scenes/Enemies/enemy_orc_rider.tscn" id="5_p6svd"]
+[ext_resource type="PackedScene" uid="uid://nipi6pghh748" path="res://Scenes/Enemies/enemy_skeleton.tscn" id="6_uu1ss"]
+[ext_resource type="PackedScene" uid="uid://dy2kqmt4m2af" path="res://Scenes/Enemies/enemy_werebear.tscn" id="8_wum1i"]
+[ext_resource type="PackedScene" uid="uid://41nrlojl56y8" path="res://Scenes/Enemies/enemy_werewolf.tscn" id="9_5srow"]
+
+[node name="DevSpace" type="Node2D"]
+scale = Vector2(4, 4)
+
+[node name="br1" parent="." instance=ExtResource("4_kbhvw")]
+
+[node name="Player" parent="." instance=ExtResource("2_t76tv")]
+position = Vector2(595.25, 166.25)
+scale = Vector2(1, 1)
+
+[node name="PlayerHUD" parent="." instance=ExtResource("3_iklah")]
+
+[node name="EnemySlime" parent="." instance=ExtResource("4_7g3ph")]
+position = Vector2(541.5, 273.75)
+scale = Vector2(0.25, 0.25)
+
+[node name="EnemyOrcRider" parent="." instance=ExtResource("5_p6svd")]
+position = Vector2(465, 242)
+scale = Vector2(0.25, 0.25)
+
+[node name="EnemySkeleton" parent="." instance=ExtResource("6_uu1ss")]
+position = Vector2(683.25, 238.75)
+scale = Vector2(0.25, 0.25)
+
+[node name="EnemySkelArcher" parent="." instance=ExtResource("4_0bd55")]
+position = Vector2(488, 113)
+scale = Vector2(0.25, 0.25)
+
+[node name="EnemyWerebear" parent="." instance=ExtResource("8_wum1i")]
+position = Vector2(653.75, 106.5)
+scale = Vector2(0.25, 0.25)
+
+[node name="EnemyWerewolf" parent="." instance=ExtResource("9_5srow")]
+position = Vector2(795, 102)
+scale = Vector2(0.25, 0.25)

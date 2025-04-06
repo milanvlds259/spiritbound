@@ -1,0 +1,221 @@
+[gd_scene load_steps=8 format=3 uid="uid://duexqplif2tvu"]
+
+[ext_resource type="Script" path="res://Scripts/settings.gd" id="1_tg0f4"]
+[ext_resource type="Texture2D" uid="uid://boghl7hhgvs62" path="res://Assets/Sprites/Dungeon_brick_wall_purple.png.png" id="1_yexwk"]
+[ext_resource type="FontFile" uid="uid://c5y2dv5ufvdgf" path="res://Assets/Fonts/DungeonFont.ttf" id="2_itaxm"]
+[ext_resource type="Texture2D" uid="uid://d271g6sx3mnus" path="res://Assets/Sprites/FreeButtons.png" id="3_0tpwl"]
+[ext_resource type="AudioStream" uid="uid://bgp6bvtjvfwa7" path="res://Assets/Audio/SLOWER2019-01-02_-_8_Bit_Menu_-_David_Renda_-_FesliyanStudios.com.mp3" id="4_10fhc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7p6d"]
+atlas = ExtResource("3_0tpwl")
+region = Rect2(33, 1, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_agvjn"]
+texture = SubResource("AtlasTexture_n7p6d")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[node name="Settings" type="Node2D"]
+script = ExtResource("1_tg0f4")
+
+[node name="BG" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.2)
+position = Vector2(640, 360)
+texture = ExtResource("1_yexwk")
+
+[node name="TITLE" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_right = 1280.0
+offset_bottom = 180.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.854833, 0.33, 1)
+theme_override_colors/font_shadow_color = Color(0.11, 0, 0.0825, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 25
+theme_override_fonts/font = ExtResource("2_itaxm")
+theme_override_font_sizes/font_size = 120
+text = "Spiritbound !"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 540.0
+offset_top = 632.0
+offset_right = 590.0
+offset_bottom = 647.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(4, 4)
+theme_override_styles/normal = SubResource("StyleBoxTexture_agvjn")
+
+[node name="CloseText" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 540.0
+offset_top = 632.0
+offset_right = 940.0
+offset_bottom = 752.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(1, 0.854902, 0.329412, 1)
+theme_override_colors/font_shadow_color = Color(0.109804, 0.0313726, 0.0588235, 1)
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/font = ExtResource("2_itaxm")
+theme_override_font_sizes/font_size = 66
+text = "Save and Exit
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChangeModeButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 660.0
+offset_top = 250.0
+offset_right = 710.0
+offset_bottom = 265.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(4, 4)
+theme_override_styles/normal = SubResource("StyleBoxTexture_agvjn")
+
+[node name="ChangeModeText" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 370.0
+offset_top = 250.0
+offset_right = 870.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(1, 0.854902, 0.329412, 1)
+theme_override_colors/font_shadow_color = Color(0.109804, 0.0313726, 0.0588235, 1)
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/font = ExtResource("2_itaxm")
+theme_override_font_sizes/font_size = 66
+text = "Change Difficulty:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="DifficultyText" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 660.0
+offset_top = 250.0
+offset_right = 1060.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(1, 0.854902, 0.329412, 1)
+theme_override_colors/font_shadow_color = Color(0.109804, 0.0313726, 0.0588235, 1)
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/font = ExtResource("2_itaxm")
+theme_override_font_sizes/font_size = 66
+text = "Easy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChangeControlButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 660.0
+offset_top = 340.0
+offset_right = 710.0
+offset_bottom = 355.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(4, 4)
+theme_override_styles/normal = SubResource("StyleBoxTexture_agvjn")
+
+[node name="ChangeControlText" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 370.0
+offset_top = 340.0
+offset_right = 870.0
+offset_bottom = 440.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(1, 0.854902, 0.329412, 1)
+theme_override_colors/font_shadow_color = Color(0.109804, 0.0313726, 0.0588235, 1)
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/font = ExtResource("2_itaxm")
+theme_override_font_sizes/font_size = 66
+text = "Change Controls:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ControlTypeText" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 660.0
+offset_top = 340.0
+offset_right = 1060.0
+offset_bottom = 440.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(1, 0.854902, 0.329412, 1)
+theme_override_colors/font_shadow_color = Color(0.109804, 0.0313726, 0.0588235, 1)
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/font = ExtResource("2_itaxm")
+theme_override_font_sizes/font_size = 66
+text = "Keyboard"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AuthorText" type="Label" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 609.0
+offset_top = 133.0
+offset_right = 924.0
+offset_bottom = 166.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.854833, 0.33, 1)
+theme_override_colors/font_shadow_color = Color(0.07, 0, 0.0525, 1)
+theme_override_constants/shadow_outline_size = 7
+theme_override_fonts/font = ExtResource("2_itaxm")
+theme_override_font_sizes/font_size = 32
+text = "a game by The Eight Team"
+vertical_alignment = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_10fhc")
+autoplay = true

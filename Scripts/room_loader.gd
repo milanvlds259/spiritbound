@@ -1,14 +1,17 @@
 extends Node2D
 
+# File paths for the rooms and the boss rooms
 const ROOM_SCENE_FOLDER := "res://Scenes/room scenes/"
 const BOSS_ROOM_SCENE_FOLDER := "res://Scenes/boss room scenes/"
 
+# Room Management
 var room_count := 0
 var current_room: Node = null
 
 var used_rooms: Array = []
 var used_boss_rooms: Array = []
 
+# Player defined
 @onready var player = get_tree().get_first_node_in_group("player")
 
 func _ready():
