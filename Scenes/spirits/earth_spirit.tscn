@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dqqb7caw840bf"]
 
 [ext_resource type="Script" path="res://Scripts/earth_spirit.gd" id="1_gs4c8"]
-[ext_resource type="Texture2D" uid="uid://cv2jkub02j7oh" path="res://Assets/Sprites/Spirit_Earth_Animation.png" id="2_jmfmi"]
+[ext_resource type="Texture2D" uid="uid://cv2jkub02j7oh" path="res://Assets/Sprites/Spirits/Spirit_Earth_Animation.png" id="2_jmfmi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qetdj"]
 atlas = ExtResource("2_jmfmi")

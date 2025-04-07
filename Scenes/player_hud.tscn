@@ -1,10 +1,10 @@
 [gd_scene load_steps=16 format=3 uid="uid://de7br0582ath"]
 
-[ext_resource type="Texture2D" uid="uid://l1ww5jlc34ch" path="res://Assets/Sprites/Spirits.png" id="1_51208"]
+[ext_resource type="Texture2D" uid="uid://l1ww5jlc34ch" path="res://Assets/Sprites/Spirits/Spirits.png" id="1_51208"]
 [ext_resource type="Script" path="res://Scripts/HUDManager.gd" id="1_pvo2x"]
-[ext_resource type="Texture2D" uid="uid://j1rgj1lmi217" path="res://Assets/Sprites/air_spirit.png" id="3_kwkag"]
-[ext_resource type="Texture2D" uid="uid://cv2jkub02j7oh" path="res://Assets/Sprites/Spirit_Earth_Animation.png" id="4_gp8ph"]
-[ext_resource type="Texture2D" uid="uid://bjwf4ijvw4ol0" path="res://Assets/Sprites/thunder_spirit.png" id="5_oy2l1"]
+[ext_resource type="Texture2D" uid="uid://j1rgj1lmi217" path="res://Assets/Sprites/Spirits/air_spirit.png" id="3_kwkag"]
+[ext_resource type="Texture2D" uid="uid://cv2jkub02j7oh" path="res://Assets/Sprites/Spirits/Spirit_Earth_Animation.png" id="4_gp8ph"]
+[ext_resource type="Texture2D" uid="uid://bjwf4ijvw4ol0" path="res://Assets/Sprites/Spirits/thunder_spirit.png" id="5_oy2l1"]
 [ext_resource type="FontFile" uid="uid://c5y2dv5ufvdgf" path="res://Assets/Fonts/DungeonFont.ttf" id="6_28xsp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_14212"]
@@ -123,9 +123,8 @@ theme = SubResource("Theme_0qe3m")
 theme_override_styles/panel = SubResource("StyleBoxFlat_ma53j")
 
 [node name="Sprite" type="Sprite2D" parent="SpiritInventory/Panel1"]
-visible = false
 position = Vector2(32, 32)
-scale = Vector2(3.625, 3.625)
+scale = Vector2(3.5, 3.5)
 texture = SubResource("AtlasTexture_2kfx1")
 
 [node name="Panel2" type="Panel" parent="SpiritInventory"]
@@ -135,9 +134,8 @@ theme = SubResource("Theme_0qe3m")
 theme_override_styles/panel = SubResource("StyleBoxFlat_ma53j")
 
 [node name="Sprite" type="Sprite2D" parent="SpiritInventory/Panel2"]
-visible = false
 position = Vector2(32, 32)
-scale = Vector2(3.625, 3.625)
+scale = Vector2(3.5, 3.5)
 texture = SubResource("AtlasTexture_2kfx1")
 
 [node name="Panel3" type="Panel" parent="SpiritInventory"]
@@ -147,9 +145,8 @@ theme = SubResource("Theme_0qe3m")
 theme_override_styles/panel = SubResource("StyleBoxFlat_ma53j")
 
 [node name="Sprite" type="Sprite2D" parent="SpiritInventory/Panel3"]
-visible = false
 position = Vector2(32, 32)
-scale = Vector2(3.625, 3.625)
+scale = Vector2(3.5, 3.5)
 texture = SubResource("AtlasTexture_2kfx1")
 
 [node name="Panel4" type="Panel" parent="SpiritInventory"]
@@ -159,9 +156,8 @@ theme = SubResource("Theme_0qe3m")
 theme_override_styles/panel = SubResource("StyleBoxFlat_ma53j")
 
 [node name="Sprite" type="Sprite2D" parent="SpiritInventory/Panel4"]
-visible = false
 position = Vector2(32, 32)
-scale = Vector2(3.625, 3.625)
+scale = Vector2(3.5, 3.5)
 texture = SubResource("AtlasTexture_2kfx1")
 
 [node name="Panel5" type="Panel" parent="SpiritInventory"]
@@ -171,9 +167,8 @@ theme = SubResource("Theme_0qe3m")
 theme_override_styles/panel = SubResource("StyleBoxFlat_ma53j")
 
 [node name="Sprite" type="Sprite2D" parent="SpiritInventory/Panel5"]
-visible = false
 position = Vector2(32, 32)
-scale = Vector2(3.625, 3.625)
+scale = Vector2(3.5, 3.5)
 texture = SubResource("AtlasTexture_2kfx1")
 
 [node name="HPBar" type="ProgressBar" parent="."]

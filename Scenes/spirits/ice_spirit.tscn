@@ -1,17 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://bf880mqeqp1cr"]
+[gd_scene load_steps=6 format=3 uid="uid://bhthrm1rnv4pr"]
 
-[ext_resource type="Script" path="res://Scripts/air_spirit.gd" id="1_i0lo7"]
-[ext_resource type="Texture2D" uid="uid://j1rgj1lmi217" path="res://Assets/Sprites/Spirits/air_spirit.png" id="2_6jxc3"]
+[ext_resource type="Script" path="res://Scripts/ice_spirit.gd" id="1_2t1ki"]
+[ext_resource type="Texture2D" uid="uid://cc1mtcjnhc5ie" path="res://Assets/Sprites/Spirits/ice_guy.png" id="2_blv2g"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a23qq"]
-atlas = ExtResource("2_6jxc3")
+[sub_resource type="AtlasTexture" id="AtlasTexture_hugk6"]
+atlas = ExtResource("2_blv2g")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_5euod"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_84eba"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_a23qq")
+"texture": SubResource("AtlasTexture_hugk6")
 }],
 "loop": true,
 "name": &"default",
@@ -24,11 +24,11 @@ radius = 21.1906
 [node name="AirSpirit" type="Area2D"]
 z_index = 2
 scale = Vector2(0.992243, 0.945044)
-script = ExtResource("1_i0lo7")
+script = ExtResource("1_2t1ki")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_5euod")
+sprite_frames = SubResource("SpriteFrames_84eba")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2.38419e-07, 0)

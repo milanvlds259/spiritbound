@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/room_loader.gd" id="1_mhbm3"]
 [ext_resource type="PackedScene" uid="uid://v7fuklt8nwxj" path="res://Scenes/player.tscn" id="2_ltihn"]
 [ext_resource type="PackedScene" uid="uid://de7br0582ath" path="res://Scenes/player_hud.tscn" id="3_t4ttr"]
-[ext_resource type="AudioStream" path="res://Assets/Audio/8bit_loading.wav" id="4_dtl5r"]
+[ext_resource type="AudioStream" uid="uid://q1tvkrf78u00" path="res://Assets/Audio/8bit_loading.wav" id="4_dtl5r"]
 
 [node name="room_loader" type="Node2D"]
 scale = Vector2(4, 4)

@@ -166,6 +166,8 @@ func add_spirit(type: String) -> void:
 		powerup_text = "+50% Move Speed!"
 	elif type == "thunder":
 		powerup_text = "Faster Arrows"
+	elif type == "ice":
+		powerup_text = "Attacks Slow Enemies!"
 	else:
 		powerup_text = "Unknown Effect!"
 
@@ -219,9 +221,6 @@ func _attack_melee():
 		$AttackEffect01/AttackHitbox.scale = Vector2(1, 1)
 		$AttackEffect01/AttackEffectSprite.scale = Vector2(1, 1)
 		$AttackEffect01/AttackEffectSprite.play("attack01")
-
-
-
 
 func _attack_ranged():
 	attack_mode = "ranged"
@@ -324,6 +323,13 @@ func _on_attack_effect_frame_changed():
 	# Adjust the frame numbers (e.g. 3 and 4) as needed depending on your animation indexing.
 	if current_frame == 2 or current_frame == 3:
 		$AttackEffect01/AttackHitbox.disabled = false
+
+		# Ice spirit effect
+		if "ice" in spirit_inventory:
+			var enemies = $AttackEffect01/AttackHitbox.get_overlapping_bodies()
+			for enemy in enemies:
+				if enemy.is_in_group("enemy") and enemy.has_method("freeze"):
+					enemy.freeze(2.0, 0.5)
 	else:
 		$AttackEffect01/AttackHitbox.disabled = true
 

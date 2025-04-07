@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bwfhfut87ybtx"]
 
-[ext_resource type="Script" path="res://Scenes/medkit.gd" id="1_ly1j1"]
+[ext_resource type="Script" path="res://Scripts/medkit.gd" id="1_ly1j1"]
 [ext_resource type="Texture2D" uid="uid://bprcaksa4hshh" path="res://Assets/Sprites/MEDKIT.png" id="1_wvnn3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s78py"]

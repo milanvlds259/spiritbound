@@ -1,7 +1,8 @@
 class_name EnemyWerewolf extends CharacterBody2D
 
 # Speed, Health, Damage
-@export var speed: float = 250
+@export var normal_speed: float = 250
+var current_speed: float = normal_speed
 @export var health: int = 10
 @export var base_damage: int = 1
 
@@ -22,6 +23,7 @@ var attack_type = "attack"
 @export var impulse_str: float = 200
 
 # Movement/AI 
+var is_frozen: bool = false
 var target : Player
 @onready var follow_area: Area2D = $Vision      # Area2D used for vision
 enum State{IDLE, FOLLOW, HURT, ATTACK, DEATH, PHASE}
@@ -44,6 +46,8 @@ func _ready() -> void:
 	# Connect enemy hitbox to hit player
 	$HitBox.body_entered.connect(_on_hitbox_body_entered)
 	$AttackArea.body_entered.connect(_on_attack_area_body_entered)
+
+	current_speed = normal_speed
 
 func _process(_delta: float) -> void:
 	updateAnimations()
@@ -88,7 +92,7 @@ func update_velocity() -> void:
 			
 			#Finds the target player's position and computes the directoin to follow
 			var direction = target.global_position - global_position
-			var new_velocity = direction.normalized() * speed
+			var new_velocity = direction.normalized() * current_speed
 			velocity = new_velocity
 		State.HURT:
 			velocity = Vector2.ZERO
@@ -100,7 +104,7 @@ func update_velocity() -> void:
 			if target:
 				if sprite.frame == 8:
 					var direction = target.global_position - global_position
-					var new_velocity = direction.normalized() * speed
+					var new_velocity = direction.normalized() * current_speed
 					global_position = target.global_position + new_velocity/3
 					if target.hp > base_damage:
 						target.take_damage(base_damage)
@@ -213,3 +217,15 @@ func _on_attack_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		body.apply_knockback(body.position-global_position)
 		body.take_damage(2*base_damage)
+
+func freeze(duration: float, slow_multiplier: float) -> void:
+	if is_frozen:
+		return
+	is_frozen = true
+	# turn enemy blue
+	sprite.modulate = Color(0.5, 0.5, 1, 1)
+	current_speed *= slow_multiplier  # Reduce speed, for example 0.5 for 50%
+	await get_tree().create_timer(duration).timeout
+	current_speed = normal_speed
+	is_frozen = false
+	sprite.modulate = Color(1, 1, 1, 1)

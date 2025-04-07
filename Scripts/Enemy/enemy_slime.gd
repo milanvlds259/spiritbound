@@ -1,7 +1,8 @@
 class_name EnemySlime extends CharacterBody2D
 
 @export var health: int = 10
-@export var speed: int = 150
+@export var normal_speed: int = 150
+var current_speed: int = normal_speed
 var target: Player
 @onready var nav_agent:= $NavigationAgent2D as NavigationAgent2D
 
@@ -20,6 +21,7 @@ func _ready():
 	starting_position = global_position
 	hurt_area.area_entered.connect(_on_hurt_area_entered)
 	sprite.animation_finished.connect(_on_animation_finished)
+	current_speed = normal_speed
 
 func _process(_delta: float) -> void:
 	update_animations()
@@ -44,7 +46,7 @@ func update_velocity():
 	else:
 		target = null
 	var dir = to_local(nav_agent.get_next_path_position()).normalized()
-	velocity = dir * speed
+	velocity = dir * current_speed
 
 func make_path() -> void:
 	if target:
@@ -58,7 +60,7 @@ func _on_hurt_area_entered(area: Area2D) -> void:
 		if area.is_in_group("player_attack"):
 			damage_taken(3)
 		elif area.is_in_group("arrows"):
-			damage_taken(3)
+			damage_taken(2)
 			area.queue_free()
 
 func damage_taken(damage: int) -> void:
