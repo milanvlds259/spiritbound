@@ -326,7 +326,7 @@ func _on_attack_effect_frame_changed():
 
 		# Ice spirit effect
 		if "ice" in spirit_inventory:
-			var enemies = $AttackEffect01/AttackHitbox.get_overlapping_bodies()
+			var enemies = $AttackEffect01.get_overlapping_bodies()
 			for enemy in enemies:
 				if enemy.is_in_group("enemy") and enemy.has_method("freeze"):
 					enemy.freeze(2.0, 0.5)
