@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cv2jkub02j7oh"
-path="res://.godot/imported/Spirit_Earth_Animation.png-af044a031eafaf4261a3dec17dbfd5dc.ctex"
+uid="uid://l1ww5jlc34ch"
+path="res://.godot/imported/Spirits.png-c07fea8c05c0111c279ee6fd7c80a1e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Spirit_Earth_Animation.png"
-dest_files=["res://.godot/imported/Spirit_Earth_Animation.png-af044a031eafaf4261a3dec17dbfd5dc.ctex"]
+source_file="res://Assets/Sprites/Spirits/Spirits.png"
+dest_files=["res://.godot/imported/Spirits.png-c07fea8c05c0111c279ee6fd7c80a1e9.ctex"]
 
 [params]
 

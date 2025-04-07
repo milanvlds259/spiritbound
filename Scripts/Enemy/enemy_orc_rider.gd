@@ -1,7 +1,10 @@
 class_name EnemyOrcRider extends CharacterBody2D
 
-# Speed, Health, Damage
-@export var speed: float = 250
+# speed, Health, Damage
+@export var normal_speed: float = 250
+var current_speed: float = normal_speed
+var is_frozen: bool = false
+
 @export var health: int = 20
 @export var base_damage: int = 2
 
@@ -46,6 +49,7 @@ func _ready() -> void:
 	$HitBox.body_entered.connect(_on_hitbox_body_entered)
 	$AttackArea1.body_entered.connect(_on_attack_area_body_entered)
 	$AttackArea2.body_entered.connect(_on_attack_area2_body_entered)
+	current_speed = normal_speed
 
 func _process(_delta: float) -> void:
 	updateAnimations()
@@ -95,7 +99,7 @@ func update_velocity() -> void:
 			
 			#Finds the target player's position and computes the directoin to follow
 			var direction = target.global_position - global_position
-			var new_velocity = direction.normalized() * speed
+			var new_velocity = direction.normalized() * current_speed
 			velocity = new_velocity
 		State.HURT:
 			velocity = Vector2.ZERO
@@ -109,7 +113,7 @@ func update_velocity() -> void:
 				current_state = State.IDLE
 				return
 			var direction = target.global_position - global_position
-			var new_velocity = direction.normalized() * speed
+			var new_velocity = direction.normalized() * current_speed
 			velocity = new_velocity
 			
 		
@@ -117,7 +121,7 @@ func update_velocity() -> void:
 			#If the skeleton is already following player, it will continue, otherwise it will not change velocity
 			if target:
 				var direction = target.global_position - global_position
-				var new_velocity = direction.normalized() * speed
+				var new_velocity = direction.normalized() * current_speed
 
 func follow_body(body) -> void:
 	target = body
@@ -261,3 +265,16 @@ func _on_attack_area2_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		body.apply_knockback(body.position-global_position)
 		body.take_damage(2 * base_damage)
+
+func freeze(duration: float, slow_multiplier: float) -> void:
+	if is_frozen:
+		return
+	is_frozen = true
+	# turn enemy blue
+	sprite.modulate = Color(0.5, 0.5, 1, 1)
+
+	current_speed *= slow_multiplier  # Reduce normal_speed, for example 0.5 for 50%
+	await get_tree().create_timer(duration).timeout
+	current_speed = normal_speed
+	is_frozen = false
+	sprite.modulate = Color(1, 1, 1, 1)

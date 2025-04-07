@@ -2,15 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://bvrynxbdcuy8g" path="res://Assets/Sprites/Tiles/Dungeon_Tileset_v2.png" id="1_j300x"]
 [ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="2_aqucu"]
-[ext_resource type="Script" path="res://Scenes/room scenes/enemy_spawner.gd" id="2_k311s"]
+[ext_resource type="Script" path="res://Scripts/enemy_spawner.gd" id="2_k311s"]
 [ext_resource type="Texture2D" uid="uid://3qe2rcup43ig" path="res://Assets/Sprites/Tiles/FDR_Dungeon.png" id="3_l6tlr"]
 [ext_resource type="Texture2D" uid="uid://bibdiel70ce6n" path="res://Assets/Sprites/Tiles/FDR_Dungeon_Animations.png" id="4_510oy"]
 [ext_resource type="Texture2D" uid="uid://b8733p18lxm7m" path="res://Assets/Sprites/Tiles/Dungeon_item_props_v2.png" id="5_yglvj"]
 [ext_resource type="Texture2D" uid="uid://ws6vyuy0si1" path="res://Assets/Sprites/Tiles/FDR_Ground_Tiles_Godot.png" id="6_37ahw"]
 [ext_resource type="Texture2D" uid="uid://bl73ub7lfunnj" path="res://Assets/Sprites/Tiles/FDR_Ground_Tiles.png" id="7_iahbl"]
 [ext_resource type="PackedScene" uid="uid://colewlvdd1y07" path="res://Scenes/props/brazier.tscn" id="8_pg746"]
-[ext_resource type="Script" path="res://Scenes/room scenes/main_next level.gd" id="9_wx3r7"]
-[ext_resource type="Script" path="res://Scenes/boss room scenes/spirit_spawner.gd" id="11_27j0l"]
+[ext_resource type="Script" path="res://Scripts/main_next level.gd" id="9_wx3r7"]
+[ext_resource type="Script" path="res://Scripts/spirit_spawner.gd" id="11_27j0l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_68si5"]
 texture = ExtResource("1_j300x")

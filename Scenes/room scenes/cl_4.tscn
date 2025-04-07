@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=4 uid="uid://jsylkf234s31"]
 
 [ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="1_clpb6"]
-[ext_resource type="Script" path="res://Scenes/room scenes/enemy_spawner.gd" id="2_ucq0r"]
-[ext_resource type="Script" path="res://Scenes/room scenes/main_next level.gd" id="2_ynlm1"]
-[ext_resource type="Script" path="res://Scenes/boss room scenes/spirit_spawner.gd" id="4_kolc1"]
+[ext_resource type="Script" path="res://Scripts/enemy_spawner.gd" id="2_ucq0r"]
+[ext_resource type="Script" path="res://Scripts/main_next level.gd" id="2_ynlm1"]
+[ext_resource type="Script" path="res://Scripts/spirit_spawner.gd" id="4_kolc1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_83evl"]
 size = Vector2(12, 12)

@@ -1,8 +1,9 @@
 class_name EnemyWerebear extends CharacterBody2D
 
 # Speed, Health, Damage
-@export var speed: float = 120
-@onready var enraged_speed = speed * 2
+@export var normal_speed: float = 120
+var current_speed: float = normal_speed
+@onready var enraged_speed = normal_speed * 2
 @export var health: int = 30
 @export var base_damage: int = 1
 
@@ -23,7 +24,8 @@ var attack_type = "attack1"
 @export var impulse_str: float = 200
 @onready var stompable = true
 
-# Movement/AI 
+# Movement/AI
+var is_frozen: bool = false
 var target : Player
 @onready var follow_area: Area2D = $Vision      # Area2D used for vision
 enum State{IDLE, FOLLOW, HURT, ATTACK, DEATH, STOMP}
@@ -51,6 +53,8 @@ func _ready() -> void:
 	# Connect stomp hitbox to stomp player
 	$StompZone/StompEffect.frame_changed.connect(_on_stomp_frame_changed)
 	$StompZone.body_entered.connect(_on_stomp_hitbox_body_entered)
+
+	current_speed = normal_speed
 	
 func _process(_delta: float) -> void:
 	updateAnimations()
@@ -95,7 +99,7 @@ func update_velocity() -> void:
 			
 			#Finds the target player's position and computes the directoin to follow
 			var direction = target.global_position - global_position
-			var new_velocity = direction.normalized() * speed
+			var new_velocity = direction.normalized() * current_speed
 			velocity = new_velocity
 		State.HURT:
 			velocity = Vector2.ZERO
@@ -112,9 +116,9 @@ func _on_hurt_area_entered(area: Area2D) -> void:
 	# Check if the area is the player's attack hitbox (temporary)
 	if !is_invincible:
 		if area.is_in_group("player_attack"):
-			damage_taken(2)
+			damage_taken(6)
 		elif area.is_in_group("arrows"):
-			damage_taken(1)
+			damage_taken(2)
 			area.queue_free()
 
 func _on_hitbox_body_entered(body: Node) -> void:
@@ -144,7 +148,7 @@ func damage_taken(damage: int) -> void:
 	if health <= 10:
 		attack_type = "attack2"
 		stompable = false
-		speed = enraged_speed
+		current_speed = enraged_speed
 	if health <= 0:
 		died()
 
@@ -256,3 +260,16 @@ func _on_stomp_hitbox_body_entered(body: Node2D) -> void:
 		body.stun(0.5)
 		body.apply_knockback(-body.position + global_position)
 		body.take_damage(base_damage)
+
+func freeze(duration: float, slow_multiplier: float) -> void:
+	if is_frozen:
+		return
+	is_frozen = true
+	# turn enemy blue
+	sprite.modulate = Color(0.5, 0.5, 1, 1)
+
+	current_speed *= slow_multiplier  # Reduce speed, for example 0.5 for 50%
+	await get_tree().create_timer(duration).timeout
+	current_speed = normal_speed
+	is_frozen = false
+	sprite.modulate = Color(1, 1, 1, 1)
