@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cn5hvacow2vb6"]
+
+[ext_resource type="Texture2D" uid="uid://c6rey4bu8tmaw" path="res://Assets/TinyRPGCharPack/Skeleton Archer/Arrow(projectile)/Arrow03(100x100).png" id="1_2cnn5"]
+[ext_resource type="Script" path="res://Scripts/Enemy/enemy_skeleton_arrow.gd" id="1_xme4e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_du3hy"]
+size = Vector2(30, 2)
+
+[node name="EnemySkeletonArrow" type="Area2D"]
+script = ExtResource("1_xme4e")
+
+[node name="ArrowSprite" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_2cnn5")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(5, 1)
+shape = SubResource("RectangleShape2D_du3hy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
