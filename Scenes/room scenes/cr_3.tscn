@@ -2,11 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://bvrynxbdcuy8g" path="res://Assets/Sprites/Tiles/Dungeon_Tileset_v2.png" id="1_je4hv"]
 [ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="2_hq831"]
-[ext_resource type="Script" path="res://Scenes/room scenes/enemy_spawner.gd" id="2_xn0rn"]
+[ext_resource type="Script" path="res://Scripts/enemy_spawner.gd" id="2_xn0rn"]
 [ext_resource type="PackedScene" uid="uid://ckkepwnyxc5tj" path="res://Scenes/traps/spike_wave_left_to_right.tscn" id="3_4vs2m"]
 [ext_resource type="PackedScene" uid="uid://dat7owl2o1282" path="res://Scenes/traps/spike_wave_right_to_left.tscn" id="4_tmcdn"]
-[ext_resource type="Script" path="res://Scenes/room scenes/main_next level.gd" id="6_gtx5f"]
-[ext_resource type="Script" path="res://Scenes/boss room scenes/spirit_spawner.gd" id="7_5l3l3"]
+[ext_resource type="Script" path="res://Scripts/main_next level.gd" id="6_gtx5f"]
+[ext_resource type="Script" path="res://Scripts/spirit_spawner.gd" id="7_5l3l3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2k0xp"]
 texture = ExtResource("1_je4hv")

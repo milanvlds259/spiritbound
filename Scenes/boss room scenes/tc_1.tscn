@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=4 uid="uid://mhvcse32q6re"]
 
 [ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="1_5bgdu"]
-[ext_resource type="Script" path="res://Scenes/room scenes/enemy_spawner.gd" id="2_hw1n0"]
+[ext_resource type="Script" path="res://Scripts/enemy_spawner.gd" id="2_hw1n0"]
 [ext_resource type="Texture2D" uid="uid://3qe2rcup43ig" path="res://Assets/Sprites/Tiles/FDR_Dungeon.png" id="3_ky7uc"]
-[ext_resource type="Script" path="res://Scenes/room scenes/main_next level.gd" id="3_tcbdf"]
-[ext_resource type="Script" path="res://Scenes/boss room scenes/spirit_spawner.gd" id="5_254xm"]
+[ext_resource type="Script" path="res://Scripts/main_next level.gd" id="3_tcbdf"]
+[ext_resource type="Script" path="res://Scripts/spirit_spawner.gd" id="5_254xm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_53ohv"]
 texture = ExtResource("3_ky7uc")

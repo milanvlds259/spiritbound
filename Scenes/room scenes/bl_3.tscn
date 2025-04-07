@@ -2,9 +2,9 @@
 
 [ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="1_34geq"]
 [ext_resource type="Texture2D" uid="uid://bibdiel70ce6n" path="res://Assets/Sprites/Tiles/FDR_Dungeon_Animations.png" id="2_3d5j4"]
-[ext_resource type="Script" path="res://Scenes/room scenes/enemy_spawner.gd" id="2_hj7uk"]
-[ext_resource type="Script" path="res://Scenes/room scenes/main_next level.gd" id="3_7epi1"]
-[ext_resource type="Script" path="res://Scenes/boss room scenes/spirit_spawner.gd" id="5_cr0tc"]
+[ext_resource type="Script" path="res://Scripts/enemy_spawner.gd" id="2_hj7uk"]
+[ext_resource type="Script" path="res://Scripts/main_next level.gd" id="3_7epi1"]
+[ext_resource type="Script" path="res://Scripts/spirit_spawner.gd" id="5_cr0tc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wld6e"]
 atlas = ExtResource("2_3d5j4")
