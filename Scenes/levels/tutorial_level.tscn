@@ -245,7 +245,7 @@ texture = SubResource("AtlasTexture_emvw7")
 
 [node name="NextLevelArea" type="Area2D" parent="."]
 script = ExtResource("12_r71qg")
-next_level = "res://room_loader.tscn"
+next_level = "res://Scenes/title_screen.tscn"
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NextLevelArea" groups=["next_level"]]
