@@ -6,13 +6,6 @@ extends Node
 
 var scene_path: String = ""
 
-
-var curr_difficulty: int = 0
-var difficulty : Array = ["Easy", "Normal", "Hardcore", "Milansanity"]
-
-var curr_control: int = 0
-var controls: Array = ["Keyboard", "Controller"]
-
 # Transition properties
 var transition_duration = 0.75  # Time in seconds for the fade
 var is_transitioning = false
@@ -25,6 +18,9 @@ func _ready():
 	$CloseButton.pressed.connect(_on_close_button_pressed)
 	$ChangeModeButton.pressed.connect(_on_change_mode_button_pressed)
 	$ChangeControlButton.pressed.connect(_on_change_control_button_pressed)
+
+	$DifficultyText.text = SettingsManager.get_difficulty_name()
+	$ControlTypeText.text = SettingsManager.get_control_name()
 
 	# Create a transition overlay
 	transition_overlay = ColorRect.new()
@@ -45,16 +41,10 @@ func _on_close_button_pressed() -> void:
 
 
 func _on_change_mode_button_pressed() -> void:
-	curr_difficulty += 1
-	if (curr_difficulty >= difficulty.size()):
-		curr_difficulty = 0
-	$DifficultyText.text = difficulty[curr_difficulty]
+	$DifficultyText.text = SettingsManager.next_difficulty()
 
 func _on_change_control_button_pressed() -> void:
-	curr_control += 1
-	if (curr_control >= controls.size()):
-		curr_control = 0
-	$ControlTypeText.text = controls[curr_control]
+	$ControlTypeText.text = SettingsManager.next_control()
 	
 
 func change_scene():

@@ -1,21 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://ct8hpq8d4mjsj"]
+[gd_scene load_steps=6 format=3 uid="uid://ct8hpq8d4mjsj"]
 
 [ext_resource type="Texture2D" uid="uid://boghl7hhgvs62" path="res://Assets/Sprites/Dungeon_brick_wall_purple.png.png" id="1_4o3hy"]
 [ext_resource type="Script" path="res://Scripts/title_screen.gd" id="1_6ggef"]
 [ext_resource type="FontFile" uid="uid://c5y2dv5ufvdgf" path="res://Assets/Fonts/DungeonFont.ttf" id="2_1jtn1"]
-[ext_resource type="Texture2D" uid="uid://d271g6sx3mnus" path="res://Assets/Sprites/FreeButtons.png" id="3_pcmow"]
+[ext_resource type="StyleBox" uid="uid://rqmrq5uihx6i" path="res://Resources/ButtonStyle.tres" id="4_fttbk"]
 [ext_resource type="AudioStream" uid="uid://bgp6bvtjvfwa7" path="res://Assets/Audio/SLOWER2019-01-02_-_8_Bit_Menu_-_David_Renda_-_FesliyanStudios.com.mp3" id="5_7f1v0"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tg3lq"]
-atlas = ExtResource("3_pcmow")
-region = Rect2(33, 1, 14, 14)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xvujo"]
-texture = SubResource("AtlasTexture_tg3lq")
-texture_margin_left = 4.0
-texture_margin_top = 4.0
-texture_margin_right = 4.0
-texture_margin_bottom = 4.0
 
 [node name="Node" type="Node"]
 script = ExtResource("1_6ggef")
@@ -57,18 +46,22 @@ offset_bottom = -277.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(4, 4)
-theme_override_styles/normal = SubResource("StyleBoxTexture_xvujo")
+theme_override_styles/normal = ExtResource("4_fttbk")
 
-[node name="PlayText" type="Label" parent="."]
+[node name="PlayText" type="Label" parent="PlayButton"]
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -147.0
-offset_top = -300.0
-offset_right = 149.0
-offset_bottom = -208.0
+offset_left = -36.25
+offset_top = -24.75
+offset_right = 259.75
+offset_bottom = 67.25
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.25, 0.25)
 theme_override_colors/font_color = Color(1, 0.854902, 0.329412, 1)
 theme_override_colors/font_shadow_color = Color(0.109804, 0.0313726, 0.0588235, 1)
 theme_override_constants/shadow_outline_size = 8
@@ -92,21 +85,22 @@ offset_bottom = -189.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(4, 4)
-theme_override_styles/normal = SubResource("StyleBoxTexture_xvujo")
+theme_override_styles/normal = ExtResource("4_fttbk")
 
-[node name="TutorialText" type="Label" parent="."]
+[node name="TutorialText" type="Label" parent="TutorialButton"]
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -147.0
-offset_top = -204.0
-offset_right = 141.0
-offset_bottom = -84.0
+offset_left = -18.0
+offset_top = -15.75
+offset_right = 270.0
+offset_bottom = 104.25
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.125, 0.125)
 theme_override_colors/font_color = Color(1, 0.854902, 0.329412, 1)
 theme_override_colors/font_shadow_color = Color(0.109804, 0.0313726, 0.0588235, 1)
 theme_override_constants/shadow_outline_size = 8
@@ -130,21 +124,22 @@ offset_bottom = -189.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(4, 4)
-theme_override_styles/normal = SubResource("StyleBoxTexture_xvujo")
+theme_override_styles/normal = ExtResource("4_fttbk")
 
-[node name="SettingsText" type="Label" parent="."]
+[node name="SettingsText" type="Label" parent="SettingsButton"]
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 5.0
-offset_top = -204.0
-offset_right = 293.0
-offset_bottom = -84.0
+offset_left = -18.25
+offset_top = -16.25
+offset_right = 269.75
+offset_bottom = 103.75
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.125, 0.125)
 theme_override_colors/font_color = Color(1, 0.854902, 0.329412, 1)
 theme_override_colors/font_shadow_color = Color(0.109804, 0.0313726, 0.0588235, 1)
 theme_override_constants/shadow_outline_size = 8

@@ -38,6 +38,9 @@ func spawn_enemies():
 		print("[Spawner] No valid positions found! Nothing to spawn.")
 		return
 
+	if get_node_or_null("/root/SettingsManager"):
+		base_enemies = SettingsManager.get_enemy_spawncount()
+		print("[Spawner] Base enemies set to: %d" % base_enemies)
 	var total_enemies = base_enemies + int(room_count * enemy_scale_factor)
 	total_enemies = min(total_enemies, valid_positions.size())
 	print("[Spawner] Total enemies to spawn: %d" % total_enemies)

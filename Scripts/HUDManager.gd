@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @export var spirit_textures: Dictionary
+@export var menu_scene: PackedScene
 
 func _ready() -> void:
 
@@ -9,6 +10,7 @@ func _ready() -> void:
 	Global.setup_hpbar.connect(_on_setup_hpbar)
 	Global.player_died.connect(_on_player_died)
 	$RestartButton.pressed.connect(_on_restart_button_pressed)
+	$MenuBackButton.pressed.connect(_on_menu_back_button_pressed)
 
 func _on_spirit_inventory_updated(new_inventory: Array) -> void:
 	var inventory = $SpiritInventory
@@ -52,6 +54,11 @@ func _on_player_died() -> void:
 	$DeathTint.visible = true
 	$RestartButton.visible = true
 	$GameOverText.visible = true
+	$MenuBackButton.visible = true
 
 func _on_restart_button_pressed() -> void:
 	get_tree().reload_current_scene()
+
+func _on_menu_back_button_pressed() -> void:
+	#transition to the menu scene (not instantiated)
+	get_tree().change_scene_to_packed(menu_scene)
