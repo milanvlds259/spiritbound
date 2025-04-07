@@ -112,9 +112,9 @@ func _on_hurt_area_entered(area: Area2D) -> void:
 	# Check if the area is the player's attack hitbox (temporary)
 	if !is_invincible:
 		if area.is_in_group("player_attack"):
-			damage_taken(2)
+			damage_taken(5)
 		elif area.is_in_group("arrows"):
-			damage_taken(1)
+			damage_taken(2)
 			area.queue_free()
 
 func _on_hitbox_body_entered(body: Node) -> void:

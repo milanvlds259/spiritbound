@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="1_ygkra"]
 [ext_resource type="PackedScene" uid="uid://v7fuklt8nwxj" path="res://Scenes/player.tscn" id="2_tobfr"]
-[ext_resource type="AudioStream" uid="uid://c4abcppdikws3" path="res://Assets/Audio/8bitloop_Level_Combat.wav" id="3_vifju"]
+[ext_resource type="AudioStream" uid="uid://2sg4x30siidq" path="res://Assets/Audio/8bit_loading.wav" id="3_50xd8"]
 [ext_resource type="PackedScene" uid="uid://de7br0582ath" path="res://Scenes/player_hud.tscn" id="4_co6kt"]
 [ext_resource type="PackedScene" uid="uid://ctqjr3xpg5cko" path="res://Scenes/dummy_enemy.tscn" id="5_mqe60"]
 [ext_resource type="Texture2D" uid="uid://cmurc64yyroae" path="res://Assets/Sprites/tilemap.png" id="6_vklws"]
@@ -69,8 +69,9 @@ tile_set = ExtResource("1_ygkra")
 position = Vector2(522, 573)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_vifju")
+stream = ExtResource("3_50xd8")
 autoplay = true
+attenuation = 1e-05
 
 [node name="PlayerHUD" parent="." instance=ExtResource("4_co6kt")]
 layer = 2
