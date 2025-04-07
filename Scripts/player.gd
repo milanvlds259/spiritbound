@@ -35,6 +35,7 @@ var spirit_inventory: Array = []
 var continue_prompt_visible: bool = false
 @onready var continue_prompt = $ContinuePrompt
 
+
 func _ready():
 	$PlayerSprite.animation_finished.connect(_on_AnimatedSprite2D_animation_finished)
 	$PlayerSprite.frame_changed.connect(_on_PlayerSprite_frame_changed)
@@ -53,6 +54,13 @@ func _ready():
 
 func _on_can_transition(can_transition: bool):
 	$ContinuePrompt.visible = can_transition
+	match control:
+		Controltype.CONTROLLER:
+			$ContinuePrompt/SpriteController.visible = true
+			$ContinuePrompt/SpriteKeyboard.visible = false
+		Controltype.KEYBOARD:
+			$ContinuePrompt/SpriteKeyboard.visible = true
+			$ContinuePrompt/SpriteController.visible = false
 
 func emit_setup_hpbar():
 	hp = max_hp
