@@ -1,83 +1,75 @@
-[gd_scene load_steps=22 format=4 uid="uid://ctth5yk3ynadd"]
+[gd_scene load_steps=20 format=4 uid="uid://ce7qibu3tnbev"]
 
-[ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="1_ygkra"]
-[ext_resource type="PackedScene" uid="uid://v7fuklt8nwxj" path="res://Scenes/player.tscn" id="2_tobfr"]
-[ext_resource type="PackedScene" uid="uid://de7br0582ath" path="res://Scenes/player_hud.tscn" id="4_co6kt"]
-[ext_resource type="PackedScene" uid="uid://ctqjr3xpg5cko" path="res://Scenes/dummy_enemy.tscn" id="5_mqe60"]
-[ext_resource type="Texture2D" uid="uid://cmurc64yyroae" path="res://Assets/Sprites/tilemap.png" id="6_vklws"]
-[ext_resource type="FontFile" uid="uid://c5y2dv5ufvdgf" path="res://Assets/Fonts/DungeonFont.ttf" id="7_7mebi"]
-[ext_resource type="Texture2D" uid="uid://j1rgj1lmi217" path="res://Assets/Sprites/Spirits/air_spirit.png" id="8_u6k3q"]
-[ext_resource type="Texture2D" uid="uid://cv2jkub02j7oh" path="res://Assets/Sprites/Spirits/Spirit_Earth_Animation.png" id="9_vobyk"]
-[ext_resource type="Texture2D" uid="uid://l1ww5jlc34ch" path="res://Assets/Sprites/Spirits/Spirits.png" id="10_ij447"]
-[ext_resource type="Texture2D" uid="uid://bjwf4ijvw4ol0" path="res://Assets/Sprites/Spirits/thunder_spirit.png" id="11_38pgf"]
-[ext_resource type="Script" path="res://Scripts/next_level_area.gd" id="12_r71qg"]
+[ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="1_0nbwh"]
+[ext_resource type="PackedScene" uid="uid://v7fuklt8nwxj" path="res://Scenes/player.tscn" id="2_uetfr"]
+[ext_resource type="PackedScene" uid="uid://de7br0582ath" path="res://Scenes/player_hud.tscn" id="3_3sqcp"]
+[ext_resource type="PackedScene" uid="uid://ctqjr3xpg5cko" path="res://Scenes/dummy_enemy.tscn" id="4_ef1ic"]
+[ext_resource type="Texture2D" uid="uid://cmurc64yyroae" path="res://Assets/Sprites/tilemap.png" id="5_5y784"]
+[ext_resource type="FontFile" uid="uid://c5y2dv5ufvdgf" path="res://Assets/Fonts/DungeonFont.ttf" id="6_4k1a2"]
+[ext_resource type="Texture2D" uid="uid://j1rgj1lmi217" path="res://Assets/Sprites/Spirits/air_spirit.png" id="7_ohkih"]
+[ext_resource type="Texture2D" uid="uid://cv2jkub02j7oh" path="res://Assets/Sprites/Spirits/Spirit_Earth_Animation.png" id="8_810lh"]
+[ext_resource type="Texture2D" uid="uid://l1ww5jlc34ch" path="res://Assets/Sprites/Spirits/Spirits.png" id="9_ll5d5"]
+[ext_resource type="Texture2D" uid="uid://bjwf4ijvw4ol0" path="res://Assets/Sprites/Spirits/thunder_spirit.png" id="10_txtoi"]
+[ext_resource type="Script" path="res://Scripts/next_level_area.gd" id="11_b28ts"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_aj36y"]
-atlas = ExtResource("6_vklws")
-region = Rect2(306, 170, 15, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mhwr"]
+atlas = ExtResource("5_5y784")
+region = Rect2(255, 119, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lxmv3"]
-atlas = ExtResource("6_vklws")
-region = Rect2(306, 187, 15, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ifnp"]
+atlas = ExtResource("5_5y784")
+region = Rect2(255, 153, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m5h32"]
-atlas = ExtResource("6_vklws")
-region = Rect2(323, 187, 15, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_60ikk"]
+atlas = ExtResource("5_5y784")
+region = Rect2(170, 272, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_np6ys"]
-atlas = ExtResource("6_vklws")
-region = Rect2(340, 187, 15, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryckw"]
+atlas = ExtResource("5_5y784")
+region = Rect2(238, 272, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6h8gx"]
-atlas = ExtResource("6_vklws")
-region = Rect2(153, 34, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_emqxg"]
-atlas = ExtResource("6_vklws")
-region = Rect2(170, 34, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_538uo"]
-atlas = ExtResource("9_vobyk")
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrfiw"]
+atlas = ExtResource("8_810lh")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_o2pkh"]
-atlas = ExtResource("10_ij447")
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2dsk"]
+atlas = ExtResource("9_ll5d5")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_emvw7"]
-atlas = ExtResource("11_38pgf")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ee7cu"]
+atlas = ExtResource("10_txtoi")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qx4r"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o3vu1"]
 size = Vector2(109, 83.7549)
 
-[node name="tutorial_level" type="Node2D"]
+[node name="TutorialLevel2" type="Node2D"]
 
 [node name="FloorLayer" type="TileMapLayer" parent="."]
 scale = Vector2(4, 4)
 tile_map_data = PackedByteArray("AAAFAAIAAAABAAIAAAAFAAoAAAABAAMAAAAGAAoAAAACAAMAAAAHAAoAAAADAAMAAAAIAAoAAAACAAMAAAAJAAoAAAADAAMAAAAKAAoAAAACAAMAAAALAAoAAAAEAAMAAAAGAAIAAAAHAAMAAAAHAAIAAAABAAIAAAAIAAIAAAAHAAMAAAAJAAIAAAAEAAIAAAAKAAIAAAAHAAMAAAAFAAQAAAABAAIAAAAFAAUAAAABAAEAAAAFAAYAAAABAAIAAAAFAAcAAAABAAIAAAAFAAgAAAABAAIAAAAFAAkAAAABAAIAAAAGAAQAAAAGAAEAAAAGAAUAAAACAAEAAAAGAAYAAAAHAAMAAAAGAAcAAAACAAIAAAAGAAgAAAAHAAMAAAAGAAkAAAAHAAMAAAAHAAMAAAABAAIAAAAHAAQAAAABAAIAAAAHAAUAAAAHAAMAAAAHAAYAAAAHAAMAAAAHAAcAAAADAAIAAAAHAAgAAAACAAIAAAAHAAkAAAAHAAMAAAAIAAMAAAAHAAMAAAAIAAQAAAAHAAMAAAAIAAUAAAAHAAMAAAAIAAYAAAAHAAMAAAAIAAcAAAAHAAMAAAAIAAgAAAADAAIAAAAIAAkAAAACAAIAAAAJAAMAAAAEAAIAAAAJAAQAAAAEAAIAAAAJAAUAAAACAAIAAAAJAAYAAAAHAAMAAAAJAAcAAAAHAAMAAAAJAAgAAAAHAAMAAAAJAAkAAAADAAIAAAAKAAQAAAAHAAMAAAAKAAUAAAACAAEAAAAKAAYAAAAHAAMAAAAKAAcAAAAHAAMAAAAKAAgAAAACAAIAAAAKAAkAAAAHAAMAAAALAAQAAAAEAAIAAAALAAUAAAAEAAEAAAALAAYAAAAEAAIAAAALAAcAAAAEAAIAAAALAAgAAAAEAAIAAAALAAkAAAAEAAIAAAALAAIAAAAEAAIAAAAFAPD/AAABAAIAAAAFAPH/AAABAAIAAAAFAPL/AAABAAIAAAAFAPP/AAABAAMAAAAFAPT/AAABAAIAAAAFAPv/AAABAAEAAAAFAPz/AAABAAIAAAAFAP3/AAABAAIAAAAFAP7/AAABAAIAAAAFAP//AAABAAIAAAAFAAAAAAABAAIAAAAFAAEAAAABAAIAAAAGAPD/AAAHAAMAAAAGAPH/AAAHAAMAAAAGAPL/AAACAAIAAAAGAPP/AAAHAAMAAAAGAPT/AAAHAAMAAAAGAPv/AAACAAEAAAAGAPz/AAAHAAMAAAAGAP3/AAAHAAMAAAAGAP7/AAAGAAAAAAAGAP//AAAGAAEAAAAGAAAAAAAHAAMAAAAGAAEAAAAHAAMAAAAHAPD/AAAHAAMAAAAHAPH/AAAHAAMAAAAHAPL/AAADAAIAAAAHAPP/AAAHAAMAAAAHAPT/AAABAAIAAAAHAPX/AAABAAIAAAAHAPb/AAABAAIAAAAHAPf/AAABAAIAAAAHAPj/AAABAAIAAAAHAPn/AAABAAIAAAAHAPr/AAABAAIAAAAHAPv/AAAHAAMAAAAHAPz/AAAGAAAAAAAHAP3/AAAGAAEAAAAHAP7/AAAHAAAAAAAHAP//AAAHAAEAAAAHAAAAAAAHAAMAAAAHAAEAAAAHAAMAAAAIAPD/AAAHAAMAAAAIAPH/AAAGAAAAAAAIAPL/AAAGAAEAAAAIAPP/AAACAAIAAAAIAPT/AAAHAAMAAAAIAPX/AAAHAAMAAAAIAPb/AAAHAAMAAAAIAPf/AAACAAIAAAAIAPj/AAAHAAMAAAAIAPn/AAAHAAMAAAAIAPr/AAAHAAMAAAAIAPv/AAAHAAMAAAAIAPz/AAAHAAAAAAAIAP3/AAAHAAEAAAAIAP7/AAAHAAMAAAAIAP//AAAHAAMAAAAIAAAAAAAGAAAAAAAIAAEAAAAGAAEAAAAJAPD/AAAHAAMAAAAJAPH/AAAHAAAAAAAJAPL/AAAHAAEAAAAJAPP/AAADAAIAAAAJAPT/AAAEAAIAAAAJAPX/AAAEAAIAAAAJAPb/AAAEAAIAAAAJAPf/AAAEAAIAAAAJAPj/AAAEAAIAAAAJAPn/AAAEAAIAAAAJAPr/AAAEAAIAAAAJAPv/AAAHAAMAAAAJAPz/AAAHAAMAAAAJAP3/AAAHAAMAAAAJAP7/AAAGAAAAAAAJAP//AAAGAAEAAAAJAAAAAAAHAAAAAAAJAAEAAAAHAAEAAAAKAPD/AAAHAAMAAAAKAPH/AAAHAAMAAAAKAPL/AAAHAAMAAAAKAPP/AAAHAAMAAAAKAPT/AAAHAAMAAAAKAPv/AAADAAEAAAAKAPz/AAAHAAMAAAAKAP3/AAAHAAMAAAAKAP7/AAAHAAAAAAAKAP//AAAHAAEAAAAKAAAAAAAHAAMAAAAKAAEAAAAHAAMAAAALAPD/AAAEAAIAAAALAPH/AAAEAAIAAAALAPL/AAAEAAIAAAALAPP/AAAEAAMAAAALAPT/AAAEAAIAAAALAPr/AAAEAAIAAAALAPv/AAAEAAEAAAALAPz/AAAEAAIAAAALAP3/AAAEAAIAAAALAP7/AAAEAAIAAAALAP//AAAEAAIAAAALAAAAAAAEAAIAAAALAAEAAAAEAAIAAAAFAO//AAABAAIAAAAFAO7/AAABAAIAAAALAO//AAAEAAIAAAALAO7/AAAEAAIAAAAFAO3/AAABAAEAAAAGAO3/AAAHAAIAAAAHAO3/AAADAAEAAAAIAO3/AAAFAAYAAAAJAO3/AAACAAEAAAAKAO3/AAADAAEAAAALAO3/AAAJAAIAAAAGAO7/AAAHAAMAAAAGAO//AAAIAAMAAAAHAO//AAAHAAMAAAAIAO//AAAHAAMAAAAJAO//AAACAAIAAAAKAO//AAADAAIAAAAKAO7/AAAHAAMAAAAJAO7/AAAHAAMAAAAIAO7/AAAHAAMAAAAHAO7/AAAHAAMAAAA=")
-tile_set = ExtResource("1_ygkra")
+tile_set = ExtResource("1_0nbwh")
 collision_enabled = false
 
 [node name="WallLayer" type="TileMapLayer" parent="."]
 scale = Vector2(4, 4)
 tile_map_data = PackedByteArray("AAAEAAEAAAAAAAMAAAALAAsAAAAEAAQAAAAJAAsAAAACAAQAAAAKAAsAAAADAAQAAAAHAAsAAAACAAQAAAAIAAsAAAADAAQAAAAFAAsAAAABAAQAAAAGAAsAAAADAAQAAAAEAAsAAAAAAAQAAAAEAAgAAAAAAAEAAAAEAAkAAAAAAAIAAAAEAAoAAAAAAAMAAAAEAAUAAAAAAAEAAAAEAAYAAAAAAAIAAAAEAAcAAAAAAAMAAAAEAAIAAAAAAAQAAAAEAAQAAAAAAAAAAAAMAAEAAAAFAAAAAAAMAAIAAAAFAAQAAAAMAAQAAAAFAAAAAAAMAAUAAAAFAAEAAAAMAAYAAAAFAAIAAAAMAAcAAAAFAAMAAAAMAAgAAAAFAAEAAAAMAAkAAAAFAAIAAAAMAAoAAAAFAAMAAAAMAAsAAAAFAAQAAAAEAP//AAAAAAEAAAAEAAAAAAAAAAIAAAAEAPz/AAAAAAEAAAAEAP3/AAAAAAIAAAAEAP7/AAAAAAMAAAAEAPr/AAAAAAIAAAAEAPv/AAAAAAMAAAAEAPD/AAAAAAEAAAAEAPH/AAAAAAIAAAAEAPL/AAAAAAMAAAAMAP7/AAAFAAEAAAAMAP//AAAFAAIAAAAMAAAAAAAFAAMAAAAMAPv/AAAFAAEAAAAMAPz/AAAFAAIAAAAMAP3/AAAFAAMAAAAMAPr/AAAFAAMAAAAMAPL/AAAFAAMAAAAMAPD/AAAFAAEAAAAMAPH/AAAFAAIAAAAFAAQAAAABAAAAAAAGAAQAAAADAAUAAAALAAQAAAAEAAAAAAAKAAQAAAACAAUAAAAKAAIAAAADAAYAAAAFAAIAAAABAAQAAAALAAIAAAAEAAQAAAAKAAMAAAAFAAIAAAAGAAMAAAAAAAIAAAAMAPP/AAAFAAIAAAAEAPP/AAAAAAIAAAAFAPr/AAABAAAAAAALAPr/AAAEAAAAAAAGAPr/AAADAAUAAAAKAPr/AAACAAUAAAAKAPn/AAAFAAIAAAAKAPj/AAAFAAIAAAAGAPn/AAAAAAIAAAAGAPj/AAAAAAIAAAAGAPf/AAAAAAIAAAAGAPb/AAAAAAIAAAAGAPX/AAAAAAEAAAAGAPT/AAACAAYAAAAKAPT/AAADAAYAAAAKAPf/AAAFAAIAAAAKAPb/AAAFAAIAAAAKAPX/AAAFAAEAAAAFAPT/AAABAAQAAAALAPT/AAAEAAQAAAAMAPT/AAAFAAQAAAAEAPT/AAAAAAQAAAAEAOz/AAAAAAAAAAAFAOz/AAABAAAAAAAGAOz/AAACAAAAAAAHAOz/AAAEAAcAAAAIAOz/AAAFAAUAAAAJAOz/AAAFAAcAAAAKAOz/AAADAAAAAAALAOz/AAAEAAAAAAAMAOz/AAAFAAAAAAAEAO//AAAAAAIAAAAEAO7/AAAAAAIAAAAEAO3/AAAAAAEAAAAMAO//AAAFAAIAAAAMAO7/AAAFAAIAAAAMAO3/AAAFAAEAAAAGAAIAAAACAAYAAAA=")
-tile_set = ExtResource("1_ygkra")
+tile_set = ExtResource("1_0nbwh")
 
-[node name="Player" parent="." instance=ExtResource("2_tobfr")]
+[node name="Player" parent="." instance=ExtResource("2_uetfr")]
 position = Vector2(522, 573)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 autoplay = true
 attenuation = 1e-05
 
-[node name="PlayerHUD" parent="." instance=ExtResource("4_co6kt")]
+[node name="PlayerHUD" parent="." instance=ExtResource("3_3sqcp")]
 layer = 2
 
-[node name="Dummy" parent="." instance=ExtResource("5_mqe60")]
+[node name="Dummy" parent="." instance=ExtResource("4_ef1ic")]
 position = Vector2(533.25, 214.5)
 
-[node name="Dummy2" parent="." instance=ExtResource("5_mqe60")]
+[node name="Dummy2" parent="." instance=ExtResource("4_ef1ic")]
 position = Vector2(540, -736)
 
 [node name="Label" type="Label" parent="."]
@@ -86,49 +78,60 @@ offset_bottom = 23.0
 
 [node name="MoveGuide" type="Node2D" parent="."]
 z_index = 2
-position = Vector2(556, 816)
+position = Vector2(400, 800)
 scale = Vector2(1.5, 1.5)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="MoveGuide"]
-position = Vector2(-81, -19)
-scale = Vector2(2, 2)
-texture = SubResource("AtlasTexture_aj36y")
-offset = Vector2(12, 0)
-
-[node name="Sprite2D2" type="Sprite2D" parent="MoveGuide"]
-position = Vector2(-109, 4)
-scale = Vector2(2, 2)
-texture = SubResource("AtlasTexture_lxmv3")
-offset = Vector2(12, 0)
-
-[node name="Sprite2D3" type="Sprite2D" parent="MoveGuide"]
-position = Vector2(-81, 12)
-scale = Vector2(2, 2)
-texture = SubResource("AtlasTexture_m5h32")
-offset = Vector2(12, 0)
-
-[node name="Sprite2D4" type="Sprite2D" parent="MoveGuide"]
-position = Vector2(-53, 4)
-scale = Vector2(2, 2)
-texture = SubResource("AtlasTexture_np6ys")
+position = Vector2(-90.6667, -0.666657)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2mhwr")
 offset = Vector2(12, 0)
 
 [node name="Label" type="Label" parent="MoveGuide"]
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = -6.0
+offset_left = -20.0
 offset_top = -25.0
-offset_right = 117.0
+offset_right = 103.0
 offset_bottom = 33.0
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 12
-theme_override_fonts/font = ExtResource("7_7mebi")
+theme_override_fonts/font = ExtResource("6_4k1a2")
 theme_override_font_sizes/font_size = 48
 text = "Move"
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AimGuide" type="Node2D" parent="."]
+z_index = 2
+position = Vector2(750, 800)
+scale = Vector2(1.5, 1.5)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="AimGuide"]
+position = Vector2(-45.3333, 0)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_6ifnp")
+
+[node name="Label" type="Label" parent="AimGuide"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -25.0
+offset_right = 108.0
+offset_bottom = 33.0
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 12
+theme_override_fonts/font = ExtResource("6_4k1a2")
+theme_override_font_sizes/font_size = 48
+text = "Aim"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="MeleeGuide" type="Node2D" parent="."]
 position = Vector2(774, 221)
@@ -138,7 +141,7 @@ metadata/_edit_group_ = true
 [node name="Sprite2D" type="Sprite2D" parent="MeleeGuide"]
 position = Vector2(-73, 0)
 scale = Vector2(2, 2)
-texture = SubResource("AtlasTexture_6h8gx")
+texture = SubResource("AtlasTexture_60ikk")
 offset = Vector2(12, 0)
 
 [node name="Label" type="Label" parent="MeleeGuide"]
@@ -152,7 +155,7 @@ offset_bottom = 32.0
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 12
-theme_override_fonts/font = ExtResource("7_7mebi")
+theme_override_fonts/font = ExtResource("6_4k1a2")
 theme_override_font_sizes/font_size = 48
 text = "Melee
 "
@@ -166,7 +169,7 @@ metadata/_edit_group_ = true
 [node name="Sprite2D" type="Sprite2D" parent="RangedGuide"]
 position = Vector2(-105, -3)
 scale = Vector2(2, 2)
-texture = SubResource("AtlasTexture_emqxg")
+texture = SubResource("AtlasTexture_ryckw")
 offset = Vector2(12, 0)
 
 [node name="Label" type="Label" parent="RangedGuide"]
@@ -180,7 +183,7 @@ offset_bottom = 29.0
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 12
-theme_override_fonts/font = ExtResource("7_7mebi")
+theme_override_fonts/font = ExtResource("6_4k1a2")
 theme_override_font_sizes/font_size = 48
 text = "Ranged
 "
@@ -200,7 +203,7 @@ grow_vertical = 2
 scale = Vector2(1.25, 1.25)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 12
-theme_override_fonts/font = ExtResource("7_7mebi")
+theme_override_fonts/font = ExtResource("6_4k1a2")
 theme_override_font_sizes/font_size = 48
 text = "Pick up Spirits to boost your abilities !
 "
@@ -217,7 +220,7 @@ grow_vertical = 2
 scale = Vector2(1.25, 1.25)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 12
-theme_override_fonts/font = ExtResource("7_7mebi")
+theme_override_fonts/font = ExtResource("6_4k1a2")
 theme_override_font_sizes/font_size = 48
 text = "Kill all enemies to proceed to the next level !
 "
@@ -225,28 +228,28 @@ text = "Kill all enemies to proceed to the next level !
 [node name="Sprite2D" type="Sprite2D" parent="Spirit Guide"]
 position = Vector2(-2, -68)
 scale = Vector2(4, 4)
-texture = ExtResource("8_u6k3q")
+texture = ExtResource("7_ohkih")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Spirit Guide"]
 position = Vector2(363, -64)
 scale = Vector2(4, 4)
-texture = SubResource("AtlasTexture_538uo")
+texture = SubResource("AtlasTexture_wrfiw")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Spirit Guide"]
 position = Vector2(-140, -76)
 scale = Vector2(4, 4)
-texture = SubResource("AtlasTexture_o2pkh")
+texture = SubResource("AtlasTexture_a2dsk")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Spirit Guide"]
 position = Vector2(196, -74)
 scale = Vector2(4, 4)
-texture = SubResource("AtlasTexture_emvw7")
+texture = SubResource("AtlasTexture_ee7cu")
 
 [node name="NextLevelArea" type="Area2D" parent="."]
-script = ExtResource("12_r71qg")
+script = ExtResource("11_b28ts")
 next_level = "res://Scenes/title_screen.tscn"
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NextLevelArea" groups=["next_level"]]
 position = Vector2(546.5, -1164.88)
-shape = SubResource("RectangleShape2D_0qx4r")
+shape = SubResource("RectangleShape2D_o3vu1")

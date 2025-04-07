@@ -41,7 +41,8 @@ func _ready():
 	$AttackEffect01/AttackEffectSprite.frame_changed.connect(_on_attack_effect_frame_changed)
 	$AttackEffect01/AttackHitbox.disabled = true
 	$ContinuePrompt.visible = false
-
+	
+	control_type = SettingsManager.curr_control
 	# Set up hp bar
 	call_deferred("emit_setup_hpbar")
 	if (control_type == 0):
@@ -249,7 +250,7 @@ func fire_arrow():
 	var scale_factor = 1.0
 
 
-	if current_scene.name == "tutorial_level":
+	if current_scene.name == "tutorial_level" || current_scene.name == "TutorialLevel2":
 		scale_factor = 4.0
 	elif scene_scale != Vector2.ONE:
 		scale_factor = (scene_scale.x + scene_scale.y) / 2
@@ -288,7 +289,8 @@ func fire_arrow():
 	# calculate direction of arrow
 
 	var adjusted_speed = arrow_speed * scale_factor
-	if current_scene.name != "tutorial_level":
+	print(current_scene.name)
+	if current_scene.name != "tutorial_level" && current_scene.name != "TutorialLevel2":
 		adjusted_speed = adjusted_speed / 4.0
 	arrow_instance.velocity = dir * adjusted_speed
 
