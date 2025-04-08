@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://wysg20h8ri63"]
 
-[ext_resource type="Script" path="res://Scenes/props/bookshelf.gd" id="1_u8pnn"]
+[ext_resource type="Script" uid="uid://b82mbc6j2r4kq" path="res://Scenes/props/bookshelf.gd" id="1_u8pnn"]
 [ext_resource type="Texture2D" uid="uid://3qe2rcup43ig" path="res://Assets/Sprites/Tiles/FDR_Dungeon.png" id="1_w1qki"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_stmj5"]

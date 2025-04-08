@@ -1,7 +1,7 @@
 [gd_scene load_steps=33 format=4 uid="uid://d1umn4rwip6xq"]
 
 [ext_resource type="Texture2D" uid="uid://bvrynxbdcuy8g" path="res://Assets/Sprites/Tiles/Dungeon_Tileset_v2.png" id="1_l6kaj"]
-[ext_resource type="Script" path="res://Scripts/enemy_spawner.gd" id="2_bqoxl"]
+[ext_resource type="Script" uid="uid://iiyht5d252at" path="res://Scripts/enemy_spawner.gd" id="2_bqoxl"]
 [ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="2_xobs2"]
 [ext_resource type="PackedScene" uid="uid://ckkepwnyxc5tj" path="res://Scenes/traps/spike_wave_left_to_right.tscn" id="3_mb5lm"]
 [ext_resource type="PackedScene" uid="uid://dat7owl2o1282" path="res://Scenes/traps/spike_wave_right_to_left.tscn" id="4_5ohgd"]
@@ -12,8 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://b8733p18lxm7m" path="res://Assets/Sprites/Tiles/Dungeon_item_props_v2.png" id="9_vut6r"]
 [ext_resource type="Texture2D" uid="uid://ws6vyuy0si1" path="res://Assets/Sprites/Tiles/FDR_Ground_Tiles_Godot.png" id="10_o8t2y"]
 [ext_resource type="Texture2D" uid="uid://bl73ub7lfunnj" path="res://Assets/Sprites/Tiles/FDR_Ground_Tiles.png" id="11_rw6qf"]
-[ext_resource type="Script" path="res://Scripts/main_next level.gd" id="13_vyvm8"]
-[ext_resource type="Script" path="res://Scripts/spirit_spawner.gd" id="14_000bl"]
+[ext_resource type="Script" uid="uid://cravfq6hvos04" path="res://Scripts/main_next level.gd" id="13_vyvm8"]
+[ext_resource type="Script" uid="uid://bh6pv1b1ctrhr" path="res://Scripts/spirit_spawner.gd" id="14_000bl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1t6vd"]
 texture = ExtResource("1_l6kaj")

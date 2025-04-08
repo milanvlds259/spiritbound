@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://k0whlwy7le1b"]
 
-[ext_resource type="Script" path="res://Scenes/Bosses/bossminotaur.gd" id="1_6pvhb"]
+[ext_resource type="Script" uid="uid://bcvj0txywsviq" path="res://Scenes/Bosses/bossminotaur.gd" id="1_6pvhb"]
 [ext_resource type="Texture2D" uid="uid://di18nb1je2k1" path="res://Assets/Sprites/EnemyBoss/enemy_boss_minotaur.png" id="1_co8jk"]
 [ext_resource type="PackedScene" uid="uid://bn2m5ghwophjs" path="res://Scenes/damage_label.tscn" id="2_yfafg"]
 [ext_resource type="Texture2D" uid="uid://rtkce1jrkiiw" path="res://Assets/Sprites/player/Soldier-Attack01_Fire_Effect.png" id="3_fx8ot"]
