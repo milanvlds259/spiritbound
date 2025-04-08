@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://v7fuklt8nwxj"]
+[gd_scene load_steps=14 format=3 uid="uid://v7fuklt8nwxj"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_xlfw7"]
 [ext_resource type="PackedScene" uid="uid://cufgcvrbu5khl" path="res://Scenes/arrow.tscn" id="2_387co"]
@@ -20,6 +20,10 @@ height = 24.0
 [sub_resource type="AtlasTexture" id="AtlasTexture_jrcy8"]
 atlas = ExtResource("7_0pmo8")
 region = Rect2(324, 171, 13, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqlrt"]
+atlas = ExtResource("7_0pmo8")
+region = Rect2(85, 0, 16, 16)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 1
@@ -74,20 +78,15 @@ shape = SubResource("CapsuleShape2D_dbeav")
 [node name="ContinuePrompt" type="Node2D" parent="."]
 scale = Vector2(1.5, 1.5)
 
-[node name="Sprite2D" type="Sprite2D" parent="ContinuePrompt"]
-position = Vector2(-15.5, -12.8333)
-scale = Vector2(0.413462, 0.413462)
-texture = SubResource("AtlasTexture_jrcy8")
-
-[node name="Label" type="Label" parent="ContinuePrompt/Sprite2D"]
+[node name="Label" type="Label" parent="ContinuePrompt"]
 anchors_preset = -1
 anchor_top = 0.486
 anchor_bottom = 0.486
-offset_left = 13.907
-offset_top = -17.0831
-offset_right = 332.907
-offset_bottom = 61.9169
-scale = Vector2(0.25, 0.25)
+offset_left = -9.74998
+offset_top = -17.0833
+offset_right = 309.25
+offset_bottom = 61.9167
+scale = Vector2(0.103, 0.103)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
@@ -95,3 +94,13 @@ theme_override_constants/shadow_outline_size = 16
 theme_override_fonts/font = ExtResource("8_x1yrj")
 theme_override_font_sizes/font_size = 78
 text = "Continue"
+
+[node name="SpriteKeyboard" type="Sprite2D" parent="ContinuePrompt"]
+position = Vector2(-15.5, -12.8333)
+scale = Vector2(0.413462, 0.413462)
+texture = SubResource("AtlasTexture_jrcy8")
+
+[node name="SpriteController" type="Sprite2D" parent="ContinuePrompt"]
+position = Vector2(-15.5, -12.8333)
+scale = Vector2(0.401, 0.401)
+texture = SubResource("AtlasTexture_fqlrt")
