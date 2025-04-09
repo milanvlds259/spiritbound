@@ -251,10 +251,13 @@ func fire_arrow():
 
 	if current_scene.name == "tutorial_level":
 		scale_factor = 4.0
+	elif current_scene.name == "Main":
+		scale_factor = 8.0
 	elif scene_scale != Vector2.ONE:
 		scale_factor = (scene_scale.x + scene_scale.y) / 2
 	else:
 		scale_factor = 1.0
+	print(current_scene.name)
 	print(scale_factor)
 
 	get_tree().current_scene.add_child(arrow_instance)

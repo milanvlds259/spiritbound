@@ -225,7 +225,6 @@ text = "16 / 20"
 vertical_alignment = 2
 
 [node name="GameOverText" type="Label" parent="."]
-visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -243,15 +242,36 @@ theme_override_font_sizes/font_size = 64
 text = "You Died!"
 horizontal_alignment = 1
 
+[node name="Score" type="Label" parent="GameOverText"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = -1.866
+anchor_right = 0.5
+anchor_bottom = -1.866
+offset_left = -167.0
+offset_top = 212.817
+offset_right = 168.0
+offset_bottom = 313.817
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 9
+theme_override_fonts/font = ExtResource("6_28xsp")
+theme_override_font_sizes/font_size = 48
+text = "Floors Cleared: 17
+Enemies Killed: 84"
+horizontal_alignment = 1
+
 [node name="RestartButton" type="Button" parent="."]
-visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -134.0
-offset_top = 256.0
-offset_right = 134.0
-offset_bottom = 325.0
+offset_left = -135.0
+offset_top = 352.0
+offset_right = 133.0
+offset_bottom = 421.0
 grow_horizontal = 2
 theme_override_colors/font_outline_color = Color(0.0177324, 0.0177324, 0.0177324, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -263,14 +283,13 @@ theme_override_styles/normal = ExtResource("8_cgs3r")
 text = "Restart"
 
 [node name="MenuBackButton" type="Button" parent="."]
-visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -147.0
-offset_top = 344.0
-offset_right = 147.0
-offset_bottom = 413.0
+offset_left = -146.0
+offset_top = 431.0
+offset_right = 148.0
+offset_bottom = 500.0
 grow_horizontal = 2
 theme_override_colors/font_outline_color = Color(0.0177324, 0.0177324, 0.0177324, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
