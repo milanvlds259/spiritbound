@@ -2,12 +2,12 @@
 
 [ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="1_dasry"]
 [ext_resource type="Texture2D" uid="uid://3qe2rcup43ig" path="res://Assets/Sprites/Tiles/FDR_Dungeon.png" id="2_hhx4x"]
-[ext_resource type="Script" path="res://Scripts/enemy_spawner.gd" id="2_y1hw7"]
+[ext_resource type="Script" uid="uid://iiyht5d252at" path="res://Scripts/enemy_spawner.gd" id="2_y1hw7"]
 [ext_resource type="PackedScene" uid="uid://colewlvdd1y07" path="res://Scenes/props/brazier.tscn" id="3_xu2lo"]
 [ext_resource type="PackedScene" uid="uid://wysg20h8ri63" path="res://Scenes/props/bookshelf.tscn" id="4_15kmm"]
 [ext_resource type="PackedScene" uid="uid://c65iy8ixixoyr" path="res://Scenes/props/empty_bookshelf.tscn" id="5_0t6n6"]
-[ext_resource type="Script" path="res://Scripts/main_next level.gd" id="7_pkuiv"]
-[ext_resource type="Script" path="res://Scripts/spirit_spawner.gd" id="8_8kmk5"]
+[ext_resource type="Script" uid="uid://cravfq6hvos04" path="res://Scripts/main_next level.gd" id="7_pkuiv"]
+[ext_resource type="Script" uid="uid://bh6pv1b1ctrhr" path="res://Scripts/spirit_spawner.gd" id="8_8kmk5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ylv5d"]
 texture = ExtResource("2_hhx4x")

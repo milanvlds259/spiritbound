@@ -41,7 +41,7 @@ func _on_spirit_inventory_updated(new_inventory: Array) -> void:
 func _on_player_hp_changed(new_hp: int) -> void:
 
 	$HPBar.value = new_hp
-	$HPBar/HPValueLabel.text = str(new_hp) + " / " + str($HPBar.max_value)
+	$HPBar/HPValueLabel.text = str(new_hp) + " / " + str(int($HPBar.max_value))
 
 func _on_setup_hpbar(hp: int, max_hp: int) -> void:
 	print("Setting up hp bar")

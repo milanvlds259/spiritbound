@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=4 uid="uid://d1p1mkgpxd01q"]
 
 [ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="1_37tcx"]
-[ext_resource type="Script" path="res://Scripts/enemy_spawner.gd" id="2_eudi0"]
+[ext_resource type="Script" uid="uid://iiyht5d252at" path="res://Scripts/enemy_spawner.gd" id="2_eudi0"]
 [ext_resource type="Texture2D" uid="uid://b8733p18lxm7m" path="res://Assets/Sprites/Tiles/Dungeon_item_props_v2.png" id="2_osg2q"]
 [ext_resource type="Texture2D" uid="uid://bvrynxbdcuy8g" path="res://Assets/Sprites/Tiles/Dungeon_Tileset_v2.png" id="3_1sqnm"]
 [ext_resource type="Texture2D" uid="uid://3qe2rcup43ig" path="res://Assets/Sprites/Tiles/FDR_Dungeon.png" id="4_s112y"]
@@ -11,8 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://colewlvdd1y07" path="res://Scenes/props/brazier.tscn" id="10_c0c8c"]
 [ext_resource type="PackedScene" uid="uid://ddhrmeowk1f5o" path="res://Scenes/traps/spike_wave_bottom_up.tscn" id="11_xhf7u"]
 [ext_resource type="PackedScene" uid="uid://cawlsgibekht1" path="res://Scenes/traps/spike_wave_top down.tscn" id="12_8vb7l"]
-[ext_resource type="Script" path="res://Scripts/main_next level.gd" id="13_hvw6c"]
-[ext_resource type="Script" path="res://Scripts/spirit_spawner.gd" id="13_jnc27"]
+[ext_resource type="Script" uid="uid://cravfq6hvos04" path="res://Scripts/main_next level.gd" id="13_hvw6c"]
+[ext_resource type="Script" uid="uid://bh6pv1b1ctrhr" path="res://Scripts/spirit_spawner.gd" id="13_jnc27"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b331x"]
 texture = ExtResource("2_osg2q")

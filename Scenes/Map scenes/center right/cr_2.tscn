@@ -5,7 +5,6 @@
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_68si5"]
 texture = ExtResource("1_q0r5s")
-
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -109,7 +108,6 @@ texture = ExtResource("1_q0r5s")
 
 [sub_resource type="TileSet" id="TileSet_s4083"]
 sources/0 = SubResource("TileSetAtlasSource_68si5")
-
 
 [node name="cr2" type="Node2D"]
 visible = false
