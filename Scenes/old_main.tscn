@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://c4abcppdikws3" path="res://Assets/Audio/8bitloop_Level_Combat.wav" id="7_44unc"]
 [ext_resource type="Texture2D" uid="uid://3qe2rcup43ig" path="res://Assets/Sprites/Tiles/FDR_Dungeon.png" id="7_62rwg"]
 [ext_resource type="PackedScene" uid="uid://de7br0582ath" path="res://Scenes/player_hud.tscn" id="8_g1w1d"]
-[ext_resource type="PackedScene" uid="uid://nipi6pghh748" path="res://Scenes/Enemies/enemy_skeleton.tscn" id="9_v8b8w"]
+[ext_resource type="PackedScene" uid="uid://dy2kqmt4m2af" path="res://Scenes/Enemies/enemy_werebear.tscn" id="10_fsdm0"]
 [ext_resource type="PackedScene" uid="uid://dqqb7caw840bf" path="res://Scenes/spirits/earth_spirit.tscn" id="11_cfs5g"]
 [ext_resource type="PackedScene" uid="uid://k0whlwy7le1b" path="res://Scenes/Bosses/minotaur.tscn" id="13_svhai"]
 
@@ -1207,7 +1207,7 @@ tile_map_data = PackedByteArray("AAAyAP//AAAFAAQAAAAzAP//AAAIAAMAAADu/xoAAAAEAAM
 tile_set = SubResource("TileSet_qd6qe")
 
 [node name="Player" parent="." instance=ExtResource("2_m62md")]
-position = Vector2(273, 225)
+position = Vector2(253, 226)
 knockback_decay = 500.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
@@ -1225,8 +1225,8 @@ layer = 2
 [node name="Minotaur" parent="." instance=ExtResource("13_svhai")]
 position = Vector2(-1367, 499)
 
-[node name="EnemySkeleton" parent="." instance=ExtResource("9_v8b8w")]
-position = Vector2(861, 241)
-
 [node name="EarthSpirit" parent="." instance=ExtResource("11_cfs5g")]
 position = Vector2(351, 576)
+
+[node name="EnemyWerebear" parent="." instance=ExtResource("10_fsdm0")]
+position = Vector2(901, 220)

@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cc1mtcjnhc5ie" path="res://Assets/Sprites/Spirits/ice_guy.png" id="6_0ysoo"]
 [ext_resource type="FontFile" uid="uid://c5y2dv5ufvdgf" path="res://Assets/Fonts/DungeonFont.ttf" id="6_28xsp"]
 [ext_resource type="PackedScene" uid="uid://ct8hpq8d4mjsj" path="res://Scenes/title_screen.tscn" id="7_qi7h4"]
-[ext_resource type="StyleBox" uid="uid://rqmrq5uihx6i" path="res://Resources/ButtonStyle.tres" id="8_cgs3r"]
+[ext_resource type="StyleBox" uid="uid://c56hrfbfrri85" path="res://Resources/ButtonStyle.tres" id="8_cgs3r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_14212"]
 atlas = ExtResource("3_kwkag")
@@ -225,6 +225,7 @@ text = "16 / 20"
 vertical_alignment = 2
 
 [node name="GameOverText" type="Label" parent="."]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -243,6 +244,7 @@ text = "You Died!"
 horizontal_alignment = 1
 
 [node name="Score" type="Label" parent="GameOverText"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -265,6 +267,7 @@ Enemies Killed: 84"
 horizontal_alignment = 1
 
 [node name="RestartButton" type="Button" parent="."]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -283,6 +286,7 @@ theme_override_styles/normal = ExtResource("8_cgs3r")
 text = "Restart"
 
 [node name="MenuBackButton" type="Button" parent="."]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
