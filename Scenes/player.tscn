@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://v7fuklt8nwxj"]
+[gd_scene load_steps=18 format=3 uid="uid://v7fuklt8nwxj"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_xlfw7"]
 [ext_resource type="PackedScene" uid="uid://cufgcvrbu5khl" path="res://Scenes/arrow.tscn" id="2_387co"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://di4vu1rd2dh6v" path="res://Assets/Audio/laserShoot.wav" id="10_lsuou"]
 [ext_resource type="AudioStream" uid="uid://b3dhp10io7i8v" path="res://Assets/Audio/8bit_hitsuccessful.wav" id="11_rnavt"]
 [ext_resource type="AudioStream" uid="uid://pkov7angwvl5" path="res://Assets/Audio/explosion.wav" id="12_4m6xa"]
+[ext_resource type="AudioStream" uid="uid://di1x7pg4boj3e" path="res://Assets/Audio/hitHurt.wav" id="13_crulu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mrugd"]
 size = Vector2(13.5, 9)
@@ -118,3 +119,6 @@ stream = ExtResource("11_rnavt")
 
 [node name="MeleeFireExplosion" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_4m6xa")
+
+[node name="PlayerHurt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_crulu")
