@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://ctth5yk3ynadd"]
+[gd_scene load_steps=23 format=4 uid="uid://ctth5yk3ynadd"]
 
 [ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="1_ygkra"]
 [ext_resource type="PackedScene" uid="uid://v7fuklt8nwxj" path="res://Scenes/player.tscn" id="2_tobfr"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cv2jkub02j7oh" path="res://Assets/Sprites/Spirits/Spirit_Earth_Animation.png" id="9_vobyk"]
 [ext_resource type="Texture2D" uid="uid://l1ww5jlc34ch" path="res://Assets/Sprites/Spirits/Spirits.png" id="10_ij447"]
 [ext_resource type="Texture2D" uid="uid://bjwf4ijvw4ol0" path="res://Assets/Sprites/Spirits/thunder_spirit.png" id="11_38pgf"]
+[ext_resource type="PackedScene" uid="uid://bj8ayerplwie2" path="res://Scenes/Enemies/enemy_skel_great.tscn" id="12_kpmow"]
 [ext_resource type="Script" path="res://Scripts/next_level_area.gd" id="12_r71qg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aj36y"]
@@ -250,3 +251,6 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NextLevelArea" groups=["next_level"]]
 position = Vector2(546.5, -1164.88)
 shape = SubResource("RectangleShape2D_0qx4r")
+
+[node name="EnemySkelGreat" parent="." instance=ExtResource("12_kpmow")]
+position = Vector2(576, -104)
