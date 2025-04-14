@@ -1,8 +1,8 @@
 extends Node2D
 
 # File paths for the rooms and the boss rooms
-const ROOM_SCENE_FOLDER := "res://Scenes/room scenes/"
-const BOSS_ROOM_SCENE_FOLDER := "res://Scenes/boss room scenes/"
+const ROOM_SCENE_FOLDER := "res://scenes/room scenes/"
+const BOSS_ROOM_SCENE_FOLDER := "res://scenes/boss room scenes/"
 
 # Room Management
 var room_count := 0

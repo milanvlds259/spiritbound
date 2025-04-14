@@ -32,6 +32,8 @@ player="duh"
 enemy_hit=""
 arrows=""
 next_level=""
+Room=""
+wall=""
 
 [input]
 

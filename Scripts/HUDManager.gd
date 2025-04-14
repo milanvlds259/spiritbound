@@ -27,7 +27,7 @@ func _on_spirit_inventory_updated(new_inventory: Array) -> void:
 		var spirit_type = new_inventory[index]
 		# Get the panel for the spirit
 		var panel = inventory.get_child(index)
-		if panel.has_node("Sprite"):
+w		if panel.has_node("Sprite"):
 			# Get the sprite node
 			var sprite = panel.get_node("Sprite")
 			if spirit_textures.has(spirit_type):
