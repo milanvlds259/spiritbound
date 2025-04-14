@@ -77,6 +77,7 @@ func damage_taken(damage: int) -> void:
 func died() -> void:
 	disable()
 	sprite.play("death")
+	Global.add_enemy_kill()
 
 func disable() -> void:
 	# Disable further physics processing (could also play a death animation, etc.).

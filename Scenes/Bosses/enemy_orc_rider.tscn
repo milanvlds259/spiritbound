@@ -666,7 +666,7 @@ damage_label = ExtResource("2_5ype3")
 [node name="OrcRiderSprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_ssj4f")
-animation = &"attackcharge"
+animation = &"idle"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_irh6v")

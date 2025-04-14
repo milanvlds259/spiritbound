@@ -36,6 +36,7 @@ func _process(_delta):
 		var room_loader = find_room_loader()
 		if room_loader:
 			room_loader.load_next_room()
+			Global.add_floor_cleared()
 		else:
 			print("ERROR: RoomLoader not found in scene!")
 
