@@ -38,7 +38,7 @@ func _on_body_entered(body: Node2D) -> void:
 		return
 
 	if body.is_in_group("player"):
-		print("⚔️ Sword hit player!")
+		print("Sword hit player!")
 		body.take_damage(damage)
 
 	queue_free()

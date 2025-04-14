@@ -22,7 +22,7 @@ func _ready():
 	var players = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
 		player_node = players[0]
-		print("✅ Banshee found player at:", player_node.global_position)
+		print("Banshee found player at:", player_node.global_position)
 	else:
 		print("❌ Banshee couldn't find any player!")
 
@@ -96,7 +96,7 @@ func throw_sword():
 		var sword = sword_scene.instantiate()
 		get_tree().current_scene.add_child(sword)
 		sword.global_position = global_position + Vector2(0, -100)  # Offset to avoid self-collision
-		print("🗡️ Sword spawned at:", sword.global_position)
+		print("Sword spawned at:", sword.global_position)
 		sword.call_deferred("set_target", player_node.global_position)
 
 func _on_SwordSpawnTimer_timeout():
@@ -121,7 +121,7 @@ func spawn_swords_around_player(center: Vector2):
 
 func take_damage(amount: int) -> void:
 	current_health -= amount
-	print("🩸 Banshee took damage! New HP:", current_health)
+	print("Banshee took damage! New HP:", current_health)
 
 	$AnimatedSprite2D.modulate = Color(1, 0.5, 0.5)
 	await get_tree().create_timer(0.1).timeout
@@ -131,7 +131,7 @@ func take_damage(amount: int) -> void:
 		die()
 
 func die():
-	print("💀 Banshee has been defeated!")
+	print("Banshee has been defeated!")
 	anim.play("BansheeDeath")
 	set_physics_process(false)
 	await anim.animation_finished
@@ -147,15 +147,15 @@ func _on_HitBox_body_entered(body: Node2D) -> void:
 	print("📦 HitBox collision detected with:", body.name)
 
 	if body.is_in_group("player_attack") or body.name == "AttackEffect01":
-		print("✅ Valid attack detected!")
+		print("Valid attack detected!")
 
 		var damage = 15
 		if body.has_method("get_damage"):
 			damage = body.get_damage()
-			print("🎯 Damage value from body:", damage)
+			print("Damage value from body:", damage)
 		else:
-			print("⚠️ Using default damage:", damage)
+			print("Using default damage:", damage)
 
 		take_damage(damage)
 	else:
-		print("❌ Not a valid attack source.")
+		print("Not a valid attack source.")
