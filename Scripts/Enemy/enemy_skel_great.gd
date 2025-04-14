@@ -1,20 +1,20 @@
-class_name EnemyOrc extends CharacterBody2D
+class_name EnemySkelGreat extends CharacterBody2D
 
 # Speed, Health, Damage
-@export var normal_speed: float = 150
+@export var normal_speed: float = 180
 var current_speed: float = normal_speed
 @export var health: int = 15
-@export var base_damage: int = 5
+@export var base_damage: int = 8
 
 # Animation
-@onready var sprite: AnimatedSprite2D = $OrcSprite
+@onready var sprite: AnimatedSprite2D = $SkelGreatSprite
 
 #Taking Damage
 @export var damage_label: PackedScene
 @onready var hurt_area: Area2D = $HitBox         # The Area2D used for taking damage
-var hurt_color = Color(1,0.40,0.40)
+var hurt_color = Color(1,0.50,0.50)
 var hurt_duration = 0.1
-var invincible: bool = false
+var is_invincible: bool = false
 
 # Attacking
 @onready var is_attacking = false
@@ -26,7 +26,7 @@ var attack_type = "attackdown"
 var is_frozen: bool = false
 var target : Player
 @onready var follow_area: Area2D = $Vision      # Area2D used for vision
-enum State{IDLE, FOLLOW, HURT, ATTACK, DEATH}
+enum State{IDLE, FOLLOW, HURT, ATTACK, DEATH, BLOCK}
 var current_state: State = State.IDLE
 
 # Start/End Position
@@ -35,6 +35,7 @@ var end_position: Vector2
 
 func _ready() -> void:
 	sprite.frame_changed.connect(_on_frame_changed)
+	sprite.animation_finished.connect(_on_sprite_animation_finished)
 	$AttackArea/AttackHitbox.disabled = true
 	# Connect the hurt area's signal for collision detection.
 	if hurt_area:
@@ -42,8 +43,11 @@ func _ready() -> void:
 	# Initialize marker movement positions.
 	start_position = position
 
+	current_speed = normal_speed
+
 	# Connect enemy hitbox to hit player
 	$HitBox.body_entered.connect(_on_hitbox_body_entered)
+	$AttackArea.body_entered.connect(_on_attack_area_body_entered)
 
 func _process(_delta: float) -> void:
 	updateAnimations()
@@ -92,6 +96,12 @@ func update_velocity() -> void:
 			velocity = Vector2.ZERO
 		State.ATTACK:
 			velocity = Vector2.ZERO
+		
+		State.BLOCK:
+			#If the skeleton is already following player, it will continue, otherwise it will not change velocity
+			if target:
+				var direction = target.global_position - global_position
+				var new_velocity = direction.normalized() * current_speed
 
 func follow_body(body) -> void:
 	target = body
@@ -99,20 +109,31 @@ func follow_body(body) -> void:
 
 func _on_hurt_area_entered(area: Area2D) -> void:
 	# Check if the area is the player's attack hitbox (temporary)
-	if !invincible:
-		if area.is_in_group("player_attack"):
-			damage_taken(3)
-		elif area.is_in_group("arrows"):
-			damage_taken(3)
-			area.queue_free()
+	if area.is_in_group("player_attack"):
+		if is_invincible:
+			return
+		damage_taken(3)
+	elif area.is_in_group("arrows"):
+		damage_taken(3)
+		area.queue_free()
 
 func _on_hitbox_body_entered(body: Node) -> void:
+	
 	if body.is_in_group("player"):
 		var push_dir = (body.global_position - global_position).normalized()
 		body.apply_knockback(push_dir * impulse_str)
 
+func block_damage(damage: int) -> void:
+	current_state = State.BLOCK
+	sprite.play("parry")
+	var damage_label_instance = damage_label.instantiate()
+	damage_label_instance.text = str("blocked")
+	add_child(damage_label_instance)
+	
+	
+
 func damage_taken(damage: int) -> void:
-	invincible = true
+	is_invincible = true
 	modulate = hurt_color
 	match current_state:
 		State.IDLE:
@@ -162,30 +183,35 @@ func attack(body) -> void:
 func _on_frame_changed() -> void:
 	var current_frame = sprite.frame
 	var animation = sprite.animation
-	if animation == "attackdown" or animation == "attackup":
+	if animation == "attackdown":
 		if current_frame > 2 and current_frame < 5:
 			$AttackArea/AttackHitbox.disabled = false
 		else:
 			$AttackArea/AttackHitbox.disabled = true
+	elif animation == "attackup":
+		if current_frame > 5 and current_frame < 8:
+			$AttackArea/AttackHitbox.disabled = false
+		else:
+			$AttackArea/AttackHitbox.disabled = true
 
-func _on_orc_sprite_animation_finished() -> void:
+func _on_sprite_animation_finished() -> void:
+	modulate = Color(1, 1, 1, 1)
 	if sprite.animation == "hurt":
 		current_state = State.IDLE
-		modulate = Color(1, 1, 1, 1)
 		is_attacking = false
-		invincible = false
-
+		is_invincible = false
 	elif sprite.animation == "death":
 		queue_free()
-		modulate = Color(1, 1, 1, 1)
 		is_attacking = false
-		invincible = false
-
+		is_invincible = false
 	elif sprite.animation == "attackdown" or sprite.animation == "attackup":
 		current_state = State.IDLE
-		modulate = Color(1, 1, 1, 1)
 		is_attacking = false
-		invincible = false
+		is_invincible = false
+	elif sprite.animation == "raiseshield" or sprite.animation == "parry":
+		current_state = State.IDLE
+		is_attacking = false
+		
 
 func _on_attack_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):

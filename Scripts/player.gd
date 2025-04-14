@@ -48,8 +48,10 @@ func _ready():
 	call_deferred("emit_setup_hpbar")
 	if (control_type == 0):
 		control = Controltype.KEYBOARD
+		$ContinuePrompt/SpriteController.visible = false
 	else:
 		control = Controltype.CONTROLLER
+		$ContinuePrompt/SpriteKeyboard.visible = false
 
 
 func _on_can_transition(can_transition: bool):
@@ -57,10 +59,8 @@ func _on_can_transition(can_transition: bool):
 	match control:
 		Controltype.CONTROLLER:
 			$ContinuePrompt/SpriteController.visible = true
-			$ContinuePrompt/SpriteKeyboard.visible = false
 		Controltype.KEYBOARD:
 			$ContinuePrompt/SpriteKeyboard.visible = true
-			$ContinuePrompt/SpriteController.visible = false
 
 func emit_setup_hpbar():
 	hp = max_hp
