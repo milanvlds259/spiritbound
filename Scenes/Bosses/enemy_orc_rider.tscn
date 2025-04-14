@@ -1,7 +1,7 @@
 [gd_scene load_steps=97 format=3 uid="uid://c7eubxy7iku7k"]
 
 [ext_resource type="Texture2D" uid="uid://ow8oay24cnm6" path="res://Assets/TinyRPGCharPack/Orc rider/Orc rider(Split Effects)/Orc rider.png" id="1_uxb6d"]
-[ext_resource type="Script" path="res://Scripts/Enemy/enemy_orc_rider.gd" id="1_uysxu"]
+[ext_resource type="Script" uid="uid://dy70nf3w6m51q" path="res://Scripts/Enemy/enemy_orc_rider.gd" id="1_uysxu"]
 [ext_resource type="PackedScene" uid="uid://bn2m5ghwophjs" path="res://Scenes/damage_label.tscn" id="2_5ype3"]
 [ext_resource type="Texture2D" uid="uid://blt04qk2732it" path="res://Assets/TinyRPGCharPack/Orc rider/Orc rider(Split Effects)/Orc rider-Attack02_Effect.png" id="3_e0o6o"]
 [ext_resource type="Texture2D" uid="uid://ti4isowliwyn" path="res://Assets/TinyRPGCharPack/Orc rider/Orc rider(Split Effects)/Orc rider-Attack01_Effect.png" id="4_flw6a"]
@@ -666,7 +666,7 @@ damage_label = ExtResource("2_5ype3")
 [node name="OrcRiderSprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_ssj4f")
-animation = &"attackcharge"
+animation = &"idle"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_irh6v")

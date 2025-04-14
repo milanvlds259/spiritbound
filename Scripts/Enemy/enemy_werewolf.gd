@@ -144,6 +144,7 @@ func died() -> void:
 	current_state = State.DEATH
 	disable()
 	sprite.play("death")
+	Global.add_enemy_kill()
 
 func disable() -> void:
 	# Disable further physics processing (could also play a death animation, etc.).

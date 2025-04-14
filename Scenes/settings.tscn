@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://duexqplif2tvu"]
 
-[ext_resource type="Script" path="res://Scripts/settings.gd" id="1_tg0f4"]
+[ext_resource type="Script" uid="uid://31ffiiaa3pgt" path="res://Scripts/settings.gd" id="1_tg0f4"]
 [ext_resource type="Texture2D" uid="uid://boghl7hhgvs62" path="res://Assets/Sprites/Dungeon_brick_wall_purple.png.png" id="1_yexwk"]
 [ext_resource type="FontFile" uid="uid://c5y2dv5ufvdgf" path="res://Assets/Fonts/DungeonFont.ttf" id="2_itaxm"]
 [ext_resource type="Texture2D" uid="uid://d271g6sx3mnus" path="res://Assets/Sprites/FreeButtons.png" id="3_0tpwl"]
@@ -64,10 +64,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 540.0
-offset_top = 632.0
-offset_right = 940.0
-offset_bottom = 752.0
+offset_left = 541.0
+offset_top = 644.0
+offset_right = 941.0
+offset_bottom = 711.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.5, 0.5)
@@ -76,8 +76,7 @@ theme_override_colors/font_shadow_color = Color(0.109804, 0.0313726, 0.0588235, 
 theme_override_constants/shadow_outline_size = 8
 theme_override_fonts/font = ExtResource("2_itaxm")
 theme_override_font_sizes/font_size = 66
-text = "Save and Exit
-"
+text = "Save and Exit"
 horizontal_alignment = 1
 vertical_alignment = 1
 

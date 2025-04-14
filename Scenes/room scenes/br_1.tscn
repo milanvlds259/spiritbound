@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=4 uid="uid://b33xjbsmr7q3y"]
 
 [ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="1_pumca"]
-[ext_resource type="Script" path="res://Scripts/enemy_spawner.gd" id="2_o2uft"]
+[ext_resource type="Script" uid="uid://iiyht5d252at" path="res://Scripts/enemy_spawner.gd" id="2_o2uft"]
 [ext_resource type="PackedScene" uid="uid://bl3ldbh0gf5en" path="res://Scenes/traps/2x_3_loop.tscn" id="2_tnynj"]
 [ext_resource type="PackedScene" uid="uid://colewlvdd1y07" path="res://Scenes/props/brazier.tscn" id="4_b1q80"]
-[ext_resource type="Script" path="res://Scripts/main_next level.gd" id="4_btxvc"]
-[ext_resource type="Script" path="res://Scripts/spirit_spawner.gd" id="6_q4i6a"]
+[ext_resource type="Script" uid="uid://cravfq6hvos04" path="res://Scripts/main_next level.gd" id="4_btxvc"]
+[ext_resource type="Script" uid="uid://bh6pv1b1ctrhr" path="res://Scripts/spirit_spawner.gd" id="6_q4i6a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_raji6"]
 size = Vector2(12, 12)

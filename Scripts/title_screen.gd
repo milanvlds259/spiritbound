@@ -2,7 +2,8 @@ extends Node
 
 # Path to the main game scene - change this to your main scene path
 @export var main_scene_path : String = "res://room_loader.tscn"
-@export var tutorial_scene_path: String = "res://Scenes/levels/tutorial_level.tscn"
+@export var tutorial_scene_path_keyboard: String = "res://Scenes/levels/tutorial_level.tscn"
+@export var tutorial_scene_path_controller: String = "res://Scenes/levels/tutorial_level2.tscn"
 @export var settings_scene_path: String = "res://Scenes/settings.tscn"
 
 var scene_path: String = ""
@@ -56,7 +57,10 @@ func _on_tutorial_button_pressed() -> void:
 	
 	var tween = create_tween()
 	tween.tween_property(transition_overlay, "color", Color(0, 0, 0, 1), transition_duration)
-	scene_path = tutorial_scene_path
+	if SettingsManager.get_control_name() == "Controller":
+		scene_path = tutorial_scene_path_controller
+	elif SettingsManager.get_control_name() == "Keyboard":
+		scene_path = tutorial_scene_path_keyboard
 	tween.tween_callback(change_scene)
 
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cn5hvacow2vb6"]
 
 [ext_resource type="Texture2D" uid="uid://c6rey4bu8tmaw" path="res://Assets/TinyRPGCharPack/Skeleton Archer/Arrow(projectile)/Arrow03(100x100).png" id="1_2cnn5"]
-[ext_resource type="Script" path="res://Scripts/Enemy/enemy_skeleton_arrow.gd" id="1_xme4e"]
+[ext_resource type="Script" uid="uid://dqls2lcud8c1h" path="res://Scripts/Enemy/enemy_skeleton_arrow.gd" id="1_xme4e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_du3hy"]
 size = Vector2(30, 2)

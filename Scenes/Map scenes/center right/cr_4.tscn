@@ -5,7 +5,6 @@
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_68si5"]
 texture = ExtResource("1_bgqav")
-
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0

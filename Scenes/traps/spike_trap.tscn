@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://274xnww4a8dx"]
 
 [ext_resource type="Texture2D" uid="uid://3qe2rcup43ig" path="res://Assets/Sprites/Tiles/FDR_Dungeon.png" id="1_3epxq"]
-[ext_resource type="Script" path="res://spiketrap.gd" id="2_hiven"]
+[ext_resource type="Script" uid="uid://bwlulhv1bt5he" path="res://spiketrap.gd" id="2_hiven"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_webyr"]
 atlas = ExtResource("1_3epxq")

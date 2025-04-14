@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://conaltiyj33i7"]
 
-[ext_resource type="Script" path="res://map_gen.gd" id="1_mda76"]
+[ext_resource type="Script" uid="uid://bh3h4j0kti7aj" path="res://map_gen.gd" id="1_mda76"]
 
 [node name="map gen" type="Node2D"]
 scale = Vector2(4, 4)

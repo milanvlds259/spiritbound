@@ -1,6 +1,6 @@
 [gd_scene load_steps=46 format=3 uid="uid://c5bwvk7fq2qyh"]
 
-[ext_resource type="Script" path="res://Scripts/Enemy/enemy_slime.gd" id="1_c2335"]
+[ext_resource type="Script" uid="uid://bqtd85oxmpqq2" path="res://Scripts/Enemy/enemy_slime.gd" id="1_c2335"]
 [ext_resource type="Texture2D" uid="uid://b5suv02fjurnn" path="res://Assets/TinyRPGCharPack/Slime/Slime(Split Effects)/Slime.png" id="1_iba3l"]
 [ext_resource type="PackedScene" uid="uid://bn2m5ghwophjs" path="res://Scenes/damage_label.tscn" id="2_7wl4y"]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dtntgcbx3gs3d"]
 
 [ext_resource type="SpriteFrames" uid="uid://d1s7aklh3cqjj" path="res://Resources/Animations/FireSprite.tres" id="1_4h2qk"]
-[ext_resource type="Script" path="res://Scripts/fire_spirit.gd" id="1_naoud"]
+[ext_resource type="Script" uid="uid://c0lg60nnvku48" path="res://Scripts/fire_spirit.gd" id="1_naoud"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dvkxu"]
 radius = 17.0
