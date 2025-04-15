@@ -67,16 +67,10 @@ func enter_phase(phase):
 
 func spawn_shield():
 	if shield_scene and not shield_instance:
-		print("Spawning shield...")
 		shield_instance = shield_scene.instantiate()
-		if not shield_instance:
-			print("Shield instantiation failed.")
-		else:
-			add_child(shield_instance)
-			shield_instance.global_position = global_position
-			shield_instance.scale *= 3
-	else:
-		print("Shield not spawned. Either already exists or scene not assigned.")
+		add_child(shield_instance)
+		shield_instance.global_position = global_position
+		shield_instance.scale *= 3  # Scale the shield up
 
 func remove_shield():
 	if shield_instance:

@@ -1278,10 +1278,10 @@ texture = SubResource("CompressedTexture2D_r2ndd")
 polygon = PackedVector2Array(-7.18494, -11.9521, -0.505474, -11.9149, 9.53572, -11.7592, 9.64026, 1.74579, 9.64026, 13.2251, 9.7448, 17.3409, -4.35372, 17.3409, -17.6607, 17.3409, -17.6906, -11.502)
 script = SubResource("GDScript_1skun")
 
-[node name="banshee" parent="." instance=ExtResource("12_w7p1r")]
-position = Vector2(629, -577)
-scale = Vector2(0.3, 0.3)
-
 [node name="Player" parent="." instance=ExtResource("13_hpl0i")]
 position = Vector2(616, -351)
 scale = Vector2(1, 1)
+
+[node name="banshee" parent="." instance=ExtResource("12_w7p1r")]
+position = Vector2(629, -577)
+scale = Vector2(0.3, 0.3)

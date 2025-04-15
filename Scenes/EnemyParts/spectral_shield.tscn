@@ -73,7 +73,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oswvv")
 }],
-"loop": true,
+"loop": false,
 "name": &"ShieldIdle",
 "speed": 5.0
 }, {
@@ -134,19 +134,22 @@ animations = [{
 }]
 
 [node name="SpectralShield" type="Area2D"]
+collision_layer = 4
+collision_mask = 5
 script = ExtResource("1_xiba5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemy_hit"]]
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_28m2m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_cs4xe")
-animation = &"ShieldIdle"
+animation = &"ShieldShatter"
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 30.0
-one_shot = true
+wait_time = 4.632
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
