@@ -137,7 +137,7 @@ animations = [{
 height = 26.0325
 
 [node name="SpectralSword" type="Area2D"]
-rotation = 1.6441
+z_index = 2
 script = ExtResource("1_886du")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
