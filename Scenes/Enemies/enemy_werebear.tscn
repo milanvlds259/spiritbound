@@ -1,6 +1,6 @@
 [gd_scene load_steps=99 format=3 uid="uid://dy2kqmt4m2af"]
 
-[ext_resource type="Script" path="res://Scripts/Enemy/enemy_werebear.gd" id="1_2j1mh"]
+[ext_resource type="Script" uid="uid://b5rc2fck54303" path="res://Scripts/Enemy/enemy_werebear.gd" id="1_2j1mh"]
 [ext_resource type="PackedScene" uid="uid://bn2m5ghwophjs" path="res://Scenes/damage_label.tscn" id="2_616g8"]
 [ext_resource type="Texture2D" uid="uid://dody5y74t02gs" path="res://Assets/TinyRPGCharPack/Werebear/Werebear(Split Effects)/Werebear.png" id="2_jcge8"]
 [ext_resource type="Texture2D" uid="uid://d3bb6ajxkuvvt" path="res://Assets/TinyRPGCharPack/Werebear/Werebear(Split Effects)/Werebear-Attack01_Effect.png" id="3_bxwxv"]
@@ -594,7 +594,7 @@ animations = [{
 radius = 100.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f8aul"]
-radius = 200.0
+radius = 207.002
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_15xeb"]
 atlas = ExtResource("5_fi4ex")

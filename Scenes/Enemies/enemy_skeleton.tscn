@@ -1,6 +1,6 @@
 [gd_scene load_steps=53 format=3 uid="uid://nipi6pghh748"]
 
-[ext_resource type="Script" path="res://Scripts/Enemy/enemy_skeleton.gd" id="1_6orb4"]
+[ext_resource type="Script" uid="uid://c7w25h0gvnqk6" path="res://Scripts/Enemy/enemy_skeleton.gd" id="1_6orb4"]
 [ext_resource type="Texture2D" uid="uid://cepbf6cmi222p" path="res://Assets/TinyRPGCharPack/Skeleton/Skeleton.png" id="2_ti5gg"]
 [ext_resource type="PackedScene" uid="uid://bn2m5ghwophjs" path="res://Scenes/damage_label.tscn" id="2_xt2tp"]
 

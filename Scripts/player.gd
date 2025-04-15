@@ -35,23 +35,32 @@ var spirit_inventory: Array = []
 var continue_prompt_visible: bool = false
 @onready var continue_prompt = $ContinuePrompt
 
+
 func _ready():
 	$PlayerSprite.animation_finished.connect(_on_AnimatedSprite2D_animation_finished)
 	$PlayerSprite.frame_changed.connect(_on_PlayerSprite_frame_changed)
 	$AttackEffect01/AttackEffectSprite.frame_changed.connect(_on_attack_effect_frame_changed)
 	$AttackEffect01/AttackHitbox.disabled = true
 	$ContinuePrompt.visible = false
-
+	
+	control_type = SettingsManager.curr_control
 	# Set up hp bar
 	call_deferred("emit_setup_hpbar")
 	if (control_type == 0):
 		control = Controltype.KEYBOARD
+		$ContinuePrompt/SpriteController.visible = false
 	else:
 		control = Controltype.CONTROLLER
+		$ContinuePrompt/SpriteKeyboard.visible = false
 
 
 func _on_can_transition(can_transition: bool):
 	$ContinuePrompt.visible = can_transition
+	match control:
+		Controltype.CONTROLLER:
+			$ContinuePrompt/SpriteController.visible = true
+		Controltype.KEYBOARD:
+			$ContinuePrompt/SpriteKeyboard.visible = true
 
 func emit_setup_hpbar():
 	hp = max_hp
@@ -249,12 +258,15 @@ func fire_arrow():
 	var scale_factor = 1.0
 
 
-	if current_scene.name == "tutorial_level":
+	if current_scene.name == "tutorial_level" || current_scene.name == "TutorialLevel2":
 		scale_factor = 4.0
+	elif current_scene.name == "Main":
+		scale_factor = 8.0
 	elif scene_scale != Vector2.ONE:
 		scale_factor = (scene_scale.x + scene_scale.y) / 2
 	else:
 		scale_factor = 1.0
+	print(current_scene.name)
 	print(scale_factor)
 
 	get_tree().current_scene.add_child(arrow_instance)
@@ -288,7 +300,8 @@ func fire_arrow():
 	# calculate direction of arrow
 
 	var adjusted_speed = arrow_speed * scale_factor
-	if current_scene.name != "tutorial_level":
+	print(current_scene.name)
+	if current_scene.name != "tutorial_level" && current_scene.name != "TutorialLevel2":
 		adjusted_speed = adjusted_speed / 4.0
 	arrow_instance.velocity = dir * adjusted_speed
 

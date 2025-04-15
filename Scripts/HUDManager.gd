@@ -9,6 +9,7 @@ func _ready() -> void:
 	Global.player_hp_changed.connect(_on_player_hp_changed)
 	Global.setup_hpbar.connect(_on_setup_hpbar)
 	Global.player_died.connect(_on_player_died)
+	Global.score_updated.connect(_on_score_updated)
 	$RestartButton.pressed.connect(_on_restart_button_pressed)
 	$MenuBackButton.pressed.connect(_on_menu_back_button_pressed)
 
@@ -41,7 +42,7 @@ w		if panel.has_node("Sprite"):
 func _on_player_hp_changed(new_hp: int) -> void:
 
 	$HPBar.value = new_hp
-	$HPBar/HPValueLabel.text = str(new_hp) + " / " + str($HPBar.max_value)
+	$HPBar/HPValueLabel.text = str(new_hp) + " / " + str(int($HPBar.max_value))
 
 func _on_setup_hpbar(hp: int, max_hp: int) -> void:
 	print("Setting up hp bar")
@@ -55,10 +56,17 @@ func _on_player_died() -> void:
 	$RestartButton.visible = true
 	$GameOverText.visible = true
 	$MenuBackButton.visible = true
+	$GameOverText/Score.visible = true
+
+	_on_score_updated(Global.enemies_killed, Global.floors_cleared)
 
 func _on_restart_button_pressed() -> void:
+	Global.reset_score()
 	get_tree().reload_current_scene()
 
 func _on_menu_back_button_pressed() -> void:
 	#transition to the menu scene (not instantiated)
 	get_tree().change_scene_to_packed(menu_scene)
+
+func _on_score_updated(enemies_killed: int, floors_cleared: int) -> void:
+	$GameOverText/Score.text = "Floors Cleared: " + str(floors_cleared) + "\nEnemies Killed: " + str(enemies_killed)

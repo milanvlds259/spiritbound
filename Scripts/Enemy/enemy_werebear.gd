@@ -51,7 +51,6 @@ func _ready() -> void:
 	$StompZone/StompHitbox.disabled = true
 	
 	# Connect stomp hitbox to stomp player
-	$StompZone/StompEffect.frame_changed.connect(_on_stomp_frame_changed)
 	$StompZone.body_entered.connect(_on_stomp_hitbox_body_entered)
 
 	current_speed = normal_speed
@@ -158,6 +157,7 @@ func died() -> void:
 	$AttackArea/AttackEffect.stop()
 	disable()
 	sprite.play("death")
+	Global.add_enemy_kill()
 
 func disable() -> void:
 	# Disable further physics processing (could also play a death animation, etc.).
@@ -217,13 +217,12 @@ func _on_frame_changed() -> void:
 				$AttackArea.position = push_dir * 5
 		else:
 			$AttackArea/AttackHitbox.disabled = true
+	elif animation == "stomp":
+		if current_frame > 4 and current_frame < 8:
+			$StompZone/StompHitbox.disabled = false
+		else:
+			$StompZone/StompHitbox.disabled = true
 
-func _on_stomp_frame_changed() -> void:
-	var current_frame = $StompZone/StompEffect.frame
-	if current_frame > 4 and current_frame < 8:
-		$StompZone/StompHitbox.disabled = false
-	else:
-		$StompZone/StompHitbox.disabled = true
 
 func _on_sprite_animation_finished() -> void:
 	is_invincible = false
