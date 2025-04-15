@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://v7fuklt8nwxj"]
+[gd_scene load_steps=17 format=3 uid="uid://v7fuklt8nwxj"]
 
-[ext_resource type="Script" uid="uid://jcb2yeejo5wc" path="res://Scripts/player.gd" id="1_xlfw7"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_xlfw7"]
 [ext_resource type="PackedScene" uid="uid://cufgcvrbu5khl" path="res://Scenes/arrow.tscn" id="2_387co"]
 [ext_resource type="SpriteFrames" uid="uid://it7fq2fn8ey3" path="res://Resources/Animations/PlayerAnims.tres" id="2_yr4xh"]
 [ext_resource type="SpriteFrames" uid="uid://d13x0a41bwxgo" path="res://Resources/Animations/AttackEffects.tres" id="3_cy3px"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://cg16fj8h48ot5" path="res://Scenes/powerup_label.tscn" id="4_cd7ro"]
 [ext_resource type="Texture2D" uid="uid://cmurc64yyroae" path="res://Assets/Sprites/tilemap.png" id="7_0pmo8"]
 [ext_resource type="FontFile" uid="uid://c5y2dv5ufvdgf" path="res://Assets/Fonts/DungeonFont.ttf" id="8_x1yrj"]
+[ext_resource type="AudioStream" uid="uid://di4vu1rd2dh6v" path="res://Assets/Audio/laserShoot.wav" id="10_lsuou"]
+[ext_resource type="AudioStream" uid="uid://b3dhp10io7i8v" path="res://Assets/Audio/8bit_hitsuccessful.wav" id="11_rnavt"]
+[ext_resource type="AudioStream" uid="uid://pkov7angwvl5" path="res://Assets/Audio/explosion.wav" id="12_4m6xa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mrugd"]
 size = Vector2(13.5, 9)
@@ -104,3 +107,14 @@ texture = SubResource("AtlasTexture_jrcy8")
 position = Vector2(-15.5, -12.8333)
 scale = Vector2(0.401, 0.401)
 texture = SubResource("AtlasTexture_fqlrt")
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+
+[node name="PlayerRangedHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_lsuou")
+
+[node name="PlayerMeleeHit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_rnavt")
+
+[node name="MeleeFireExplosion" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_4m6xa")

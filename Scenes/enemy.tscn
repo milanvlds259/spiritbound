@@ -1,6 +1,6 @@
 [gd_scene load_steps=29 format=3 uid="uid://dr1r1xj2pim7r"]
 
-[ext_resource type="Script" uid="uid://bfh7o7wkw0qpu" path="res://Scripts/Enemy_Component_Scripts/enemy.gd" id="1_cr3e4"]
+[ext_resource type="Script" path="res://Scripts/Enemy_Component_Scripts/enemy.gd" id="1_cr3e4"]
 [ext_resource type="Texture2D" uid="uid://bqfjtuiydirrw" path="res://Assets/Sprites/Dungeon_Enemy_v3.png" id="1_jy1n3"]
 [ext_resource type="Texture2D" uid="uid://7wd7npp4rfw8" path="res://Assets/Sprites/EnemyGuard.png" id="2_0fy1h"]
 [ext_resource type="PackedScene" uid="uid://bn2m5ghwophjs" path="res://Scenes/damage_label.tscn" id="2_5y65s"]
@@ -216,3 +216,5 @@ sprite_frames = SubResource("SpriteFrames_185cv")
 animation = &"attack"
 frame = 4
 frame_progress = 1.0
+
+[node name="AttackSound" type="AudioStreamPlayer" parent="."]
