@@ -1,6 +1,6 @@
 [gd_scene load_steps=35 format=3 uid="uid://dcuis34ffu8km"]
 
-[ext_resource type="Texture2D" uid="uid://dxu1xkceocyef" path="res://Assets/TinyRPGCharPack/Armored Axeman/Armored Axeman.png" id="1_cb1b7"]
+[ext_resource type="Texture2D" uid="uid://dxu1xkceocyef" path="res://assets/tinyRPGCharPack/Armored Axeman/Armored Axeman.png" id="1_cb1b7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vn0dt"]
 atlas = ExtResource("1_cb1b7")

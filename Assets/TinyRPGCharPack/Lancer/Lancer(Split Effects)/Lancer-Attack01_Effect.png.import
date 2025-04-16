@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cc3r34r44ujm5"
-path="res://.godot/imported/Lancer-Attack01_Effect.png-49852622f42970c18339bb0ebeab0301.ctex"
+path="res://.godot/imported/Lancer-Attack01_Effect.png-291d73c3b2d390ce6d58f531036394b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TinyRPGCharPack/Lancer/Lancer(Split Effects)/Lancer-Attack01_Effect.png"
-dest_files=["res://.godot/imported/Lancer-Attack01_Effect.png-49852622f42970c18339bb0ebeab0301.ctex"]
+source_file="res://assets/tinyRPGCharPack/Lancer/Lancer(Split Effects)/Lancer-Attack01_Effect.png"
+dest_files=["res://.godot/imported/Lancer-Attack01_Effect.png-291d73c3b2d390ce6d58f531036394b2.ctex"]
 
 [params]
 

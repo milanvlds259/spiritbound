@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://nmaoikk83jpc"]
 
-[ext_resource type="Script" uid="uid://b82mbc6j2r4kq" path="res://Scenes/props/bookshelf.gd" id="1_0n7iy"]
-[ext_resource type="Texture2D" uid="uid://3qe2rcup43ig" path="res://Assets/Sprites/Tiles/FDR_Dungeon.png" id="2_gvsv7"]
+[ext_resource type="Script" uid="uid://b82mbc6j2r4kq" path="res://scenes/props/bookshelf.gd" id="1_0n7iy"]
+[ext_resource type="Texture2D" uid="uid://3qe2rcup43ig" path="res://assets/sprites/Tiles/FDR_Dungeon.png" id="2_gvsv7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_stmj5"]
 size = Vector2(16, 15.5)

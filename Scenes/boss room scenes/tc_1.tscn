@@ -1,12 +1,12 @@
 [gd_scene load_steps=12 format=4 uid="uid://mhvcse32q6re"]
 
-[ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="1_5bgdu"]
-[ext_resource type="Script" uid="uid://iiyht5d252at" path="res://Scripts/enemy_spawner.gd" id="2_hw1n0"]
-[ext_resource type="Texture2D" uid="uid://3qe2rcup43ig" path="res://Assets/Sprites/Tiles/FDR_Dungeon.png" id="3_ky7uc"]
-[ext_resource type="PackedScene" uid="uid://d1t6rrajdprfm" path="res://Scenes/Bosses/banshee.tscn" id="6_y248y"]
-[ext_resource type="PackedScene" uid="uid://v7fuklt8nwxj" path="res://Scenes/player.tscn" id="7_dnad7"]
-[ext_resource type="Script" uid="uid://cravfq6hvos04" path="res://Scripts/main_next level.gd" id="3_tcbdf"]
-[ext_resource type="Script" uid="uid://bh6pv1b1ctrhr" path="res://Scripts/spirit_spawner.gd" id="5_254xm"]
+[ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://resources/tilesets/DungeonBase.tres" id="1_5bgdu"]
+[ext_resource type="Script" uid="uid://iiyht5d252at" path="res://scripts/enemy_spawner.gd" id="2_hw1n0"]
+[ext_resource type="Texture2D" uid="uid://3qe2rcup43ig" path="res://assets/sprites/Tiles/FDR_Dungeon.png" id="3_ky7uc"]
+[ext_resource type="Script" uid="uid://cravfq6hvos04" path="res://scripts/main_next level.gd" id="3_tcbdf"]
+[ext_resource type="Script" uid="uid://bh6pv1b1ctrhr" path="res://scripts/spirit_spawner.gd" id="5_254xm"]
+[ext_resource type="PackedScene" uid="uid://d1t6rrajdprfm" path="res://scenes/bosses/banshee.tscn" id="6_y248y"]
+[ext_resource type="PackedScene" uid="uid://v7fuklt8nwxj" path="res://scenes/player.tscn" id="7_dnad7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_53ohv"]
 texture = ExtResource("3_ky7uc")

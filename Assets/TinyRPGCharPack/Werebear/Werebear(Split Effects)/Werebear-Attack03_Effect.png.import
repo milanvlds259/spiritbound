@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bc3kvwanqnve3"
-path="res://.godot/imported/Werebear-Attack03_Effect.png-415d308c3ef73dd3ceaee7160059e323.ctex"
+path="res://.godot/imported/Werebear-Attack03_Effect.png-908f2b9fbb771b981dbeb846433f9c89.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TinyRPGCharPack/Werebear/Werebear(Split Effects)/Werebear-Attack03_Effect.png"
-dest_files=["res://.godot/imported/Werebear-Attack03_Effect.png-415d308c3ef73dd3ceaee7160059e323.ctex"]
+source_file="res://assets/tinyRPGCharPack/Werebear/Werebear(Split Effects)/Werebear-Attack03_Effect.png"
+dest_files=["res://.godot/imported/Werebear-Attack03_Effect.png-908f2b9fbb771b981dbeb846433f9c89.ctex"]
 
 [params]
 

@@ -1,18 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://duexqplif2tvu"]
 
-<<<<<<< Updated upstream
-[ext_resource type="Script" path="res://Scripts/settings.gd" id="1_tg0f4"]
-[ext_resource type="Texture2D" uid="uid://boghl7hhgvs62" path="res://Assets/Sprites/Dungeon_brick_wall_purple.png.png" id="1_yexwk"]
-[ext_resource type="FontFile" uid="uid://c5y2dv5ufvdgf" path="res://Assets/Fonts/DungeonFont.ttf" id="2_itaxm"]
-[ext_resource type="Texture2D" uid="uid://d271g6sx3mnus" path="res://Assets/Sprites/FreeButtons.png" id="3_0tpwl"]
-[ext_resource type="AudioStream" uid="uid://blbkd5ugm06o0" path="res://Assets/Audio/8bitloop_menu.wav" id="5_tnthk"]
-=======
-[ext_resource type="Script" uid="uid://31ffiiaa3pgt" path="res://Scripts/settings.gd" id="1_tg0f4"]
-[ext_resource type="Texture2D" uid="uid://boghl7hhgvs62" path="res://Assets/Sprites/Dungeon_brick_wall_purple.png.png" id="1_yexwk"]
-[ext_resource type="FontFile" uid="uid://c5y2dv5ufvdgf" path="res://Assets/Fonts/DungeonFont.ttf" id="2_itaxm"]
-[ext_resource type="Texture2D" uid="uid://d271g6sx3mnus" path="res://Assets/Sprites/FreeButtons.png" id="3_0tpwl"]
-[ext_resource type="AudioStream" uid="uid://bgp6bvtjvfwa7" path="res://Assets/Audio/SLOWER2019-01-02_-_8_Bit_Menu_-_David_Renda_-_FesliyanStudios.com.mp3" id="4_10fhc"]
->>>>>>> Stashed changes
+[ext_resource type="Script" uid="uid://31ffiiaa3pgt" path="res://scripts/settings.gd" id="1_tg0f4"]
+[ext_resource type="Texture2D" uid="uid://boghl7hhgvs62" path="res://assets/sprites/Dungeon_brick_wall_purple.png.png" id="1_yexwk"]
+[ext_resource type="FontFile" uid="uid://c5y2dv5ufvdgf" path="res://assets/fonts/DungeonFont.ttf" id="2_itaxm"]
+[ext_resource type="Texture2D" uid="uid://d271g6sx3mnus" path="res://assets/sprites/FreeButtons.png" id="3_0tpwl"]
+[ext_resource type="AudioStream" uid="uid://bgp6bvtjvfwa7" path="res://assets/audio/SLOWER2019-01-02_-_8_Bit_Menu_-_David_Renda_-_FesliyanStudios.com.mp3" id="4_10fhc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n7p6d"]
 atlas = ExtResource("3_0tpwl")
@@ -224,5 +216,5 @@ text = "a game by The Eight Team"
 vertical_alignment = 2
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_tnthk")
+stream = ExtResource("4_10fhc")
 autoplay = true

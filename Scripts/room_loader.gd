@@ -1,17 +1,14 @@
 extends Node2D
 
-# File paths for the rooms and the boss rooms
 const ROOM_SCENE_FOLDER := "res://scenes/room scenes/"
 const BOSS_ROOM_SCENE_FOLDER := "res://scenes/boss room scenes/"
 
-# Room Management
 var room_count := 0
 var current_room: Node = null
 
 var used_rooms: Array = []
 var used_boss_rooms: Array = []
 
-# Player defined
 @onready var player = get_tree().get_first_node_in_group("player")
 
 func _ready():
@@ -70,10 +67,9 @@ func _place_player_and_spawn_enemies():
 					print("Calling enemy_spawner.spawn_enemies()...")
 					node.call_deferred("spawn_enemies")
 				else:
-					print("enemy_spawner node found but has no 'spawn_enemies' method.")
-				break
+					print("enemy_spawner node found but has no 'spawn_enemies' method")
 	else:
-		print("ERROR: Player or current room not found!")
+		print("Player or current_room is null")
 
 func pick_unique_scene(folder_path: String, used_list: Array) -> String:
 	var files = []
@@ -82,8 +78,10 @@ func pick_unique_scene(folder_path: String, used_list: Array) -> String:
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
 		while file_name != "":
-			if not dir.current_is_dir() and file_name.ends_with(".tscn"):
+			print("Checking file:", file_name)
+			if not dir.current_is_dir() and (file_name.ends_with(".tscn") or file_name.ends_with(".tscn.remap")):
 				var full_path = folder_path + file_name
+				print("Found candidate:", full_path)
 				if not used_list.has(full_path):
 					files.append(full_path)
 			file_name = dir.get_next()
@@ -91,10 +89,16 @@ func pick_unique_scene(folder_path: String, used_list: Array) -> String:
 	else:
 		print("ERROR: Could not open directory: ", folder_path)
 
+	print("DEBUG FILES FOUND IN DIR:")
+	for f in files:
+		print(" →", f)
+
 	if files.is_empty():
 		print("All scenes used in folder: ", folder_path)
 		return ""
 
 	var selected = files[randi() % files.size()]
+	if selected.ends_with(".remap"):
+		selected = selected.replace(".remap", "")
 	used_list.append(selected)
 	return selected

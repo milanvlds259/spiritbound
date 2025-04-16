@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cv2jkub02j7oh"
-path="res://.godot/imported/Spirit_Earth_Animation.png-268bcd452c8bc4f536ceddd73072243e.ctex"
+path="res://.godot/imported/Spirit_Earth_Animation.png-617008fa004829a0f4af1027c408025f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Spirits/Spirit_Earth_Animation.png"
-dest_files=["res://.godot/imported/Spirit_Earth_Animation.png-268bcd452c8bc4f536ceddd73072243e.ctex"]
+source_file="res://assets/sprites/Spirits/Spirit_Earth_Animation.png"
+dest_files=["res://.godot/imported/Spirit_Earth_Animation.png-617008fa004829a0f4af1027c408025f.ctex"]
 
 [params]
 

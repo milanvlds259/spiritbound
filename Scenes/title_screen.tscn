@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://ct8hpq8d4mjsj"]
 
-[ext_resource type="Texture2D" uid="uid://boghl7hhgvs62" path="res://Assets/Sprites/Dungeon_brick_wall_purple.png.png" id="1_4o3hy"]
-[ext_resource type="Script" path="res://Scripts/title_screen.gd" id="1_6ggef"]
-[ext_resource type="FontFile" uid="uid://c5y2dv5ufvdgf" path="res://Assets/Fonts/DungeonFont.ttf" id="2_1jtn1"]
-[ext_resource type="StyleBox" uid="uid://c56hrfbfrri85" path="res://Resources/ButtonStyle.tres" id="4_fttbk"]
-[ext_resource type="AudioStream" uid="uid://badj7smrs0ea3" path="res://Assets/Audio/8bit_introductory.wav" id="5_5ll3c"]
+[ext_resource type="Texture2D" uid="uid://boghl7hhgvs62" path="res://assets/sprites/Dungeon_brick_wall_purple.png.png" id="1_4o3hy"]
+[ext_resource type="Script" uid="uid://m8p57jl5dtyp" path="res://scripts/title_screen.gd" id="1_6ggef"]
+[ext_resource type="FontFile" uid="uid://c5y2dv5ufvdgf" path="res://assets/fonts/DungeonFont.ttf" id="2_1jtn1"]
+[ext_resource type="StyleBox" uid="uid://c56hrfbfrri85" path="res://resources/ButtonStyle.tres" id="4_fttbk"]
+[ext_resource type="AudioStream" uid="uid://bgp6bvtjvfwa7" path="res://assets/audio/SLOWER2019-01-02_-_8_Bit_Menu_-_David_Renda_-_FesliyanStudios.com.mp3" id="5_7f1v0"]
 
 [node name="Node" type="Node"]
 script = ExtResource("1_6ggef")

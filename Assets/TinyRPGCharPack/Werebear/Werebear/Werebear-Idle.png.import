@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cyd1ovrmarc8l"
-path="res://.godot/imported/Werebear-Idle.png-c3d83f9b7cc26ec3a6860af158bbb6d2.ctex"
+path="res://.godot/imported/Werebear-Idle.png-bd558fceb5f1a9310f71ae76be94fddc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TinyRPGCharPack/Werebear/Werebear/Werebear-Idle.png"
-dest_files=["res://.godot/imported/Werebear-Idle.png-c3d83f9b7cc26ec3a6860af158bbb6d2.ctex"]
+source_file="res://assets/tinyRPGCharPack/Werebear/Werebear/Werebear-Idle.png"
+dest_files=["res://.godot/imported/Werebear-Idle.png-bd558fceb5f1a9310f71ae76be94fddc.ctex"]
 
 [params]
 

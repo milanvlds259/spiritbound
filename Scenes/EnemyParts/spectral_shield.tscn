@@ -1,70 +1,70 @@
 [gd_scene load_steps=20 format=3 uid="uid://cogurs0cgdlk0"]
 
-[ext_resource type="Script" path="res://Scenes/Bosses/spectral_shield.gd" id="1_xiba5"]
-[ext_resource type="Texture2D" uid="uid://b4semahqp6m7n" path="res://Assets/Sprites/EnemyBoss/Banshee/Spectral Shield Sprite Sheets.png" id="2_k2u7h"]
+[ext_resource type="Script" uid="uid://ddcjjkr7vcy8n" path="res://scenes/bosses/spectral_shield.gd" id="1_dishk"]
+[ext_resource type="Texture2D" uid="uid://b4semahqp6m7n" path="res://assets/sprites/EnemyBoss/Banshee/Spectral Shield Sprite Sheets.png" id="2_o3cqf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_28m2m"]
 radius = 26.0
 height = 52.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oswvv"]
-atlas = ExtResource("2_k2u7h")
+atlas = ExtResource("2_o3cqf")
 region = Rect2(0, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iai41"]
-atlas = ExtResource("2_k2u7h")
+atlas = ExtResource("2_o3cqf")
 region = Rect2(0, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_04x44"]
-atlas = ExtResource("2_k2u7h")
+atlas = ExtResource("2_o3cqf")
 region = Rect2(64, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_83c71"]
-atlas = ExtResource("2_k2u7h")
+atlas = ExtResource("2_o3cqf")
 region = Rect2(128, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8lxqb"]
-atlas = ExtResource("2_k2u7h")
+atlas = ExtResource("2_o3cqf")
 region = Rect2(192, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_alyrd"]
-atlas = ExtResource("2_k2u7h")
+atlas = ExtResource("2_o3cqf")
 region = Rect2(256, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uub7p"]
-atlas = ExtResource("2_k2u7h")
+atlas = ExtResource("2_o3cqf")
 region = Rect2(320, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uf031"]
-atlas = ExtResource("2_k2u7h")
+atlas = ExtResource("2_o3cqf")
 region = Rect2(384, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_otqyb"]
-atlas = ExtResource("2_k2u7h")
+atlas = ExtResource("2_o3cqf")
 region = Rect2(448, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bj1rf"]
-atlas = ExtResource("2_k2u7h")
+atlas = ExtResource("2_o3cqf")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oqigi"]
-atlas = ExtResource("2_k2u7h")
+atlas = ExtResource("2_o3cqf")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0v1i5"]
-atlas = ExtResource("2_k2u7h")
+atlas = ExtResource("2_o3cqf")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8u86t"]
-atlas = ExtResource("2_k2u7h")
+atlas = ExtResource("2_o3cqf")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ev6vt"]
-atlas = ExtResource("2_k2u7h")
+atlas = ExtResource("2_o3cqf")
 region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gbhff"]
-atlas = ExtResource("2_k2u7h")
+atlas = ExtResource("2_o3cqf")
 region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cs4xe"]
@@ -73,7 +73,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oswvv")
 }],
-"loop": true,
+"loop": false,
 "name": &"ShieldIdle",
 "speed": 5.0
 }, {
@@ -134,19 +134,22 @@ animations = [{
 }]
 
 [node name="SpectralShield" type="Area2D"]
-script = ExtResource("1_xiba5")
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("1_dishk")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemy_hit"]]
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_28m2m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_cs4xe")
-animation = &"ShieldIdle"
+animation = &"ShieldShatter"
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 30.0
-one_shot = true
+wait_time = 4.632
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
