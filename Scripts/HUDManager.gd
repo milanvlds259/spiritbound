@@ -57,6 +57,8 @@ func _on_player_died() -> void:
 	$GameOverText.visible = true
 	$MenuBackButton.visible = true
 	$GameOverText/Score.visible = true
+	$DeathSound.play()
+
 
 	_on_score_updated(Global.enemies_killed, Global.floors_cleared)
 
