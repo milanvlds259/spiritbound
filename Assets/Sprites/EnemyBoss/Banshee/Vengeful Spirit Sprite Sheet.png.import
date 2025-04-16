@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bv03etpex00wi"
-path="res://.godot/imported/Vengeful Spirit Sprite Sheet.png-0867e357f994e362fa08712571a4665e.ctex"
+path="res://.godot/imported/Vengeful Spirit Sprite Sheet.png-8251b813edba1c9c1eef29d9cc4bc70f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/EnemyBoss/Banshee/Vengeful Spirit Sprite Sheet.png"
-dest_files=["res://.godot/imported/Vengeful Spirit Sprite Sheet.png-0867e357f994e362fa08712571a4665e.ctex"]
+source_file="res://Assets/Sprites/EnemyBoss/Banshee/Vengeful Spirit Sprite Sheet.png"
+dest_files=["res://.godot/imported/Vengeful Spirit Sprite Sheet.png-8251b813edba1c9c1eef29d9cc4bc70f.ctex"]
 
 [params]
 
