@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfftgpaerbyga"
-path="res://.godot/imported/Armored Orc_Idle.png-30e335c9f1a08e22ac4131b7e2e88f6b.ctex"
+path="res://.godot/imported/Armored Orc_Idle.png-548e7d104301f80402b8441336e12118.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tinyRPGCharPack/Armored Orc/Armored Orc_Idle.png"
-dest_files=["res://.godot/imported/Armored Orc_Idle.png-30e335c9f1a08e22ac4131b7e2e88f6b.ctex"]
+source_file="res://assets/TinyRPGCharPack/Armored Orc/Armored Orc_Idle.png"
+dest_files=["res://.godot/imported/Armored Orc_Idle.png-548e7d104301f80402b8441336e12118.ctex"]
 
 [params]
 

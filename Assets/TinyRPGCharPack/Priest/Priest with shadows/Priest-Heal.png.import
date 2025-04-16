@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cbu1lnpaqt2ri"
-path="res://.godot/imported/Priest-Heal.png-62f793e1a0fded1e44d38c05b494a4dc.ctex"
+path="res://.godot/imported/Priest-Heal.png-80d0505c727a16ab3b1c607b4d43839a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tinyRPGCharPack/Priest/Priest with shadows/Priest-Heal.png"
-dest_files=["res://.godot/imported/Priest-Heal.png-62f793e1a0fded1e44d38c05b494a4dc.ctex"]
+source_file="res://assets/TinyRPGCharPack/Priest/Priest with shadows/Priest-Heal.png"
+dest_files=["res://.godot/imported/Priest-Heal.png-80d0505c727a16ab3b1c607b4d43839a.ctex"]
 
 [params]
 

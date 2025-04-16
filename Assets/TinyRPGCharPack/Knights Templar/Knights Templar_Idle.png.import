@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d2vkoeocwfbsq"
-path="res://.godot/imported/Knights Templar_Idle.png-9ea97ddf0eba56e237ba63bbf509d36d.ctex"
+path="res://.godot/imported/Knights Templar_Idle.png-5764e8aad4d8b6534a8857069ee0d013.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tinyRPGCharPack/Knights Templar/Knights Templar_Idle.png"
-dest_files=["res://.godot/imported/Knights Templar_Idle.png-9ea97ddf0eba56e237ba63bbf509d36d.ctex"]
+source_file="res://assets/TinyRPGCharPack/Knights Templar/Knights Templar_Idle.png"
+dest_files=["res://.godot/imported/Knights Templar_Idle.png-5764e8aad4d8b6534a8857069ee0d013.ctex"]
 
 [params]
 

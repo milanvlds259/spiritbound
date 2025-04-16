@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8evqnuo8xbpl"
-path="res://.godot/imported/Werewolf-shadow_death.png-51baa6093964ffe49fd0920d158f5378.ctex"
+path="res://.godot/imported/Werewolf-shadow_death.png-33ce4fbb809c391ec7ea0ba2ba5ba2a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tinyRPGCharPack/Werewolf/Werewolf/shadow sprites/Werewolf-shadow_death.png"
-dest_files=["res://.godot/imported/Werewolf-shadow_death.png-51baa6093964ffe49fd0920d158f5378.ctex"]
+source_file="res://assets/TinyRPGCharPack/Werewolf/Werewolf/shadow sprites/Werewolf-shadow_death.png"
+dest_files=["res://.godot/imported/Werewolf-shadow_death.png-33ce4fbb809c391ec7ea0ba2ba5ba2a0.ctex"]
 
 [params]
 

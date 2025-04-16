@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bq2qast78d4c"
-path="res://.godot/imported/Armored Axeman_Death.png-ef1a88d1a979609ea954bddfd4de0159.ctex"
+path="res://.godot/imported/Armored Axeman_Death.png-ee4562bb1d3a1c7075f9b186d6be4f45.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tinyRPGCharPack/Armored Axeman/Armored Axeman_Death.png"
-dest_files=["res://.godot/imported/Armored Axeman_Death.png-ef1a88d1a979609ea954bddfd4de0159.ctex"]
+source_file="res://assets/TinyRPGCharPack/Armored Axeman/Armored Axeman_Death.png"
+dest_files=["res://.godot/imported/Armored Axeman_Death.png-ee4562bb1d3a1c7075f9b186d6be4f45.ctex"]
 
 [params]
 

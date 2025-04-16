@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://kn1fkicu0hsj"
-path="res://.godot/imported/Wizard-Shadow.png-00e2a42f54083b2d9292d259c6c9e3a9.ctex"
+path="res://.godot/imported/Wizard-Shadow.png-75d93fa6b1ea0ab123525f9697d07dc7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tinyRPGCharPack/Wizard/Wizard/Shadow sprites/Wizard-Shadow.png"
-dest_files=["res://.godot/imported/Wizard-Shadow.png-00e2a42f54083b2d9292d259c6c9e3a9.ctex"]
+source_file="res://assets/TinyRPGCharPack/Wizard/Wizard/Shadow sprites/Wizard-Shadow.png"
+dest_files=["res://.godot/imported/Wizard-Shadow.png-75d93fa6b1ea0ab123525f9697d07dc7.ctex"]
 
 [params]
 

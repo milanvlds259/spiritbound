@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=4 uid="uid://cb48baol0lnl"]
 
 [ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://resources/tilesets/DungeonBase.tres" id="1_esc0u"]
-[ext_resource type="PackedScene" uid="uid://d1t6rrajdprfm" path="res://scenes/bosses/banshee.tscn" id="5_8ku5r"]
-[ext_resource type="PackedScene" uid="uid://v7fuklt8nwxj" path="res://scenes/player.tscn" id="6_4umqt"]
 [ext_resource type="Script" uid="uid://cravfq6hvos04" path="res://scripts/main_next level.gd" id="2_1s0ul"]
 [ext_resource type="Script" uid="uid://iiyht5d252at" path="res://scripts/enemy_spawner.gd" id="2_tvx12"]
 [ext_resource type="Script" uid="uid://bh6pv1b1ctrhr" path="res://scripts/spirit_spawner.gd" id="4_by1n3"]
+[ext_resource type="PackedScene" uid="uid://d1t6rrajdprfm" path="res://scenes/bosses/banshee.tscn" id="5_8ku5r"]
+[ext_resource type="PackedScene" uid="uid://v7fuklt8nwxj" path="res://scenes/player.tscn" id="6_4umqt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_83evl"]
 size = Vector2(12, 12)
@@ -52,7 +52,6 @@ position = Vector2(0, 16)
 position = Vector2(16, 0)
 
 [node name="banshee" parent="." instance=ExtResource("5_8ku5r")]
-visible = false
 position = Vector2(128, -576)
 scale = Vector2(0.3, 0.3)
 

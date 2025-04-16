@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b24xct6njidyy"
-path="res://.godot/imported/Priest-Shadow_death.png-64ae17cb66ea391898e55dc03dd98e8f.ctex"
+path="res://.godot/imported/Priest-Shadow_death.png-6636eec86f9fc191f4030d7342327030.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tinyRPGCharPack/Priest/Priest/Shadow sprites/Priest-Shadow_death.png"
-dest_files=["res://.godot/imported/Priest-Shadow_death.png-64ae17cb66ea391898e55dc03dd98e8f.ctex"]
+source_file="res://assets/TinyRPGCharPack/Priest/Priest/Shadow sprites/Priest-Shadow_death.png"
+dest_files=["res://.godot/imported/Priest-Shadow_death.png-6636eec86f9fc191f4030d7342327030.ctex"]
 
 [params]
 

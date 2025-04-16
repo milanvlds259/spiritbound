@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8a4otofhalqh"
-path="res://.godot/imported/Lancer-Walk02.png-62234dec4b6b8dc987a613a1f28caa9b.ctex"
+path="res://.godot/imported/Lancer-Walk02.png-f78a26fae21812c57ddd9dd5bc4f7212.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tinyRPGCharPack/Lancer/Lancer/Lancer-Walk02.png"
-dest_files=["res://.godot/imported/Lancer-Walk02.png-62234dec4b6b8dc987a613a1f28caa9b.ctex"]
+source_file="res://assets/TinyRPGCharPack/Lancer/Lancer/Lancer-Walk02.png"
+dest_files=["res://.godot/imported/Lancer-Walk02.png-f78a26fae21812c57ddd9dd5bc4f7212.ctex"]
 
 [params]
 

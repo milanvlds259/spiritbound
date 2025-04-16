@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dw41gbpvfy5ss"
-path="res://.godot/imported/Swordsman_Idle.png-e79aff3381bf17007938a54461fc611a.ctex"
+path="res://.godot/imported/Swordsman_Idle.png-4888b5fd0bdee4dae171fd915d08aec1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tinyRPGCharPack/Swordsman/Swordsman_Idle.png"
-dest_files=["res://.godot/imported/Swordsman_Idle.png-e79aff3381bf17007938a54461fc611a.ctex"]
+source_file="res://assets/TinyRPGCharPack/Swordsman/Swordsman_Idle.png"
+dest_files=["res://.godot/imported/Swordsman_Idle.png-4888b5fd0bdee4dae171fd915d08aec1.ctex"]
 
 [params]
 
