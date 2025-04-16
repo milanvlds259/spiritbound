@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cry08n38jkbo8"
-path="res://.godot/imported/Slime-Death.png-4a0866829f4f479f08fb17cc201f6663.ctex"
+path="res://.godot/imported/Slime-Death.png-b92ee8f03dd11d0d054dc5f084d952b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tinyRPGCharPack/Slime/Slime/Slime-Death.png"
-dest_files=["res://.godot/imported/Slime-Death.png-4a0866829f4f479f08fb17cc201f6663.ctex"]
+source_file="res://Assets/TinyRPGCharPack/Slime/Slime/Slime-Death.png"
+dest_files=["res://.godot/imported/Slime-Death.png-b92ee8f03dd11d0d054dc5f084d952b3.ctex"]
 
 [params]
 

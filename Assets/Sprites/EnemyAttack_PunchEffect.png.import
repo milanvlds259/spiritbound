@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://djnmaapqx2wio"
-path="res://.godot/imported/EnemyAttack_PunchEffect.png-9cfd17fe5e5ba54e75fde60278499ad6.ctex"
+path="res://.godot/imported/EnemyAttack_PunchEffect.png-ed0bf95cdf69b03905c0d085f38660a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/EnemyAttack_PunchEffect.png"
-dest_files=["res://.godot/imported/EnemyAttack_PunchEffect.png-9cfd17fe5e5ba54e75fde60278499ad6.ctex"]
+source_file="res://Assets/Sprites/EnemyAttack_PunchEffect.png"
+dest_files=["res://.godot/imported/EnemyAttack_PunchEffect.png-ed0bf95cdf69b03905c0d085f38660a8.ctex"]
 
 [params]
 

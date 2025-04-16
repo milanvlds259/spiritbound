@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjwf4ijvw4ol0"
-path="res://.godot/imported/thunder_spirit.png-928f5b4f2a4f388821c1947ddfe46561.ctex"
+path="res://.godot/imported/thunder_spirit.png-2fd61cda0c20759c7bd9621cc4e29764.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Spirits/thunder_spirit.png"
-dest_files=["res://.godot/imported/thunder_spirit.png-928f5b4f2a4f388821c1947ddfe46561.ctex"]
+source_file="res://Assets/Sprites/Spirits/thunder_spirit.png"
+dest_files=["res://.godot/imported/thunder_spirit.png-2fd61cda0c20759c7bd9621cc4e29764.ctex"]
 
 [params]
 

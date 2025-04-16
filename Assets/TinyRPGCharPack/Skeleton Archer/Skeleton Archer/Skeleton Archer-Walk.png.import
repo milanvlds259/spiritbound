@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cw4anwobcl41h"
-path="res://.godot/imported/Skeleton Archer-Walk.png-a5cc1bade9d4387496bc42cb04e635b9.ctex"
+path="res://.godot/imported/Skeleton Archer-Walk.png-e4b14a39ceb63d0af32711c36515b1fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tinyRPGCharPack/Skeleton Archer/Skeleton Archer/Skeleton Archer-Walk.png"
-dest_files=["res://.godot/imported/Skeleton Archer-Walk.png-a5cc1bade9d4387496bc42cb04e635b9.ctex"]
+source_file="res://Assets/TinyRPGCharPack/Skeleton Archer/Skeleton Archer/Skeleton Archer-Walk.png"
+dest_files=["res://.godot/imported/Skeleton Archer-Walk.png-e4b14a39ceb63d0af32711c36515b1fa.ctex"]
 
 [params]
 
