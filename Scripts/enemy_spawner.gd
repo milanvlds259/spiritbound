@@ -55,6 +55,9 @@ func load_enemy_scenes():
 		print("[Spawner] Enemy scenes already loaded.")
 		return
 
+	# Make sure this matches your actual enemy scene folder:
+	const ENEMY_FOLDER := "res://scenes/enemies/"  # Change if needed
+
 	var dir = DirAccess.open(ENEMY_FOLDER)
 	if not dir:
 		print("[Spawner] ERROR: Could not open enemy folder: %s" % ENEMY_FOLDER)
@@ -63,15 +66,20 @@ func load_enemy_scenes():
 	dir.list_dir_begin()
 	var file_name = dir.get_next()
 	while file_name != "":
-		if not dir.current_is_dir() and file_name.ends_with(".tscn"):
+		if not dir.current_is_dir() and (file_name.ends_with(".tscn") or file_name.ends_with(".tscn.remap")):
 			var full_path = ENEMY_FOLDER + file_name
-			var enemy_scene = load(full_path)
-			if enemy_scene:
-				enemy_scenes.append(enemy_scene)
+			if full_path.ends_with(".remap"):
+				full_path = full_path.replace(".remap", "")
+			var scene = load(full_path)
+			if scene:
+				enemy_scenes.append(scene)
+			else:
+				print("[Spawner] ERROR: Could not load enemy scene at path:", full_path)
 		file_name = dir.get_next()
 	dir.list_dir_end()
 
 	print("[Spawner] Total enemy scenes loaded: %d" % enemy_scenes.size())
+
 
 func spawn_random_enemy(pos: Vector2):
 	if enemy_scenes.is_empty():

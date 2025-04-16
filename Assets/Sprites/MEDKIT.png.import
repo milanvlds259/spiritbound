@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bprcaksa4hshh"
-path="res://.godot/imported/MEDKIT.png-32c6ce554509ca74bd27872fadbba145.ctex"
+path="res://.godot/imported/MEDKIT.png-8ef974dba627ca802b33ee90a124f57f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/MEDKIT.png"
-dest_files=["res://.godot/imported/MEDKIT.png-32c6ce554509ca74bd27872fadbba145.ctex"]
+source_file="res://assets/sprites/MEDKIT.png"
+dest_files=["res://.godot/imported/MEDKIT.png-8ef974dba627ca802b33ee90a124f57f.ctex"]
 
 [params]
 

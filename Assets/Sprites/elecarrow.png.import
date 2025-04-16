@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bgcwbiup1oau4"
-path="res://.godot/imported/elecarrow.png-1fc2dd5e45df940ae4e119143f2eef5e.ctex"
+path="res://.godot/imported/elecarrow.png-310277e4392a1b6ba0a6dfeba07fab53.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/elecarrow.png"
-dest_files=["res://.godot/imported/elecarrow.png-1fc2dd5e45df940ae4e119143f2eef5e.ctex"]
+source_file="res://assets/sprites/elecarrow.png"
+dest_files=["res://.godot/imported/elecarrow.png-310277e4392a1b6ba0a6dfeba07fab53.ctex"]
 
 [params]
 

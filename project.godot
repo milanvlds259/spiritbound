@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="spiritbound"
-run/main_scene="res://Scenes/title_screen.tscn"
+run/main_scene="res://scenes/title_screen.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
 [autoload]
 
 Global="*res://Global.gd"
-SettingsManager="*res://Scripts/settings_manager.gd"
+SettingsManager="*res://scripts/settings_manager.gd"
 
 [display]
 

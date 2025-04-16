@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cg16fj8h48ot5"]
 
-[ext_resource type="FontFile" uid="uid://c5y2dv5ufvdgf" path="res://Assets/Fonts/DungeonFont.ttf" id="1_xc4yk"]
-[ext_resource type="Script" uid="uid://n5c60ca5vcvs" path="res://Scripts/powerup_label.gd" id="2_xdmav"]
+[ext_resource type="FontFile" uid="uid://c5y2dv5ufvdgf" path="res://assets/fonts/DungeonFont.ttf" id="1_xc4yk"]
+[ext_resource type="Script" uid="uid://n5c60ca5vcvs" path="res://scripts/powerup_label.gd" id="2_xdmav"]
 
 [node name="DamageLabel" type="Label"]
 offset_left = -56.0

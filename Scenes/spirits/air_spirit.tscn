@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bf880mqeqp1cr"]
 
-[ext_resource type="Script" uid="uid://cev4b4asg66s5" path="res://Scripts/air_spirit.gd" id="1_i0lo7"]
-[ext_resource type="Texture2D" uid="uid://j1rgj1lmi217" path="res://Assets/Sprites/Spirits/air_spirit.png" id="2_6jxc3"]
+[ext_resource type="Script" uid="uid://cev4b4asg66s5" path="res://scripts/air_spirit.gd" id="1_i0lo7"]
+[ext_resource type="Texture2D" uid="uid://j1rgj1lmi217" path="res://assets/sprites/Spirits/air_spirit.png" id="2_6jxc3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a23qq"]
 atlas = ExtResource("2_6jxc3")

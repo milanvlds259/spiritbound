@@ -1,14 +1,14 @@
 [gd_scene load_steps=16 format=4 uid="uid://dmtkmidnfteqo"]
 
-[ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="1_ctdn8"]
-[ext_resource type="Script" uid="uid://iiyht5d252at" path="res://Scripts/enemy_spawner.gd" id="2_6y7f1"]
-[ext_resource type="Texture2D" uid="uid://b8733p18lxm7m" path="res://Assets/Sprites/Tiles/Dungeon_item_props_v2.png" id="2_e3jk1"]
-[ext_resource type="Texture2D" uid="uid://bvrynxbdcuy8g" path="res://Assets/Sprites/Tiles/Dungeon_Tileset_v2.png" id="3_8u230"]
-[ext_resource type="Texture2D" uid="uid://3qe2rcup43ig" path="res://Assets/Sprites/Tiles/FDR_Dungeon.png" id="4_jubc1"]
-[ext_resource type="Texture2D" uid="uid://bibdiel70ce6n" path="res://Assets/Sprites/Tiles/FDR_Dungeon_Animations.png" id="5_p0u1a"]
-[ext_resource type="PackedScene" uid="uid://colewlvdd1y07" path="res://Scenes/props/brazier.tscn" id="6_04kxv"]
-[ext_resource type="Script" uid="uid://bh6pv1b1ctrhr" path="res://Scripts/spirit_spawner.gd" id="9_supjd"]
-[ext_resource type="Script" uid="uid://cravfq6hvos04" path="res://Scripts/main_next level.gd" id="9_xsv1r"]
+[ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://resources/tilesets/DungeonBase.tres" id="1_ctdn8"]
+[ext_resource type="Script" uid="uid://iiyht5d252at" path="res://scripts/enemy_spawner.gd" id="2_6y7f1"]
+[ext_resource type="Texture2D" uid="uid://b8733p18lxm7m" path="res://assets/sprites/Tiles/Dungeon_item_props_v2.png" id="2_e3jk1"]
+[ext_resource type="Texture2D" uid="uid://bvrynxbdcuy8g" path="res://assets/sprites/Tiles/Dungeon_Tileset_v2.png" id="3_8u230"]
+[ext_resource type="Texture2D" uid="uid://3qe2rcup43ig" path="res://assets/sprites/Tiles/FDR_Dungeon.png" id="4_jubc1"]
+[ext_resource type="Texture2D" uid="uid://bibdiel70ce6n" path="res://assets/sprites/Tiles/FDR_Dungeon_Animations.png" id="5_p0u1a"]
+[ext_resource type="PackedScene" uid="uid://colewlvdd1y07" path="res://scenes/props/brazier.tscn" id="6_04kxv"]
+[ext_resource type="Script" uid="uid://bh6pv1b1ctrhr" path="res://scripts/spirit_spawner.gd" id="9_supjd"]
+[ext_resource type="Script" uid="uid://cravfq6hvos04" path="res://scripts/main_next level.gd" id="9_xsv1r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q0v70"]
 texture = ExtResource("2_e3jk1")

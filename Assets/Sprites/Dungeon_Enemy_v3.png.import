@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqfjtuiydirrw"
-path="res://.godot/imported/Dungeon_Enemy_v3.png-170770a3753337acfc5a23f6a139cbbb.ctex"
+path="res://.godot/imported/Dungeon_Enemy_v3.png-eb7cc159e2b9a448de1092818a7f8b56.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Dungeon_Enemy_v3.png"
-dest_files=["res://.godot/imported/Dungeon_Enemy_v3.png-170770a3753337acfc5a23f6a139cbbb.ctex"]
+source_file="res://assets/sprites/Dungeon_Enemy_v3.png"
+dest_files=["res://.godot/imported/Dungeon_Enemy_v3.png-eb7cc159e2b9a448de1092818a7f8b56.ctex"]
 
 [params]
 

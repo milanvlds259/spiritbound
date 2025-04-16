@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cepbf6cmi222p"
-path="res://.godot/imported/Skeleton.png-4aac2099d066751ec733b79013deac8f.ctex"
+path="res://.godot/imported/Skeleton.png-b62244d2d0bb21a9f30d2e474790442d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TinyRPGCharPack/Skeleton/Skeleton.png"
-dest_files=["res://.godot/imported/Skeleton.png-4aac2099d066751ec733b79013deac8f.ctex"]
+source_file="res://assets/tinyRPGCharPack/Skeleton/Skeleton.png"
+dest_files=["res://.godot/imported/Skeleton.png-b62244d2d0bb21a9f30d2e474790442d.ctex"]
 
 [params]
 

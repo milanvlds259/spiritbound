@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlc0qr5jv1537"
-path="res://.godot/imported/Archer-Attack01.png-76ccff49835cd9b8293a003523759637.ctex"
+path="res://.godot/imported/Archer-Attack01.png-55b7cbe27de708dd5a073d0cc3fe0c5c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TinyRPGCharPack/Archer/Archer with shadows/Archer-Attack01.png"
-dest_files=["res://.godot/imported/Archer-Attack01.png-76ccff49835cd9b8293a003523759637.ctex"]
+source_file="res://assets/tinyRPGCharPack/Archer/Archer with shadows/Archer-Attack01.png"
+dest_files=["res://.godot/imported/Archer-Attack01.png-55b7cbe27de708dd5a073d0cc3fe0c5c.ctex"]
 
 [params]
 

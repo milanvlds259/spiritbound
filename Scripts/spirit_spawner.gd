@@ -1,16 +1,24 @@
 extends Node2D
 
-const SPIRIT_FOLDER := "res://Scenes/spirits/"  # Ensure this matches your folder exactly
-const MEDKIT_SCENE := "res://Scenes/medkit.tscn"
+const SPIRIT_FOLDER := "res://scenes/spirits/"
+const MEDKIT_SCENE := "res://scenes/medkit.tscn"
+
 
 var spirit_scenes: Array = []
 var medkit_scene: PackedScene
 
 func _ready():
 	load_spirit_scenes()
-	medkit_scene = load(MEDKIT_SCENE)
+
+	var medkit_path = MEDKIT_SCENE
+	if medkit_path.ends_with(".remap"):
+		medkit_path = medkit_path.replace(".remap", "")
+
+	medkit_scene = load(medkit_path)
 	if not medkit_scene:
 		print("[Spirits] ERROR: Could not load medkit scene.")
+
+
 
 func spawn_spirits():
 	print("[Spirits] Spawning spirits...")
@@ -72,7 +80,7 @@ func spawn_spirits():
 func get_spirit_type(scene: PackedScene) -> String:
 	# this function sucks will optimize later :)
 	var path = scene.resource_path.to_lower()
-    
+	
 	if "air_spirit" in path:
 		return "air"
 	elif "earth_spirit" in path:
@@ -99,11 +107,15 @@ func load_spirit_scenes():
 	dir.list_dir_begin()
 	var file_name = dir.get_next()
 	while file_name != "":
-		if not dir.current_is_dir() and file_name.ends_with(".tscn"):
+		if not dir.current_is_dir() and (file_name.ends_with(".tscn") or file_name.ends_with(".tscn.remap")):
 			var scene_path = SPIRIT_FOLDER + file_name
+			if scene_path.ends_with(".remap"):
+				scene_path = scene_path.replace(".remap", "")
 			var scene = load(scene_path)
 			if scene:
 				spirit_scenes.append(scene)
+			else:
+				print("[Spirits] ERROR: Failed to load spirit scene:", scene_path)
 		file_name = dir.get_next()
 	dir.list_dir_end()
 

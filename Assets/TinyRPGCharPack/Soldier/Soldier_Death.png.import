@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://wdysen8gw3vq"
-path="res://.godot/imported/Soldier_Death.png-cfeb4401d868b4a98792814c09dde17c.ctex"
+path="res://.godot/imported/Soldier_Death.png-0b52ea6f40735f22ac33fe6e88a6aee9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TinyRPGCharPack/Soldier/Soldier_Death.png"
-dest_files=["res://.godot/imported/Soldier_Death.png-cfeb4401d868b4a98792814c09dde17c.ctex"]
+source_file="res://assets/tinyRPGCharPack/Soldier/Soldier_Death.png"
+dest_files=["res://.godot/imported/Soldier_Death.png-0b52ea6f40735f22ac33fe6e88a6aee9.ctex"]
 
 [params]
 

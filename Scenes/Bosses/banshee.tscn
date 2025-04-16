@@ -1,10 +1,10 @@
 [gd_scene load_steps=46 format=3 uid="uid://d1t6rrajdprfm"]
 
-[ext_resource type="Script" path="res://Scenes/Bosses/banshee.gd" id="1_vyjyp"]
-[ext_resource type="PackedScene" uid="uid://dmvjwdpabh7yj" path="res://Scenes/EnemyParts/spectral_sword.tscn" id="2_vhs18"]
-[ext_resource type="Texture2D" uid="uid://di18nb1je2k1" path="res://Assets/Sprites/EnemyBoss/enemy_boss_minotaur.png" id="3_r0rwo"]
-[ext_resource type="PackedScene" uid="uid://cogurs0cgdlk0" path="res://Scenes/EnemyParts/spectral_shield.tscn" id="3_voncq"]
-[ext_resource type="Texture2D" uid="uid://bv03etpex00wi" path="res://Assets/Sprites/EnemyBoss/Banshee/Vengeful Spirit Sprite Sheet.png" id="4_04hwx"]
+[ext_resource type="Script" uid="uid://eslqvubbexgn" path="res://scenes/bosses/banshee.gd" id="1_vyjyp"]
+[ext_resource type="PackedScene" uid="uid://dmvjwdpabh7yj" path="res://scenes/enemyparts/spectral_sword.tscn" id="2_vhs18"]
+[ext_resource type="Texture2D" uid="uid://di18nb1je2k1" path="res://assets/sprites/EnemyBoss/enemy_boss_minotaur.png" id="3_r0rwo"]
+[ext_resource type="PackedScene" uid="uid://cogurs0cgdlk0" path="res://scenes/enemyparts/spectral_shield.tscn" id="3_voncq"]
+[ext_resource type="Texture2D" uid="uid://bv03etpex00wi" path="res://assets/sprites/EnemyBoss/Banshee/Vengeful Spirit Sprite Sheet.png" id="4_04hwx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nn7cn"]
 atlas = ExtResource("4_04hwx")

@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=4 uid="uid://blqbew0bqmxao"]
 
-[ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="1_20shm"]
-[ext_resource type="Script" uid="uid://cravfq6hvos04" path="res://Scripts/main_next level.gd" id="2_2ejt0"]
-[ext_resource type="Script" uid="uid://iiyht5d252at" path="res://Scripts/enemy_spawner.gd" id="2_moigd"]
-[ext_resource type="Script" uid="uid://bh6pv1b1ctrhr" path="res://Scripts/spirit_spawner.gd" id="3_tn3d0"]
+[ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://resources/tilesets/DungeonBase.tres" id="1_20shm"]
+[ext_resource type="Script" uid="uid://cravfq6hvos04" path="res://scripts/main_next level.gd" id="2_2ejt0"]
+[ext_resource type="Script" uid="uid://iiyht5d252at" path="res://scripts/enemy_spawner.gd" id="2_moigd"]
+[ext_resource type="Script" uid="uid://bh6pv1b1ctrhr" path="res://scripts/spirit_spawner.gd" id="3_tn3d0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_83evl"]
 size = Vector2(12, 12)

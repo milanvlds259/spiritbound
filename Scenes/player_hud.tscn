@@ -1,14 +1,14 @@
 [gd_scene load_steps=20 format=3 uid="uid://de7br0582ath"]
 
-[ext_resource type="Texture2D" uid="uid://l1ww5jlc34ch" path="res://Assets/Sprites/Spirits/Spirits.png" id="1_51208"]
-[ext_resource type="Script" uid="uid://c5bawssikfj8h" path="res://Scripts/HUDManager.gd" id="1_pvo2x"]
-[ext_resource type="Texture2D" uid="uid://j1rgj1lmi217" path="res://Assets/Sprites/Spirits/air_spirit.png" id="3_kwkag"]
-[ext_resource type="Texture2D" uid="uid://cv2jkub02j7oh" path="res://Assets/Sprites/Spirits/Spirit_Earth_Animation.png" id="4_gp8ph"]
-[ext_resource type="Texture2D" uid="uid://bjwf4ijvw4ol0" path="res://Assets/Sprites/Spirits/thunder_spirit.png" id="5_oy2l1"]
-[ext_resource type="Texture2D" uid="uid://cc1mtcjnhc5ie" path="res://Assets/Sprites/Spirits/ice_guy.png" id="6_0ysoo"]
-[ext_resource type="FontFile" uid="uid://c5y2dv5ufvdgf" path="res://Assets/Fonts/DungeonFont.ttf" id="6_28xsp"]
-[ext_resource type="PackedScene" uid="uid://ct8hpq8d4mjsj" path="res://Scenes/title_screen.tscn" id="7_qi7h4"]
-[ext_resource type="StyleBox" uid="uid://c56hrfbfrri85" path="res://Resources/ButtonStyle.tres" id="8_cgs3r"]
+[ext_resource type="Texture2D" uid="uid://l1ww5jlc34ch" path="res://assets/sprites/Spirits/Spirits.png" id="1_51208"]
+[ext_resource type="Script" uid="uid://c5bawssikfj8h" path="res://scripts/HUDManager.gd" id="1_pvo2x"]
+[ext_resource type="Texture2D" uid="uid://j1rgj1lmi217" path="res://assets/sprites/Spirits/air_spirit.png" id="3_kwkag"]
+[ext_resource type="Texture2D" uid="uid://cv2jkub02j7oh" path="res://assets/sprites/Spirits/Spirit_Earth_Animation.png" id="4_gp8ph"]
+[ext_resource type="Texture2D" uid="uid://bjwf4ijvw4ol0" path="res://assets/sprites/Spirits/thunder_spirit.png" id="5_oy2l1"]
+[ext_resource type="Texture2D" uid="uid://cc1mtcjnhc5ie" path="res://assets/sprites/Spirits/ice_guy.png" id="6_0ysoo"]
+[ext_resource type="FontFile" uid="uid://c5y2dv5ufvdgf" path="res://assets/fonts/DungeonFont.ttf" id="6_28xsp"]
+[ext_resource type="PackedScene" uid="uid://ct8hpq8d4mjsj" path="res://scenes/title_screen.tscn" id="7_qi7h4"]
+[ext_resource type="StyleBox" uid="uid://c56hrfbfrri85" path="res://resources/ButtonStyle.tres" id="8_cgs3r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_14212"]
 atlas = ExtResource("3_kwkag")

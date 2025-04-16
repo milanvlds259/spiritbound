@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://dmvjwdpabh7yj"]
 
-[ext_resource type="Script" path="res://Scenes/EnemyParts/spectral_sword.gd" id="1_886du"]
-[ext_resource type="Texture2D" uid="uid://d11es7i76fpte" path="res://Assets/Sprites/EnemyBoss/Banshee/Spectral Sword Sprite Sheet.png" id="1_hxl4g"]
+[ext_resource type="Script" uid="uid://uqyobleo78j3" path="res://scenes/enemyparts/spectral_sword.gd" id="1_886du"]
+[ext_resource type="Texture2D" uid="uid://d11es7i76fpte" path="res://assets/sprites/EnemyBoss/Banshee/Spectral Sword Sprite Sheet.png" id="1_hxl4g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l2p7r"]
 atlas = ExtResource("1_hxl4g")
