@@ -1,11 +1,11 @@
 [gd_scene load_steps=95 format=3 uid="uid://bj8ayerplwie2"]
 
-[ext_resource type="Texture2D" uid="uid://deyh22wd7qk5y" path="res://Assets/TinyRPGCharPack/Greatsword Skeleton/Greatsword Skeleton(Split Effects)/Greatsword Skeleton.png" id="1_oec4x"]
-[ext_resource type="Script" path="res://Scripts/Enemy/enemy_skel_great.gd" id="1_rec4e"]
-[ext_resource type="Texture2D" uid="uid://c68xkmbk2ktgl" path="res://Assets/TinyRPGCharPack/Greatsword Skeleton/Greatsword Skeleton(Split Effects)/Greatsword Skeleton-Attack01_Effect.png" id="2_2tec4"]
-[ext_resource type="PackedScene" uid="uid://bn2m5ghwophjs" path="res://Scenes/damage_label.tscn" id="2_520hw"]
-[ext_resource type="Texture2D" uid="uid://b3i382kwwsyoc" path="res://Assets/TinyRPGCharPack/Greatsword Skeleton/Greatsword Skeleton(Split Effects)/Greatsword Skeleton-Attack03_Effect.png" id="3_cr34h"]
-[ext_resource type="Texture2D" uid="uid://cfi6va3ntkynb" path="res://Assets/TinyRPGCharPack/Greatsword Skeleton/Greatsword Skeleton(Split Effects)/Greatsword Skeleton-Attack02_Effect.png" id="4_r4xa7"]
+[ext_resource type="Texture2D" uid="uid://deyh22wd7qk5y" path="res://assets/tinyRPGCharPack/Greatsword Skeleton/Greatsword Skeleton(Split Effects)/Greatsword Skeleton.png" id="1_oec4x"]
+[ext_resource type="Script" uid="uid://cvj42jwihk4i7" path="res://scripts/enemy/enemy_skel_great.gd" id="1_rec4e"]
+[ext_resource type="Texture2D" uid="uid://c68xkmbk2ktgl" path="res://assets/tinyRPGCharPack/Greatsword Skeleton/Greatsword Skeleton(Split Effects)/Greatsword Skeleton-Attack01_Effect.png" id="2_2tec4"]
+[ext_resource type="PackedScene" uid="uid://bn2m5ghwophjs" path="res://scenes/damage_label.tscn" id="2_520hw"]
+[ext_resource type="Texture2D" uid="uid://b3i382kwwsyoc" path="res://assets/tinyRPGCharPack/Greatsword Skeleton/Greatsword Skeleton(Split Effects)/Greatsword Skeleton-Attack03_Effect.png" id="3_cr34h"]
+[ext_resource type="Texture2D" uid="uid://cfi6va3ntkynb" path="res://assets/tinyRPGCharPack/Greatsword Skeleton/Greatsword Skeleton(Split Effects)/Greatsword Skeleton-Attack02_Effect.png" id="4_r4xa7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kfl62"]
 atlas = ExtResource("1_oec4x")

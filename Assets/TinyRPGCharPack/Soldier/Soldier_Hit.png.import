@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c15j2p684btyd"
-path="res://.godot/imported/Soldier_Hit.png-e8386319d521c6cf7e7e27a185b9e6d4.ctex"
+path="res://.godot/imported/Soldier_Hit.png-955b190c80bfcee7a7884e4c2f6ddd69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TinyRPGCharPack/Soldier/Soldier_Hit.png"
-dest_files=["res://.godot/imported/Soldier_Hit.png-e8386319d521c6cf7e7e27a185b9e6d4.ctex"]
+source_file="res://assets/tinyRPGCharPack/Soldier/Soldier_Hit.png"
+dest_files=["res://.godot/imported/Soldier_Hit.png-955b190c80bfcee7a7884e4c2f6ddd69.ctex"]
 
 [params]
 

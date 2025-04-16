@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bo3lvw2dpk8lm"]
 
-[ext_resource type="PackedScene" uid="uid://274xnww4a8dx" path="res://Scenes/traps/spike_trap.tscn" id="1_dgje2"]
+[ext_resource type="PackedScene" uid="uid://274xnww4a8dx" path="res://scenes/traps/spike_trap.tscn" id="1_dgje2"]
 
 [node name="spike wave right to left" type="AnimatedSprite2D"]
 position = Vector2(72, 8)

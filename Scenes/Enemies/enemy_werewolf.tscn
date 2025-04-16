@@ -1,9 +1,9 @@
 [gd_scene load_steps=68 format=3 uid="uid://41nrlojl56y8"]
 
-[ext_resource type="Script" uid="uid://ctkbxox3cq1n6" path="res://Scripts/Enemy/enemy_werewolf.gd" id="1_24uwu"]
-[ext_resource type="Texture2D" uid="uid://hyv4u8kplljh" path="res://Assets/TinyRPGCharPack/Werewolf/Werewolf(Split Effects)/Werewolf.png" id="1_fm66s"]
-[ext_resource type="PackedScene" uid="uid://bn2m5ghwophjs" path="res://Scenes/damage_label.tscn" id="2_pqwdi"]
-[ext_resource type="Texture2D" uid="uid://dci7obgkcwav8" path="res://Assets/TinyRPGCharPack/Werewolf/Werewolf(Split Effects)/Werewolf-Attack01_Effect.png" id="4_gihlf"]
+[ext_resource type="Script" uid="uid://ctkbxox3cq1n6" path="res://scripts/enemy/enemy_werewolf.gd" id="1_24uwu"]
+[ext_resource type="Texture2D" uid="uid://hyv4u8kplljh" path="res://assets/tinyRPGCharPack/Werewolf/Werewolf(Split Effects)/Werewolf.png" id="1_fm66s"]
+[ext_resource type="PackedScene" uid="uid://bn2m5ghwophjs" path="res://scenes/damage_label.tscn" id="2_pqwdi"]
+[ext_resource type="Texture2D" uid="uid://dci7obgkcwav8" path="res://assets/tinyRPGCharPack/Werewolf/Werewolf(Split Effects)/Werewolf-Attack01_Effect.png" id="4_gihlf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_11awx"]
 atlas = ExtResource("1_fm66s")

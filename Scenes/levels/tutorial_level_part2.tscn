@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=4 uid="uid://cuc8etdv5iy67"]
 
-[ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="1_wgl86"]
-[ext_resource type="Texture2D" uid="uid://3qe2rcup43ig" path="res://Assets/Sprites/Tiles/FDR_Dungeon.png" id="2_jt4vm"]
-[ext_resource type="PackedScene" uid="uid://v7fuklt8nwxj" path="res://Scenes/player.tscn" id="3_kd156"]
-[ext_resource type="PackedScene" uid="uid://de7br0582ath" path="res://Scenes/player_hud.tscn" id="4_umn0v"]
-[ext_resource type="AudioStream" uid="uid://c4abcppdikws3" path="res://Assets/Audio/8bitloop_Level_Combat.wav" id="5_1x25u"]
-[ext_resource type="PackedScene" uid="uid://cx0bsc413mouh" path="res://Scenes/Enemies/enemy_orc.tscn" id="6_3nveh"]
+[ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://resources/tilesets/DungeonBase.tres" id="1_wgl86"]
+[ext_resource type="Texture2D" uid="uid://3qe2rcup43ig" path="res://assets/sprites/Tiles/FDR_Dungeon.png" id="2_jt4vm"]
+[ext_resource type="PackedScene" uid="uid://v7fuklt8nwxj" path="res://scenes/player.tscn" id="3_kd156"]
+[ext_resource type="PackedScene" uid="uid://de7br0582ath" path="res://scenes/player_hud.tscn" id="4_umn0v"]
+[ext_resource type="AudioStream" uid="uid://c4abcppdikws3" path="res://assets/audio/8bitloop_Level_Combat.wav" id="5_1x25u"]
+[ext_resource type="PackedScene" uid="uid://cx0bsc413mouh" path="res://scenes/enemies/enemy_orc.tscn" id="6_3nveh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kml87"]
 texture = ExtResource("2_jt4vm")

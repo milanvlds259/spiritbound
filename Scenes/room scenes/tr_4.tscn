@@ -1,18 +1,16 @@
-[gd_scene load_steps=23 format=4 uid="uid://c0w0lvsgcun3b"]
+[gd_scene load_steps=21 format=4 uid="uid://c0w0lvsgcun3b"]
 
-[ext_resource type="Texture2D" uid="uid://bvrynxbdcuy8g" path="res://Assets/Sprites/Tiles/Dungeon_Tileset_v2.png" id="1_o86q1"]
-[ext_resource type="Script" uid="uid://iiyht5d252at" path="res://Scripts/enemy_spawner.gd" id="2_ob8qg"]
-[ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="2_xyk3i"]
-[ext_resource type="Texture2D" uid="uid://b8733p18lxm7m" path="res://Assets/Sprites/Tiles/Dungeon_item_props_v2.png" id="3_4wbum"]
-[ext_resource type="Texture2D" uid="uid://3qe2rcup43ig" path="res://Assets/Sprites/Tiles/FDR_Dungeon.png" id="4_2f0dt"]
-[ext_resource type="PackedScene" uid="uid://wysg20h8ri63" path="res://Scenes/props/bookshelf.tscn" id="5_yhx5p"]
-[ext_resource type="PackedScene" uid="uid://c65iy8ixixoyr" path="res://Scenes/props/empty_bookshelf.tscn" id="6_l5sx7"]
-[ext_resource type="PackedScene" uid="uid://bl3ldbh0gf5en" path="res://Scenes/traps/2x_3_loop.tscn" id="7_0lkf0"]
-[ext_resource type="PackedScene" uid="uid://c306g4p6i7ff8" path="res://Scenes/traps/2x_3_loop_opposite.tscn" id="8_foj5l"]
-[ext_resource type="PackedScene" uid="uid://d1t6rrajdprfm" path="res://Scenes/Bosses/banshee.tscn" id="12_w7p1r"]
-[ext_resource type="PackedScene" uid="uid://v7fuklt8nwxj" path="res://Scenes/player.tscn" id="13_hpl0i"]
-[ext_resource type="Script" uid="uid://cravfq6hvos04" path="res://Scripts/main_next level.gd" id="10_vebe3"]
-[ext_resource type="Script" uid="uid://bh6pv1b1ctrhr" path="res://Scripts/spirit_spawner.gd" id="11_rkog3"]
+[ext_resource type="Texture2D" uid="uid://bvrynxbdcuy8g" path="res://assets/sprites/Tiles/Dungeon_Tileset_v2.png" id="1_o86q1"]
+[ext_resource type="Script" uid="uid://iiyht5d252at" path="res://scripts/enemy_spawner.gd" id="2_ob8qg"]
+[ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://resources/tilesets/DungeonBase.tres" id="2_xyk3i"]
+[ext_resource type="Texture2D" uid="uid://b8733p18lxm7m" path="res://assets/sprites/Tiles/Dungeon_item_props_v2.png" id="3_4wbum"]
+[ext_resource type="Texture2D" uid="uid://3qe2rcup43ig" path="res://assets/sprites/Tiles/FDR_Dungeon.png" id="4_2f0dt"]
+[ext_resource type="PackedScene" uid="uid://wysg20h8ri63" path="res://scenes/props/bookshelf.tscn" id="5_yhx5p"]
+[ext_resource type="PackedScene" uid="uid://c65iy8ixixoyr" path="res://scenes/props/empty_bookshelf.tscn" id="6_l5sx7"]
+[ext_resource type="PackedScene" uid="uid://bl3ldbh0gf5en" path="res://scenes/traps/2x_3_loop.tscn" id="7_0lkf0"]
+[ext_resource type="PackedScene" uid="uid://c306g4p6i7ff8" path="res://scenes/traps/2x_3_loop_opposite.tscn" id="8_foj5l"]
+[ext_resource type="Script" uid="uid://cravfq6hvos04" path="res://scripts/main_next level.gd" id="10_vebe3"]
+[ext_resource type="Script" uid="uid://bh6pv1b1ctrhr" path="res://scripts/spirit_spawner.gd" id="11_rkog3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xvnex"]
 texture = ExtResource("1_o86q1")
@@ -1270,17 +1268,10 @@ position = Vector2(0, 16)
 position = Vector2(16, 0)
 
 [node name="mask2" type="Polygon2D" parent="."]
+visible = false
 z_index = 2
 position = Vector2(679.628, -582.823)
 scale = Vector2(16.7393, 7.77488)
 texture = SubResource("CompressedTexture2D_r2ndd")
 polygon = PackedVector2Array(-7.18494, -11.9521, -0.505474, -11.9149, 9.53572, -11.7592, 9.64026, 1.74579, 9.64026, 13.2251, 9.7448, 17.3409, -4.35372, 17.3409, -17.6607, 17.3409, -17.6906, -11.502)
 script = SubResource("GDScript_1skun")
-
-[node name="Player" parent="." instance=ExtResource("13_hpl0i")]
-position = Vector2(616, -351)
-scale = Vector2(1, 1)
-
-[node name="banshee" parent="." instance=ExtResource("12_w7p1r")]
-position = Vector2(629, -577)
-scale = Vector2(0.3, 0.3)

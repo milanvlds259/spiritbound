@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cbvw8ppg2hrj1"
-path="res://.godot/imported/Werebear.png-645070552e36d67864040d3119a57855.ctex"
+path="res://.godot/imported/Werebear.png-8e2b500ba46f73156df04ff5f939adf7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TinyRPGCharPack/Werebear/Werebear/Werebear.png"
-dest_files=["res://.godot/imported/Werebear.png-645070552e36d67864040d3119a57855.ctex"]
+source_file="res://assets/tinyRPGCharPack/Werebear/Werebear/Werebear.png"
+dest_files=["res://.godot/imported/Werebear.png-8e2b500ba46f73156df04ff5f939adf7.ctex"]
 
 [params]
 

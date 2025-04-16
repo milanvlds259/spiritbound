@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://ctqjr3xpg5cko"]
 
-[ext_resource type="PackedScene" uid="uid://bn2m5ghwophjs" path="res://Scenes/damage_label.tscn" id="2_t7i23"]
-[ext_resource type="Texture2D" uid="uid://deavjxvmuqxsx" path="res://Assets/Sprites/shadow.png" id="3_rlx2n"]
-[ext_resource type="Texture2D" uid="uid://bqfjtuiydirrw" path="res://Assets/Sprites/Dungeon_Enemy_v3.png" id="5_7fjec"]
-[ext_resource type="Script" uid="uid://bec8tfnym5kt" path="res://Scenes/dummy_enemy.gd" id="5_43ya8"]
+[ext_resource type="PackedScene" uid="uid://bn2m5ghwophjs" path="res://scenes/damage_label.tscn" id="2_t7i23"]
+[ext_resource type="Texture2D" uid="uid://deavjxvmuqxsx" path="res://assets/sprites/shadow.png" id="3_rlx2n"]
+[ext_resource type="Texture2D" uid="uid://bqfjtuiydirrw" path="res://assets/sprites/Dungeon_Enemy_v3.png" id="5_7fjec"]
+[ext_resource type="Script" uid="uid://bec8tfnym5kt" path="res://scenes/dummy_enemy.gd" id="5_43ya8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uv6dy"]
 size = Vector2(20.5, 14)

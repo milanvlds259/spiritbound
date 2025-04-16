@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bu88u84ka73rk"
-path="res://.godot/imported/Elite Orc_Hit.png-75530472f14a0de3fb8de75d631dd2bc.ctex"
+path="res://.godot/imported/Elite Orc_Hit.png-e54a33f8ce7b48954e154c153b6e400c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TinyRPGCharPack/Elite Orc/Elite Orc_Hit.png"
-dest_files=["res://.godot/imported/Elite Orc_Hit.png-75530472f14a0de3fb8de75d631dd2bc.ctex"]
+source_file="res://assets/tinyRPGCharPack/Elite Orc/Elite Orc_Hit.png"
+dest_files=["res://.godot/imported/Elite Orc_Hit.png-e54a33f8ce7b48954e154c153b6e400c.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b7fgsl5ndk0p5"]
 
-[ext_resource type="Script" uid="uid://c1pbi5md05e0x" path="res://Scripts/thunder_spirit.gd" id="1_h8h7y"]
-[ext_resource type="Texture2D" uid="uid://bjwf4ijvw4ol0" path="res://Assets/Sprites/Spirits/thunder_spirit.png" id="2_55cbh"]
+[ext_resource type="Script" uid="uid://c1pbi5md05e0x" path="res://scripts/thunder_spirit.gd" id="1_h8h7y"]
+[ext_resource type="Texture2D" uid="uid://bjwf4ijvw4ol0" path="res://assets/sprites/Spirits/thunder_spirit.png" id="2_55cbh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cwng1"]
 atlas = ExtResource("2_55cbh")
