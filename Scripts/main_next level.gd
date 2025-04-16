@@ -16,6 +16,7 @@ func _on_body_entered(body: Node2D):
 	player_in_area = true
 	player_can_transition.emit(true)
 
+	# can only transition if the player killed all enemies
 	if body.has_node("ContinuePrompt"):
 		body.get_node("ContinuePrompt").visible = true
 
