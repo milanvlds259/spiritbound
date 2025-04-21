@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://csjssf383xx6m"
-path="res://.godot/imported/Swordsman_Attack02.png-2499890348183d5a675f16d49b8b424d.ctex"
+path="res://.godot/imported/Swordsman_Attack02.png-0eff5cfb8d4c8212286e5d60c6684140.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TinyRPGCharPack/Swordsman/Swordsman_Attack02.png"
-dest_files=["res://.godot/imported/Swordsman_Attack02.png-2499890348183d5a675f16d49b8b424d.ctex"]
+source_file="res://assets/TinyRPGCharPack/Swordsman/Swordsman_Attack02.png"
+dest_files=["res://.godot/imported/Swordsman_Attack02.png-0eff5cfb8d4c8212286e5d60c6684140.ctex"]
 
 [params]
 

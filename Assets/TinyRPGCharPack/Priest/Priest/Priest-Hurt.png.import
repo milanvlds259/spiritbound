@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cd16d58uplp4c"
-path="res://.godot/imported/Priest-Hurt.png-80f8203e9bcee75fbd4c5ad18ddc9941.ctex"
+path="res://.godot/imported/Priest-Hurt.png-0d5ed8326d6630717a0ae9f2c73eba0e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TinyRPGCharPack/Priest/Priest/Priest-Hurt.png"
-dest_files=["res://.godot/imported/Priest-Hurt.png-80f8203e9bcee75fbd4c5ad18ddc9941.ctex"]
+source_file="res://assets/TinyRPGCharPack/Priest/Priest/Priest-Hurt.png"
+dest_files=["res://.godot/imported/Priest-Hurt.png-0d5ed8326d6630717a0ae9f2c73eba0e.ctex"]
 
 [params]
 

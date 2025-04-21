@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxj24j4cu06gi"
-path="res://.godot/imported/Archer.png-26558728dc5e4ca66370edd2fda3c293.ctex"
+path="res://.godot/imported/Archer.png-9a5f23e4ee1ba3f86c9ab7bf1af1af9d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TinyRPGCharPack/Archer/Archer(Split Effects)/Archer.png"
-dest_files=["res://.godot/imported/Archer.png-26558728dc5e4ca66370edd2fda3c293.ctex"]
+source_file="res://assets/TinyRPGCharPack/Archer/Archer(Split Effects)/Archer.png"
+dest_files=["res://.godot/imported/Archer.png-9a5f23e4ee1ba3f86c9ab7bf1af1af9d.ctex"]
 
 [params]
 

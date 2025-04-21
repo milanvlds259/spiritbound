@@ -40,6 +40,7 @@ func _ready():
 	$PlayerSprite.animation_finished.connect(_on_AnimatedSprite2D_animation_finished)
 	$PlayerSprite.frame_changed.connect(_on_PlayerSprite_frame_changed)
 	$AttackEffect01/AttackEffectSprite.frame_changed.connect(_on_attack_effect_frame_changed)
+	$AttackEffect01.area_entered.connect(_on_attack_hit_enemy)
 	$AttackEffect01/AttackHitbox.disabled = true
 	$ContinuePrompt.visible = false
 	
@@ -228,12 +229,10 @@ func _attack_melee():
 		$AttackEffect01/AttackHitbox.position = attack_dir * 16
 		$AttackEffect01/AttackEffectSprite.position = attack_dir * 5
 		$AttackEffect01/AttackEffectSprite.play("attack01fire")
-		$MeleeFireExplosion.play()
 	else:
 		$AttackEffect01/AttackHitbox.scale = Vector2(1, 1)
 		$AttackEffect01/AttackEffectSprite.scale = Vector2(1, 1)
 		$AttackEffect01/AttackEffectSprite.play("attack01")
-		$PlayerMeleeHit.play()
 
 func _attack_ranged():
 	attack_mode = "ranged"
@@ -325,8 +324,8 @@ func take_damage(damage: int):
 
 func die():
 	# Emit signal to global script
-	Global.emit_signal("player_died")
-	#disable player
+	Global.player_died.emit()
+	# disable player
 	queue_free()
 
 func _on_PlayerSprite_frame_changed():
@@ -336,19 +335,19 @@ func _on_PlayerSprite_frame_changed():
 			arrow_fired = true
 			fire_arrow()
 
+func _on_attack_hit_enemy(area: Area2D):
+	print("Hit area: ", area.name)
+	# Check if the area is a hitbox belonging to an enemy
+	if "ice" in spirit_inventory and area.is_in_group("enemy_hit") and area.get_parent().has_method("freeze"):
+		print("Ice effect applied to enemy: ", area.get_parent().name)
+		area.get_parent().freeze(2.0, 0.5)
+
 func _on_attack_effect_frame_changed():
 	var current_frame = $AttackEffect01/AttackEffectSprite.frame
 	# If the current frame is where the attack should be active.
 	# Adjust the frame numbers (e.g. 3 and 4) as needed depending on your animation indexing.
 	if current_frame == 2 or current_frame == 3:
 		$AttackEffect01/AttackHitbox.disabled = false
-
-		# Ice spirit effect
-		if "ice" in spirit_inventory:
-			var enemies = $AttackEffect01.get_overlapping_bodies()
-			for enemy in enemies:
-				if enemy.is_in_group("enemy") and enemy.has_method("freeze"):
-					enemy.freeze(2.0, 0.5)
 	else:
 		$AttackEffect01/AttackHitbox.disabled = true
 

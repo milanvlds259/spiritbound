@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dyc5mb4msb5gk"
-path="res://.godot/imported/Slime-Shadow_walk.png-618f1d9ffee94631206acfa92e90e4f3.ctex"
+path="res://.godot/imported/Slime-Shadow_walk.png-f7250fd23482814e8a2adbdc45d68e53.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TinyRPGCharPack/Slime/Slime/Shadow sprites/Slime-Shadow_walk.png"
-dest_files=["res://.godot/imported/Slime-Shadow_walk.png-618f1d9ffee94631206acfa92e90e4f3.ctex"]
+source_file="res://assets/TinyRPGCharPack/Slime/Slime/Shadow sprites/Slime-Shadow_walk.png"
+dest_files=["res://.godot/imported/Slime-Shadow_walk.png-f7250fd23482814e8a2adbdc45d68e53.ctex"]
 
 [params]
 

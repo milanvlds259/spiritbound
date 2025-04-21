@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://nf1m3iyycujw"
-path="res://.godot/imported/Knights Templar_Attack02.png-2d79347d7187aded3efd13114c09ea88.ctex"
+path="res://.godot/imported/Knights Templar_Attack02.png-c4386a00f2cf80c9044076828622ea5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TinyRPGCharPack/Knights Templar/Knights Templar_Attack02.png"
-dest_files=["res://.godot/imported/Knights Templar_Attack02.png-2d79347d7187aded3efd13114c09ea88.ctex"]
+source_file="res://assets/TinyRPGCharPack/Knights Templar/Knights Templar_Attack02.png"
+dest_files=["res://.godot/imported/Knights Templar_Attack02.png-c4386a00f2cf80c9044076828622ea5a.ctex"]
 
 [params]
 

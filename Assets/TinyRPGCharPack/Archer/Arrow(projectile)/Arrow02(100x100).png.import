@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ctpug34o2d6y6"
-path="res://.godot/imported/Arrow02(100x100).png-5a54fa402d2b239f7990c2c000201eb6.ctex"
+path="res://.godot/imported/Arrow02(100x100).png-4b48d97f168a4764c4807fd0489d4e2d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TinyRPGCharPack/Archer/Arrow(projectile)/Arrow02(100x100).png"
-dest_files=["res://.godot/imported/Arrow02(100x100).png-5a54fa402d2b239f7990c2c000201eb6.ctex"]
+source_file="res://assets/TinyRPGCharPack/Archer/Arrow(projectile)/Arrow02(100x100).png"
+dest_files=["res://.godot/imported/Arrow02(100x100).png-4b48d97f168a4764c4807fd0489d4e2d.ctex"]
 
 [params]
 

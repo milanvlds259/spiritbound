@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnswvv5bevl64"
-path="res://.godot/imported/Slime-Attack02.png-9582cc48641ef34a31337bfb0f7d5eac.ctex"
+path="res://.godot/imported/Slime-Attack02.png-be34cbe2b91eca1b00c243ee0ef26bd4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TinyRPGCharPack/Slime/Slime with shadows/Slime-Attack02.png"
-dest_files=["res://.godot/imported/Slime-Attack02.png-9582cc48641ef34a31337bfb0f7d5eac.ctex"]
+source_file="res://assets/TinyRPGCharPack/Slime/Slime with shadows/Slime-Attack02.png"
+dest_files=["res://.godot/imported/Slime-Attack02.png-be34cbe2b91eca1b00c243ee0ef26bd4.ctex"]
 
 [params]
 

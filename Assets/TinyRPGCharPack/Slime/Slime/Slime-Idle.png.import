@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6j86gtrkxsmt"
-path="res://.godot/imported/Slime-Idle.png-6f4e1ddf93be8b2165337e9d53b34682.ctex"
+path="res://.godot/imported/Slime-Idle.png-9d3bcfac377692d4f3c7040459a9e635.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TinyRPGCharPack/Slime/Slime/Slime-Idle.png"
-dest_files=["res://.godot/imported/Slime-Idle.png-6f4e1ddf93be8b2165337e9d53b34682.ctex"]
+source_file="res://assets/TinyRPGCharPack/Slime/Slime/Slime-Idle.png"
+dest_files=["res://.godot/imported/Slime-Idle.png-9d3bcfac377692d4f3c7040459a9e635.ctex"]
 
 [params]
 

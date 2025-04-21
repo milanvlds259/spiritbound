@@ -1,7 +1,7 @@
 [gd_scene load_steps=45 format=3 uid="uid://cx0bsc413mouh"]
 
 [ext_resource type="Script" uid="uid://cywnoxgglj6y" path="res://scripts/enemy/enemy_orc.gd" id="1_o5lep"]
-[ext_resource type="Texture2D" uid="uid://bml4ya0bu6l4g" path="res://assets/tinyRPGCharPack/Orc/Orc.png" id="1_rqxjn"]
+[ext_resource type="Texture2D" uid="uid://bml4ya0bu6l4g" path="res://assets/TinyRPGCharPack/Orc/Orc.png" id="1_rqxjn"]
 [ext_resource type="PackedScene" uid="uid://bn2m5ghwophjs" path="res://scenes/damage_label.tscn" id="2_hf8nf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qqlbt"]
