@@ -40,7 +40,7 @@ func _ready():
 	$PlayerSprite.animation_finished.connect(_on_AnimatedSprite2D_animation_finished)
 	$PlayerSprite.frame_changed.connect(_on_PlayerSprite_frame_changed)
 	$AttackEffect01/AttackEffectSprite.frame_changed.connect(_on_attack_effect_frame_changed)
-	$AttackEffect01.body_entered.connect(_on_attack_hit_enemy)
+	$AttackEffect01.area_entered.connect(_on_attack_hit_enemy)
 	$AttackEffect01/AttackHitbox.disabled = true
 	$ContinuePrompt.visible = false
 	
@@ -333,12 +333,12 @@ func _on_PlayerSprite_frame_changed():
 			arrow_fired = true
 			fire_arrow()
 
-func _on_attack_hit_enemy(body: Node):
-	print("Hit enemy: ", body.name)
-	# Apply ice effect when an enemy is hit
-	if "ice" in spirit_inventory and body.has_method("freeze"):
-		print("Ice effect applied to enemy: ", body.name)
-		body.freeze(2.0, 0.5)
+func _on_attack_hit_enemy(area: Area2D):
+	print("Hit area: ", area.name)
+	# Check if the area is a hitbox belonging to an enemy
+	if "ice" in spirit_inventory and area.is_in_group("enemy_hit") and area.get_parent().has_method("freeze"):
+		print("Ice effect applied to enemy: ", area.get_parent().name)
+		area.get_parent().freeze(2.0, 0.5)
 
 func _on_attack_effect_frame_changed():
 	var current_frame = $AttackEffect01/AttackEffectSprite.frame

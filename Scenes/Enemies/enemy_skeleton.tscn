@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c7w25h0gvnqk6" path="res://scripts/enemy/enemy_skeleton.gd" id="1_lsw4l"]
 [ext_resource type="PackedScene" uid="uid://bn2m5ghwophjs" path="res://scenes/damage_label.tscn" id="2_1quu0"]
-[ext_resource type="Texture2D" uid="uid://cepbf6cmi222p" path="res://assets/tinyRPGCharPack/Skeleton/Skeleton.png" id="3_gyhkd"]
+[ext_resource type="Texture2D" uid="uid://cepbf6cmi222p" path="res://assets/TinyRPGCharPack/Skeleton/Skeleton.png" id="3_gyhkd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cy5cb"]
 atlas = ExtResource("3_gyhkd")
