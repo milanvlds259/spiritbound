@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://di18nb1je2k1"
-path="res://.godot/imported/enemy_boss_minotaur.png-df68b55f15dae0d0166acaec1d2e8ee1.ctex"
+path="res://.godot/imported/enemy_boss_minotaur.png-5e0ae3f876ce2bb85c76981ab955d9c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/EnemyBoss/enemy_boss_minotaur.png"
-dest_files=["res://.godot/imported/enemy_boss_minotaur.png-df68b55f15dae0d0166acaec1d2e8ee1.ctex"]
+source_file="res://Assets/Sprites/EnemyBoss/enemy_boss_minotaur.png"
+dest_files=["res://.godot/imported/enemy_boss_minotaur.png-5e0ae3f876ce2bb85c76981ab955d9c4.ctex"]
 
 [params]
 

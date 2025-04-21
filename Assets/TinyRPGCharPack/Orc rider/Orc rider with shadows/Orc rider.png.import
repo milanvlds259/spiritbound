@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxbkhpecor4w4"
-path="res://.godot/imported/Orc rider.png-748c69fbde237af639cc1fd5b05d7f24.ctex"
+path="res://.godot/imported/Orc rider.png-1f1b13d3d0ecc2ff4d2a5828625ba403.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TinyRPGCharPack/Orc rider/Orc rider with shadows/Orc rider.png"
-dest_files=["res://.godot/imported/Orc rider.png-748c69fbde237af639cc1fd5b05d7f24.ctex"]
+source_file="res://Assets/TinyRPGCharPack/Orc rider/Orc rider with shadows/Orc rider.png"
+dest_files=["res://.godot/imported/Orc rider.png-1f1b13d3d0ecc2ff4d2a5828625ba403.ctex"]
 
 [params]
 

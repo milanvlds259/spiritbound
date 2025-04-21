@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c56a61xe87fo4"
-path="res://.godot/imported/FDR_Water_Tiles_Godot.png-871a80b394c5115c790535557c0c9459.ctex"
+path="res://.godot/imported/FDR_Water_Tiles_Godot.png-abde2b5a61be691a3ba4a14e9c731158.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Tiles/FDR_Water_Tiles_Godot.png"
-dest_files=["res://.godot/imported/FDR_Water_Tiles_Godot.png-871a80b394c5115c790535557c0c9459.ctex"]
+source_file="res://Assets/Sprites/Tiles/FDR_Water_Tiles_Godot.png"
+dest_files=["res://.godot/imported/FDR_Water_Tiles_Godot.png-abde2b5a61be691a3ba4a14e9c731158.ctex"]
 
 [params]
 

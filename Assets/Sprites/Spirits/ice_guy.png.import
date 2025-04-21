@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cc1mtcjnhc5ie"
-path="res://.godot/imported/ice_guy.png-d07cedebfdaeeede4a2fea6e797e1751.ctex"
+path="res://.godot/imported/ice_guy.png-03e08ef9739273eb72cf406889c00dc5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Spirits/ice_guy.png"
-dest_files=["res://.godot/imported/ice_guy.png-d07cedebfdaeeede4a2fea6e797e1751.ctex"]
+source_file="res://Assets/Sprites/Spirits/ice_guy.png"
+dest_files=["res://.godot/imported/ice_guy.png-03e08ef9739273eb72cf406889c00dc5.ctex"]
 
 [params]
 

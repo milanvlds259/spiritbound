@@ -19,17 +19,16 @@ func load_next_room():
 
 	var folder_path: String
 	var used_list: Array
+	var scene_path: String
 
 	if room_count % 5 == 0:
 		folder_path = BOSS_ROOM_SCENE_FOLDER
-		used_list = used_boss_rooms
+		scene_path = get_boss_room_by_index(used_boss_rooms.size())
 	else:
 		folder_path = ROOM_SCENE_FOLDER
-		used_list = used_rooms
+		scene_path = pick_unique_scene(folder_path, used_rooms)
 
 	print("Loading room #%d from folder: %s" % [room_count, folder_path])
-
-	var scene_path = pick_unique_scene(folder_path, used_list)
 	print("Selected scene path: ", scene_path)
 
 	if scene_path == "":
@@ -82,7 +81,7 @@ func pick_unique_scene(folder_path: String, used_list: Array) -> String:
 			if not dir.current_is_dir() and (file_name.ends_with(".tscn") or file_name.ends_with(".tscn.remap")):
 				var full_path = folder_path + file_name
 				print("Found candidate:", full_path)
-				if not used_list.has(full_path):
+				if not used_list.has(full_path.replace(".remap", "")):
 					files.append(full_path)
 			file_name = dir.get_next()
 		dir.list_dir_end()
@@ -102,3 +101,24 @@ func pick_unique_scene(folder_path: String, used_list: Array) -> String:
 		selected = selected.replace(".remap", "")
 	used_list.append(selected)
 	return selected
+
+func get_boss_room_by_index(index: int) -> String:
+	var boss_files = [
+		"tc_1.tscn",
+		"tc_2.tscn",
+		"tc_3.tscn",
+		"tc_4.tscn"
+	]
+
+	if index >= boss_files.size():
+		index = boss_files.size() - 1  # clamp to last if somehow over
+
+	var file = boss_files[index]
+	var full_path = BOSS_ROOM_SCENE_FOLDER + file
+	var remap_path = full_path + ".remap"
+
+	if FileAccess.file_exists(remap_path):
+		full_path = remap_path
+
+	used_boss_rooms.append(full_path.replace(".remap", ""))
+	return full_path.replace(".remap", "")

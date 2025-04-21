@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccml4gm2gutbb"
-path="res://.godot/imported/Greatsword Skeleton-Death.png-f8121b49790355551b5b82f4e40a868d.ctex"
+path="res://.godot/imported/Greatsword Skeleton-Death.png-866d2f1482c400b540aa5cc3ebb3bc14.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TinyRPGCharPack/Greatsword Skeleton/Greatsword Skeleton/Greatsword Skeleton-Death.png"
-dest_files=["res://.godot/imported/Greatsword Skeleton-Death.png-f8121b49790355551b5b82f4e40a868d.ctex"]
+source_file="res://Assets/TinyRPGCharPack/Greatsword Skeleton/Greatsword Skeleton/Greatsword Skeleton-Death.png"
+dest_files=["res://.godot/imported/Greatsword Skeleton-Death.png-866d2f1482c400b540aa5cc3ebb3bc14.ctex"]
 
 [params]
 

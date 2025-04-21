@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://w5mqeltvsv6v"
-path="res://.godot/imported/Armored Skeleton_Idle.png-db62d59812b8ded3b6607e9d875299ac.ctex"
+path="res://.godot/imported/Armored Skeleton_Idle.png-075b19ad76e964bd3be0ea177bfd8dc0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TinyRPGCharPack/Armored Skeleton/Armored Skeleton_Idle.png"
-dest_files=["res://.godot/imported/Armored Skeleton_Idle.png-db62d59812b8ded3b6607e9d875299ac.ctex"]
+source_file="res://Assets/TinyRPGCharPack/Armored Skeleton/Armored Skeleton_Idle.png"
+dest_files=["res://.godot/imported/Armored Skeleton_Idle.png-075b19ad76e964bd3be0ea177bfd8dc0.ctex"]
 
 [params]
 
