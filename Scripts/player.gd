@@ -156,6 +156,8 @@ func handle_input():
 	if Input.is_action_just_pressed("ranged_attack"):
 		is_attacking = true
 		_attack_ranged()
+		
+
 
 func add_spirit(type: String) -> void:
 	spirit_inventory.append(type)
@@ -227,10 +229,12 @@ func _attack_melee():
 		$AttackEffect01/AttackHitbox.position = attack_dir * 16
 		$AttackEffect01/AttackEffectSprite.position = attack_dir * 5
 		$AttackEffect01/AttackEffectSprite.play("attack01fire")
+		$MeleeFireExplosion.play()
 	else:
 		$AttackEffect01/AttackHitbox.scale = Vector2(1, 1)
 		$AttackEffect01/AttackEffectSprite.scale = Vector2(1, 1)
 		$AttackEffect01/AttackEffectSprite.play("attack01")
+		$PlayerMeleeHit.play()
 
 func _attack_ranged():
 	attack_mode = "ranged"

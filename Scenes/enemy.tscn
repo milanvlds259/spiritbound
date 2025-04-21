@@ -216,3 +216,5 @@ sprite_frames = SubResource("SpriteFrames_185cv")
 animation = &"attack"
 frame = 4
 frame_progress = 1.0
+
+[node name="AttackSound" type="AudioStreamPlayer" parent="."]
