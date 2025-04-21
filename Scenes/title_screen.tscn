@@ -8,6 +8,7 @@
 
 [node name="Node" type="Node"]
 script = ExtResource("1_6ggef")
+main_scene_path = "res://scenes/room_loader.tscn"
 
 [node name="BG" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.2)
