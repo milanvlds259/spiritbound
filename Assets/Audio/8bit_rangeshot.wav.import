@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://duymue8uwe3ue"
-path="res://.godot/imported/8bit_rangeshot.wav-67021655f327d417a1c2128d7e70040b.sample"
+path="res://.godot/imported/8bit_rangeshot.wav-1bdd15726a99a646a3fa579c7db63549.sample"
 
 [deps]
 
-source_file="res://Assets/Audio/8bit_rangeshot.wav"
-dest_files=["res://.godot/imported/8bit_rangeshot.wav-67021655f327d417a1c2128d7e70040b.sample"]
+source_file="res://assets/audio/8bit_rangeshot.wav"
+dest_files=["res://.godot/imported/8bit_rangeshot.wav-1bdd15726a99a646a3fa579c7db63549.sample"]
 
 [params]
 

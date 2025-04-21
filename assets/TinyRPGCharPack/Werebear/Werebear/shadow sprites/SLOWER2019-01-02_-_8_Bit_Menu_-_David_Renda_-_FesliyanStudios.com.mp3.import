@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bgp6bvtjvfwa7"
+path="res://.godot/imported/SLOWER2019-01-02_-_8_Bit_Menu_-_David_Renda_-_FesliyanStudios.com.mp3-ad393393a54295da017bc1e8df407549.mp3str"
+
+[deps]
+
+source_file="res://assets/TinyRPGCharPack/Werebear/Werebear/shadow sprites/SLOWER2019-01-02_-_8_Bit_Menu_-_David_Renda_-_FesliyanStudios.com.mp3"
+dest_files=["res://.godot/imported/SLOWER2019-01-02_-_8_Bit_Menu_-_David_Renda_-_FesliyanStudios.com.mp3-ad393393a54295da017bc1e8df407549.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=1.0
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dte6e5n2vej6n"
-path="res://.godot/imported/8bit_hitempty.wav-e217ba1aa569f1a15978b0ff0c2bbe25.sample"
+path="res://.godot/imported/8bit_hitempty.wav-dc10573549c71357099491f7ad28fe3e.sample"
 
 [deps]
 
-source_file="res://Assets/Audio/8bit_hitempty.wav"
-dest_files=["res://.godot/imported/8bit_hitempty.wav-e217ba1aa569f1a15978b0ff0c2bbe25.sample"]
+source_file="res://assets/audio/8bit_hitempty.wav"
+dest_files=["res://.godot/imported/8bit_hitempty.wav-dc10573549c71357099491f7ad28fe3e.sample"]
 
 [params]
 

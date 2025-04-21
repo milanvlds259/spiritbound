@@ -229,12 +229,10 @@ func _attack_melee():
 		$AttackEffect01/AttackHitbox.position = attack_dir * 16
 		$AttackEffect01/AttackEffectSprite.position = attack_dir * 5
 		$AttackEffect01/AttackEffectSprite.play("attack01fire")
-		$MeleeFireExplosion.play()
 	else:
 		$AttackEffect01/AttackHitbox.scale = Vector2(1, 1)
 		$AttackEffect01/AttackEffectSprite.scale = Vector2(1, 1)
 		$AttackEffect01/AttackEffectSprite.play("attack01")
-		$PlayerMeleeHit.play()
 
 func _attack_ranged():
 	attack_mode = "ranged"

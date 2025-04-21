@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://boghl7hhgvs62" path="res://assets/sprites/Dungeon_brick_wall_purple.png.png" id="1_yexwk"]
 [ext_resource type="FontFile" uid="uid://c5y2dv5ufvdgf" path="res://assets/fonts/DungeonFont.ttf" id="2_itaxm"]
 [ext_resource type="Texture2D" uid="uid://d271g6sx3mnus" path="res://assets/sprites/FreeButtons.png" id="3_0tpwl"]
-[ext_resource type="AudioStream" uid="uid://bgp6bvtjvfwa7" path="res://assets/audio/SLOWER2019-01-02_-_8_Bit_Menu_-_David_Renda_-_FesliyanStudios.com.mp3" id="4_10fhc"]
+[ext_resource type="AudioStream" uid="uid://bgp6bvtjvfwa7" path="res://assets/TinyRPGCharPack/Werebear/Werebear/shadow sprites/SLOWER2019-01-02_-_8_Bit_Menu_-_David_Renda_-_FesliyanStudios.com.mp3" id="4_10fhc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n7p6d"]
 atlas = ExtResource("3_0tpwl")
