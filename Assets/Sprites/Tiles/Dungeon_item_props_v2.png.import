@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8733p18lxm7m"
-path="res://.godot/imported/Dungeon_item_props_v2.png-1990417d564fdf3d889c730374962a2e.ctex"
+path="res://.godot/imported/Dungeon_item_props_v2.png-5b374479ee78dd9c45ad5e0ff5daea19.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tiles/Dungeon_item_props_v2.png"
-dest_files=["res://.godot/imported/Dungeon_item_props_v2.png-1990417d564fdf3d889c730374962a2e.ctex"]
+source_file="res://assets/sprites/Tiles/Dungeon_item_props_v2.png"
+dest_files=["res://.godot/imported/Dungeon_item_props_v2.png-5b374479ee78dd9c45ad5e0ff5daea19.ctex"]
 
 [params]
 
