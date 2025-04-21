@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://7wd7npp4rfw8"
-path="res://.godot/imported/EnemyGuard.png-328f408edb71f958fa8aac16892dbc38.ctex"
+path="res://.godot/imported/EnemyGuard.png-deebdea6855f8e083bad89d703f111df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/EnemyGuard.png"
-dest_files=["res://.godot/imported/EnemyGuard.png-328f408edb71f958fa8aac16892dbc38.ctex"]
+source_file="res://Assets/Sprites/EnemyGuard.png"
+dest_files=["res://.godot/imported/EnemyGuard.png-deebdea6855f8e083bad89d703f111df.ctex"]
 
 [params]
 

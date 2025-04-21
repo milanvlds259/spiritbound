@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmhq4d7sbhcjm"
-path="res://.godot/imported/Armored Axeman_Walk.png-9f74bd351378d44652628ab34b8f3ff9.ctex"
+path="res://.godot/imported/Armored Axeman_Walk.png-66477444aaa008220ff5c42822e66301.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tinyRPGCharPack/Armored Axeman/Armored Axeman_Walk.png"
-dest_files=["res://.godot/imported/Armored Axeman_Walk.png-9f74bd351378d44652628ab34b8f3ff9.ctex"]
+source_file="res://Assets/TinyRPGCharPack/Armored Axeman/Armored Axeman_Walk.png"
+dest_files=["res://.godot/imported/Armored Axeman_Walk.png-66477444aaa008220ff5c42822e66301.ctex"]
 
 [params]
 

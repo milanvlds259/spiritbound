@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bgp6bvtjvfwa7"
-path="res://.godot/imported/SLOWER2019-01-02_-_8_Bit_Menu_-_David_Renda_-_FesliyanStudios.com.mp3-05dc89f8227d250ec7ad1e38c769c11c.mp3str"
+path="res://.godot/imported/SLOWER2019-01-02_-_8_Bit_Menu_-_David_Renda_-_FesliyanStudios.com.mp3-78ee2bd98ea9583104575ce28b552e0e.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/SLOWER2019-01-02_-_8_Bit_Menu_-_David_Renda_-_FesliyanStudios.com.mp3"
-dest_files=["res://.godot/imported/SLOWER2019-01-02_-_8_Bit_Menu_-_David_Renda_-_FesliyanStudios.com.mp3-05dc89f8227d250ec7ad1e38c769c11c.mp3str"]
+source_file="res://Assets/Audio/SLOWER2019-01-02_-_8_Bit_Menu_-_David_Renda_-_FesliyanStudios.com.mp3"
+dest_files=["res://.godot/imported/SLOWER2019-01-02_-_8_Bit_Menu_-_David_Renda_-_FesliyanStudios.com.mp3-78ee2bd98ea9583104575ce28b552e0e.mp3str"]
 
 [params]
 

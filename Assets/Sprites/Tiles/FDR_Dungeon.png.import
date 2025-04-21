@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://3qe2rcup43ig"
-path="res://.godot/imported/FDR_Dungeon.png-38022ce8eaac3da034e751199a5debc8.ctex"
+path="res://.godot/imported/FDR_Dungeon.png-11c1f99488987b6a9dedce4f2fcc578e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Tiles/FDR_Dungeon.png"
-dest_files=["res://.godot/imported/FDR_Dungeon.png-38022ce8eaac3da034e751199a5debc8.ctex"]
+source_file="res://Assets/Sprites/Tiles/FDR_Dungeon.png"
+dest_files=["res://.godot/imported/FDR_Dungeon.png-11c1f99488987b6a9dedce4f2fcc578e.ctex"]
 
 [params]
 
