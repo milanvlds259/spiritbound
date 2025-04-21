@@ -2,7 +2,7 @@ extends Node
 
 
 # Path to the main game scene - change this to your main scene path
-@export var title_screen_path : String = "res://Scenes/title_screen.tscn"
+@export var title_screen_path : String = "res://scenes/title_screen.tscn"
 
 var scene_path: String = ""
 
