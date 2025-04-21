@@ -238,7 +238,6 @@ func _attack_ranged():
 	attack_mode = "ranged"
 	arrow_fired = false
 	$PlayerSprite.play("attack_ranged")
-	$PlayerRangedHit.play()
 
 func fire_arrow():
 	var used_arrow: PackedScene
@@ -319,7 +318,6 @@ func take_damage(damage: int):
 		die()
 	Global.emit_signal("player_hp_changed", hp)
 	$PlayerSprite.play("hurt")
-	$PlayerHurt.play()
 
 
 func die():
