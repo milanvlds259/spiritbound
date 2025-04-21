@@ -120,3 +120,8 @@ func _on_enemy_died():
 			spirit_spawner.spawn_spirits()
 		else:
 			print("[Spawner] spirit_spawner not found or missing spawn_spirits()")
+		var next_level = get_tree().get_first_node_in_group("next_level")
+		if next_level:
+			next_level.call_deferred("enable_transition")
+		else:
+			print("[Spawner] ERROR: No next_level node found")

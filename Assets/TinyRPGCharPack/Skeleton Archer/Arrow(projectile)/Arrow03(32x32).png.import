@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://diynuhskojysk"
-path="res://.godot/imported/Arrow03(32x32).png-c549c61cd47973403718948e1e71303f.ctex"
+path="res://.godot/imported/Arrow03(32x32).png-efa8023a991989e28178c88ce1fcca97.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TinyRPGCharPack/Skeleton Archer/Arrow(projectile)/Arrow03(32x32).png"
-dest_files=["res://.godot/imported/Arrow03(32x32).png-c549c61cd47973403718948e1e71303f.ctex"]
+source_file="res://Assets/TinyRPGCharPack/Skeleton Archer/Arrow(projectile)/Arrow03(32x32).png"
+dest_files=["res://.godot/imported/Arrow03(32x32).png-efa8023a991989e28178c88ce1fcca97.ctex"]
 
 [params]
 

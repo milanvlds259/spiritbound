@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://bao152g41ddvi"]
+[gd_scene load_steps=7 format=4 uid="uid://bao152g41ddvi"]
 
-[ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://resources/tilesets/DungeonBase.tres" id="1_wkm6n"]
-[ext_resource type="Script" uid="uid://iiyht5d252at" path="res://scripts/enemy_spawner.gd" id="2_5rn8v"]
-[ext_resource type="Script" uid="uid://cravfq6hvos04" path="res://scripts/main_next level.gd" id="2_qwn8w"]
-[ext_resource type="Script" uid="uid://bh6pv1b1ctrhr" path="res://scripts/spirit_spawner.gd" id="4_mfshv"]
+[ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="1_wkm6n"]
+[ext_resource type="Script" uid="uid://iiyht5d252at" path="res://Scripts/enemy_spawner.gd" id="2_5rn8v"]
+[ext_resource type="Script" uid="uid://cravfq6hvos04" path="res://Scripts/main_next level.gd" id="2_qwn8w"]
+[ext_resource type="Script" uid="uid://bh6pv1b1ctrhr" path="res://Scripts/spirit_spawner.gd" id="4_mfshv"]
+[ext_resource type="PackedScene" uid="uid://k0whlwy7le1b" path="res://Scenes/Bosses/minotaur.tscn" id="5_rjc7y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_83evl"]
 size = Vector2(12, 12)
@@ -48,3 +49,7 @@ position = Vector2(0, 16)
 
 [node name="Spirit_spawner_3" type="Node2D" parent="spirit_spawner"]
 position = Vector2(16, 0)
+
+[node name="Minotaur" parent="." instance=ExtResource("5_rjc7y")]
+position = Vector2(154, -555)
+scale = Vector2(0.3, 0.3)

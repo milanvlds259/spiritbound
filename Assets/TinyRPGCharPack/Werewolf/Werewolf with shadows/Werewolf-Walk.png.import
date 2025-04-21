@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://xnubijj565fb"
-path="res://.godot/imported/Werewolf-Walk.png-8d57aa6933aedc3e509508acbf946cf2.ctex"
+path="res://.godot/imported/Werewolf-Walk.png-ff46c892beb1fd901020c74d5173b026.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TinyRPGCharPack/Werewolf/Werewolf with shadows/Werewolf-Walk.png"
-dest_files=["res://.godot/imported/Werewolf-Walk.png-8d57aa6933aedc3e509508acbf946cf2.ctex"]
+source_file="res://Assets/TinyRPGCharPack/Werewolf/Werewolf with shadows/Werewolf-Walk.png"
+dest_files=["res://.godot/imported/Werewolf-Walk.png-ff46c892beb1fd901020c74d5173b026.ctex"]
 
 [params]
 

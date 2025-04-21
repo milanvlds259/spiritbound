@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cy8h1c2f7qkcd"
-path="res://.godot/imported/Slime-Walk.png-a8b260d7c4feb77c07ed409acd465fc1.ctex"
+path="res://.godot/imported/Slime-Walk.png-b33c547184cdb0aa27db77b635c7fb74.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TinyRPGCharPack/Slime/Slime with shadows/Slime-Walk.png"
-dest_files=["res://.godot/imported/Slime-Walk.png-a8b260d7c4feb77c07ed409acd465fc1.ctex"]
+source_file="res://Assets/TinyRPGCharPack/Slime/Slime with shadows/Slime-Walk.png"
+dest_files=["res://.godot/imported/Slime-Walk.png-b33c547184cdb0aa27db77b635c7fb74.ctex"]
 
 [params]
 
