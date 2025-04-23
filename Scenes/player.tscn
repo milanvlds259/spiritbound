@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://v7fuklt8nwxj"]
+[gd_scene load_steps=14 format=3 uid="uid://v7fuklt8nwxj"]
 
 [ext_resource type="Script" uid="uid://jcb2yeejo5wc" path="res://scripts/player.gd" id="1_xlfw7"]
 [ext_resource type="PackedScene" uid="uid://cufgcvrbu5khl" path="res://scenes/arrow.tscn" id="2_387co"]
@@ -104,14 +104,3 @@ texture = SubResource("AtlasTexture_jrcy8")
 position = Vector2(-15.5, -12.8333)
 scale = Vector2(0.401, 0.401)
 texture = SubResource("AtlasTexture_fqlrt")
-
-[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
-
-[node name="PlayerRangedHit" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_lsuou")
-
-[node name="PlayerMeleeHit" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("11_rnavt")
-
-[node name="MeleeFireExplosion" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_4m6xa")

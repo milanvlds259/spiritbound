@@ -117,7 +117,6 @@ func _on_hurt_area_entered(area: Area2D) -> void:
 		area.queue_free()
 
 func _on_hitbox_body_entered(body: Node) -> void:
-	
 	if body.is_in_group("player"):
 		var push_dir = (body.global_position - global_position).normalized()
 		body.apply_knockback(push_dir * impulse_str)

@@ -2,9 +2,9 @@ extends Node
 
 # Path to the main game scene - change this to your main scene path
 @export var main_scene_path : String = "res://room_loader.tscn"
-@export var tutorial_scene_path_keyboard: String = "res://Scenes/levels/tutorial_level.tscn"
-@export var tutorial_scene_path_controller: String = "res://Scenes/levels/tutorial_level2.tscn"
-@export var settings_scene_path: String = "res://Scenes/settings.tscn"
+@export var tutorial_scene_path_keyboard: String = "res://scenes/levels/tutorial_level.tscn"
+@export var tutorial_scene_path_controller: String = "res://scenes/levels/tutorial_level2.tscn"
+@export var settings_scene_path: String = "res://scenes/settings.tscn"
 
 var scene_path: String = ""
 

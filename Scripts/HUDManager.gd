@@ -28,7 +28,7 @@ func _on_spirit_inventory_updated(new_inventory: Array) -> void:
 		var spirit_type = new_inventory[index]
 		# Get the panel for the spirit
 		var panel = inventory.get_child(index)
-w		if panel.has_node("Sprite"):
+		if panel.has_node("Sprite"):
 			# Get the sprite node
 			var sprite = panel.get_node("Sprite")
 			if spirit_textures.has(spirit_type):
@@ -57,7 +57,6 @@ func _on_player_died() -> void:
 	$GameOverText.visible = true
 	$MenuBackButton.visible = true
 	$GameOverText/Score.visible = true
-	$DeathSound.play()
 
 
 	_on_score_updated(Global.enemies_killed, Global.floors_cleared)

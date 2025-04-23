@@ -1,10 +1,10 @@
 [gd_scene load_steps=54 format=3 uid="uid://bd4unjout48hv"]
 
-[ext_resource type="Texture2D" uid="uid://bommbtf8m22if" path="res://assets/tinyRPGCharPack/Skeleton Archer/Skeleton Archer(Split Effects)/Skeleton Archer.png" id="1_5ef7e"]
+[ext_resource type="Texture2D" uid="uid://bommbtf8m22if" path="res://assets/TinyRPGCharPack/Skeleton Archer/Skeleton Archer(Split Effects)/Skeleton Archer.png" id="1_5ef7e"]
 [ext_resource type="Script" uid="uid://t0urysoqj76p" path="res://scripts/enemy/enemy_skel_archer.gd" id="1_rsbpa"]
 [ext_resource type="PackedScene" uid="uid://cn5hvacow2vb6" path="res://scenes/enemyparts/enemy_skeleton_arrow.tscn" id="2_7vmnr"]
 [ext_resource type="PackedScene" uid="uid://bn2m5ghwophjs" path="res://scenes/damage_label.tscn" id="3_qcol6"]
-[ext_resource type="Texture2D" uid="uid://cls6sv06rbv4t" path="res://assets/tinyRPGCharPack/Skeleton Archer/Skeleton Archer(Split Effects)/Skeleton Archer-Attack_Effect.png" id="5_krq2p"]
+[ext_resource type="Texture2D" uid="uid://cls6sv06rbv4t" path="res://assets/TinyRPGCharPack/Skeleton Archer/Skeleton Archer(Split Effects)/Skeleton Archer-Attack_Effect.png" id="5_krq2p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x58vf"]
 atlas = ExtResource("1_5ef7e")

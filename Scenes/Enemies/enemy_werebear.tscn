@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://b5rc2fck54303" path="res://scripts/enemy/enemy_werebear.gd" id="1_2j1mh"]
 [ext_resource type="PackedScene" uid="uid://bn2m5ghwophjs" path="res://scenes/damage_label.tscn" id="2_616g8"]
-[ext_resource type="Texture2D" uid="uid://dody5y74t02gs" path="res://assets/tinyRPGCharPack/Werebear/Werebear(Split Effects)/Werebear.png" id="2_jcge8"]
-[ext_resource type="Texture2D" uid="uid://d3bb6ajxkuvvt" path="res://assets/tinyRPGCharPack/Werebear/Werebear(Split Effects)/Werebear-Attack01_Effect.png" id="3_bxwxv"]
-[ext_resource type="Texture2D" uid="uid://duv6w5t1vmwq0" path="res://assets/tinyRPGCharPack/Werebear/Werebear(Split Effects)/Werebear-Attack02_Effect.png" id="4_oovq1"]
-[ext_resource type="Texture2D" uid="uid://bc3kvwanqnve3" path="res://assets/tinyRPGCharPack/Werebear/Werebear(Split Effects)/Werebear-Attack03_Effect.png" id="5_fi4ex"]
+[ext_resource type="Texture2D" uid="uid://dody5y74t02gs" path="res://assets/TinyRPGCharPack/Werebear/Werebear(Split Effects)/Werebear.png" id="2_jcge8"]
+[ext_resource type="Texture2D" uid="uid://d3bb6ajxkuvvt" path="res://assets/TinyRPGCharPack/Werebear/Werebear(Split Effects)/Werebear-Attack01_Effect.png" id="3_bxwxv"]
+[ext_resource type="Texture2D" uid="uid://duv6w5t1vmwq0" path="res://assets/TinyRPGCharPack/Werebear/Werebear(Split Effects)/Werebear-Attack02_Effect.png" id="4_oovq1"]
+[ext_resource type="Texture2D" uid="uid://bc3kvwanqnve3" path="res://assets/TinyRPGCharPack/Werebear/Werebear(Split Effects)/Werebear-Attack03_Effect.png" id="5_fi4ex"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m727n"]
 atlas = ExtResource("2_jcge8")
@@ -427,8 +427,8 @@ height = 1200.0
 size = Vector2(48, 56)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3p8kc"]
-radius = 48.0
-height = 160.0
+radius = 41.0
+height = 144.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a11od"]
 atlas = ExtResource("3_bxwxv")
@@ -593,8 +593,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_pnmao"]
 radius = 100.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_f8aul"]
-radius = 207.002
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ub1eq"]
+radius = 44.0
+height = 200.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_15xeb"]
 atlas = ExtResource("5_fi4ex")
@@ -678,7 +679,7 @@ impulse_str = 250.0
 [node name="WerebearSprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_sla6b")
-animation = &"stomp"
+animation = &"idle"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 12)
@@ -719,7 +720,8 @@ shape = SubResource("CircleShape2D_pnmao")
 [node name="StompZone" type="Area2D" parent="."]
 
 [node name="StompHitbox" type="CollisionShape2D" parent="StompZone"]
-shape = SubResource("CircleShape2D_f8aul")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ub1eq")
 
 [node name="StompEffect" type="AnimatedSprite2D" parent="StompZone"]
 position = Vector2(-32, 0)
