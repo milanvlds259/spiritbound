@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=4 uid="uid://bgb7c8paro3gf"]
+[gd_scene load_steps=9 format=4 uid="uid://bgb7c8paro3gf"]
 
 [ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="1_233ut"]
 [ext_resource type="Script" uid="uid://cravfq6hvos04" path="res://Scripts/main_next level.gd" id="2_6nqpr"]
 [ext_resource type="Script" uid="uid://iiyht5d252at" path="res://Scripts/enemy_spawner.gd" id="2_g3r2e"]
 [ext_resource type="Script" uid="uid://bh6pv1b1ctrhr" path="res://Scripts/spirit_spawner.gd" id="4_hajih"]
+[ext_resource type="PackedScene" uid="uid://d1t6rrajdprfm" path="res://Scenes/Bosses/banshee.tscn" id="5_kjefm"]
+[ext_resource type="PackedScene" uid="uid://k0whlwy7le1b" path="res://Scenes/Bosses/minotaur.tscn" id="6_lcaxb"]
+[ext_resource type="PackedScene" uid="uid://c7eubxy7iku7k" path="res://Scenes/Bosses/enemy_orc_rider.tscn" id="7_d234d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_83evl"]
 size = Vector2(12, 12)
@@ -48,3 +51,15 @@ position = Vector2(0, 16)
 
 [node name="Spirit_spawner_3" type="Node2D" parent="spirit_spawner"]
 position = Vector2(16, 0)
+
+[node name="banshee" parent="." instance=ExtResource("5_kjefm")]
+position = Vector2(84, -576)
+scale = Vector2(0.3, 0.3)
+
+[node name="Minotaur" parent="." instance=ExtResource("6_lcaxb")]
+position = Vector2(130, -577)
+scale = Vector2(0.3, 0.3)
+
+[node name="EnemyOrcRider" parent="." instance=ExtResource("7_d234d")]
+position = Vector2(208, -558)
+scale = Vector2(0.3, 0.3)

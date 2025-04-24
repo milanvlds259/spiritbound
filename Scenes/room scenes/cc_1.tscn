@@ -1,18 +1,18 @@
 [gd_scene load_steps=20 format=4 uid="uid://byxp4v447l8jq"]
 
-[ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://resources/tilesets/DungeonBase.tres" id="1_kclfk"]
-[ext_resource type="Script" uid="uid://iiyht5d252at" path="res://scripts/enemy_spawner.gd" id="2_bhkyu"]
-[ext_resource type="Texture2D" uid="uid://b8733p18lxm7m" path="res://assets/sprites/Tiles/Dungeon_item_props_v2.png" id="2_shqjy"]
-[ext_resource type="Texture2D" uid="uid://bvrynxbdcuy8g" path="res://assets/sprites/Tiles/Dungeon_Tileset_v2.png" id="3_plu1c"]
-[ext_resource type="Texture2D" uid="uid://3qe2rcup43ig" path="res://assets/sprites/Tiles/FDR_Dungeon.png" id="4_wdqdq"]
-[ext_resource type="Texture2D" uid="uid://bibdiel70ce6n" path="res://assets/sprites/Tiles/FDR_Dungeon_Animations.png" id="5_bxx8h"]
-[ext_resource type="PackedScene" uid="uid://ckkepwnyxc5tj" path="res://scenes/traps/spike_wave_left_to_right.tscn" id="6_gv0da"]
-[ext_resource type="PackedScene" uid="uid://dat7owl2o1282" path="res://scenes/traps/spike_wave_right_to_left.tscn" id="7_j3te8"]
-[ext_resource type="PackedScene" uid="uid://ddhrmeowk1f5o" path="res://scenes/traps/spike_wave_bottom_up.tscn" id="8_4gww8"]
-[ext_resource type="PackedScene" uid="uid://cawlsgibekht1" path="res://scenes/traps/spike_wave_top down.tscn" id="9_6hd5h"]
-[ext_resource type="PackedScene" uid="uid://colewlvdd1y07" path="res://scenes/props/brazier.tscn" id="12_qkv0h"]
-[ext_resource type="Script" uid="uid://bh6pv1b1ctrhr" path="res://scripts/spirit_spawner.gd" id="13_mjhqu"]
-[ext_resource type="Script" uid="uid://cravfq6hvos04" path="res://scripts/main_next level.gd" id="13_rbg3c"]
+[ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="1_kclfk"]
+[ext_resource type="Script" uid="uid://iiyht5d252at" path="res://Scripts/enemy_spawner.gd" id="2_bhkyu"]
+[ext_resource type="Texture2D" uid="uid://b8733p18lxm7m" path="res://Assets/Sprites/Tiles/Dungeon_item_props_v2.png" id="2_shqjy"]
+[ext_resource type="Texture2D" uid="uid://bvrynxbdcuy8g" path="res://Assets/Sprites/Tiles/Dungeon_Tileset_v2.png" id="3_plu1c"]
+[ext_resource type="Texture2D" uid="uid://3qe2rcup43ig" path="res://Assets/Sprites/Tiles/FDR_Dungeon.png" id="4_wdqdq"]
+[ext_resource type="Texture2D" uid="uid://bibdiel70ce6n" path="res://Assets/Sprites/Tiles/FDR_Dungeon_Animations.png" id="5_bxx8h"]
+[ext_resource type="PackedScene" uid="uid://ckkepwnyxc5tj" path="res://Scenes/traps/spike_wave_left_to_right.tscn" id="6_gv0da"]
+[ext_resource type="PackedScene" uid="uid://dat7owl2o1282" path="res://Scenes/traps/spike_wave_right_to_left.tscn" id="7_j3te8"]
+[ext_resource type="PackedScene" uid="uid://ddhrmeowk1f5o" path="res://Scenes/traps/spike_wave_bottom_up.tscn" id="8_4gww8"]
+[ext_resource type="PackedScene" uid="uid://cawlsgibekht1" path="res://Scenes/traps/spike_wave_top down.tscn" id="9_6hd5h"]
+[ext_resource type="PackedScene" uid="uid://colewlvdd1y07" path="res://Scenes/props/brazier.tscn" id="12_qkv0h"]
+[ext_resource type="Script" uid="uid://bh6pv1b1ctrhr" path="res://Scripts/spirit_spawner.gd" id="13_mjhqu"]
+[ext_resource type="Script" uid="uid://cravfq6hvos04" path="res://Scripts/main_next level.gd" id="13_rbg3c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t6fbi"]
 texture = ExtResource("2_shqjy")
@@ -1317,19 +1317,19 @@ tile_set = SubResource("TileSet_eukjh")
 [node name="traps" type="Node2D" parent="."]
 
 [node name="spike wave left to right" parent="traps" instance=ExtResource("6_gv0da")]
-position = Vector2(8, -8)
-
-[node name="spike wave right to left" parent="traps" instance=ExtResource("7_j3te8")]
 position = Vector2(248, -8)
 
-[node name="spike wave left to right2" parent="traps" instance=ExtResource("6_gv0da")]
+[node name="spike wave right to left" parent="traps" instance=ExtResource("7_j3te8")]
 position = Vector2(8, -280)
+
+[node name="spike wave left to right2" parent="traps" instance=ExtResource("6_gv0da")]
+position = Vector2(8, -8)
 
 [node name="spike wave right to left2" parent="traps" instance=ExtResource("7_j3te8")]
 position = Vector2(248, -280)
 
 [node name="spike wave bottom up" parent="traps" instance=ExtResource("8_4gww8")]
-position = Vector2(-40, -72)
+position = Vector2(344, -200)
 
 [node name="spike wave top down" parent="traps" instance=ExtResource("9_6hd5h")]
 position = Vector2(-40, -200)
@@ -1338,7 +1338,7 @@ position = Vector2(-40, -200)
 position = Vector2(344, -72)
 
 [node name="spike wave top down2" parent="traps" instance=ExtResource("9_6hd5h")]
-position = Vector2(344, -200)
+position = Vector2(-40, -72)
 
 [node name="brazier" parent="." instance=ExtResource("12_qkv0h")]
 position = Vector2(-56, -304)

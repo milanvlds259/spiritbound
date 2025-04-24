@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://cb48baol0lnl"]
+[gd_scene load_steps=7 format=4 uid="uid://cb48baol0lnl"]
 
 [ext_resource type="TileSet" uid="uid://bja406cwxrdgc" path="res://Resources/Tilesets/DungeonBase.tres" id="1_esc0u"]
 [ext_resource type="Script" uid="uid://cravfq6hvos04" path="res://Scripts/main_next level.gd" id="2_1s0ul"]
 [ext_resource type="Script" uid="uid://iiyht5d252at" path="res://Scripts/enemy_spawner.gd" id="2_tvx12"]
 [ext_resource type="Script" uid="uid://bh6pv1b1ctrhr" path="res://Scripts/spirit_spawner.gd" id="4_by1n3"]
 [ext_resource type="PackedScene" uid="uid://d1t6rrajdprfm" path="res://Scenes/Bosses/banshee.tscn" id="5_8ku5r"]
-[ext_resource type="PackedScene" uid="uid://v7fuklt8nwxj" path="res://Scenes/player.tscn" id="6_dvimk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_83evl"]
 size = Vector2(12, 12)
@@ -55,7 +54,3 @@ position = Vector2(16, 0)
 [node name="banshee" parent="." instance=ExtResource("5_8ku5r")]
 position = Vector2(128, -576)
 scale = Vector2(0.3, 0.3)
-
-[node name="Player" parent="." instance=ExtResource("6_dvimk")]
-position = Vector2(141, -414)
-scale = Vector2(1, 1)
